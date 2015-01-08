@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+
+    <!-- Replace placeholder ID with your tracking ID -->
+    <string name="ga_trackingId">UA-42520913-1</string>
+
+    <!-- Enable Activity tracking -->
+    <bool name="ga_autoActivityTracking">true</bool>
+
+    <!-- Enable automatic exception tracking -->
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+
+    <!-- Remove the last octet of the IP address -->
+    <bool name="ga_anonymizeIp">false</bool>
+
+    <!-- The screen names that will appear in the reports -->
+    <string name="com.uwetrottmann.shopr.ui.MainActivity">Home</string>
+    <string name="com.uwetrottmann.shopr.ui.ItemDetailsActivity">Details</string>
+    <string name="com.uwetrottmann.shopr.ui.CritiqueActivity">Critique</string>
+
+</resources>

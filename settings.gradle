@@ -1,0 +1,4 @@
+include ':Android:Shopr:src:main'
+include ':Android:libraries:google-play-services_lib'
+include ':Java:ShoprAlgorithm'
+include ':Android:libraries:androidutils'

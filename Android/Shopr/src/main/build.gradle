@@ -1,0 +1,33 @@
+apply plugin: 'android'
+repositories {
+    mavenCentral()
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile project(':Android:libraries:androidutils')
+    compile project(':Android:libraries:google-play-services_lib')
+    compile project(':Java:ShoprAlgorithm')
+    compile group: 'org.jgrapht', name: 'jgrapht-ext', version:'0.9.0'
+    compile 'org.easytesting:fest-assert-core:2.0M10'
+
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "19.1.0"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['java']
+            //resources.srcDirs = ['java']
+           // aidl.srcDirs = ['java']
+            //renderscript.srcDirs = ['java']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+    }
+}

@@ -46,9 +46,10 @@ public class Similarity {
      */
     public static double attributeSimilarity(Attribute first, Attribute second) {
         double similarity = 0;
+
         double[] valueWeightsFirst = first.getValueWeights();
         double[] valueWeightsSecond = second.getValueWeights();
-
+        if (valueWeightsFirst==null||valueWeightsSecond==null) return 0;
         if (valueWeightsFirst.length != valueWeightsSecond.length) {
             throw new IllegalArgumentException(
                     "Attribute value weight vectors must be of same size.");

@@ -33,6 +33,7 @@ import com.uwetrottmann.androidutils.Maps;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -84,9 +85,7 @@ public class SelectionBuilder {
 
         mSelection.append("(").append(selection).append(")");
         if (selectionArgs != null) {
-            for (String arg : selectionArgs) {
-                mSelectionArgs.add(arg);
-            }
+            Collections.addAll(mSelectionArgs, selectionArgs);
         }
 
         return this;

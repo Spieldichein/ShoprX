@@ -62,7 +62,7 @@ public class AdaptiveSelection {
     }
 
     /**
-     * Call before {@link #getRecommendations(Critique)} to set the initial data
+     * Call before {@link #getRecommendations()} to set the initial data
      * set. Resets the query.
      */
     public void setInitialCaseBase(List<Item> caseBase, boolean isUsingDiversity) {

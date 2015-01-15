@@ -141,7 +141,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     /**
      * Post {@link ShopUpdateEvent} based on current list of recommendations.
      * 
-     * @param data
+     * @param data the collection of shop data that should be updated
      */
     private void onUpdateShops(List<Item> data) {
         ShopUpdateEvent event = new ShopUpdateEvent();

@@ -31,7 +31,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
 
     public enum Type {
         IMPORT_SHOPS,
-        IMPORT_ITEMS;
+        IMPORT_ITEMS
     }
 
     private static final String TAG = "Importer";

@@ -69,7 +69,7 @@ public class AndroidUtils {
      * {@code getExternalStorageState()} and therefore external storage is read-
      * and writeable.
      * 
-     * @return
+     * @return A variable indicating whether external storage is read- and writable
      */
     public static boolean isExtStorageAvailable() {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
@@ -78,34 +78,28 @@ public class AndroidUtils {
     /**
      * Whether there is any network with a usable connection.
      * 
-     * @param context
-     * @return
+     * @param context The Android System Context
+     * @return True if a network is available and this network can be used.
      */
     public static boolean isNetworkConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        if (activeNetworkInfo != null) {
-            return activeNetworkInfo.isConnected();
-        }
-        return false;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     /**
      * Whether WiFi has an active, usable connection.
      * 
-     * @param context
-     * @return
+     * @param context The current Android system context
+     * @return whether there is a Wifi connection and this wifi connection is active.
      */
     public static boolean isWifiConnected(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifiNetworkInfo = connectivityManager
                 .getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        if (wifiNetworkInfo != null) {
-            return wifiNetworkInfo.isConnected();
-        }
-        return false;
+        return wifiNetworkInfo != null && wifiNetworkInfo.isConnected();
     }
 
     /**
@@ -142,7 +136,7 @@ public class AndroidUtils {
      * 
      * @param input {@link InputStream}
      * @param output {@link OutputStream}
-     * @return
+     * @return The number of elements in the stream copied.
      * @throws IOException
      */
     public static int copy(InputStream input, OutputStream output) throws IOException {

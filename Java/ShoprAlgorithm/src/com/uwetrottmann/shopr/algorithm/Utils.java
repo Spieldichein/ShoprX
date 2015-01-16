@@ -22,7 +22,8 @@ public class Utils {
      * Currently only returns sample items.
      */
     public static List<Item> getLimitedCaseBase() {
-        // TODO replace with actual prefiltered data
+        // TODO (noch von Uwe) replace with actual prefiltered data
+        // TODO hier könnte ein erster Ansatzpunkt für ein Pre-filtering des Kontext sein. Dafür müsste allerdings dann auch in "Adaptive Selection" dieser Algorithmus verwendet werden und nicht der similitarity based Algorithmus.
         ArrayList<Item> cases = new ArrayList<Item>();
 
         int count = 0;

@@ -27,7 +27,7 @@
             android:id="@+id/imageViewCritiqueImage"
             android:layout_width="150dp"
             android:layout_height="200dp"
-            android:contentDescription="@string/description_item_picutre"
+            android:contentDescription="@string/description_item_picture"
             android:scaleType="fitCenter" />
     </LinearLayout>
 

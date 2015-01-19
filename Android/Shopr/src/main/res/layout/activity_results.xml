@@ -97,7 +97,8 @@
         <ImageView
             android:id="@+id/imageViewResultsItemPicture"
             android:layout_width="150dp"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:contentDescription="@string/your_selected_item"/>
     </LinearLayout>
 
 </ScrollView>

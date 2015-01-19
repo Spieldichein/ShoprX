@@ -31,7 +31,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
     private static final int RADIUS_METERS = 2000;
     private static final int ZOOM_LEVEL_INITIAL = 14;
     public static final String TAG = "Shops Map";
-    private static final int LAODER_ID = 22;
+    private static final int LOADER_ID = 22;
 
     public static ShopMapFragment newInstance() {
         return new ShopMapFragment();
@@ -50,7 +50,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
         // enable my location feature
         getMap().setMyLocationEnabled(!AppSettings.isUsingFakeLocation(getActivity()));
 
-        getLoaderManager().initLoader(LAODER_ID, null, this);
+        getLoaderManager().initLoader(LOADER_ID, null, this);
     }
 
     @Override
@@ -101,7 +101,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
         List<Marker> shopMarkersNew = Lists.newArrayList();
 
         for (Shop shop : shops) {
-            // determine color and recom. items in this shop
+            // determine color and recommended items in this shop
             float color;
             int itemCount;
             if (mShopsWithItems != null && mShopsWithItems.containsKey(shop.id())) {
@@ -131,7 +131,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
 
     public void onEvent(ShopUpdateEvent event) {
         mShopsWithItems = event.shopMap;
-        getLoaderManager().restartLoader(LAODER_ID, null, this);
+        getLoaderManager().restartLoader(LOADER_ID, null, this);
     }
 
     @Override
@@ -145,7 +145,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
     }
 
     @Override
-    public void onLoaderReset(Loader<List<Shop>> laoder) {
+    public void onLoaderReset(Loader<List<Shop>> loader) {
     }
 
 }

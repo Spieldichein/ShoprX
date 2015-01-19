@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="app_name">Shopr</string>
     <string name="action_settings">Einstellungen</string>
     <string name="title_list">Artikel</string>
     <string name="title_map">Geschäfte</string>
@@ -20,8 +21,29 @@
     <string name="action_restart">Neu starten</string>
     <string name="getting_your_location">Bestimme Ihren Standort…</string>
     <string name="has_x_recommendations">führt %s empfohlene Artikel</string>
+    <string name="title_activity_importer">ImporterActivity</string>
+    <string name="import_items">Importiere Items</string>
+    <string name="import_shops">Importiere Shops</string>
+    <string name="import_no_file_manager">Um zu importieren, muss ein Dateimanager installiert sein.</string>
+    <string name="import_a_csv_file">Importiere eine CSV-Datei</string>
+    <string name="action_import">Importiere die Daten</string>
+    <string name="import_start">Importiere…</string>
+    <string name="import_successful">Import erfolgreich.</string>
+    <string name="import_failed">Import fehlgeschlagen.</string>
     <string name="last_critique">Letzte Bewertung</string>
+    <string name="use_fake_location">Nutze einen Fake-Ort</string>
+    <string name="diversity_on_negative_progress">Exploration bei negativem Prozess</string>
+    <string name="no_item_dropping">Wiederholungen werden nicht ausgeschlossen</string>
+    <string name="title_activity_test_setup">Test Einstellungen</string>
+    <string name="test_setup">Test Einstellungen</string>
+    <string name="start">Start</string>
+    <string name="your_name_or_pseudonym">Dein Name oder Pseudonym</string>
+    <string name="title_activity_results">Testergebnisse</string>
     <string name="thank_you_this_task_is_finished_">Vielen Dank, das war\'s!</string>
+    <string name="no_data">Keine Daten vorhanden</string>
+    <string name="task_type">Art des Tasks</string>
+    <string name="duration">Dauer</string>
+    <string name="cycle_count">Anzahl Zyklen</string>
     <string name="title_activity_item_details">Artikel-Eigenschaften</string>
     <string name="choice_confirmation">Sind Sie mit \"%s\" zufrieden?</string>
     <string name="choice_instructions">Wenn nicht, gehen Sie zurück.</string>
@@ -69,5 +91,7 @@
     <string name="only">nur %s</string>
     <string name="preferably">bevorzugt %s</string>
     <string name="avoid">vermeide %s</string>
+    <string name="restart_test">Neustart des Tests</string>
+    <string name="selection_hint">Wähle eins oder mehrere</string>
 
 </resources>

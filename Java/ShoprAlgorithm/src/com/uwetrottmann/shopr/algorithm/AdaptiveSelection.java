@@ -19,7 +19,6 @@ public class AdaptiveSelection {
     private static final int NUM_RECOMMENDATIONS_DEFAULT = 8;
     private static final int BOUND_DEFAULT = 10;
     private static final boolean DUMP_INVENTORY = false;
-    private static final boolean IS_USING_DIVERSITY_DEFAULT = true;
 
     private static AdaptiveSelection _instance;
 
@@ -42,14 +41,12 @@ public class AdaptiveSelection {
     private Critique mCurrentCritique;
     private int mNumRecommendations;
     private List<Item> mCurrentRecommendations;
-    private boolean mIsUsingDiversity;
     private LocalizationModule mLocalizer;
 
     private AdaptiveSelection() {
         mCaseBase = new ArrayList<Item>();
         mQuery = new Query();
         mNumRecommendations = NUM_RECOMMENDATIONS_DEFAULT;
-        mIsUsingDiversity = IS_USING_DIVERSITY_DEFAULT;
         mCurrentRecommendations = new ArrayList<Item>();
     }
 
@@ -65,11 +62,10 @@ public class AdaptiveSelection {
      * Call before {@link #getRecommendations()} to set the initial data
      * set. Resets the query.
      */
-    public void setInitialCaseBase(List<Item> caseBase, boolean isUsingDiversity) {
+    public void setInitialCaseBase(List<Item> caseBase) {
         mQuery = new Query();
         mCurrentCritique = null;
         mCaseBase = caseBase;
-        mIsUsingDiversity = isUsingDiversity;
     }
 
     /**
@@ -89,15 +85,9 @@ public class AdaptiveSelection {
     public List<Item> getRecommendations() {
         // build a new set of recommendations
         List<Item> recommendations;
-        if (mIsUsingDiversity) {
-            // using adaptive selection (diversity on negative progress)
-            recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations,
-                    BOUND_DEFAULT, mIsUsingDiversity, mCurrentCritique);
-        } else {
-            // using similarity based recommendations
-            recommendations = itemRecommendSimOnly(mCaseBase, mQuery, mNumRecommendations,
+        // using adaptive selection (diversity on negative progress)
+        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations,
                     BOUND_DEFAULT, mCurrentCritique);
-        }
 
         mCurrentRecommendations = recommendations;
 
@@ -135,15 +125,6 @@ public class AdaptiveSelection {
     }
 
     /**
-     * Toggles usage of diverse recommendations when the last critique indicated
-     * negative progress (adaptive selection). If disabled always uses
-     * similarity based recommendations.
-     */
-    public void setIsUsingDiversity(boolean isUsingDiversity) {
-        mIsUsingDiversity = isUsingDiversity;
-    }
-
-    /**
      * **DO NOT USE** Only for testing of the Adaptive Selection cycle using a
      * console program.
      */
@@ -167,7 +148,7 @@ public class AdaptiveSelection {
 
         while (!isAbort) {
             List<Item> recommendations = itemRecommend(caseBase, query,
-                    NUM_RECOMMENDATIONS_DEFAULT, BOUND_DEFAULT, IS_USING_DIVERSITY_DEFAULT,
+                    NUM_RECOMMENDATIONS_DEFAULT, BOUND_DEFAULT,
                     critique);
             critique = userReview(recommendations, query);
             queryRevise(query, critique);
@@ -185,12 +166,11 @@ public class AdaptiveSelection {
      * critique. Returns a list of recommended items based on the case-base.
      */
     private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems,
-            int bound, boolean isUsingDiversity, Critique lastCritique) {
+            int bound, Critique lastCritique) {
 
         List<Item> recommendations = new ArrayList<Item>();
 
-        if ((lastCritique != null && !isUsingDiversity) ||
-                lastCritique != null && lastCritique.item() != null
+        if ( lastCritique != null && lastCritique.item() != null
                 && lastCritique.feedback().isPositiveFeedback()) {
             /*
              * Positive progress: user liked one or more features of one of the
@@ -235,55 +215,6 @@ public class AdaptiveSelection {
     }
 
     /**
-     * Takes the current query, number of recommended items to return, the last
-     * critique. Returns a list of recommended items based on the case-base.
-     */
-    private static List<Item> itemRecommendSimOnly(List<Item> caseBase, Query query, int numItems,
-            int bound, Critique lastCritique) {
-        List<Item> recommendations = new ArrayList<Item>();
-
-        if (lastCritique != null) {
-            /*
-             * REFINE: Show similar recommendations by sorting the case-base in
-             * decreasing similarity to current query. Return top k items.
-             */
-            Utils.sortBySimilarityToQuery(query, caseBase);
-            for (int i = 0; i < numItems; i++) {
-                // Remove previous recs to avoid same items
-                recommendations.add(caseBase.remove(0));
-            }
-        } else {
-            /*
-             * First run: show diverse results.
-             */
-            // REFOCUS: show diverse recommendations
-            recommendations = BoundedGreedySelection
-                    .boundedGreedySelection(query, caseBase, numItems, bound);
-        }
-
-        // Carry the critiqued so the user may critique it further.
-        if (lastCritique != null && lastCritique.item() != null) {
-            // check if it is already in the list
-            boolean isAlreadyPresent = false;
-            for (Item item : recommendations) {
-                if (item.id() == lastCritique.item().id()) {
-                    isAlreadyPresent = true;
-                    break;
-                }
-            }
-            // if not: replace the last one with it
-            if (!isAlreadyPresent) {
-                // Remove previous recs to avoid same items
-                caseBase.add(recommendations.remove(recommendations.size() -
-                        1));
-                recommendations.add(lastCritique.item());
-            }
-        }
-
-        return recommendations;
-    }
-
-    /**
      * Takes the list of recommended items and elicits a critique on a feature
      * of one item from the user. Returns the liked/disliked item and which
      * feature value (! not just which feature !) was liked/disliked.
@@ -301,13 +232,13 @@ public class AdaptiveSelection {
             System.out.print("Like (1) or Dislike(0)? ");
             boolean isPositiveCritique = Integer.valueOf(in.readLine()) == 1;
 
-            // TODO: allow multiple attributes
+            // TODO (von Uwe): allow multiple attributes
             System.out.print("Color (0), type (1), label(2), price(3)? Enter , separated: ");
             String input = in.readLine();
             String[] attrs = input.split(",");
             Feedback feedback = new Feedback();
-            for (int i = 0; i < attrs.length; i++) {
-                switch (Integer.valueOf(attrs[i])) {
+            for (String i : attrs) {
+                switch (Integer.valueOf(i)) {
                     case 0:
                         feedback.addAttributes(new Color());
                         break;

@@ -53,16 +53,15 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
             Log.d(TAG, "Initializing case base.");
             List<Item> caseBase = getInitialCaseBase();
-            manager.setInitialCaseBase(caseBase, AppSettings.isUsingDiversity(getContext()));
+            manager.setInitialCaseBase(caseBase);
 
             int maxRecommendations = AppSettings.getMaxRecommendations(getContext());
             AdaptiveSelection.get().setMaxRecommendations(maxRecommendations);
         }
 
         Log.d(TAG, "Fetching recommendations.");
-        List<Item> recommendations = manager.getRecommendations();
 
-        return recommendations;
+        return manager.getRecommendations();
     }
 
     private List<Item> getInitialCaseBase() {

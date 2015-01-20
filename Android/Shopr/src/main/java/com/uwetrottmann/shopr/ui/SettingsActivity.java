@@ -5,12 +5,9 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.PreferenceFragment;
 
 import com.uwetrottmann.shopr.R;
-import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
-import com.uwetrottmann.shopr.settings.AppSettings;
 
 public class SettingsActivity extends Activity {
 
@@ -50,11 +47,6 @@ public class SettingsActivity extends Activity {
 
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-            if (AppSettings.KEY_USING_DIVERSITY.equals(key)) {
-                // toggle diversity live while using the app
-                CheckBoxPreference pref = (CheckBoxPreference) findPreference(key);
-                AdaptiveSelection.get().setIsUsingDiversity(pref.isChecked());
-            }
         }
     }
 }

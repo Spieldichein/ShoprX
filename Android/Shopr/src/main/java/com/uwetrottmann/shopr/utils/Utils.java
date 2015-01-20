@@ -13,8 +13,7 @@ public class Utils {
          * Some eBay URLs sadly include commas (,), so really split by ",http".
          * We only want the first one anyhow.
          */
-        String url = arrayAsString.split(",http")[0];
-        return url;
+        return arrayAsString.split(",http")[0];
     }
 
 }

@@ -132,7 +132,6 @@ public class AdaptiveSelection {
         Query query = new Query();
         Critique critique = new Critique();
         critique.item(null);
-        boolean isAbort = false;
 
         /*
          * The caseBase will later be stored in a database (due to its size).
@@ -146,7 +145,7 @@ public class AdaptiveSelection {
             dumpInventory(query, caseBase);
         }
 
-        while (!isAbort) {
+        while (true) {
             List<Item> recommendations = itemRecommend(caseBase, query,
                     NUM_RECOMMENDATIONS_DEFAULT, BOUND_DEFAULT,
                     critique);

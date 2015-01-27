@@ -103,7 +103,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                     case IMPORT_ITEMS:
                         // add values for one item
                         values.put(Items._ID, line[0]);
-                        values.put(Shops.REF_SHOP_ID, random.nextInt(129));
+                        values.put(Shops.REF_SHOP_ID, random.nextInt(129)); //FIXME number of shops
                         values.put(Items.CLOTHING_TYPE, line[1]);
                         values.put(Items.SEX, line[2]);
                         values.put(Items.COLOR, line[3]);

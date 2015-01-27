@@ -26,7 +26,7 @@ public class BoundedGreedySelection {
         }
     }
 
-    public static final double ALPHA = 0.99;
+    public static final double ALPHA = 0.80; //FIXME: Find optimal value for more diverse searching, when there was a negative critique
 
     /**
      * Chooses <code>bound*limit</code> items most similar to current query.
@@ -53,7 +53,7 @@ public class BoundedGreedySelection {
 
         List<Item> recommendations = new ArrayList<Item>();
         for (int i = 0; i < numRecs; i++) {
-            sortByQuality(limitedCaseBase, recommendations, query);
+            sortByQuality(limitedCaseBase, recommendations);
 
             // get top item, remove it from remaining cases
             recommendations.add(limitedCaseBase.remove(0));
@@ -66,7 +66,7 @@ public class BoundedGreedySelection {
      * Calculates the quality for each item, sorts the case base with highest
      * quality first.
      */
-    private static void sortByQuality(List<Item> caseBase, List<Item> recommendations, Query query) {
+    private static void sortByQuality(List<Item> caseBase, List<Item> recommendations) {
         // Calculate current quality
         for (Item item : caseBase) {
             item.quality(ALPHA * item.querySimilarity()

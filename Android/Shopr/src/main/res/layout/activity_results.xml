@@ -94,6 +94,20 @@
             android:text="@string/no_data"
             android:textAppearance="@style/TextAppearance.Light" />
 
+        <TextView
+            android:id="@+id/textViewResultsItemPositionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_selected_item_position"
+            android:textAppearance="@style/TextAppearance.Small.Label" />
+
+        <TextView
+            android:id="@+id/textViewResultsItemPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data"
+            android:textAppearance="@style/TextAppearance.Light" />
+
         <ImageView
             android:id="@+id/imageViewResultsItemPicture"
             android:layout_width="150dp"

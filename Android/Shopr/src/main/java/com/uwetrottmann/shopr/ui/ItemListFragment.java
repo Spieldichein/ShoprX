@@ -30,10 +30,10 @@ import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.loaders.ItemLoader;
 import com.uwetrottmann.shopr.ui.MainActivity.LocationUpdateEvent;
 
-import de.greenrobot.event.EventBus;
-
 import java.util.List;
 import java.util.Map;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Shows a list of clothing items the user can critique by tapping an up or down
@@ -184,6 +184,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         // display details
         Intent intent = new Intent(getActivity(), ItemDetailsActivity.class);
         intent.putExtra(ItemDetailsActivity.InitBundle.ITEM_ID, item.id());
+        intent.putExtra(ItemDetailsActivity.InitBundle.ITEM_POSITION, mAdapter.getPosition(item) + 1); // Start for counting is 0
         startActivity(intent);
     }
 

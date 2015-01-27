@@ -68,9 +68,10 @@ public class ResultsActivity extends Activity {
 //        TextView textViewTaskType = (TextView) findViewById(R.id.textViewResultsTaskType);
         TextView textViewDuration = (TextView) findViewById(R.id.textViewResultsDuration);
         TextView textViewCycles = (TextView) findViewById(R.id.textViewResultsCycles);
+        TextView textViewItemPosition = (TextView) findViewById(R.id.textViewResultsItemPosition);
 
         final Cursor query = getContentResolver().query(Stats.buildStatUri(mStatId), new String[] {
-                Stats._ID, Stats.USERNAME, Stats.TASK_TYPE, Stats.DURATION, Stats.CYCLE_COUNT
+                Stats._ID, Stats.USERNAME, Stats.TASK_TYPE, Stats.DURATION, Stats.CYCLE_COUNT, Stats.ITEM_POSITION
         }, null, null, null);
         if (query != null) {
             if (query.moveToFirst()) {
@@ -80,6 +81,7 @@ public class ResultsActivity extends Activity {
                 textViewDuration.setText(String.format("%dh:%02dm:%02ds", duration / 3600,
                         (duration % 3600) / 60, (duration % 60)));
                 textViewCycles.setText(query.getString(4));
+                textViewItemPosition.setText(query.getString(5));
             }
             query.close();
         }

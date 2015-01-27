@@ -33,9 +33,11 @@ public class ItemDetailsActivity extends Activity {
 
     public interface InitBundle {
         String ITEM_ID = "item_id";
+        String ITEM_POSITION = "item_position";
     }
 
     private Item mItem;
+    private int mItemPosition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class ItemDetailsActivity extends Activity {
             finish();
             return;
         }
+
+        mItemPosition = extras.getInt(InitBundle.ITEM_POSITION);
 
         int itemId = extras.getInt(InitBundle.ITEM_ID);
         List<Item> currentCaseBase = AdaptiveSelection.get().getCurrentRecommendations();
@@ -118,6 +122,7 @@ public class ItemDetailsActivity extends Activity {
     }
 
     protected void onFinishTask() {
+        Statistics.get().setSelectedItemPosition(mItemPosition);
         // finish task, store stats to database
         Uri statUri = Statistics.get().finishTask(this);
         if (statUri == null) {

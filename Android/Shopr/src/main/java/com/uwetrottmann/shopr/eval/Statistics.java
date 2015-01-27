@@ -20,6 +20,7 @@ public class Statistics {
     private int mCyclePositiveCount;
     private String mUserName;
     private boolean mIsDiversity;
+    private int mSelectedItemPosition;
 
     private boolean mIsStarted;
 
@@ -78,6 +79,7 @@ public class Statistics {
         statValues.put(Stats.TASK_TYPE, mIsDiversity ? "div" : "sim");
         statValues.put(Stats.CYCLE_COUNT, mCycleCount + "(" + mCyclePositiveCount + "+)");
         statValues.put(Stats.DURATION, duration);
+        statValues.put(Stats.ITEM_POSITION, mSelectedItemPosition);
         final Uri inserted = context.getContentResolver().insert(Stats.CONTENT_URI, statValues);
 
         EasyTracker.getTracker().sendEvent("Results", "Type",
@@ -87,12 +89,17 @@ public class Statistics {
         EasyTracker.getTracker().sendEvent("Results", "Value", "Cycles (positive)",
                 (long) mCyclePositiveCount);
         EasyTracker.getTracker().sendEvent("Results", "Value", "Duration", duration);
+        EasyTracker.getTracker().sendEvent("Results", "Value", "Item Position", (long) mSelectedItemPosition);
 
         return inserted;
     }
 
     public synchronized String getUserName() {
         return mUserName;
+    }
+
+    public void setSelectedItemPosition(int position){
+        mSelectedItemPosition = position;
     }
 
 }

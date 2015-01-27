@@ -93,5 +93,6 @@
     <string name="avoid">vermeide %s</string>
     <string name="restart_test">Neustart des Tests</string>
     <string name="selection_hint">Wähle eins oder mehrere</string>
+    <string name="title_selected_item_position">Position des Items</string>
 
 </resources>

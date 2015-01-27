@@ -43,6 +43,8 @@ public class ShoprContract {
         String CYCLE_COUNT = "stats_cycles";
 
         String TASK_TYPE = "stats_tasktype";
+
+        String ITEM_POSITION = "stats_item_position";
     }
 
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://"

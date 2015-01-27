@@ -13,33 +13,37 @@ import java.util.List;
 
 public class ShopLoader extends GenericSimpleLoader<List<Shop>> {
 
+    private List<Shop> mShops;
+
     public ShopLoader(Context context) {
         super(context);
     }
 
     @Override
     public List<Shop> loadInBackground() {
-        final Cursor query = getContext().getContentResolver().query(Shops.CONTENT_URI,
-                new String[] {
-                        Shops._ID, Shops.NAME, Shops.LAT, Shops.LONG
-                }, null, null,
-                null);
+        if (mShops == null) {
+            final Cursor query = getContext().getContentResolver().query(Shops.CONTENT_URI,
+                    new String[]{
+                            Shops._ID, Shops.NAME, Shops.LAT, Shops.LONG
+                    }, null, null,
+                    null);
 
-        List<Shop> shops = Lists.newArrayList();
+            mShops = Lists.newArrayList();
 
-        if (query != null) {
-            while (query.moveToNext()) {
-                Shop shop = new Shop();
-                shop.id(query.getInt(0));
-                shop.name(query.getString(1));
-                shop.location(new LatLng(query.getDouble(2), query.getDouble(3)));
-                shops.add(shop);
+            if (query != null) {
+                while (query.moveToNext()) {
+                    Shop shop = new Shop();
+                    shop.id(query.getInt(0));
+                    shop.name(query.getString(1));
+                    shop.location(new LatLng(query.getDouble(2), query.getDouble(3)));
+                    mShops.add(shop);
+                }
+
+                query.close();
             }
-
-            query.close();
         }
 
-        return shops;
+        return mShops;
     }
 
 }

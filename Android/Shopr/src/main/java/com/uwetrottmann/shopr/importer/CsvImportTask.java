@@ -12,6 +12,7 @@ import au.com.bytecode.opencsv.CSVReader;
 
 import com.uwetrottmann.androidutils.Lists;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.loaders.ShopLoader;
 import com.uwetrottmann.shopr.provider.ShoprContract.Items;
 import com.uwetrottmann.shopr.provider.ShoprContract.Shops;
 import com.uwetrottmann.shopr.utils.Utils;
@@ -83,6 +84,14 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                 return "Invalid column count.";
             }
 
+            int numberOfShops = 0;
+            if (mType == Type.IMPORT_ITEMS){
+                ShopLoader loader = new ShopLoader(mContext);
+                numberOfShops = loader.loadInBackground().size();
+            } else if (mType == Type.IMPORT_SHOPS){
+                numberOfShops = 1;
+            }
+
             Log.d(TAG, "Importing the following CSV schema: " + Arrays.toString(firstLine));
 
             String[] line;
@@ -94,16 +103,18 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                 switch (mType) {
                     case IMPORT_SHOPS:
                         // add values for one shop
-                        values.put(Shops._ID, line[0]);
+                        values.put(Shops._ID, numberOfShops); //Ensures that we have all IDs even though there might be some missing in the CSV.
                         values.put(Shops.NAME, line[1]);
                         values.put(Shops.OPENING_HOURS, line[2]);
                         values.put(Shops.LAT, line[5]);
                         values.put(Shops.LONG, line[6]);
+
+                        numberOfShops++;
                         break;
                     case IMPORT_ITEMS:
                         // add values for one item
                         values.put(Items._ID, line[0]);
-                        values.put(Shops.REF_SHOP_ID, random.nextInt(129)); //FIXME number of shops
+                        values.put(Shops.REF_SHOP_ID, random.nextInt(numberOfShops) +1 ); // 0 is inclusive but n exclusive, we start at 1 with our IDs
                         values.put(Items.CLOTHING_TYPE, line[1]);
                         values.put(Items.SEX, line[2]);
                         values.put(Items.COLOR, line[3]);

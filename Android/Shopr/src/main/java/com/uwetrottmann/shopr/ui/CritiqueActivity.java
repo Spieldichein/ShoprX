@@ -23,9 +23,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.Critique;
 import com.uwetrottmann.shopr.algorithm.Feedback;
@@ -131,13 +133,17 @@ public class CritiqueActivity extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-        EasyTracker.getInstance().activityStart(this);
+
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("Critique").setAction("Start").setValue(System.currentTimeMillis()).build());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        EasyTracker.getInstance().activityStop(this);
+
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("Critique").setAction("Stop").setValue(System.currentTimeMillis()).build());
     }
 
     @Override
@@ -242,20 +248,20 @@ public class CritiqueActivity extends Activity {
 
             String title = "";
             String id = item.id();
-            if (id == Color.ID) {
+            if (id.equals(Color.ID)) {
                 title = getContext().getString(R.string.color);
-            } else if (id == Label.ID) {
+            } else if (id.equals(Label.ID)) {
                 title = getContext().getString(R.string.label);
-            } else if (id == ClothingType.ID) {
+            } else if (id.equals(ClothingType.ID)) {
                 title = getContext().getString(R.string.type);
-            } else if (id == Price.ID) {
+            } else if (id.equals(Price.ID)) {
                 title = getContext().getString(R.string.price);
-            } else if (id == Sex.ID) {
+            } else if (id.equals(Sex.ID)) {
                 title = getContext().getString(R.string.sex);
             }
 
             holder.title.setText(title);
-            if (id != Label.ID) {
+            if (!id.equals(Label.ID)) {
                 holder.value.setText(ValueConverter.getLocalizedStringForValue(getContext(), item
                         .currentValue().descriptor()));
             } else {

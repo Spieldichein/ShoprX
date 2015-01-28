@@ -12,9 +12,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
@@ -112,13 +114,17 @@ public class ItemDetailsActivity extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-        EasyTracker.getInstance().activityStart(this);
+
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("ItemDetails").setAction("Start").setValue(System.currentTimeMillis()).build());
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        EasyTracker.getInstance().activityStop(this);
+
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("ItemDetails").setAction("Stop").setValue(System.currentTimeMillis()).build());
     }
 
     protected void onFinishTask() {

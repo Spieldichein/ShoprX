@@ -5,7 +5,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.net.Uri;
 
-import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
 
@@ -107,11 +109,12 @@ public class Statistics {
 
         final Uri inserted = context.getContentResolver().insert(Stats.CONTENT_URI, statValues);
 
-        EasyTracker.getTracker().sendEvent("Results", "Value", "Cycles", (long) mCycleCount);
-        EasyTracker.getTracker().sendEvent("Results", "Value", "Cycles (positive)",
-                (long) mCyclePositiveCount);
-        EasyTracker.getTracker().sendEvent("Results", "Value", "Duration", duration);
-        EasyTracker.getTracker().sendEvent("Results", "Value", "Item Position", (long) mSelectedItemPosition);
+        Tracker t = ((ShoprApp) context.getApplicationContext()).getTracker();
+
+        t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Cycles").setValue((long) mCycleCount).build());
+        t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Cycles (positive)").setValue((long) mCyclePositiveCount).build());
+        t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Duration").setValue(duration).build());
+        t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Item Position").setValue((long) mSelectedItemPosition).build());
 
         return inserted;
     }

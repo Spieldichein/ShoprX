@@ -18,24 +18,27 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.analytics.tracking.android.EasyTracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient;
 import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.location.LocationClient;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.eval.TestSetupActivity;
 import com.uwetrottmann.shopr.importer.ImporterActivity;
 import com.uwetrottmann.shopr.settings.AppSettings;
 
-import de.greenrobot.event.EventBus;
-
 import java.util.Locale;
+
+import de.greenrobot.event.EventBus;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
         GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener {
+        GooglePlayServicesClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     private static final String TAG = "Shopr";
 
@@ -60,7 +63,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
      */
     ViewPager mViewPager;
 
-    private LocationClient mLocationClient;
+    private GoogleApiClient mLocationClient;
 
     private LatLng mLastLocation;
 
@@ -82,7 +85,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
          * Create a new location client, using the enclosing class to handle
          * callbacks.
          */
-        mLocationClient = new LocationClient(this, this, this);
+        mLocationClient = new GoogleApiClient.Builder(this).addApi(LocationServices.API).addConnectionCallbacks(this).addOnConnectionFailedListener(this).build();
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the app.
@@ -124,13 +127,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // send out location update event immediately
             EventBus.getDefault().postSticky(new LocationUpdateEvent());
         } else {
-            if (mLocationClient == null){
-                mLocationClient = new LocationClient(this, this, this);
-            }
             mLocationClient.connect();
         }
 
-        EasyTracker.getInstance().activityStart(this);
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("Activity").setAction("Start").setLabel("Started").build());
     }
 
     @Override
@@ -140,7 +141,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         }
         super.onStop();
 
-        EasyTracker.getInstance().activityStop(this);
+        Tracker t = ((ShoprApp) getApplication()).getTracker();
+        t.send(new HitBuilders.EventBuilder().setCategory("Activity").setAction("Stop").setLabel("Stopped").build());
     }
 
     @Override
@@ -264,6 +266,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     }
 
     @Override
+    public void onConnectionSuspended(int i) {
+        Log.d(TAG, "Connection with Location Service suspended");
+    }
+
+    @Override
     public void onDisconnected() {
         Log.d(TAG, "Disconnected from location service.");
     }
@@ -365,7 +372,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // If Google Play Services is available
         if (servicesConnected()) {
             // Get the current location
-            Location lastLocation = mLocationClient.getLastLocation();
+            Location lastLocation = LocationServices.FusedLocationApi.getLastLocation(mLocationClient);
             mLastLocation = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
             EventBus.getDefault().postSticky(new LocationUpdateEvent());
         }

@@ -2,10 +2,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
 
     <!-- Replace placeholder ID with your tracking ID -->
-    <string name="ga_trackingId">UA-42520913-1</string>
+    <string name="ga_trackingId">UA-59068924-1</string>
 
     <!-- Enable Activity tracking -->
     <bool name="ga_autoActivityTracking">true</bool>
+
+    <!-- Timeout -->
+    <integer name="ga_sessionTimeout">300</integer>
 
     <!-- Enable automatic exception tracking -->
     <bool name="ga_reportUncaughtExceptions">true</bool>

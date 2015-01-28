@@ -113,6 +113,20 @@
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:contentDescription="@string/your_selected_item"/>
+
+        <TextView
+            android:id="@+id/textViewResultsItemCoverageTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_item_coverage"
+            android:textAppearance="@style/TextAppearance.Small.Label" />
+
+        <TextView
+            android:id="@+id/textViewResultsItemCoverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data"
+            android:textAppearance="@style/TextAppearance.Light" />
     </LinearLayout>
 
 </ScrollView>

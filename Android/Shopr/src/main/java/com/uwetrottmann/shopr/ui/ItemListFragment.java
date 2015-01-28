@@ -27,6 +27,7 @@ import com.uwetrottmann.shopr.adapters.ItemAdapter.OnItemDisplayListener;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.Query;
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.loaders.ItemLoader;
 import com.uwetrottmann.shopr.ui.MainActivity.LocationUpdateEvent;
 
@@ -126,6 +127,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     public void onLoadFinished(Loader<List<Item>> loader, List<Item> data) {
         mAdapter.clear();
         mAdapter.addAll(data);
+        Statistics.get().itemCoverageStatistics(data);
         onUpdateReason();
         onUpdateShops(data);
     }
@@ -203,6 +205,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         }
     }
 
+    // Relikt aus Uwe Zeiten - löschen?
     public void onEvent(LocationUpdateEvent event) {
         if (!mIsInitialized) {
             Log.d(TAG, "Received location update, requerying");

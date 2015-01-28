@@ -45,9 +45,6 @@ public class TestSetupActivity extends Activity {
         String prevUserName = Statistics.get().getUserName();
         mNameEditText.setText(TextUtils.isEmpty(prevUserName) ? "thisis"
                 + new Random().nextInt(999999) : prevUserName);
-
-        //mDiversityCheckBox = (CheckBox) findViewById(R.id.checkBoxTestSetupDiversity);
-        //mDiversityCheckBox.setChecked(AppSettings.isUsingDiversity(this));
     }
 
     protected void onStartTest() {
@@ -56,15 +53,8 @@ public class TestSetupActivity extends Activity {
             return;
         }
 
-        // set diversity on or off
-        //PreferenceManager.getDefaultSharedPreferences(this).edit()
-        //        .putBoolean(AppSettings.KEY_USING_DIVERSITY, mDiversityCheckBox.isChecked())
-        //        .commit();
-        //Log.d(TAG, "Setting diversity to : " + (mDiversityCheckBox.isChecked() ? "ON" : "OFF"));
-
-        // record name, time and type, start task
-        Statistics.get().startTask(mNameEditText.getText().toString(),
-                true); // diversity checkbox always true
+        // record name, time and start task
+        Statistics.get().startTask(mNameEditText.getText().toString());
 
         // start the task
         startActivity(new Intent(this, MainActivity.class));

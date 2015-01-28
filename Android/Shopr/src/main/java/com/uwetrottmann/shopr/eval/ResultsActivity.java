@@ -65,23 +65,23 @@ public class ResultsActivity extends Activity {
 
     private void setupViews() {
         TextView textViewUserName = (TextView) findViewById(R.id.textViewResultsUsername);
-//        TextView textViewTaskType = (TextView) findViewById(R.id.textViewResultsTaskType);
         TextView textViewDuration = (TextView) findViewById(R.id.textViewResultsDuration);
         TextView textViewCycles = (TextView) findViewById(R.id.textViewResultsCycles);
         TextView textViewItemPosition = (TextView) findViewById(R.id.textViewResultsItemPosition);
+        TextView textViewItemCoverage = (TextView) findViewById(R.id.textViewResultsItemCoverage);
 
         final Cursor query = getContentResolver().query(Stats.buildStatUri(mStatId), new String[] {
-                Stats._ID, Stats.USERNAME, Stats.TASK_TYPE, Stats.DURATION, Stats.CYCLE_COUNT, Stats.ITEM_POSITION
+                Stats._ID, Stats.USERNAME, Stats.DURATION, Stats.CYCLE_COUNT, Stats.ITEM_POSITION, Stats.ITEM_COVERAGE
         }, null, null, null);
         if (query != null) {
             if (query.moveToFirst()) {
                 textViewUserName.setText(query.getString(1));
-//                textViewTaskType.setText(query.getString(2));
-                long duration = query.getLong(3) / DateUtils.SECOND_IN_MILLIS;
+                long duration = query.getLong(2) / DateUtils.SECOND_IN_MILLIS;
                 textViewDuration.setText(String.format("%dh:%02dm:%02ds", duration / 3600,
                         (duration % 3600) / 60, (duration % 60)));
-                textViewCycles.setText(query.getString(4));
-                textViewItemPosition.setText(query.getString(5));
+                textViewCycles.setText(query.getString(3));
+                textViewItemPosition.setText(query.getString(4));
+                textViewItemCoverage.setText(query.getString(5));
             }
             query.close();
         }

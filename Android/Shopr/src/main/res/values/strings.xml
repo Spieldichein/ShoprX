@@ -94,5 +94,6 @@
     <string name="restart_test">Restart test</string>
     <string name="selection_hint">Select one or more</string>
     <string name="title_selected_item_position">Item\'s position</string>
+    <string name="title_item_coverage">Item coverage</string>
 
 </resources>

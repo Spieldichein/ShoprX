@@ -6,7 +6,11 @@ import android.content.Context;
 import android.net.Uri;
 
 import com.google.analytics.tracking.android.EasyTracker;
+import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Stores data about the current task.
@@ -19,8 +23,8 @@ public class Statistics {
     private int mCycleCount;
     private int mCyclePositiveCount;
     private String mUserName;
-    private boolean mIsDiversity;
     private int mSelectedItemPosition;
+    private List<Integer> mShowedIds;
 
     private boolean mIsStarted;
 
@@ -39,10 +43,9 @@ public class Statistics {
      * Saves the current time, user name and task type until
      * {@link #finishTask(Context)} is called.
      */
-    public synchronized void startTask(String username, boolean isDiversity) {
+    public synchronized void startTask(String username) {
         mIsStarted = true;
         mUserName = username;
-        mIsDiversity = isDiversity;
         mStartTime = System.currentTimeMillis();
         mCycleCount = 0;
         mCyclePositiveCount = 0;
@@ -60,10 +63,25 @@ public class Statistics {
     }
 
     /**
+     * Adds all the itemIds in the list to the member list of this class. This is used in order to detect how many
+     * (distinct) items are shown to the user.
+     * @param items A list of all the items used in this critiquing cycle
+     */
+    public synchronized void itemCoverageStatistics(List<Item> items){
+        if (mShowedIds == null){
+            mShowedIds = new LinkedList<Integer>();
+        }
+
+        for (Item item : items) {
+            mShowedIds.add(item.id());
+        }
+    }
+
+    /**
      * Stops the task and writes all data to the database.
      * 
      * @return The {@link Uri} pointing to the new data set or {@code null} if
-     *         {@link #startTask(String, boolean)} was not called before.
+     *         {@link #startTask(String)} was not called before.
      */
     public synchronized Uri finishTask(Context context) {
         if (!mIsStarted) {
@@ -76,15 +94,19 @@ public class Statistics {
         // Write to database
         ContentValues statValues = new ContentValues();
         statValues.put(Stats.USERNAME, mUserName);
-        statValues.put(Stats.TASK_TYPE, mIsDiversity ? "div" : "sim");
         statValues.put(Stats.CYCLE_COUNT, mCycleCount + "(" + mCyclePositiveCount + "+)");
         statValues.put(Stats.DURATION, duration);
         statValues.put(Stats.ITEM_POSITION, mSelectedItemPosition);
+
+        StringBuilder build = new StringBuilder();
+        for(Integer i : mShowedIds){
+            build.append(i);
+            build.append(",");
+        }
+        statValues.put(Stats.ITEM_COVERAGE, build.toString());
+
         final Uri inserted = context.getContentResolver().insert(Stats.CONTENT_URI, statValues);
 
-        EasyTracker.getTracker().sendEvent("Results", "Type",
-                mIsDiversity ? "Diversity" : "Similarity",
-                (long) 0);
         EasyTracker.getTracker().sendEvent("Results", "Value", "Cycles", (long) mCycleCount);
         EasyTracker.getTracker().sendEvent("Results", "Value", "Cycles (positive)",
                 (long) mCyclePositiveCount);
@@ -98,7 +120,7 @@ public class Statistics {
         return mUserName;
     }
 
-    public void setSelectedItemPosition(int position){
+    public synchronized void setSelectedItemPosition(int position){
         mSelectedItemPosition = position;
     }
 

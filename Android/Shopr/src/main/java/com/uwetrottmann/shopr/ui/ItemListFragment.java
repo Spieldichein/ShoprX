@@ -205,13 +205,17 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         }
     }
 
-    // Relikt aus Uwe Zeiten - löschen?
+    /**
+     * Wird beim Start aufgerufen.
+     * @param event Location Update
+     */
     public void onEvent(LocationUpdateEvent event) {
         if (!mIsInitialized) {
             Log.d(TAG, "Received location update, requerying");
             mIsInitialized = true;
-            onInitializeItems();
         }
+
+        onInitializeItems();
     }
 
     private void onInitializeItems() {

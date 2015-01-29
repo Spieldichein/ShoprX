@@ -41,8 +41,7 @@ public class StereotypeStyleFragment extends Fragment {
                 container, false);
         GridView gridView = (GridView) view
                 .findViewById(R.id.stereotype_style_gridview);
-        gridView.setAdapter(new StereotypeStylesAdapter(getActivity()
-                .getApplicationContext(), topThreeStereotypes));
+        gridView.setAdapter(new StereotypeStylesAdapter(getActivity(), topThreeStereotypes));
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

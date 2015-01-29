@@ -1,6 +1,9 @@
 package com.uwetrottmann.shopr.stereotype.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +23,14 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Y
- * annick on 29.01.15.
+ * Created by Yannick on 29.01.15.
+ *
+ * Adapter class to display the styles on a page.
  */
 public class StereotypeStylesAdapter extends BaseAdapter {
+
+    private static final int fixed_width = 250;
+    private static final int fixed_height = 590;
 
     // references to our images
     private Map<Stereotype, Integer> stereotypeImagesMale;
@@ -90,19 +97,6 @@ public class StereotypeStylesAdapter extends BaseAdapter {
 		 * -out-views-in-relativelayout-programmatically
 		 */
 
-        // RelativeLayout layout = new RelativeLayout(mContext);
-        ImageView imageView;
-        if (convertView == null) { // if it's not recycled, initialize some
-            // attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(260, 600));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(10, 10, 10, 10);
-        } else {
-            imageView = (ImageView) convertView;
-        }
-        // imageView.setId(1);
-
         Stereotype activeStereotype = topThreeStereotypes.get(position)
                 .getStereotype();
         Integer id = null;
@@ -120,8 +114,40 @@ public class StereotypeStylesAdapter extends BaseAdapter {
                     "User has attribute sex set to BOTH. Can't determine picture to show.");
         }
 
-        imageView.setImageBitmap(Utils.decodeSampledBitmapFromResource(
-                parent.getResources(), id, 250, 590));
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((Activity) mContext).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int height;
+        int width = metrics.widthPixels;
+
+        if (mContext.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) { //Portrait
+            width = width / 3 - 5;
+
+            double factor = 1.0d;
+            if (width < fixed_width) {
+                factor = 1.0d * width / fixed_width;
+            }
+
+            height = (int) (fixed_height * factor);
+        } else {
+            width = fixed_width;
+            height = fixed_height;
+        }
+
+        Log.d("height", ""+ height);
+        Log.d("width", ""+ width);
+
+        ImageView imageView;
+        if (convertView == null) { // if it's not recycled, initialize some
+            // attributes
+            imageView = new ImageView(mContext);
+            imageView.setLayoutParams(new GridView.LayoutParams(width + 10, height + 10));
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setPadding(10, 10, 10, 10);
+        } else {
+            imageView = (ImageView) convertView;
+        }
+
+        imageView.setImageBitmap(Utils.decodeSampledBitmapFromResource(parent.getResources(), id, width, height));
 
         return imageView;
     }

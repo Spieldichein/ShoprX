@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.stereotype.adapter.StereotypeStylesAdapter;
@@ -53,11 +52,7 @@ public class StereotypeStyleFragment extends Fragment {
                 AbstractStereotype stereotype = topThreeStereotypes
                         .get(position);
                 User.getUser().setStereotype(stereotype);
-                Toast.makeText(
-                        getActivity(),
-                        "Stereotype set to "
-                                + stereotype.getStereotype().name(),
-                        Toast.LENGTH_LONG).show();
+                Log.d("Stereotype set to", stereotype.getStereotype().name());
                 startActivity(new Intent(getActivity().getApplicationContext(),
                         MainActivity.class));
             }

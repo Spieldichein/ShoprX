@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.stereotype.controller.StereotypeDeterminator;
@@ -51,16 +50,7 @@ public class StereotypeActivity extends FragmentActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.stereotype, menu);
-        MenuItem restartButton = menu.findItem(R.id.action_restart);
-        restartButton.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-
-            @Override
-            public boolean onMenuItemClick(MenuItem item) { //FIXME Restart Button - set default behavior
-                //Intent intent = new Intent(getApplicationContext(), SplashActivity.class);
-                //startActivity(intent);
-                return false;
-            }
-        });
+        //Restart Button disabled here
         return true;
     }
 

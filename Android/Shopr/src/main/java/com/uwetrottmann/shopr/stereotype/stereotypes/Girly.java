@@ -238,7 +238,7 @@ public class Girly extends AbstractStereotype {
 		jobs.put(Job.ASSISTANT, 5);
 		jobs.put(Job.LAWYER, 1);
 		jobs.put(Job.PROGRAMMER, 1);
-		jobs.put(Job.ASSISTANT, 1);
+		jobs.put(Job.ATHLETE, 1);
 		jobs.put(Job.RESEARCHER, 2);
 		jobs.put(Job.OTHER, 0);
 	}

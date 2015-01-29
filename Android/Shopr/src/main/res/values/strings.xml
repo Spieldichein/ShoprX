@@ -80,6 +80,11 @@
     <string name="turquoise">Turquoise</string>
     <string name="white">White</string>
     <string name="beige">Beige</string>
+    <string name="acryl">Acryl</string>
+    <string name="cremeColored">Creme colored</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="lightblue">Light Blue</string>
     <string name="less_than_25">less than 25 €</string>
     <string name="_25_to_50">25 to 50 €</string>
     <string name="_50_to_75">50 to 75 €</string>
@@ -95,5 +100,130 @@
     <string name="selection_hint">Select one or more</string>
     <string name="title_selected_item_position">Item\'s position</string>
     <string name="title_item_coverage">Item coverage</string>
+    
+    
+    <!--Stereotypes -->
+    <string name="StereotypeWelcome">Please fill in the form in order to determine your style.</string>
+    <string name="StereotypeAge">Age:</string>
+    <string name="StereotypeJob">Job:</string>
+    <string name="StereotypeSpinnerPrompt">Job</string>
+    <string name="StereotypeMusic">Preferred Music:</string>
+    <string name="StereotypeNextStep">Proceed</string>
+    <string-array name="StereotypeJobArray">
+        <item>Pupil</item>
+        <item>Student</item>
+        <item>Researcher</item>
+        <item>Manager</item>
+        <item>Salesperson</item>
+        <item>Cashier</item>
+        <item>Chef</item>
+        <item>Waiter</item>
+        <item>Nurse</item>
+        <item>Customer consultant</item>
+        <item>Craftsman</item>
+        <item>Secretary</item>
+        <item>Assistant</item>
+        <item>Lawyer</item>
+        <item>Programmer</item>
+        <item>Athlete</item>
+        <item>Unemployed</item>
+        <item>Others</item>
+    </string-array>
+    <string name="MusicDnB">DnB</string>
+    <string name="MusicHipHop">Hip-Hop</string>
+    <string name="MusicJazz">Jazz</string>
+    <string name="MusicIndie">Indie</string>
+    <string name="MusicFolk">Folk</string>
+    <string name="MusicPop">Pop</string>
+    <string name="MusicClassic">Classic</string>
+    <string name="MusicElectronic">Electronic</string>
+    <string name="MusicRock">Rock</string>
+    <string-array name="sex">
+        <item>@string/male</item>
+        <item>@string/female</item>
+    </string-array>
+    <string name="sexPrompt">Sex</string>
+    <string name="stereotypeFormSex">Sex:</string>
+    <string name="stereotypeSelectionText">Which of these styles fits you the most?</string>
+
+
+    <!-- Brands and colors //-->
+    <string name="adidas">Adidas</string>
+    <string name="allegraK">Allegra K</string>
+    <string name="boomBap">boom Bap</string>
+    <string name="boss">Hugo Boss</string>
+    <string name="brax">Brax</string>
+    <string name="byebyekitty">Bye Bye Kitty</string>
+    <string name="ca">C &amp; A</string>
+    <string name="carhartt">Carhartt</string>
+    <string name="chanel">Chanel</string>
+    <string name="converse">Converse</string>
+    <string name="cupcakecult">Cupcakecult</string>
+    <string name="dc">DC</string>
+    <string name="denim">Denim</string>
+    <string name="dickies">Dickies</string>
+    <string name="diesel">Diesel</string>
+    <string name="dior">C. Dior</string>
+    <string name="esprit">Esprit</string>
+    <string name="etnies">Etnies</string>
+    <string name="fjallraven">Fjallraven</string>
+    <string name="forever21">Forever 21</string>
+    <string name="gstar">G Star</string>
+    <string name="gucci">Gucci</string>
+    <string name="hm">H &amp; M</string>
+    <string name="hrlondon">Hrlondon</string>
+    <string name="hellbunny">Hellbunny</string>
+    <string name="innocent">Innocent</string>
+    <string name="jcrew">J Crew</string>
+    <string name="lacoste">Lacoste</string>
+    <string name="levis">Levis</string>
+    <string name="livingdeadsouls">Livingdeadsouls</string>
+    <string name="louisvitton">Louis Vitton</string>
+    <string name="lrg">Lrg</string>
+    <string name="mazine">Mazine</string>
+    <string name="newyorker">New Yorker</string>
+    <string name="nike">Nike</string>
+    <string name="pepe">Pepe</string>
+    <string name="prada">Prada</string>
+    <string name="ralphlauren">Ralph Lauren</string>
+    <string name="reebok">Reebok</string>
+    <string name="sOliver">S. Oliver</string>
+    <string name="scotchsoda">Scotchsoda</string>
+    <string name="spiral">Spiral</string>
+    <string name="superdry">Superdry</string>
+    <string name="tomtailor">Tom Tailor</string>
+    <string name="tommyhilfiger">Tommy Hilfiger</string>
+    <string name="vans">Vans</string>
+    <string name="versace">Versace</string>
+
+    <string name="athletic">Athletic</string>
+    <string name="baggy">Baggy</string>
+    <string name="triangle">Triangle</string>
+    <string name="emo">Emo</string>
+    <string name="tight">Tight</string>
+    <string name="girly">Girly</string>
+    <string name="hoody">Hoody</string>
+    <string name="classic">Classic</string>
+    <string name="curt">Curt</string>
+    <string name="leather">Leather</string>
+    <string name="logo">Logo</string>
+    <string name="girl">Girl</string>
+    <string name="swatch">Swatch</string>
+    <string name="navy">Navy</string>
+    <string name="neon">Neon</string>
+    <string name="original">Original</string>
+    <string name="plush">Plush</string>
+    <string name="retro">Retro</string>
+    <string name="romantic">Romantic</string>
+    <string name="ribbon">Ribbon</string>
+    <string name="cord">Cord</string>
+    <string name="sport">Sport</string>
+    <string name="sporty">Sporty</string>
+    <string name="saying">Saying</string>
+    <string name="street">Street</string>
+    <string name="street2">street</string>
+    <string name="stripes">Stripes</string>
+    <string name="used">Used</string>
+    <string name="vintage">Vintage</string>
 
 </resources>

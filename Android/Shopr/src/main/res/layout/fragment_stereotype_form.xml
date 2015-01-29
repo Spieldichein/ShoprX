@@ -1,0 +1,187 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".StereotypeActivity" >
+
+    <TextView
+        android:id="@+id/stereotypeWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/StereotypeWelcome" />
+
+    <TextView
+        android:id="@+id/stereotypeTextAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stereotypeWelcome"
+        android:layout_alignStart="@+id/stereotypeWelcome"
+        android:layout_below="@+id/stereotypeWelcome"
+        android:layout_marginTop="19dp"
+        android:text="@string/StereotypeAge" />
+
+    <EditText
+        android:id="@+id/stereotypeAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_alignBaseline="@+id/stereotypeTextAge"
+        android:layout_alignBottom="@+id/stereotypeTextAge"
+        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
+        android:layout_toRightOf="@+id/stereotypeTextAge"
+        android:layout_toEndOf="@+id/stereotypeTextAge"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/stereotypeTextSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/stereotypeTextAge"
+        android:layout_alignLeft="@+id/stereotypeTextAge"
+        android:layout_below="@+id/stereotypeTextAge"
+        android:layout_marginTop="20dp"
+        android:text="@string/stereotypeFormSex"/>
+
+    <Spinner
+        android:id="@+id/stereotypeSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stereotypeAge"
+        android:layout_alignStart="@+id/stereotypeAge"
+        android:layout_alignTop="@+id/stereotypeTextSex"
+        android:layout_below="@+id/stereotypeAge"
+        android:entries="@array/sex"
+        android:prompt="@string/sexPrompt"/>
+
+    <TextView
+        android:id="@+id/TextViewJobSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stereotypeTextSex"
+        android:layout_marginTop="30dp"
+        android:text="@string/StereotypeJob" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/stereotypeSex"
+        android:layout_alignStart="@+id/stereotypeSex"
+        android:layout_alignTop="@+id/TextViewJobSelection"
+        android:entries="@array/StereotypeJobArray"
+        android:prompt="@string/StereotypeSpinnerPrompt" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TextView03"
+        android:layout_toRightOf="@+id/TextView03"
+        android:layout_toEndOf="@+id/TextView03"
+        android:text="@string/MusicRock" />
+
+    <CheckBox
+        android:id="@+id/checkBoxElectro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBoxRock"
+        android:layout_toRightOf="@+id/TextView03"
+        android:layout_toEndOf="@+id/TextView03"
+        android:text="@string/MusicElectronic" />
+
+    <CheckBox
+        android:id="@+id/checkBoxClassic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxElectro"
+        android:layout_alignStart="@+id/checkBoxElectro"
+        android:layout_below="@+id/checkBoxElectro"
+        android:text="@string/MusicClassic" />
+
+    <CheckBox
+        android:id="@+id/checkBoxPop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxRock"
+        android:layout_alignLeft="@+id/spinner1"
+        android:layout_alignStart="@+id/spinner1"
+        android:text="@string/MusicPop" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFolk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxIndie"
+        android:layout_alignLeft="@+id/checkBoxJazz"
+        android:layout_alignStart="@+id/checkBoxJazz"
+        android:text="@string/MusicFolk" />
+
+    <CheckBox
+        android:id="@+id/checkBoxJazz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/checkBoxFolk"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_toRightOf="@+id/checkBoxClassic"
+        android:layout_toEndOf="@+id/checkBoxClassic"
+        android:text="@string/MusicJazz" />
+
+    <CheckBox
+        android:id="@+id/checkBoxIndie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxFolk"
+        android:layout_alignStart="@+id/checkBoxFolk"
+        android:layout_below="@+id/checkBoxRock"
+        android:text="@string/MusicIndie" />
+
+    <CheckBox
+        android:id="@+id/checkBoxHipHop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxClassic"
+        android:layout_alignStart="@+id/checkBoxClassic"
+        android:layout_below="@+id/checkBoxClassic"
+        android:text="@string/MusicHipHop" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextViewJobSelection"
+        android:layout_alignStart="@+id/TextViewJobSelection"
+        android:layout_below="@+id/spinner1"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/checkBoxPop"
+        android:layout_toStartOf="@+id/checkBoxPop"
+        android:text="@string/StereotypeMusic" />
+
+    <Button
+        android:id="@+id/buttonStereotypeSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/StereotypeNextStep"
+        android:textSize="@dimen/buttonTextSize" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDnB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/checkBoxIndie"
+        android:layout_alignStart="@+id/checkBoxIndie"
+        android:layout_below="@+id/checkBoxIndie"
+        android:text="@string/MusicDnB" />
+
+
+</RelativeLayout>

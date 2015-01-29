@@ -9,4 +9,7 @@
 
     <integer name="gridview_num_columns">3</integer>
 
+    <!-- Own definitions of dimensions -->
+    <dimen name="buttonTextSize">14sp</dimen>
+
 </resources>

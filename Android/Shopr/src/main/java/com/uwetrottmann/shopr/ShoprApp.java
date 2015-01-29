@@ -2,6 +2,7 @@
 package com.uwetrottmann.shopr;
 
 import android.app.Application;
+import android.content.Context;
 import android.preference.PreferenceManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -16,12 +17,15 @@ public class ShoprApp extends Application {
     }
 
     HashMap<TrackerName, Tracker> mTrackers;
+    private static Context mContext;
 
     public static final String GOOGLE_ANALYTICS_ID = "UA-59068924-1";
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        mContext = this;
 
         PreferenceManager.setDefaultValues(this, R.xml.prefs, false);
 
@@ -39,6 +43,10 @@ public class ShoprApp extends Application {
         }
 
         return mTrackers.get(TrackerName.APP_TRACKER);
+    }
+
+    public static Context getContext() {
+        return mContext;
     }
 
 }

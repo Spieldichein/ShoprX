@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.uwetrottmann.shopr.R;
-import com.uwetrottmann.shopr.ui.MainActivity;
+import com.uwetrottmann.shopr.stereotype.ui.StereotypeActivity;
 import com.uwetrottmann.shopr.ui.SettingsActivity;
 
 import java.util.Random;
@@ -57,7 +57,7 @@ public class TestSetupActivity extends Activity {
         Statistics.get().startTask(mNameEditText.getText().toString());
 
         // start the task
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, StereotypeActivity.class));
     }
 
     @Override

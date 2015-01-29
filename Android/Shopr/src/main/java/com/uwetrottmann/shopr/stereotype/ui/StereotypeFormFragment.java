@@ -123,40 +123,39 @@ public class StereotypeFormFragment extends Fragment{
      * @return the job which fits the type of the person in the backend.
      */
     private Job determineJobFromForm(String value){
-        value = value.toLowerCase();
-        if (value.equals("pupil"))
+        if (value.equals(getResources().getString(R.string.jobPupil)))
             return Job.PUPIL;
-        else if (value.equals("student"))
+        else if (value.equals(getResources().getString(R.string.jobStudent)))
             return Job.STUDENT;
-        else if (value.equals("researcher"))
+        else if (value.equals(getResources().getString(R.string.jobResearcher)))
             return Job.RESEARCHER;
-        else if (value.equals("manager"))
+        else if (value.equals(getResources().getString(R.string.jobManager)))
             return Job.MANAGER;
-        else if (value.equals("salesperson"))
+        else if (value.equals(getResources().getString(R.string.jobSalesperson)))
             return Job.SALESPERSON;
-        else if (value.equals("cashier"))
+        else if (value.equals(getResources().getString(R.string.jobCashier)))
             return Job.CASHIER;
-        else if (value.equals("chef"))
+        else if (value.equals(getResources().getString(R.string.jobChef)))
             return Job.COOK;
-        else if (value.equals("waiter"))
+        else if (value.equals(getResources().getString(R.string.jobWaiter)))
             return Job.WAITER;
-        else if (value.equals("nurse"))
+        else if (value.equals(getResources().getString(R.string.jobNurse)))
             return Job.NURSE;
-        else if (value.equals("customer consultant"))
+        else if (value.equals(getResources().getString(R.string.jobCustomerConsultant)))
             return Job.CUSTOMER_SERVICE_REPRESENTATIVE;
-        else if (value.equals("craftsman"))
+        else if (value.equals(getResources().getString(R.string.jobCraftsman)))
             return Job.CARPENTER;
-        else if (value.equals("secretary"))
+        else if (value.equals(getResources().getString(R.string.jobSecretary)))
             return Job.SECRETARY;
-        else if (value.equals("assistant"))
+        else if (value.equals(getResources().getString(R.string.jobAssistant)))
             return Job.ASSISTANT;
-        else if (value.equals("programmer"))
+        else if (value.equals(getResources().getString(R.string.jobProgrammer)))
             return Job.PROGRAMMER;
-        else if (value.equals("athlete"))
+        else if (value.equals(getResources().getString(R.string.jobAthlete)))
             return Job.ATHLETE;
-        else if (value.equals("unemployed"))
+        else if (value.equals(getResources().getString(R.string.jobUnemployed)))
             return Job.UNEMPLOYED;
-        else if (value.equals("others"))
+        else if (value.equals(getResources().getString(R.string.jobOthers)))
             return Job.OTHER;
         else
             throw new IllegalArgumentException("Unknown job: " + value + ".");

@@ -109,25 +109,43 @@
     <string name="StereotypeSpinnerPrompt">Job</string>
     <string name="StereotypeMusic">Preferred Music:</string>
     <string name="StereotypeNextStep">Proceed</string>
+    <string name="jobPupil">Pupil</string>
+    <string name="jobStudent">Student</string>
+    <string name="jobResearcher">Researcher</string>
+    <string name="jobManager">Manager</string>
+    <string name="jobSalesperson">Salesperson</string>
+    <string name="jobCashier">Cashier</string>
+    <string name="jobChef">Chef</string>
+    <string name="jobWaiter">Waiter</string>
+    <string name="jobNurse">Nurse</string>
+    <string name="jobCustomerConsultant">Customer Consultant</string>
+    <string name="jobCraftsman">Craftsman</string>
+    <string name="jobSecretary">Secretary</string>
+    <string name="jobAssistant">Assistant</string>
+    <string name="jobLawyer">Lawyer</string>
+    <string name="jobProgrammer">Programmer</string>
+    <string name="jobAthlete">Athlete</string>
+    <string name="jobUnemployed">Unemployed</string>
+    <string name="jobOthers">Others</string>
     <string-array name="StereotypeJobArray">
-        <item>Pupil</item>
-        <item>Student</item>
-        <item>Researcher</item>
-        <item>Manager</item>
-        <item>Salesperson</item>
-        <item>Cashier</item>
-        <item>Chef</item>
-        <item>Waiter</item>
-        <item>Nurse</item>
-        <item>Customer consultant</item>
-        <item>Craftsman</item>
-        <item>Secretary</item>
-        <item>Assistant</item>
-        <item>Lawyer</item>
-        <item>Programmer</item>
-        <item>Athlete</item>
-        <item>Unemployed</item>
-        <item>Others</item>
+        <item>@string/jobPupil</item>
+        <item>@string/jobStudent</item>
+        <item>@string/jobResearcher</item>
+        <item>@string/jobManager</item>
+        <item>@string/jobSalesperson</item>
+        <item>@string/jobCashier</item>
+        <item>@string/jobChef</item>
+        <item>@string/jobWaiter</item>
+        <item>@string/jobNurse</item>
+        <item>@string/jobCustomerConsultant</item>
+        <item>@string/jobCraftsman</item>
+        <item>@string/jobSecretary</item>
+        <item>@string/jobAssistant</item>
+        <item>@string/jobLawyer</item>
+        <item>@string/jobProgrammer</item>
+        <item>@string/jobAthlete</item>
+        <item>@string/jobUnemployed</item>
+        <item>@string/jobOthers</item>
     </string-array>
     <string name="MusicDnB">DnB</string>
     <string name="MusicHipHop">Hip-Hop</string>

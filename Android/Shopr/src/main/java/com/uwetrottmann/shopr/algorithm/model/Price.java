@@ -1,8 +1,6 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
-import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
-
 import org.jgrapht.Graphs;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
@@ -38,7 +36,7 @@ public class Price extends GenericAttribute {
 
     public static final String ID = "price";
 
-    public enum Value implements AttributeValue {
+    public enum Value implements Attributes.AttributeValue {
         SUB_25("less than 25 €"),
         BETWEEN_25_50("25 to 50 €"),
         BETWEEN_50_75("50 to 75 €"),
@@ -103,7 +101,7 @@ public class Price extends GenericAttribute {
     }
 
     @Override
-    public AttributeValue[] getValueSymbols() {
+    public Attributes.AttributeValue[] getValueSymbols() {
         return Value.values();
     }
 

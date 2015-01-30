@@ -1,15 +1,13 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
-import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
-
 import java.util.Arrays;
 
 public class Sex extends GenericAttribute {
 
     public static final String ID = "sex";
 
-    public enum Value implements AttributeValue {
+    public enum Value implements Attributes.AttributeValue {
         FEMALE("Female"),
         MALE("Male"),
         UNISEX("Unisex");
@@ -69,7 +67,7 @@ public class Sex extends GenericAttribute {
     }
 
     @Override
-    public AttributeValue[] getValueSymbols() {
+    public Attributes.AttributeValue[] getValueSymbols() {
         return Value.values();
     }
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -127,6 +128,11 @@ public class CritiqueActivity extends Activity {
     private void setupAdapter() {
         mAdapter = new ItemFeatureAdapter(this);
         mAdapter.addAll(mItem.attributes().getAllAttributes());
+        for (Attribute attr : mItem.attributes().getAllAttributes()){
+            if (attr.id().equals(Sex.ID)){ // Do not include Sex - we will include this in the algorithm.
+                mAdapter.remove(attr);
+            }
+        }
         mListView.setAdapter(mAdapter);
     }
 
@@ -245,6 +251,8 @@ public class CritiqueActivity extends Activity {
                     mButtonUpdate.setEnabled(isButtonEnabled);
                 }
             });
+
+            Log.d("ID", item.toString());
 
             String title = "";
             String id = item.id();

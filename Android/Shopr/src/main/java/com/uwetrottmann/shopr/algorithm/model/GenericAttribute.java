@@ -4,22 +4,20 @@ package com.uwetrottmann.shopr.algorithm.model;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.LocalizationModule;
 import com.uwetrottmann.shopr.algorithm.Query;
-import com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute;
-import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
 
 import java.util.Arrays;
 
-public abstract class GenericAttribute implements Attribute {
+public abstract class GenericAttribute implements Attributes.Attribute {
 
-    private AttributeValue currentValue;
+    private Attributes.AttributeValue currentValue;
 
     double[] mValueWeights;
 
-    public AttributeValue currentValue() {
+    public Attributes.AttributeValue currentValue() {
         return currentValue;
     }
 
-    public GenericAttribute currentValue(AttributeValue currentValue) {
+    public GenericAttribute currentValue(Attributes.AttributeValue currentValue) {
         this.currentValue = currentValue;
         return this;
     }
@@ -28,12 +26,12 @@ public abstract class GenericAttribute implements Attribute {
         return mValueWeights;
     }
 
-    public abstract AttributeValue[] getValueSymbols();
+    public abstract Attributes.AttributeValue[] getValueSymbols();
 
     @Override
     public String getValueWeightsString() {
         StringBuilder builder = new StringBuilder();
-        AttributeValue[] values = getValueSymbols();
+        Attributes.AttributeValue[] values = getValueSymbols();
 
         builder.append("[");
         for (int i = 0; i < mValueWeights.length; i++) {
@@ -51,7 +49,7 @@ public abstract class GenericAttribute implements Attribute {
      * Returns string for the given attribute having weight 1.0, e.g. only items
      * that have this value are recommended.
      */
-    public String getOnlyString(AttributeValue value) {
+    public String getOnlyString(Attributes.AttributeValue value) {
         LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
         if (localizer != null) {
             return String.format(localizer.getOnlyString(),
@@ -79,7 +77,7 @@ public abstract class GenericAttribute implements Attribute {
      * Returns string for the given attribute having the highest weight of all,
      * e.g. recommended items are likely to have this value.
      */
-    public String getPreferablyString(AttributeValue value) {
+    public String getPreferablyString(Attributes.AttributeValue value) {
         LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
         if (localizer != null) {
             return String.format(localizer.getPreferablyString(),
@@ -93,7 +91,7 @@ public abstract class GenericAttribute implements Attribute {
     public String getReasonString() {
         LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
         StringBuilder reason = new StringBuilder();
-        AttributeValue[] values = getValueSymbols();
+        Attributes.AttributeValue[] values = getValueSymbols();
 
         int maxIndex = 0; // assuming there is always a maximum
         for (int i = 0; i < mValueWeights.length; i++) {
@@ -144,13 +142,13 @@ public abstract class GenericAttribute implements Attribute {
     }
 
     /**
-     * Updates the given {@link Query}s {@link Attributes} given the positive or
+     * Updates the given {@link com.uwetrottmann.shopr.algorithm.Query}s {@link Attributes} given the positive or
      * negative critique based on the {@link #currentValue()} of this
-     * {@link Attribute}.
+     * {@link com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute}.
      */
     public void critiqueQuery(Query query, boolean isPositive) {
         // get value weight index, current weights
-        Attribute queryAttr = query.attributes().getAttributeById(id());
+        Attributes.Attribute queryAttr = query.attributes().getAttributeById(id());
         if (queryAttr == null) {
             query.attributes().initializeAttribute(this);
         }
@@ -182,8 +180,8 @@ public abstract class GenericAttribute implements Attribute {
 
         // subtract increase from other non-zero weights
         int count = 0;
-        for (int i = 0; i < weights.length; i++) {
-            if (weights[i] != 0) {
+        for (double weight : weights) {
+            if (weight != 0) {
                 count++;
             }
         }
@@ -261,8 +259,8 @@ public abstract class GenericAttribute implements Attribute {
         weights[valueIndex] = 0.0;
 
         int nonZeroCount = 0;
-        for (int i = 0; i < weights.length; i++) {
-            if (weights[i] != 0) {
+        for (double weight : weights) {
+            if (weight != 0) {
                 nonZeroCount++;
             }
         }

@@ -21,7 +21,6 @@ import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.Item;
-import com.uwetrottmann.shopr.algorithm.model.Sex;
 import com.uwetrottmann.shopr.eval.ResultsActivity;
 import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
@@ -99,8 +98,7 @@ public class ItemDetailsActivity extends Activity {
                 .append(ValueConverter.getLocalizedStringForValue(this, mItem.attributes()
                         .getAttributeById(ClothingType.ID).currentValue().descriptor()))
                 .append("\n")
-                .append(ValueConverter.getLocalizedStringForValue(this, mItem.attributes()
-                        .getAttributeById(Sex.ID).currentValue().descriptor()))
+                .append(ValueConverter.getLocalizedStringForValue(this, mItem.getSex().currentValue().descriptor()))
                 .append("\n")
                 .append(ValueConverter.getLocalizedStringForValue(this, mItem.attributes()
                         .getAttributeById(Color.ID).currentValue().descriptor()))

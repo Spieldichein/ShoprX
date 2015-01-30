@@ -94,8 +94,12 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 item.attributes(new Attributes()
                         .putAttribute(type)
                         .putAttribute(new Color(query.getString(5)))
-                        .putAttribute(new Price(price))
-                        .putAttribute(new Sex(query.getString(6))));
+                        .putAttribute(new Price(price)));
+                        //.putAttribute(new Sex(query.getString(6))));
+
+                //Sets the sex of the item.
+                Sex s = new Sex(query.getString(6));
+                item.setSex(s);
 
                 caseBase.add(item);
             }

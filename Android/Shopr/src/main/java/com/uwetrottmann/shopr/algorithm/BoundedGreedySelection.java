@@ -37,7 +37,7 @@ public class BoundedGreedySelection {
      */
     public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit,
             int bound) {
-        Utils.sortBySimilarityToQuery(query, caseBase);
+        caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
 
         // Get first b*k items
         int numItems = limit * bound;

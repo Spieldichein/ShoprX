@@ -1,7 +1,9 @@
 
 package com.uwetrottmann.shopr.algorithm;
 
-import com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute;
+import android.util.Log;
+
+import com.uwetrottmann.shopr.algorithm.model.Attributes;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.Item;
@@ -32,9 +34,9 @@ public class AdaptiveSelection {
     /**
      * **DO NOT USE** Only for internal testing.
      */
-    public static void main(String[] args) {
-        adaptiveSelection();
-    }
+//    public static void main(String[] args) {
+//        adaptiveSelection();
+//    }
 
     private List<Item> mCaseBase;
     private Query mQuery;
@@ -128,7 +130,7 @@ public class AdaptiveSelection {
      * **DO NOT USE** Only for testing of the Adaptive Selection cycle using a
      * console program.
      */
-    private static void adaptiveSelection() {
+    /*private static void adaptiveSelection() {
         Query query = new Query();
         Critique critique = new Critique();
         critique.item(null);
@@ -138,21 +140,21 @@ public class AdaptiveSelection {
          * Think about optimizations which could be applied.
          */
         // Filter case-base to match hard-limits (location, opening hours)
-        List<Item> caseBase = Utils.getLimitedCaseBase();
+        //List<Item> caseBase = Utils.getLimitedCaseBase(mCaseBase);
 
         // dump database
-        if (DUMP_INVENTORY) {
-            dumpInventory(query, caseBase);
-        }
-
-        while (true) {
-            List<Item> recommendations = itemRecommend(caseBase, query,
-                    NUM_RECOMMENDATIONS_DEFAULT, BOUND_DEFAULT,
-                    critique);
-            critique = userReview(recommendations, query);
-            queryRevise(query, critique);
-        }
-    }
+//        if (DUMP_INVENTORY) {
+//            dumpInventory(query, caseBase);
+//        }
+//
+//        while (true) {
+//            List<Item> recommendations = itemRecommend(caseBase, query,
+//                    NUM_RECOMMENDATIONS_DEFAULT, BOUND_DEFAULT,
+//                    critique);
+//            critique = userReview(recommendations, query);
+//            queryRevise(query, critique);
+//        }
+//    }
 
     private static void dumpInventory(Query query, List<Item> caseBase) {
         System.out.println("*** START INVENTORY DUMP ***");
@@ -171,30 +173,32 @@ public class AdaptiveSelection {
 
         if ( lastCritique != null && lastCritique.item() != null
                 && lastCritique.feedback().isPositiveFeedback()) {
+            Log.d("Last Critique", "Positive");
             /*
              * Positive progress: user liked one or more features of one of the
              * recommended items.
-             */
-            /*
+             *
              * REFINE: Show similar recommendations by sorting the case-base in
              * decreasing similarity to current query. Return top k items.
              */
-            Utils.sortBySimilarityToQuery(query, caseBase);
+            caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
             for (int i = 0; i < numItems; i++) {
                 recommendations.add(caseBase.get(i));
             }
         } else {
+            Log.d("Last Critique", "negative");
             /*
              * Negative progress: user disliked one or more of the features of
              * one recommended item. Or: first run.
+             * REFOCUS: show diverse recommendations
              */
-            // REFOCUS: show diverse recommendations
             recommendations = BoundedGreedySelection
                     .boundedGreedySelection(query, caseBase, numItems, bound);
         }
 
         // Carry the critiqued so the user may critique it further.
         if (lastCritique != null && lastCritique.item() != null) {
+            Log.d("Last Critique", "Last item");
             // check if it is already in the list
             boolean isAlreadyPresent = false;
             for (Item item : recommendations) {
@@ -271,8 +275,8 @@ public class AdaptiveSelection {
      * critique.
      */
     private static void queryRevise(Query query, Critique critique) {
-        List<Attribute> attributes = critique.feedback().attributes();
-        for (Attribute attribute : attributes) {
+        List<Attributes.Attribute> attributes = critique.feedback().attributes();
+        for (Attributes.Attribute attribute : attributes) {
             critique.item().attributes().getAttributeById(attribute.id())
                     .critiqueQuery(query, critique.feedback().isPositiveFeedback());
         }

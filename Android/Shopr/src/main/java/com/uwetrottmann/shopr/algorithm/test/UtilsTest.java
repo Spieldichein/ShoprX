@@ -1,8 +1,6 @@
 
 package com.uwetrottmann.shopr.algorithm.test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-
 import com.uwetrottmann.shopr.algorithm.Query;
 import com.uwetrottmann.shopr.algorithm.Utils;
 import com.uwetrottmann.shopr.algorithm.model.Attributes;
@@ -12,6 +10,8 @@ import com.uwetrottmann.shopr.algorithm.model.Item;
 import org.junit.Test;
 
 import java.util.ArrayList;
+
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class UtilsTest {
 

@@ -1,7 +1,7 @@
 
 package com.uwetrottmann.shopr.algorithm;
 
-import com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute;
+import com.uwetrottmann.shopr.algorithm.model.Attributes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ public class Feedback {
 
     private boolean mIsPositiveFeedback;
 
-    private List<Attribute> mAttributes = new ArrayList<Attribute>();
+    private List<Attributes.Attribute> mAttributes = new ArrayList<Attributes.Attribute>();
 
     public boolean isPositiveFeedback() {
         return mIsPositiveFeedback;
@@ -22,11 +22,11 @@ public class Feedback {
         return this;
     }
 
-    public List<Attribute> attributes() {
+    public List<Attributes.Attribute> attributes() {
         return mAttributes;
     }
 
-    public Feedback addAttributes(Attribute... attributes) {
+    public Feedback addAttributes(Attributes.Attribute... attributes) {
         mAttributes.addAll(Arrays.asList(attributes));
         return this;
     }

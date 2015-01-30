@@ -1,14 +1,14 @@
 
 package com.uwetrottmann.shopr.algorithm.test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.GenericAttribute;
 import com.uwetrottmann.shopr.algorithm.model.Price;
 
 import org.junit.Test;
+
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class LikeDislikeTest {
 

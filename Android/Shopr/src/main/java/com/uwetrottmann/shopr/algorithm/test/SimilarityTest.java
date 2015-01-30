@@ -1,14 +1,14 @@
 
 package com.uwetrottmann.shopr.algorithm.test;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-
 import com.uwetrottmann.shopr.algorithm.Similarity;
 import com.uwetrottmann.shopr.algorithm.model.Attributes;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 
 import org.junit.Test;
+
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class SimilarityTest {
 

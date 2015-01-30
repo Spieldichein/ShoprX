@@ -244,6 +244,7 @@ public class Skater extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 6);
 		jobs.put(Job.ATHLETE, 4);
 		jobs.put(Job.RESEARCHER, 2);
+        jobs.put(Job.UNEMPLOYED, 6);
 		jobs.put(Job.OTHER, 0);
 	}
 

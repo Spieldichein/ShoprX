@@ -242,6 +242,7 @@ public class Indie extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 6);
 		jobs.put(Job.ATHLETE, 2);
 		jobs.put(Job.RESEARCHER, 4);
+        jobs.put(Job.UNEMPLOYED, 5);
 		jobs.put(Job.OTHER, 0);
 	}
 

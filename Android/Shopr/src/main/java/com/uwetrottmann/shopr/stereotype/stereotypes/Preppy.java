@@ -243,6 +243,7 @@ public class Preppy extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 2);
 		jobs.put(Job.ATHLETE, 5);
 		jobs.put(Job.RESEARCHER, 4);
+        jobs.put(Job.UNEMPLOYED, 2);
 		jobs.put(Job.OTHER, 0);
 	}
 

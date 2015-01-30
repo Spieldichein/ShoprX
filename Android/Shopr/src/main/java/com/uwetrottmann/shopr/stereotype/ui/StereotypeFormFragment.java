@@ -155,6 +155,8 @@ public class StereotypeFormFragment extends Fragment{
             return Job.ATHLETE;
         else if (value.equals(getResources().getString(R.string.jobUnemployed)))
             return Job.UNEMPLOYED;
+        else if (value.equals(getResources().getString(R.string.jobLawyer)))
+            return Job.LAWYER;
         else if (value.equals(getResources().getString(R.string.jobOthers)))
             return Job.OTHER;
         else

@@ -244,6 +244,7 @@ public class Gothic extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 7);
 		jobs.put(Job.ATHLETE, 1);
 		jobs.put(Job.RESEARCHER, 5);
+        jobs.put(Job.UNEMPLOYED, 6);
 		jobs.put(Job.OTHER, 0);
 	}
 

@@ -244,6 +244,7 @@ public class Mainstream extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 4);
 		jobs.put(Job.ATHLETE, 6);
 		jobs.put(Job.RESEARCHER, 7);
+        jobs.put(Job.UNEMPLOYED, 6);
 		jobs.put(Job.OTHER, 0);
 	}
 

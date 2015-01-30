@@ -243,6 +243,7 @@ public class Classy extends AbstractStereotype {
         jobs.put(Job.PROGRAMMER, 3);
         jobs.put(Job.ATHLETE, 2);
         jobs.put(Job.RESEARCHER, 7);
+        jobs.put(Job.UNEMPLOYED, 2);
         jobs.put(Job.OTHER, 0);
     }
 

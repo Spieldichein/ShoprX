@@ -237,6 +237,7 @@ public class Emo extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 7);
 		jobs.put(Job.ATHLETE, 0);
 		jobs.put(Job.RESEARCHER, 4);
+        jobs.put(Job.UNEMPLOYED, 5);
 		jobs.put(Job.OTHER, 0);
 	}
 

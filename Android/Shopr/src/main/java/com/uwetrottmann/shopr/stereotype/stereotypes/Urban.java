@@ -244,6 +244,7 @@ public class Urban extends AbstractStereotype {
 		jobs.put(Job.PROGRAMMER, 6);
 		jobs.put(Job.ATHLETE, 5);
 		jobs.put(Job.RESEARCHER, 4);
+        jobs.put(Job.UNEMPLOYED, 7);
 		jobs.put(Job.OTHER, 0);
 	}
 

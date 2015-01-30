@@ -244,6 +244,7 @@ public class Athlete extends AbstractStereotype {
         jobs.put(Job.PROGRAMMER, 4);
         jobs.put(Job.ATHLETE, 10);
         jobs.put(Job.RESEARCHER, 3);
+        jobs.put(Job.UNEMPLOYED, 5);
         jobs.put(Job.OTHER, 0);
     }
 

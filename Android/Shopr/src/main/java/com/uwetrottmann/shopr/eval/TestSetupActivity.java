@@ -58,6 +58,7 @@ public class TestSetupActivity extends Activity {
 
         // start the task
         startActivity(new Intent(this, StereotypeActivity.class));
+        //startActivity(new Intent(this, MainActivity.class));
     }
 
     @Override

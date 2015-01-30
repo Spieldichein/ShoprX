@@ -133,8 +133,8 @@ public class StereotypeStylesAdapter extends BaseAdapter {
             height = fixed_height;
         }
 
-        Log.d("height", ""+ height);
-        Log.d("width", ""+ width);
+        //Log.d("height", ""+ height);
+        //Log.d("width", ""+ width);
 
         ImageView imageView;
         if (convertView == null) { // if it's not recycled, initialize some

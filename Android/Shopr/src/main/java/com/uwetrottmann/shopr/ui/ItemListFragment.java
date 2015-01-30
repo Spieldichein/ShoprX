@@ -64,8 +64,8 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
         mTextViewReason = (TextView) v.findViewById(R.id.textViewItemListReason);
         mGridView = (GridView) v.findViewById(R.id.gridViewItemList);
-        View emtpyView = v.findViewById(R.id.textViewItemListEmpty);
-        mGridView.setEmptyView(emtpyView);
+        View emptyView = v.findViewById(R.id.textViewItemListEmpty);
+        mGridView.setEmptyView(emptyView);
 
         return v;
     }
@@ -79,7 +79,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         mGridView.setAdapter(mAdapter);
 
         Bundle args = new Bundle();
-        args.putBoolean("isinit", false);
+        args.putBoolean("is init", false);
         getLoaderManager().initLoader(LOADER_ID, args, this);
 
         setHasOptionsMenu(true);
@@ -88,6 +88,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     @Override
     public void onStart() {
         super.onStart();
+
         EventBus.getDefault().registerSticky(this, LocationUpdateEvent.class);
     }
 
@@ -115,9 +116,10 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
     @Override
     public Loader<List<Item>> onCreateLoader(int loaderId, Bundle args) {
+        Log.d("Create", "Create");
         boolean isInit = false;
         if (args != null) {
-            isInit = args.getBoolean("isinit");
+            isInit = args.getBoolean("is init");
         }
         LatLng location = ((MainActivity) getActivity()).getLastLocation();
         return new ItemLoader(getActivity(), location, isInit);
@@ -125,6 +127,8 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
     @Override
     public void onLoadFinished(Loader<List<Item>> loader, List<Item> data) {
+        // is called as soon as the loader finishes.
+        Log.d("Item Loader", "Load finished");
         mAdapter.clear();
         mAdapter.addAll(data);
         Statistics.get().itemCoverageStatistics(data);
@@ -178,6 +182,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
     @Override
     public void onLoaderReset(Loader<List<Item>> loader) {
+        Log.d("Clear", "Clear");
         mAdapter.clear();
     }
 
@@ -213,14 +218,14 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         if (!mIsInitialized) {
             Log.d(TAG, "Received location update, requerying");
             mIsInitialized = true;
+            onInitializeItems();
         }
-
-        onInitializeItems();
     }
 
     private void onInitializeItems() {
         Bundle args = new Bundle();
-        args.putBoolean("isinit", true);
+        args.putBoolean("is init", true);
+        //Here we have a loader with a unique ID, optional arguments and the implementation of the callbacks (this class)
         getLoaderManager().restartLoader(LOADER_ID, args, this);
     }
 }

@@ -172,6 +172,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                 startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             default:
+                Log.d("Default menu", "Default menu selected");
                 return super.onOptionsItemSelected(item);
         }
     }

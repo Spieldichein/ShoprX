@@ -33,9 +33,9 @@ public class StereotypeStyleFragment extends Fragment {
         topThreeStereotypes = User.getUser().getPotentialStereotypes();
         if (topThreeStereotypes == null || topThreeStereotypes.size() != 3) {
             Log.e(StereotypeStyleFragment.class.toString(),
-                    "List of top three stereotpye is not initialized.");
+                    "List of top three stereotype is not initialized.");
             throw new RuntimeException(
-                    "List of top three stereotpye is not initialized.");
+                    "List of top three stereotype is not initialized.");
         }
         View view = inflater.inflate(R.layout.fragment_stereotype_style,
                 container, false);
@@ -51,12 +51,16 @@ public class StereotypeStyleFragment extends Fragment {
                 AbstractStereotype stereotype = topThreeStereotypes
                         .get(position);
                 User.getUser().setStereotype(stereotype);
+
                 Log.d("Stereotype set to", stereotype.getStereotype().name());
-                startActivity(new Intent(getActivity().getApplicationContext(),
-                        MainActivity.class));
+
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                getActivity().finish();
             }
 
         });
+
         return view;
     }
 }

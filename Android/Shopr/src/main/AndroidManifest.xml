@@ -81,7 +81,8 @@
         </activity>
         <activity
             android:name="com.uwetrottmann.shopr.stereotype.ui.StereotypeActivity"
-            android:label="User Information"
+            android:label="@string/title_activity_stereotype"
+            android:theme="@android:style/Theme.Holo.Light"
             android:parentActivityName="com.uwetrottmann.shopr.ui.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

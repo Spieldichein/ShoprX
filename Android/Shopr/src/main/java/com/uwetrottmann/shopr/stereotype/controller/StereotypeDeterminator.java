@@ -1,7 +1,5 @@
 package com.uwetrottmann.shopr.stereotype.controller;
 
-import android.util.Log;
-
 import com.uwetrottmann.shopr.algorithm.model.Sex;
 import com.uwetrottmann.shopr.stereotype.dto.StereotypeForm;
 import com.uwetrottmann.shopr.stereotype.stereotypes.AbstractStereotype;
@@ -56,7 +54,7 @@ public class StereotypeDeterminator {
         for (AbstractStereotype stereotype : stereotypes){
             Integer likelihood = 0;
             if (stereotype.getSex().equals(Sex.Value.UNISEX) || stereotype.getSex().equals(form.getSex())){
-                Log.d("Current stereotype", stereotype.toString());
+                //Log.d("Current stereotype", stereotype.toString());
                 likelihood += stereotype.getAgeRange().get(getAgeRange(form.getAge()));
                 likelihood += stereotype.getJobs().get(form.getJob());
                 for (Music music : form.getMusicTaste()){

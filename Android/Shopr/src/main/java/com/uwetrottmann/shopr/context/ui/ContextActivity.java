@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.ui.MainActivity;
 
 /**
@@ -43,6 +44,7 @@ public class ContextActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+        Statistics.get().startRecommendingItems(); // Set this, which states, that the real recommendation process begins.
         finish();
     }
 }

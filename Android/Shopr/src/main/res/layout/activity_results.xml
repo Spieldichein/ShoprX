@@ -67,6 +67,21 @@
             android:textAppearance="@style/TextAppearance.Light" />
 
         <TextView
+            android:id="@+id/textViewResultsDurationRecommendationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/durationRecommendation"
+            android:textAppearance="@style/TextAppearance.Small.Label" />
+
+        <TextView
+            android:id="@+id/textViewResultsDurationRecommendation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:text="@string/no_data"
+            android:textAppearance="@style/TextAppearance.Light" />
+
+        <TextView
             android:id="@+id/textViewResultsCyclesTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -40,6 +40,8 @@ public class ShoprContract {
 
         String DURATION = "stats_duration";
 
+        String DURATION_RECOMMENDATION = "stats_duration_recommendation";
+
         String CYCLE_COUNT = "stats_cycles";
 
         String ITEM_POSITION = "stats_item_position";

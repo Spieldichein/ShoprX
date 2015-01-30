@@ -66,22 +66,26 @@ public class ResultsActivity extends Activity {
     private void setupViews() {
         TextView textViewUserName = (TextView) findViewById(R.id.textViewResultsUsername);
         TextView textViewDuration = (TextView) findViewById(R.id.textViewResultsDuration);
+        TextView textViewDurationRecommendation = (TextView) findViewById(R.id.textViewResultsDurationRecommendation);
         TextView textViewCycles = (TextView) findViewById(R.id.textViewResultsCycles);
         TextView textViewItemPosition = (TextView) findViewById(R.id.textViewResultsItemPosition);
         TextView textViewItemCoverage = (TextView) findViewById(R.id.textViewResultsItemCoverage);
 
         final Cursor query = getContentResolver().query(Stats.buildStatUri(mStatId), new String[] {
-                Stats._ID, Stats.USERNAME, Stats.DURATION, Stats.CYCLE_COUNT, Stats.ITEM_POSITION, Stats.ITEM_COVERAGE
+                Stats._ID, Stats.USERNAME, Stats.DURATION, Stats.DURATION_RECOMMENDATION, Stats.CYCLE_COUNT, Stats.ITEM_POSITION, Stats.ITEM_COVERAGE
         }, null, null, null);
         if (query != null) {
             if (query.moveToFirst()) {
                 textViewUserName.setText(query.getString(1));
                 long duration = query.getLong(2) / DateUtils.SECOND_IN_MILLIS;
+                long durationRec = query.getLong(3) /DateUtils.SECOND_IN_MILLIS;
                 textViewDuration.setText(String.format("%dh:%02dm:%02ds", duration / 3600,
                         (duration % 3600) / 60, (duration % 60)));
-                textViewCycles.setText(query.getString(3));
-                textViewItemPosition.setText(query.getString(4));
-                textViewItemCoverage.setText(query.getString(5));
+                textViewDurationRecommendation.setText(String.format("%dh:%02dm:%02ds", durationRec / 3600,
+                        (durationRec % 3600) / 60, (durationRec % 60)));
+                textViewCycles.setText(query.getString(4));
+                textViewItemPosition.setText(query.getString(5));
+                textViewItemCoverage.setText(query.getString(6));
             }
             query.close();
         }
@@ -94,6 +98,7 @@ public class ResultsActivity extends Activity {
         Picasso.with(this)
                 .load(mItem.image())
                 .resizeDimen(R.dimen.default_image_width, R.dimen.default_image_height)
+                .error(R.drawable.ic_action_tshirt)
                 .centerCrop()
                 .into(imageViewItem);
     }

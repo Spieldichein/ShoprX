@@ -44,6 +44,7 @@
     <string name="no_data">no data</string>
     <string name="task_type">Task type</string>
     <string name="duration">Duration</string>
+    <string name="durationRecommendation">Duration since Recommendation start</string>
     <string name="cycle_count">Cycle count</string>
     <string name="title_activity_item_details">Item Details</string>
     <string name="choice_confirmation">Are you happy with \"%s\"?</string>

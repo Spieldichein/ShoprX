@@ -22,6 +22,7 @@ public class Statistics {
     private static Statistics _instance;
 
     private long mStartTime;
+    private long mStartTimeRecommendation;
     private int mCycleCount;
     private int mCyclePositiveCount;
     private String mUserName;
@@ -49,6 +50,7 @@ public class Statistics {
         mIsStarted = true;
         mUserName = username;
         mStartTime = System.currentTimeMillis();
+        mShowedIds = new LinkedList<Integer>();
         mCycleCount = 0;
         mCyclePositiveCount = 0;
     }
@@ -92,12 +94,14 @@ public class Statistics {
 
         mIsStarted = false;
         long duration = System.currentTimeMillis() - mStartTime;
+        long durationFromRecommendationStart = System.currentTimeMillis() - mStartTimeRecommendation;
 
         // Write to database
         ContentValues statValues = new ContentValues();
         statValues.put(Stats.USERNAME, mUserName);
         statValues.put(Stats.CYCLE_COUNT, mCycleCount + "(" + mCyclePositiveCount + "+)");
         statValues.put(Stats.DURATION, duration);
+        statValues.put(Stats.DURATION_RECOMMENDATION, durationFromRecommendationStart);
         statValues.put(Stats.ITEM_POSITION, mSelectedItemPosition);
 
         StringBuilder build = new StringBuilder();
@@ -114,6 +118,7 @@ public class Statistics {
         t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Cycles").setValue((long) mCycleCount).build());
         t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Cycles (positive)").setValue((long) mCyclePositiveCount).build());
         t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Duration").setValue(duration).build());
+        t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Duration Recommendations").setValue(durationFromRecommendationStart).build());
         t.send(new HitBuilders.EventBuilder().setCategory("Results").setAction("Value").setLabel("Item Position").setValue((long) mSelectedItemPosition).build());
 
         return inserted;
@@ -125,6 +130,10 @@ public class Statistics {
 
     public synchronized void setSelectedItemPosition(int position){
         mSelectedItemPosition = position;
+    }
+
+    public synchronized void startRecommendingItems(){
+        mStartTimeRecommendation = System.currentTimeMillis();
     }
 
 }

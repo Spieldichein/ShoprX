@@ -109,7 +109,7 @@
     <string name="StereotypeJob">Job:</string>
     <string name="StereotypeSpinnerPrompt">Job</string>
     <string name="StereotypeMusic">Preferred Music:</string>
-    <string name="StereotypeNextStep">Proceed</string>
+    <string name="UINextStep">Proceed</string>
     <string name="jobPupil">Pupil</string>
     <string name="jobStudent">Student</string>
     <string name="jobResearcher">Researcher</string>
@@ -245,4 +245,6 @@
     <string name="used">Used</string>
     <string name="vintage">Vintage</string>
 
+    <string name="description_context_welcome">Please set your current context factors, such that you can be provided the best possible recommendations.</string>
+    <string name="title_activity_context">Context Activity</string>
 </resources>

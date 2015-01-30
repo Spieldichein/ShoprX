@@ -116,7 +116,6 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
     @Override
     public Loader<List<Item>> onCreateLoader(int loaderId, Bundle args) {
-        Log.d("Create", "Create");
         boolean isInit = false;
         if (args != null) {
             isInit = args.getBoolean("is init");
@@ -128,7 +127,6 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     @Override
     public void onLoadFinished(Loader<List<Item>> loader, List<Item> data) {
         // is called as soon as the loader finishes.
-        Log.d("Item Loader", "Load finished");
         mAdapter.clear();
         mAdapter.addAll(data);
         Statistics.get().itemCoverageStatistics(data);
@@ -182,7 +180,6 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
     @Override
     public void onLoaderReset(Loader<List<Item>> loader) {
-        Log.d("Clear", "Clear");
         mAdapter.clear();
     }
 

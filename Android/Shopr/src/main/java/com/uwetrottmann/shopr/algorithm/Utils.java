@@ -55,7 +55,7 @@ public class Utils {
 
         // calculate similarity value for each item
         for (Item item : caseBase) {
-            Log.d("Item", item.toString());
+            //Log.d("Item", item.toString());
             item.querySimilarity(Similarity.similarity(query.attributes(), item.attributes()));
         }
 

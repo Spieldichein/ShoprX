@@ -40,6 +40,19 @@ public class Label extends GenericAttribute {
     }
 
     public Label(Value value) {
+        setWeights(value);
+    }
+
+    public Label(String value){
+        //Match the given String to a brand.
+        if (value.trim().length() > 0){
+            setWeights(Value.ARMANI);
+        } else {
+            setWeights(Value.CHANEL);
+        }
+    }
+
+    private void setWeights(Value value){
         mValueWeights = new double[Value.values().length];
         Arrays.fill(mValueWeights, 0.0);
         mValueWeights[value.ordinal()] = 1.0;

@@ -1,6 +1,8 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
+import android.util.Log;
+
 import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
 
 import org.jgrapht.Graphs;
@@ -134,6 +136,8 @@ public class Color extends GenericAttribute {
         }
         else if ("Beige".equals(value)) {
             setWeights(Color.Value.BEIGE);
+        } else {
+            Log.d("IMPORTANT", "Unknown color detected: " + value);
         }
     }
 

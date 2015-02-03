@@ -12,6 +12,7 @@ import com.uwetrottmann.shopr.algorithm.model.Attributes;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.algorithm.model.Price;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
 import com.uwetrottmann.shopr.provider.ShoprContract.Items;
@@ -94,7 +95,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 item.attributes(new Attributes()
                         .putAttribute(type)
                         .putAttribute(new Color(query.getString(5)))
-                        .putAttribute(new Price(price)));
+                        .putAttribute(new Price(price))
+                        .putAttribute(new Label(query.getString(2))));
                         //.putAttribute(new Sex(query.getString(6))));
 
                 //Sets the sex of the item.

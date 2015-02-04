@@ -1,11 +1,8 @@
 
 package com.uwetrottmann.shopr.algorithm;
 
-import android.util.Log;
-
 import com.uwetrottmann.shopr.algorithm.model.Attributes;
 import com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute;
-import com.uwetrottmann.shopr.algorithm.model.Sex;
 
 import java.util.List;
 
@@ -19,9 +16,6 @@ public class Similarity {
 
         // sum up similarity values for all attributes
         for (Attribute attrFirst : attrsFirst) {
-            if (attrFirst.id().equals(Sex.ID)){
-                Log.d("Skipping similarity for Sex", "Skip");
-            }
             /*
              * The query does only store new vectors for a feature once it has
              * been critiqued (others remain null). This speeds up processing by

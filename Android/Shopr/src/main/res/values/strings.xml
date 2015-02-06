@@ -247,5 +247,34 @@
     <string name="vintage">Vintage</string>
 
     <string name="description_context_welcome">Please set your current context factors, such that you can be provided the best possible recommendations.</string>
-    <string name="title_activity_context">Context Activity</string>
+    <string name="title_activity_context">Context Determination</string>
+    <string name="upTo2Km">Up to 2 km</string>
+    <string name="upTo5Km">Up to 5 km</string>
+    <string name="selectShopDistance">Distance to shop:</string>
+
+    <string name="now">Now</string>
+    <string name="nowPlus30">Now + next 30 minutes</string>
+    <string name="nowPlus60">Now + next 60 minutes</string>
+    <string name="nowPlus90">Now + next 90 minutes</string>
+    <string name="anyShop">Include all shops</string>
+    <string name="selectShopOpeningHours">Shop Opening Hours:</string>
+    <string name="showItemsThatAreNotInStock">Only show items in stock:</string>
+    <string name="showCrowdedShops">Show shops that are crowded:</string>
+
+    <string-array name="shopDistance">
+        <item>@string/upTo2Km</item>
+        <item>@string/upTo5Km</item>
+        <item>@string/anyShop</item>
+    </string-array>
+    <string-array name="shopOpeningHours">
+        <item>@string/now</item>
+        <item>@string/nowPlus30</item>
+        <item>@string/nowPlus60</item>
+        <item>@string/nowPlus90</item>
+        <item>@string/anyShop</item>
+    </string-array>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="startRecommendation">Starting recommendation...</string>
 </resources>

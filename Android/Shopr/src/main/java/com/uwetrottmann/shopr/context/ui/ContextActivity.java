@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.eval.Statistics;
@@ -42,6 +43,7 @@ public class ContextActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Toast.makeText(this, R.string.startRecommendation, Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         Statistics.get().startRecommendingItems(); // Set this, which states, that the real recommendation process begins.

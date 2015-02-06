@@ -15,9 +15,11 @@ import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.algorithm.model.Price;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
+import com.uwetrottmann.shopr.importer.CsvImportTask;
 import com.uwetrottmann.shopr.provider.ShoprContract.Items;
 import com.uwetrottmann.shopr.provider.ShoprContract.Shops;
 import com.uwetrottmann.shopr.settings.AppSettings;
+import com.uwetrottmann.shopr.stereotype.user.User;
 import com.uwetrottmann.shopr.utils.ShoprLocalizer;
 import com.uwetrottmann.shopr.utils.ValueConverter;
 
@@ -65,15 +67,23 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         return manager.getRecommendations();
     }
 
+    /**
+     * With this method the SQlite database is searched for the specific items and the case base for
+     * the algorithm calculation is returned.
+     * @return A list featuring the case base
+     */
     private List<Item> getInitialCaseBase() {
         List<Item> caseBase = Lists.newArrayList();
+
+        // Determine the sex of the user in order to reduce the search space and improve selection time!
+        String selectionString = restrictQuerySelection();
 
         Cursor query = getContext().getContentResolver().query(
                 Items.CONTENT_URI,
                 new String[] {
                         Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,
                         Items.COLOR, Items.SEX, Shops.REF_SHOP_ID
-                }, null, null, null);
+                }, selectionString, null, null);
 
         if (query != null) {
             while (query.moveToNext()) {
@@ -85,13 +95,16 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 // name
                 ClothingType type = new ClothingType(query.getString(1));
                 String brand = query.getString(2);
+
                 item.name(ValueConverter.getLocalizedStringForValue(getContext(), type
                         .currentValue().descriptor())
                         + " " + brand);
+
                 // price
                 BigDecimal price = new BigDecimal(query.getDouble(3));
                 item.price(price);
                 // critiquable attributes
+
                 item.attributes(new Attributes()
                         .putAttribute(type)
                         .putAttribute(new Color(query.getString(5)))
@@ -100,8 +113,7 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                         //.putAttribute(new Sex(query.getString(6))));
 
                 //Sets the sex of the item.
-                Sex s = new Sex(query.getString(6));
-                item.setSex(s);
+                item.setSex(new Sex(query.getString(6)));
 
                 caseBase.add(item);
             }
@@ -110,6 +122,30 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         }
 
         return caseBase;
+    }
+
+    /**
+     * This method shall restrict the query selection. This will reduce the amount of items loaded from
+     * the database and therefore how much memory the app is using.
+     * @return either null or the selection arguments
+     */
+    private String restrictQuerySelection(){
+        try {
+            User u = User.getUser();
+            StringBuilder builder = new StringBuilder();
+            builder.append(Items.SEX + " LIKE '");
+            if (u.getSex().equals(Sex.Value.MALE)){
+                builder.append(CsvImportTask.SEX_MALE_DB);
+            } else {
+                builder.append(CsvImportTask.SEX_FEMALE_DB);
+            }
+
+            builder.append("' OR " + Items.SEX + " LIKE '" + CsvImportTask.SEX_UNISEX + "'");
+
+            return builder.toString();
+        } catch (RuntimeException re){
+            return null;
+        }
     }
 
 }

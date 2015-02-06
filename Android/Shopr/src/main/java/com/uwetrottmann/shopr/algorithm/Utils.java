@@ -4,7 +4,6 @@ package com.uwetrottmann.shopr.algorithm;
 import android.util.Log;
 
 import com.uwetrottmann.shopr.algorithm.model.Item;
-import com.uwetrottmann.shopr.stereotype.user.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,26 +18,9 @@ public class Utils {
      * Currently only returns sample items.
      */
     public static List<Item> getLimitedCaseBase(List<Item> wholeCaseBase) {
-        ArrayList<Item> cases = new ArrayList<Item>();
+        List<Item> cases = new ArrayList<Item>();
 
-        //Get the user settings from the stereotype matching
-        User user;
-        try {
-            user = User.getUser();
-        } catch (RuntimeException e){
-            Log.d("User object null", "Returning whole case base");
-            return wholeCaseBase;
-        }
-
-
-        Log.d("User sex", user.getSex().toString());
-
-        //Filter out all that do not match the specified Sex of the user.
-        for (Item item : wholeCaseBase){
-            if (item.getSex().currentValue().equals(user.getSex())){ // Sex matches
-                cases.add(item);
-            }
-        }
+        cases = wholeCaseBase;
 
         return cases;
     }

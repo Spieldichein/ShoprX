@@ -8,8 +8,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import au.com.bytecode.opencsv.CSVReader;
-
 import com.uwetrottmann.androidutils.Lists;
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.loaders.ShopLoader;
@@ -25,10 +23,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import au.com.bytecode.opencsv.CSVReader;
+
 /**
  * Imports items or shops from a CSV file into the database.
  */
 public class CsvImportTask extends AsyncTask<Void, Integer, String> {
+
+    public static final String SEX_MALE_DB = "Männlich";
+    public static final String SEX_FEMALE_DB = "Weiblich";
+    public static final String SEX_UNISEX = "Unisex";
 
     public enum Type {
         IMPORT_SHOPS,

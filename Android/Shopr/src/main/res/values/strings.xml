@@ -7,7 +7,7 @@
     <string name="title_map">Shops</string>
     <string name="reason_empty">Close to you, store open</string>
     <string name="like">I like something about this item</string>
-    <string name="dislike">I dislike something this item</string>
+    <string name="dislike">I dislike something about this item</string>
     <string name="description_item_picture">Clothing item</string>
     <string name="title_activity_critique">CritiqueActivity</string>
     <string name="title_activity_stereotype">User type determination</string>
@@ -248,6 +248,7 @@
 
     <string name="description_context_welcome">Please set your current context factors, such that you can be provided the best possible recommendations.</string>
     <string name="title_activity_context">Context Determination</string>
+    <string name="headingShopSpecific">Shop Specific Settings</string>
     <string name="upTo2Km">Up to 2 km</string>
     <string name="upTo5Km">Up to 5 km</string>
     <string name="selectShopDistance">Distance to shop:</string>
@@ -277,4 +278,52 @@
     <string name="no">No</string>
 
     <string name="startRecommendation">Starting recommendation...</string>
+
+    <string name="contextHeaderOthers">Other settings</string>
+    <string name="contextCurrentTemperature">Current temperature:</string>
+    <string name="contextCurrentWeather">Current weather conditions:</string>
+    <string name="contextCurrentCompany">My company:</string>
+
+    <string name="below0Degrees">&lt; 0° C</string>
+    <string name="between0And5Degrees">between 0° and 5° C</string>
+    <string name="between5And10Degrees">between 5° and 10° C</string>
+    <string name="between10And15Degrees">between 10° and 15° C</string>
+    <string name="between15And20Degrees">between 15° and 20° C</string>
+    <string name="between20And25Degrees">between 20° and 25° C</string>
+    <string name="between25And30Degrees">between 25° and 30° C</string>
+    <string name="above30Degrees">&gt; 30° C</string>
+    <string-array name="contextTemperature">
+        <item>@string/below0Degrees</item>
+        <item>@string/between0And5Degrees</item>
+        <item>@string/between5And10Degrees</item>
+        <item>@string/between10And15Degrees</item>
+        <item>@string/between15And20Degrees</item>
+        <item>@string/between20And25Degrees</item>
+        <item>@string/between25And30Degrees</item>
+        <item>@string/above30Degrees</item>
+    </string-array>
+    <string name="sunnyWeather">Sunny</string>
+    <string name="partlyCloudyWeather">Partly cloudy</string>
+    <string name="cloudyWeather">Cloudy</string>
+    <string name="veryCloudyWeather">Very cloudy</string>
+    <string name="RainyWeather">Raining</string>
+    <string name="SnowyWeather">Snowing</string>
+    <string name="OtherWeather">Other conditions</string>
+    <string-array name="contextWeatherConditions">
+        <item>@string/sunnyWeather</item>
+        <item>@string/partlyCloudyWeather</item>
+        <item>@string/cloudyWeather</item>
+        <item>@string/veryCloudyWeather</item>
+        <item>@string/RainyWeather</item>
+        <item>@string/SnowyWeather</item>
+        <item>@string/OtherWeather</item>
+    </string-array>
+    <string name="alone">Alone</string>
+    <string name="withFamily">With Family</string>
+    <string name="withAFriend">With (a) friend(s)</string>
+    <string-array name="contextCompany">
+        <item>@string/alone</item>
+        <item>@string/withFamily</item>
+        <item>@string/withAFriend</item>
+    </string-array>
 </resources>

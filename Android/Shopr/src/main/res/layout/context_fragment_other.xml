@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description_context_welcome"
+        android:id="@+id/textViewContextSettings" />
+
+    <TextView
+        android:id="@+id/contextHeaderOthers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/contextHeaderOthers"
+        android:layout_below="@id/textViewContextSettings"
+        android:textSize="@dimen/textSizeHeading"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/contextTextViewTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contextHeaderOthers"
+        android:text="@string/contextCurrentTemperature"
+        android:textSize="@dimen/textSize"
+        android:layout_marginTop="10dp"/>
+
+    <Spinner
+        android:id="@+id/contextSpinnerTemperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/contextTemperature"
+        android:layout_toRightOf="@id/contextTextViewTemperature"
+        android:layout_toEndOf="@id/contextTextViewTemperature"
+        android:layout_alignTop="@id/contextTextViewTemperature"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        />
+
+    <TextView
+        android:id="@+id/contextTextViewWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contextTextViewTemperature"
+        android:text="@string/contextCurrentWeather"
+        android:textSize="@dimen/textSize"
+        android:layout_marginTop="30dp"/>
+
+    <Spinner
+        android:id="@+id/contextSpinnerWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/contextWeatherConditions"
+        android:layout_below="@id/contextSpinnerTemperature"
+        android:layout_alignStart="@id/contextSpinnerTemperature"
+        android:layout_alignLeft="@id/contextSpinnerTemperature"
+        android:layout_alignTop="@id/contextTextViewWeather"
+        android:gravity="end"
+        />
+
+    <TextView
+        android:id="@+id/contextTextViewCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contextTextViewWeather"
+        android:text="@string/contextCurrentCompany"
+        android:textSize="@dimen/textSize"
+        android:layout_marginTop="30dp"/>
+
+    <Spinner
+        android:id="@+id/contextSpinnerCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/contextCompany"
+        android:layout_below="@id/contextSpinnerWeather"
+        android:layout_alignStart="@id/contextSpinnerWeather"
+        android:layout_alignLeft="@id/contextSpinnerWeather"
+        android:layout_alignTop="@id/contextTextViewCompany"
+        android:gravity="end"
+        />
+
+    <Button
+        android:id="@+id/button_context_proceed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/UINextStep"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/contextTextViewCompany"/>
+
+</RelativeLayout>

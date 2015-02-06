@@ -26,9 +26,9 @@ public class StereotypeActivity extends FragmentActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.stereotype_activity);
+        setContentView(R.layout.fragment_only_activity);
 
-        if (findViewById(R.id.stereotype_fragment_container) != null) {
+        if (findViewById(R.id.fragment_only_container) != null) {
             // no large screen
 
             if (savedInstanceState != null) {
@@ -39,7 +39,7 @@ public class StereotypeActivity extends FragmentActivity implements
 
             FragmentTransaction transaction = getSupportFragmentManager()
                     .beginTransaction();
-            transaction.add(R.id.stereotype_fragment_container, firstFragment)
+            transaction.add(R.id.fragment_only_container, firstFragment)
                     .commit();
 
         }
@@ -68,7 +68,7 @@ public class StereotypeActivity extends FragmentActivity implements
         StereotypeStyleFragment styleFragment = new StereotypeStyleFragment();
         FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction();
-        transaction.replace(R.id.stereotype_fragment_container, styleFragment);
+        transaction.replace(R.id.fragment_only_container, styleFragment);
         transaction.addToBackStack(null);
         transaction.commit();
 

@@ -31,9 +31,9 @@ public class Utils {
      */
     public static List<Item> sortBySimilarityToQuery(Query query, List<Item> caseBase) {
         // Limit the case base (PRE-FILTERING)
-        //Log.d("Case Base before", caseBase.toString());
+        Log.d("Case Base size before limiting", ""+caseBase.size());
         caseBase = getLimitedCaseBase(caseBase);
-        //Log.d("Case Base after", caseBase.toString());
+        Log.d("Case Base size after limiting", ""+caseBase.size());
 
         // calculate similarity value for each item
         for (Item item : caseBase) {

@@ -3,6 +3,8 @@ package com.uwetrottmann.shopr.algorithm.model;
 
 import android.util.Log;
 
+import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
 
 import org.jgrapht.Graphs;
@@ -45,31 +47,31 @@ public class Color extends GenericAttribute {
     public static final String ID = "color";
 
     public enum Value implements AttributeValue {
-        BLUE("Blue"),
-        RED("Red"),
-        PINK("Pink"), // rosa zu Deutsch
-        PURPLE("Purple"),
-        YELLOW("Yellow"),
-        BROWN("Brown"),
-        COLORED("Colored"),
-        MIXED("Mixed"),
-        GREY("Grey"),
-        GREEN("Green"),
-        ORANGE("Orange"),
-        BLACK("Black"),
-        TURQUOISE("Turquoise"),
-        WHITE("White"),
-        BEIGE("Beige");
+        BLUE(R.string.blue),
+        RED(R.string.black),
+        PINK(R.string.pink), // rosa zu Deutsch
+        PURPLE(R.string.purple),
+        YELLOW(R.string.yellow),
+        BROWN(R.string.brown),
+        COLORED(R.string.colored),
+        MIXED(R.string.mixed),
+        GREY(R.string.grey),
+        GREEN(R.string.green),
+        ORANGE(R.string.orange),
+        BLACK(R.string.black),
+        TURQUOISE(R.string.turquoise),
+        WHITE(R.string.white),
+        BEIGE(R.string.beige);
 
-        String mDescriptor;
+        int mDescriptor;
 
-        Value(String name) {
+        Value(int name) {
             mDescriptor = name;
         }
 
         @Override
         public String descriptor() {
-            return mDescriptor;
+            return ShoprApp.getContext().getString(mDescriptor);
         }
 
         @Override
@@ -137,6 +139,8 @@ public class Color extends GenericAttribute {
         else if ("Beige".equals(value)) {
             setWeights(Color.Value.BEIGE);
         } else {
+            setWeights(Value.BEIGE);
+            Log.d("Color", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");
             Log.d("IMPORTANT", "Unknown color detected: " + value);
         }
     }

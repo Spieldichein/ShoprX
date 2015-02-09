@@ -1,5 +1,6 @@
 package com.uwetrottmann.shopr.stereotype.stereotypes;
 
+import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
 import com.uwetrottmann.shopr.stereotype.user.AgeRange;
 import com.uwetrottmann.shopr.stereotype.user.Job;
@@ -24,7 +25,7 @@ public abstract class AbstractStereotype {
     //unless specified differently stereotypes apply to both sexes
     protected Sex.Value sex = Sex.Value.UNISEX;
 
-    protected Map<String, Integer> brandProbabilityMap;
+    protected Map<Label.Value, Integer> brandProbabilityMap;
 
     protected Map<String, Integer> attributeProbabilityMap;
 
@@ -33,7 +34,7 @@ public abstract class AbstractStereotype {
     /**
      * @return the brandProbabilityMap
      */
-    public Map<String, Integer> getBrandProbabilityMap() {
+    public Map<Label.Value, Integer> getBrandProbabilityMap() {
         return brandProbabilityMap;
     }
 

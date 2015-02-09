@@ -2,6 +2,7 @@ package com.uwetrottmann.shopr.stereotype.stereotypes;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.ShoprApp;
+import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.stereotype.user.AgeRange;
 import com.uwetrottmann.shopr.stereotype.user.Job;
 import com.uwetrottmann.shopr.stereotype.user.Music;
@@ -25,98 +26,53 @@ public class Gothic extends AbstractStereotype {
 	}
 
 	private void buildBrandMap() {
-		this.brandProbabilityMap = new HashMap<String, Integer>();
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.adidas), 2);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.allegraK), 7);
-		brandProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.boomBap), 2);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.boss),
-				1);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.brax),
-				1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.byebyekitty), 9);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.ca), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.carhartt), 2);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.chanel), 1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.converse), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.cupcakecult), 9);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.dc), 1);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.denim),
-				2);
-		brandProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.dickies), 2);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.diesel), 5);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.dior),
-				1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.esprit), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.etnies), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.fjallraven), 5);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.forever21), 5);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.gstar),
-				4);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.gucci),
-				1);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.hm), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.hrlondon), 9);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.hellbunny), 8);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.innocent), 9);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.jcrew),
-				1);
-		brandProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.lacoste), 1);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.levis),
-				4);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.livingdeadsouls), 9);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.louisvitton), 1);
-		brandProbabilityMap
-				.put(ShoprApp.getContext().getString(R.string.lrg), 2);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.mazine), 2);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.newyorker), 3);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.nike),
-				2);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.pepe),
-				3);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.prada),
-				1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.ralphlauren), 1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.reebok), 2);
-		brandProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.sOliver), 1);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.scotchsoda), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.spiral), 9);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.superdry), 4);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.tomtailor), 3);
-		brandProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.tommyhilfiger), 2);
-		brandProbabilityMap.put(ShoprApp.getContext().getString(R.string.vans),
-				2);
-		brandProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.versace), 5);
+		this.brandProbabilityMap = new HashMap<Label.Value, Integer>();
+		brandProbabilityMap.put(Label.Value.ADIDAS, 2);
+		brandProbabilityMap.put(Label.Value.ALLEGRA_K, 7);
+		brandProbabilityMap.put(Label.Value.BOOM_BAP, 2);
+		brandProbabilityMap.put(Label.Value.HUGO_BOSS, 1);
+		brandProbabilityMap.put(Label.Value.BRAX, 1);
+		brandProbabilityMap.put(Label.Value.BYE_BYE_KITTY, 9);
+		brandProbabilityMap.put(Label.Value.CARHARTT, 2);
+		brandProbabilityMap.put(Label.Value.CHANEL, 1);
+		brandProbabilityMap.put(Label.Value.CONVERSE, 3);
+		brandProbabilityMap.put(Label.Value.CUPCAKECULT, 9);
+		brandProbabilityMap.put(Label.Value.DC, 1);
+		brandProbabilityMap.put(Label.Value.DENIM, 2);
+		brandProbabilityMap.put(Label.Value.DICKIES_DOUBLE, 2);
+		brandProbabilityMap.put(Label.Value.DIESEL, 5);
+		brandProbabilityMap.put(Label.Value.C_DIOR, 1);
+		brandProbabilityMap.put(Label.Value.ESPRIT, 3);
+		brandProbabilityMap.put(Label.Value.ETNIES, 3);
+		brandProbabilityMap.put(Label.Value.FJÄLLRÄVEN, 5);
+		brandProbabilityMap.put(Label.Value.FOREVER_21, 5);
+		brandProbabilityMap.put(Label.Value.G_STAR, 4);
+		brandProbabilityMap.put(Label.Value.GUCCI, 1);
+		brandProbabilityMap.put(Label.Value.H_N_M, 3);
+		brandProbabilityMap.put(Label.Value.HRLONDON, 9);
+		brandProbabilityMap.put(Label.Value.HELLBUNNY, 8);
+		brandProbabilityMap.put(Label.Value.INNOCENT, 9);
+		brandProbabilityMap.put(Label.Value.J_CREW, 1);
+		brandProbabilityMap.put(Label.Value.LACOSTE, 1);
+		brandProbabilityMap.put(Label.Value.LEVI_S, 4);
+		brandProbabilityMap.put(Label.Value.LIVINGDEADSOULS, 9);
+		brandProbabilityMap.put(Label.Value.LOUIS_VUITTON, 1);
+		brandProbabilityMap.put(Label.Value.LRG, 2);
+		brandProbabilityMap.put(Label.Value.MAZINE, 2);
+		brandProbabilityMap.put(Label.Value.NEW_YORKER, 3);
+		brandProbabilityMap.put(Label.Value.NIKE, 2);
+		brandProbabilityMap.put(Label.Value.PEPE, 3);
+		brandProbabilityMap.put(Label.Value.PRADA, 1);
+		brandProbabilityMap.put(Label.Value.RALPH_LAUREN, 1);
+		brandProbabilityMap.put(Label.Value.REEBOK, 2);
+		brandProbabilityMap.put(Label.Value.S_OLIVER, 1);
+		brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 3);
+		brandProbabilityMap.put(Label.Value.SPIRAL, 9);
+		brandProbabilityMap.put(Label.Value.SUPERDRY, 4);
+		brandProbabilityMap.put(Label.Value.TOM_TAILOR, 3);
+		brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 2);
+		brandProbabilityMap.put(Label.Value.VANS, 2);
+		brandProbabilityMap.put(Label.Value.VERSACE, 5);
 
 	}
 

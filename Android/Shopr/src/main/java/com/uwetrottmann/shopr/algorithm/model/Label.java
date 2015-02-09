@@ -23,6 +23,7 @@ public class Label extends GenericAttribute {
         ALBERTO("Alberto"),
         ALDO("Aldo"),
         ALL_DAY("All Day"),
+        ALLEGRA_K("Allegra K"),
         ALPHA_INDUSTRIES("Alpha Industries"),
         ALTAMONT("Altamont"),
         APRIORI("Apriori"),
@@ -42,8 +43,11 @@ public class Label extends GenericAttribute {
         BRAX("Brax"),
         BRIGITTE_VON_SCHÖNFELS("Brigitte von Schönfels"),
         BRUNO_BANANI("Bruno Banani"),
+        BOOM_BAP("Boom Bap"),
         BUGATTI("Bugatti"),
         BURBERRY("Burberry"),
+        BYE_BYE_KITTY("Bye bye Kitty"),
+        C_DIOR("C. Dior"),
         CARHARTT("Carhartt"),
         CASA_MODA("Casa Moda"),
         CALVIN_KLEIN("Calvin Klein"),
@@ -58,9 +62,13 @@ public class Label extends GenericAttribute {
         COMMA("Comma"),
         COMMUNE_DE_PARIS("Commune de Paris"),
         CONTRAST("Contrast"),
+        CONVERSE("Converse"),
+        CUPCAKECULT("Cupcakecult"),
         CRAGHOPPERS("Craghoppers"),
         DARE2B("Dare2B"),
+        DC("DC"),
         DEAR_CASHMERE("Dear Cashmere"),
+        DENIM("Denim"),
         DESIGUAL("Desigual"),
         DIANE_VON_FURSTENBERG("Diane von Furstenberg"),
         DICKIES_DOUBLE("Dickies Double"),
@@ -78,10 +86,12 @@ public class Label extends GenericAttribute {
         ENZO_LORENZO("Enzo Lorenzo"),
         ERIMA("Erima"),
         ESPRIT("Esprit"),
+        ETNIES("Etnies"),
         FASHIONSTYLES("FashionStyles"),
         FILIPPA_K("Filippa K"),
         FITZ("Fitz"),
         FJÄLLRÄVEN("Fjällräven"),
+        FOREVER_21("Forever 21"),
         FRED_PERRY("Fred Perry"),
         FREESOUL("Freesoul"),
         FROG_BOX("Frog Box"),
@@ -99,18 +109,24 @@ public class Label extends GenericAttribute {
         GLUMANN("Glumann"),
         GOTTEX("Gottex"),
         GOJIRA("Gojira"),
+        GUCCI("Gucci"),
         GUESS("Guess"),
+        H_N_M("H & M"),
         HACKETT("Hackett"),
         HAGLÖFS("Haglöfs"),
         HARVEST("Harvest"),
         HEINE("Heine"),
+        HELLBUNNY("Hellbunny"),
         HOM("HOM"),
+        HRLONDON("Hrlondon"),
         HUGO_BOSS("Hugo Boss"),
+        INNOCENT("Innocent"),
         INSIGHT("Insight"),
         IRIEDAILY("Iriedaily"),
         JACK_WOLFSKIN("Jack Wolfskin"),
         JACK_N_JONES("Jack&Jones"),
         J_BRAND("J Brand"),
+        J_CREW("J Crew"),
         JAKO("Jako"),
         JAMMER("Jammer"),
         JE_SUIS("Je suis"),
@@ -143,6 +159,8 @@ public class Label extends GenericAttribute {
         LIDEA("Lidea"),
         LIPSY("Lipsy"),
         LISCA("Lisca"),
+        LIVINGDEADSOULS("Livingdeadsouls"),
+        LOUIS_VUITTON("Louis Vuitton"),
         LÖFFLER("Löffler"),
         LRG("LRG"),
         LYLE_N_SCOTT("Lyle & Scott"),
@@ -152,6 +170,7 @@ public class Label extends GenericAttribute {
         MARC_CAIN("Marc Cain"),
         MARC_O_POLO("Marc O'Polo"),
         MARLENE("Marlene"),
+        MAZINE("Mazine"),
         MCGREGOR("McGregor"),
         MCQ("McQ"),
         MEXX("Mexx"),
@@ -165,6 +184,7 @@ public class Label extends GenericAttribute {
         NAPAPIJRI("Napapijri"),
         NEW_ZEALAND_AUCKLAND("New Zealand Auckland"),
         NEXT("Next"),
+        NEW_YORKER("New Yorker"),
         NIKE("Nike"),
         NIKITA("Nikita"),
         NUDIE("Nudie"),
@@ -186,6 +206,7 @@ public class Label extends GenericAttribute {
         PIERRE_CARDIN("Pierre Cardin"),
         PIKEE("Pikee"),
         PIQUÉ("Piqué"),
+        PRADA("Prada"),
         PRINCESS_GOES_HOLLYWOOD("Princess goes Hollywood"),
         PROMOD("Promod"),
         PUMA("Puma"),
@@ -197,6 +218,7 @@ public class Label extends GenericAttribute {
         RALPH_LAUREN("Ralph Lauren"),
         RANCID("Rancid"),
         REDFIELD("Redfield"),
+        REEBOK("Reebok"),
         REELL("Reell"),
         RENÉ_LEZARD("René Lezard"),
         REPEAT("Repeat"),
@@ -225,6 +247,7 @@ public class Label extends GenericAttribute {
         SOUL_DRESS("Soul Dress"),
         SPACE_STYLE("Space Style"),
         SPEEDO("Speedo"),
+        SPIRAL("Spiral"),
         STONE_ISLAND("Stone Island"),
         STRELLSON("Strellson"),
         STROKESMAN_S("Strokesman's"),
@@ -240,7 +263,9 @@ public class Label extends GenericAttribute {
         TRIGEMA("Trigema"),
         UNDEFINED("Undefined brand"),
         UVR_CONNECTED("UVR Connected"),
+        VANS("Vans"),
         VAUDE("Vaude"),
+        VERSACE("Versace"),
         VICOMTE("Vicomte"),
         VILA_CLEAVO("Vila Cleavo"),
         VUTHY("Vuthy"),
@@ -270,6 +295,14 @@ public class Label extends GenericAttribute {
         }
     }
 
+    static {
+        if (availableBrands.size() == 0) {
+            for (Value value1 : Value.values()) {
+                availableBrands.put(value1.descriptor(), value1);
+            }
+        }
+    }
+
     public Label() {
         int numValues = Value.values().length;
         mValueWeights = new double[numValues];
@@ -281,12 +314,6 @@ public class Label extends GenericAttribute {
     }
 
     public Label(String value) {
-        if (availableBrands.size() == 0) {
-            for (Value value1 : Value.values()) {
-                availableBrands.put(value1.descriptor(), value1);
-            }
-        }
-
         value = value.trim();
         //Match the given String to a brand.
         if (availableBrands.containsKey(value)) {

@@ -1,6 +1,8 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
+import android.util.Log;
+
 import java.util.Arrays;
 
 public class Sex extends GenericAttribute {
@@ -51,6 +53,9 @@ public class Sex extends GenericAttribute {
         }
         else if ("Beide".equals(value)) {
             setWeights(Sex.Value.UNISEX);
+        } else {
+            setWeights(Value.UNISEX);
+            Log.d("Sex", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");
         }
     }
 

@@ -1,6 +1,10 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
+import android.util.Log;
+
+import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Attributes.AttributeValue;
 
 import org.jgrapht.Graphs;
@@ -40,29 +44,29 @@ public class ClothingType extends GenericAttribute {
     public static final String ID = "clothing-type";
 
     public enum Value implements AttributeValue {
-        SWIMSUIT("Swim suit"),
-        TRUNKS("Trunks"),
-        BLOUSE("Blouse"),
-        SHIRT("Shirt"),
-        TROUSERS("Trousers"),
-        JEANS("Jeans"),
-        DRESS("Dress"),
-        POLOSHIRT("Poloshirt"),
-        SWEATER("Sweater"), // Pullover
-        SKIRT("Skirt"),
-        SHORTS("Shorts"),
-        CARDIGAN("Cardigan"), // Strickjacke
-        TOP("Top/T-Shirt");
+        SWIMSUIT(R.string.swim_suit),
+        TRUNKS(R.string.trunks),
+        BLOUSE(R.string.blouse),
+        SHIRT(R.string.shirt),
+        TROUSERS(R.string.trousers),
+        JEANS(R.string.jeans),
+        DRESS(R.string.dress),
+        POLOSHIRT(R.string.poloshirt),
+        SWEATER(R.string.sweater), // Pullover
+        SKIRT(R.string.skirt),
+        SHORTS(R.string.shorts),
+        CARDIGAN(R.string.cardigan), // Strickjacke
+        TOP(R.string.top_t_shirt);
 
-        String mDescriptor;
+        int mDescriptor;
 
-        Value(String descriptor) {
+        Value(int descriptor) {
             mDescriptor = descriptor;
         }
 
         @Override
         public String descriptor() {
-            return mDescriptor;
+            return ShoprApp.getContext().getString(mDescriptor);
         }
 
         @Override
@@ -81,45 +85,47 @@ public class ClothingType extends GenericAttribute {
         setWeights(value);
     }
 
-    public ClothingType(String name) {
-        if ("Badeanzug".equals(name)) {
+    public ClothingType(String value) {
+        if ("Badeanzug".equals(value)) {
             setWeights(Value.SWIMSUIT);
         }
-        else if ("Badehose".equals(name)) {
+        else if ("Badehose".equals(value)) {
             setWeights(Value.TRUNKS);
         }
-        else if ("Bluse".equals(name)) {
+        else if ("Bluse".equals(value)) {
             setWeights(Value.BLOUSE);
         }
-        else if ("Hemd".equals(name)) {
+        else if ("Hemd".equals(value)) {
             setWeights(Value.SHIRT);
         }
-        else if ("Hose".equals(name)) {
+        else if ("Hose".equals(value)) {
             setWeights(Value.TROUSERS);
         }
-        else if ("Jeans".equals(name)) {
+        else if ("Jeans".equals(value)) {
             setWeights(Value.JEANS);
         }
-        else if ("Kleid".equals(name)) {
+        else if ("Kleid".equals(value)) {
             setWeights(Value.DRESS);
         }
-        else if ("Poloshirt".equals(name)) {
+        else if ("Poloshirt".equals(value)) {
             setWeights(Value.POLOSHIRT);
         }
-        else if ("Pullover".equals(name)) {
+        else if ("Pullover".equals(value)) {
             setWeights(Value.SWEATER);
         }
-        else if ("Rock".equals(name)) {
+        else if ("Rock".equals(value)) {
             setWeights(Value.SKIRT);
         }
-        else if ("Strickjacke".equals(name)) {
+        else if ("Strickjacke".equals(value)) {
             setWeights(Value.CARDIGAN);
         }
-        else if ("Top".equals(name)) {
+        else if ("Top".equals(value)) {
             setWeights(Value.TOP);
         }
-        else if ("Shorts".equals(name)) {
+        else if ("Shorts".equals(value)) {
             setWeights(Value.SHORTS);
+        } else {
+            Log.d("ClothingType", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");
         }
     }
 

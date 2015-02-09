@@ -1,6 +1,9 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
+import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
+
 import org.jgrapht.Graphs;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
@@ -37,23 +40,23 @@ public class Price extends GenericAttribute {
     public static final String ID = "price";
 
     public enum Value implements Attributes.AttributeValue {
-        SUB_25("less than 25 €"),
-        BETWEEN_25_50("25 to 50 €"),
-        BETWEEN_50_75("50 to 75 €"),
-        BETWEEN_75_100("75 to 100 €"),
-        BETWEEN_100_150("100 to 150 €"),
-        BETWEEN_150_200("150 to 200 €"),
-        ABOVE_200("200 € or more");
+        SUB_25(R.string.less_than_25),
+        BETWEEN_25_50(R.string._25_to_50),
+        BETWEEN_50_75(R.string._50_to_75),
+        BETWEEN_75_100(R.string._75_to_100),
+        BETWEEN_100_150(R.string._100_to_150),
+        BETWEEN_150_200(R.string._150_to_200),
+        ABOVE_200(R.string._200_or_more);
 
-        private String mDescriptor;
+        private int mDescriptor;
 
-        Value(String descriptor) {
+        Value(int descriptor) {
             mDescriptor = descriptor;
         }
 
         @Override
         public String descriptor() {
-            return mDescriptor;
+            return ShoprApp.getContext().getString(mDescriptor);
         }
 
         @Override

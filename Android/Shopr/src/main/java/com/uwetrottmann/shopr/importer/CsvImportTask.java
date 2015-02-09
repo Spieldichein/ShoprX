@@ -32,7 +32,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
 
     public static final String SEX_MALE_DB = "Männlich";
     public static final String SEX_FEMALE_DB = "Weiblich";
-    public static final String SEX_UNISEX = "Unisex";
+    public static final String SEX_UNISEX = "Beide";
 
     public enum Type {
         IMPORT_SHOPS,

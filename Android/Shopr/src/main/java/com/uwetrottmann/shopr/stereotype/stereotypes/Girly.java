@@ -74,94 +74,52 @@ public class Girly extends AbstractStereotype {
 
 	private void buildAttributeMap() {
 		this.attributeProbabilityMap = new HashMap<String, Integer>();
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.acryl), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.athletic), 1);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.baggy), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.blue), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.brown), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.cremeColored), 5);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.triangle), 5);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.dark), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.acryl), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.athletic), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.baggy), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.blue), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.brown), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext()
 				.getString(R.string.emo), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.tight), 5);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.yellow), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.girly), 9);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.grey), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.green), 5);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.light), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.lightblue), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.hoody), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.classic), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.curt), 5);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.leather), 1);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.purple), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.logo), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.girl), 9);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.swatch), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.navy), 4);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.neon), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.original), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.pink), 9);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.plush), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.retro), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.romantic), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 9);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.grey), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.green), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.light), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.lightblue), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.hoody), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.classic), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.curt), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.leather), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.purple), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.logo), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girl), 9);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.swatch), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.navy), 4);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.neon), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.original), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.pink), 9);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext()
 				.getString(R.string.red), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.ribbon), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.cord), 7);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.sport), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.sporty), 2);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.black), 4);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.saying), 4);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.street), 1);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.street2), 1);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.stripes), 6);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.used), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.vintage), 3);
-		attributeProbabilityMap.put(
-				ShoprApp.getContext().getString(R.string.white), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sporty), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.black), 4);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.saying), 4);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street2), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.stripes), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 7);
 
 	}
 

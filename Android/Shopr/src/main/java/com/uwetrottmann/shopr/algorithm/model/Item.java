@@ -26,6 +26,8 @@ public class Item {
 
     private Sex sex;
 
+    private double proximityToStereotype;
+
     public int id() {
         return id;
     }
@@ -104,6 +106,22 @@ public class Item {
 
     public Sex getSex(){
         return sex;
+    }
+
+    /**
+     * Gets the proximity to the stereotype, meaning how similar this item and the stereotype are.
+     * @return the proximity based on a previous calculation
+     */
+    public double getProximityToStereotype() {
+        return proximityToStereotype;
+    }
+
+    /**
+     * Sets the proximity to a stereotype of the user.
+     * @param proximityToStereotype the proximity to the stereotype
+     */
+    public void setProximityToStereotype(double proximityToStereotype) {
+        this.proximityToStereotype = proximityToStereotype;
     }
 
     @Override

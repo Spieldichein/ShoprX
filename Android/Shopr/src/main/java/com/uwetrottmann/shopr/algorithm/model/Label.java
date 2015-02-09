@@ -261,7 +261,6 @@ public class Label extends GenericAttribute {
         TOM_TAILOR("Tom Tailor"),
         TOMMY_HILFIGER("Tommy Hilfiger"),
         TRIGEMA("Trigema"),
-        UNDEFINED("Undefined brand"),
         UVR_CONNECTED("UVR Connected"),
         VANS("Vans"),
         VAUDE("Vaude"),
@@ -275,7 +274,8 @@ public class Label extends GenericAttribute {
         X_TWO("X-two"),
         YAKUZA("Yakuza"),
         ZERRES("Zerres"),
-        ZOE_PHOBIC("Zoe Phobic");
+        ZOE_PHOBIC("Zoe Phobic"),
+        NOT_SET("Brand not set");
 
 
         private String mDescriptor;
@@ -319,7 +319,7 @@ public class Label extends GenericAttribute {
         if (availableBrands.containsKey(value)) {
             setWeights(availableBrands.get(value));
         } else if (value.length() == 0) {
-            setWeights(Value.UNDEFINED);
+            setWeights(Value.NOT_SET);
         } else if (value.equals("O'Neill")) {
             setWeights(Value.O_NEILL);
         } else if (value.equals("Qiero")) {

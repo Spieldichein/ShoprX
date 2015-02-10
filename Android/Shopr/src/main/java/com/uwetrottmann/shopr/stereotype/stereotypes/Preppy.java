@@ -9,6 +9,13 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * A person who cares a lot about personal appearance. Preppy people are typically
+ * seen as happy, successful and well groomed. Clothes are usually clean cut and have a
+ * classical feeling to them. They use bright colors like green, pink, light blue, white, navy
+ * blue, stripes or argyle. Brands are highly priced and include J.Crew, Lacoste or Ralph
+ * Lauren among others.
+ */
 public class Preppy extends AbstractStereotype {
 
 	public Preppy() {
@@ -86,8 +93,7 @@ public class Preppy extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 4);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 4);
@@ -110,8 +116,7 @@ public class Preppy extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 1);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 6);
@@ -123,6 +128,10 @@ public class Preppy extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 6);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 8);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 4);
 	}
 
 	private void buildMusicMap() {

@@ -61,16 +61,16 @@ public class Color extends GenericAttribute {
         BLUE(R.string.blue),
         BROWN(R.string.brown),
         COLORED(R.string.colored),
-        GOLD(R.string.gold), //TODO new add to stereotypes
+        GOLD(R.string.gold),
         GREY(R.string.grey),
         GREEN(R.string.green),
         LILAC(R.string.lilac),
-        OLIVE(R.string.olive), //TODO new add to stereotypes
+        OLIVE(R.string.olive),
         ORANGE(R.string.orange),
-        PETROL(R.string.petrol), //TODO new add to stereotypes
+        PETROL(R.string.petrol),
         PINK(R.string.pink), // rosa zu Deutsch
         RED(R.string.red),
-        SILVER(R.string.silver), //TODO new add to stereotypes
+        SILVER(R.string.silver),
         TURQUOISE(R.string.turquoise),
         WHITE(R.string.white),
         YELLOW(R.string.yellow);

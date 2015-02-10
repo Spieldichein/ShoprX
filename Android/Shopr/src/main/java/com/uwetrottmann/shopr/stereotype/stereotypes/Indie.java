@@ -9,6 +9,12 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * also known as urban, retro, vintage, “close to earth”, unmaterialistic.
+ * Typical for being original, dressing different than others. Clothes use earth tones, pale
+ * pink, or cream colors. Female clothing includes flowery skirts, lacy blouses or vintage
+ * t-shirts.
+ */
 public class Indie extends AbstractStereotype {
 
 	public Indie() {
@@ -85,8 +91,7 @@ public class Indie extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 5);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 2);
@@ -109,8 +114,7 @@ public class Indie extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 1);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 4);
@@ -122,6 +126,10 @@ public class Indie extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 9);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 6);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 6);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 7);
 	}
 
 	private void buildMusicMap() {

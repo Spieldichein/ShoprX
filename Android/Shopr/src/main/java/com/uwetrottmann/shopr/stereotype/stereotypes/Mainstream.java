@@ -9,6 +9,12 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * The style of the average person. Influenced by various other current fashion
+ * styles, but in a less extroverted version. Clothes are typically in a price range that can
+ * be afforded by most people and main brands are H&M, C&A, Esprit, GStar, NewYorker,
+ * s.Oliver, Tom Tailor or Tommy Hilfiger.
+ */
 public class Mainstream extends AbstractStereotype {
 
 	public Mainstream() {
@@ -86,8 +92,7 @@ public class Mainstream extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 6);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 2);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 4);
@@ -110,8 +115,7 @@ public class Mainstream extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 2);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 4);
@@ -123,6 +127,10 @@ public class Mainstream extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 3);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 3);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 7);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 5);
 
 	}
 

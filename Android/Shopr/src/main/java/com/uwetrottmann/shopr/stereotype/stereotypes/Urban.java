@@ -9,6 +9,13 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * Also known as the style of the street and thereby referred to as street fashion.
+ * Fashion style that changes and represents the feel of the moment and time. It was born
+ * out of hip hop roots in the 1990s and is generally accessible to the common person. Typical
+ * are denim details, jeans, simple t-shirts and sneakers. The style often contradicts big brands
+ * with inexpensive items. Fairly closely related at the moment to the indie/hipster style.
+ */
 public class Urban extends AbstractStereotype {
 
     public Urban() {
@@ -86,8 +93,7 @@ public class Urban extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 4);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 5);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.emo), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 2);
@@ -110,8 +116,7 @@ public class Urban extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 7);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 2);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.red), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 4);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 6);
@@ -123,6 +128,10 @@ public class Urban extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 8);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 8);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 5);
 
     }
 

@@ -9,6 +9,12 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * Related to the skateboarding subculture. Closely related to the urban style. Clothes
+ * typically include shirts in all colors with messages, baggy or nowadays often super tight
+ * pants, as well as hoodies with big logos. Representative brands are DC, Etnies, Dickies,
+ * Carhartt, Mazine or Vans.
+ */
 public class Skater extends AbstractStereotype {
 
 	public Skater() {
@@ -86,8 +92,7 @@ public class Skater extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 5);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 1);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 2);
@@ -110,8 +115,7 @@ public class Skater extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 1);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 4);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 6);
@@ -123,6 +127,10 @@ public class Skater extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 5);
 
 	}
 

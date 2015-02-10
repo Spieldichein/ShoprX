@@ -9,6 +9,13 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * Fashion style that is related to Gothic Rock music. A Gothic person enjoys a
+ * romantic style and accepts that everyone’s di↵erent. Usually has dyed black hair, wears
+ * black lipstick and black clothes. The style is first and foremost known for using black as
+ * the main color in contrast to pieces of red, scarlet or deep purple. Clothes are often made
+ * of lather or lace.
+ */
 public class Gothic extends AbstractStereotype {
 
 	public Gothic() {
@@ -86,8 +93,7 @@ public class Gothic extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 9);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 3);
@@ -110,8 +116,7 @@ public class Gothic extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 2);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 8);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 7);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 2);
@@ -123,6 +128,10 @@ public class Gothic extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 6);
 
 	}
 

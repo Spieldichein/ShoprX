@@ -10,6 +10,11 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * A female stereotype that tries to recreate the image of a young, innocent girl. Clothes
+ * are therefore mainly skirts and dresses in bright colors like pink, red, yellow, white or light
+ * blue. Flowers are often a part of the clothing.
+ */
 public class Girly extends AbstractStereotype {
 
 	public Girly() {
@@ -82,8 +87,7 @@ public class Girly extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 3);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.emo), 3);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 9);
@@ -106,8 +110,7 @@ public class Girly extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 5);
-		attributeProbabilityMap.put(ShoprApp.getContext()
-				.getString(R.string.red), 6);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 2);
@@ -119,6 +122,10 @@ public class Girly extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 7);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 9);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 9);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 7);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 3);
 
 	}
 

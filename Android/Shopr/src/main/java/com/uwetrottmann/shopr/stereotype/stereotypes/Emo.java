@@ -9,6 +9,11 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 
 import java.util.HashMap;
 
+/**
+ * derived from emo (emocore) music. Therefore often features emocore bands on
+ * t-shirts. People tend to be sensitive, introverted and shy. Clothes typically use dark colors
+ * like black, brown, grey or neon colors as a contrast. Often wear tight, slim-fit jeans.
+ */
 public class Emo extends AbstractStereotype {
 
     public Emo() {
@@ -67,6 +72,10 @@ public class Emo extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 4);
     }
 
     private void buildBrandMap() {

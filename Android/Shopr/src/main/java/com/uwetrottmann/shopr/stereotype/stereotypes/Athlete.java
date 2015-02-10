@@ -12,7 +12,9 @@ import java.util.HashMap;
 /**
  * Created by yannick on 29.01.15.
  *
- * The Athlete stereotype. The athlete really is a sportsman.
+ * Mostly a male stereotype. Relates to a person that does a lot of sports or is
+ * a big sports fan. Wears training outfits or outfits that emphasize their physique on a daily
+ * basis. Brands are typically sports brands like Nike, Adidas, Puma and the like.
  */
 public class Athlete extends AbstractStereotype {
 
@@ -72,6 +74,11 @@ public class Athlete extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 6);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 5);
+
     }
 
     private void buildBrandMap() {

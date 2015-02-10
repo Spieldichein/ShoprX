@@ -12,7 +12,10 @@ import java.util.HashMap;
 /**
  * Created by yannick on 29.01.15.
  *
- * The Classy Stereotype.
+ * Fashion style of people mostly above 40 years of age who have established a certain
+ * lifestyle combined with a high stable income. Clothes are in the upper price range, mostly
+ * plain and feature colors like black, white, blue or red for women. Typical brands are
+ * Versace, Prada, J.Crew, Lacoste, Gucci, Dior, Brax and Hugo Boss.
  */
 public class Classy extends AbstractStereotype {
 
@@ -35,8 +38,7 @@ public class Classy extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 7);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.emo), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 1);
@@ -59,8 +61,7 @@ public class Classy extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 3);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.red), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 3);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 3);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 2);
@@ -72,6 +73,10 @@ public class Classy extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.white), 8);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.gold), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.silver), 2);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.petrol), 7);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.olive), 4);
 
     }
 

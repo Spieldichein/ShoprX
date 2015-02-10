@@ -41,6 +41,7 @@ public class ClothingType extends GenericAttribute {
 //        sSimilarValues.addEdge(Value.SKIRT, Value.SHORTS);
 //        sSimilarValues.addEdge(Value.CARDIGAN, Value.SWEATER);
         sSimilarValues.addEdge(Value.TOP, Value.SHIRT);
+        sSimilarValues.addEdge(Value.COAT, Value.JACKET);
 //        sSimilarValues.addEdge(Value.TOP, Value.BLOUSE);
 
         if (sAvailableClothing.size() == 0) {

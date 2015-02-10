@@ -31,6 +31,7 @@ import java.util.List;
 public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
     private static final String TAG = "ItemLoader";
+    private static final int LIMIT_ITEMS = 300;
     private LatLng mLocation;
     private boolean mIsInit;
 
@@ -76,10 +77,15 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         // Determine the sex of the user in order to reduce the search space and improve selection time!
         String selectionString = restrictQuerySelection();
 
+        String limitString = null;
+        if (selectionString == null){
+            limitString = " RANDOM() LIMIT " + LIMIT_ITEMS;
+        }
+
         String[] columns = new String[] { Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,
                 Items.COLOR, Items.SEX, Shops.REF_SHOP_ID, Items.SEASON, Items.NAME };
 
-        Cursor query = getContext().getContentResolver().query( Items.CONTENT_URI, columns, selectionString, null, null);
+        Cursor query = getContext().getContentResolver().query( Items.CONTENT_URI, columns, selectionString, null, limitString);
 
         if (query != null) {
             while (query.moveToNext()) {
@@ -96,8 +102,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 // price
                 BigDecimal price = new BigDecimal(query.getDouble(3));
                 item.price(price);
-                // critiquable attributes
 
+                // critiquable attributes
                 item.attributes(new Attributes()
                         .putAttribute(type)
                         .putAttribute(new Color(query.getString(5)))

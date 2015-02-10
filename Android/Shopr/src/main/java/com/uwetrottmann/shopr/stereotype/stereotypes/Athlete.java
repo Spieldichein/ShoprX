@@ -48,7 +48,7 @@ public class Athlete extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.classic), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.curt), 7);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.leather), 1);
-        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.purple), 5);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.lilac), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.logo), 7);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girl), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.swatch), 6);
@@ -68,7 +68,6 @@ public class Athlete extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.black), 6);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.saying), 7);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street), 5);
-        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street2), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.stripes), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 5);
@@ -89,7 +88,7 @@ public class Athlete extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.CUPCAKECULT, 2);
         brandProbabilityMap.put(Label.Value.DC, 7);
         brandProbabilityMap.put(Label.Value.DENIM, 7);
-        brandProbabilityMap.put(Label.Value.DICKIES_DOUBLE, 7);
+        brandProbabilityMap.put(Label.Value.DICKIES, 7);
         brandProbabilityMap.put(Label.Value.DIESEL, 7);
         brandProbabilityMap.put(Label.Value.C_DIOR, 2);
         brandProbabilityMap.put(Label.Value.ESPRIT, 6);

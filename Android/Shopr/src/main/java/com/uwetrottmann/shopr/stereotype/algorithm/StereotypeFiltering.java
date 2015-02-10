@@ -2,6 +2,7 @@ package com.uwetrottmann.shopr.stereotype.algorithm;
 
 import android.util.Log;
 
+import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.stereotype.stereotypes.AbstractStereotype;
@@ -37,7 +38,7 @@ public class StereotypeFiltering {
     public List<Item> computeStereotypeProximity(AbstractStereotype stereotype, List<Item> clothingItems) {
         for (Item item : clothingItems) {
             item.setProximityToStereotype(computeStereotypeProximity(stereotype, item));
-            Log.i("Putting proximity " + item.getProximityToStereotype(), item.toString());
+            //Log.i("Putting proximity " + item.getProximityToStereotype(), item.toString());
         }
 
         // sort the entries in descending order
@@ -79,27 +80,23 @@ public class StereotypeFiltering {
         double proximity = 0.0;
         int hits = 0;
 
+        // compute attribute proximity first
+        String haystack = item.name() + item.attributes().getAttributeById(Color.ID).currentValue().descriptor();
+        haystack = haystack.toLowerCase();
 
-        // TODO Reintegrate this part of the code, where we search for some given attributes in order to detect how likely it is, that this person likes this item
-//        // compute attribute proximity first
-//        String haystack = item.getDescription() + ", " + item.getColor();
-//        haystack = haystack.toLowerCase();
-//
-//        // get all relevant attributes for the active stereotype
-//        Map<String, Integer> attributeProbabilityMap = stereotype
-//                .getAttributeProbabilityMap();
-//        // check whether these attributes appear in the item, if so add their
-//        // weight to the proximity measure and divide it by the number of all
-//        // attributes of the stereotype
-//        for (String needle : attributeProbabilityMap.keySet()) {
-//            if (haystack.contains(needle.toLowerCase())) {
-//                // if the needle is found add it's weight divided by the number
-//                // of all attributes of the stereotype
-//                int weight = attributeProbabilityMap.get(needle);
-//                proximity += weight;
-//                hits++;
-//            }
-//        }
+        // get all relevant attributes for the active stereotype
+        Map<String, Integer> attributeProbabilityMap = stereotype.getAttributeProbabilityMap();
+        // check whether these attributes appear in the item, if so add their
+        // weight to the proximity measure
+        for (String needle : attributeProbabilityMap.keySet()) {
+            if (haystack.contains(needle.toLowerCase())) {
+                // if the needle is found add it's weight divided by the number
+                // of all attributes of the stereotype
+                int weight = attributeProbabilityMap.get(needle);
+                proximity += weight;
+                hits++;
+            }
+        }
 
         // depending on number of attribute hits set weight for brand impact
         int brandImpact = (hits> 2 ? hits / 2 : 1);
@@ -108,11 +105,8 @@ public class StereotypeFiltering {
         Label.Value label = (Label.Value) item.attributes().getAttributeById(Label.ID).currentValue();
         if (brandProbabilityMap.containsKey(label)){
             proximity += brandProbabilityMap.get(label) * brandImpact;
-        } else {
-            proximity += 0.5; // Brands that we do not know will get half a point!
+            hits += brandImpact;
         }
-        hits += brandImpact;
-
 
         return hits > 0 ? proximity / hits : 0.0;
     }

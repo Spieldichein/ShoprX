@@ -39,7 +39,7 @@ public class Mainstream extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.CUPCAKECULT, 4);
 		brandProbabilityMap.put(Label.Value.DC, 4);
 		brandProbabilityMap.put(Label.Value.DENIM, 6);
-		brandProbabilityMap.put(Label.Value.DICKIES_DOUBLE, 5);
+		brandProbabilityMap.put(Label.Value.DICKIES, 5);
 		brandProbabilityMap.put(Label.Value.DIESEL, 8);
 		brandProbabilityMap.put(Label.Value.C_DIOR, 5);
 		brandProbabilityMap.put(Label.Value.ESPRIT, 8);
@@ -99,7 +99,7 @@ public class Mainstream extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.classic), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.curt), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.leather), 2);
-		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.purple), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.lilac), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.logo), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girl), 4);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.swatch), 5);
@@ -119,7 +119,6 @@ public class Mainstream extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.black), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.saying), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street), 6);
-		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street2), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.stripes), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 6);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 6);

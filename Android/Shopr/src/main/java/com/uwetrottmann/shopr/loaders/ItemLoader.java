@@ -108,8 +108,6 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 //Sets the sex of the item.
                 item.setSex(new Sex(query.getString(6)));
 
-                item.setDescription(""); //TODO Fix this! We should have a description from the dataset!
-
                 caseBase.add(item);
             }
 

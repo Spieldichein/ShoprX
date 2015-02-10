@@ -48,7 +48,7 @@ public class Classy extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.classic), 9);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.curt), 3);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.leather), 3);
-        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.purple), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.lilac), 4);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.logo), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girl), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.swatch), 2);
@@ -68,7 +68,6 @@ public class Classy extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.black), 8);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.saying), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street), 1);
-        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street2), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.stripes), 3);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 1);
@@ -90,7 +89,7 @@ public class Classy extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.CUPCAKECULT, 1);
         brandProbabilityMap.put(Label.Value.DC, 1);
         brandProbabilityMap.put(Label.Value.DENIM, 2);
-        brandProbabilityMap.put(Label.Value.DICKIES_DOUBLE, 1);
+        brandProbabilityMap.put(Label.Value.DICKIES, 1);
         brandProbabilityMap.put(Label.Value.DIESEL, 4);
         brandProbabilityMap.put(Label.Value.C_DIOR, 8);
         brandProbabilityMap.put(Label.Value.ESPRIT, 5);

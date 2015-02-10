@@ -30,7 +30,6 @@ public class Skater extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.ADIDAS, 7);
 		brandProbabilityMap.put(Label.Value.ALLEGRA_K, 2);
 		brandProbabilityMap.put(Label.Value.BOOM_BAP, 7);
-		brandProbabilityMap.put(Label.Value.HUGO_BOSS, 1);
 		brandProbabilityMap.put(Label.Value.BRAX, 1);
 		brandProbabilityMap.put(Label.Value.BYE_BYE_KITTY, 2);
 		brandProbabilityMap.put(Label.Value.CARHARTT, 7);
@@ -39,7 +38,7 @@ public class Skater extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.CUPCAKECULT, 2);
 		brandProbabilityMap.put(Label.Value.DC, 9);
 		brandProbabilityMap.put(Label.Value.DENIM, 7);
-		brandProbabilityMap.put(Label.Value.DICKIES_DOUBLE, 9);
+		brandProbabilityMap.put(Label.Value.DICKIES, 9);
 		brandProbabilityMap.put(Label.Value.DIESEL, 5);
 		brandProbabilityMap.put(Label.Value.C_DIOR, 1);
 		brandProbabilityMap.put(Label.Value.ESPRIT, 6);
@@ -50,7 +49,8 @@ public class Skater extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.GUCCI, 1);
 		brandProbabilityMap.put(Label.Value.H_N_M, 4);
 		brandProbabilityMap.put(Label.Value.HRLONDON, 1);
-		brandProbabilityMap.put(Label.Value.HELLBUNNY, 1);
+        brandProbabilityMap.put(Label.Value.HUGO_BOSS, 1);
+        brandProbabilityMap.put(Label.Value.HELLBUNNY, 1);
 		brandProbabilityMap.put(Label.Value.INNOCENT, 1);
 		brandProbabilityMap.put(Label.Value.J_CREW, 2);
 		brandProbabilityMap.put(Label.Value.LACOSTE, 2);
@@ -99,7 +99,7 @@ public class Skater extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.classic), 1);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.curt), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.leather), 1);
-		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.purple), 5);
+		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.lilac), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.logo), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girl), 3);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.swatch), 6);
@@ -119,7 +119,6 @@ public class Skater extends AbstractStereotype {
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.black), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.saying), 7);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street), 8);
-		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.street2), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.stripes), 5);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.used), 8);
 		attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.vintage), 3);

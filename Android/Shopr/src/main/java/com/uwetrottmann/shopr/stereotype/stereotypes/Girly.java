@@ -71,10 +71,23 @@ public class Girly extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 6);
 		brandProbabilityMap.put(Label.Value.SPIRAL, 2);
 		brandProbabilityMap.put(Label.Value.SUPERDRY, 3);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 4);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 2);
+        brandProbabilityMap.put(Label.Value.SWING, 5);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 2);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 1);
 		brandProbabilityMap.put(Label.Value.TOM_TAILOR, 3);
 		brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 3);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 4);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 3);
 		brandProbabilityMap.put(Label.Value.VANS, 2);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 4);
 		brandProbabilityMap.put(Label.Value.VERSACE, 5);
+        brandProbabilityMap.put(Label.Value.VILA, 3);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 2);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 3);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN, 2);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 5);
 	}
 
 	private void buildAttributeMap() {

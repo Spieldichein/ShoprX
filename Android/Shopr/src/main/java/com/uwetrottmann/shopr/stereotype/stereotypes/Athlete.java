@@ -125,10 +125,23 @@ public class Athlete extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 6);
         brandProbabilityMap.put(Label.Value.SPIRAL, 2);
         brandProbabilityMap.put(Label.Value.SUPERDRY, 5);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 2);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 5);
+        brandProbabilityMap.put(Label.Value.SWING, 2);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 3);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 2);
         brandProbabilityMap.put(Label.Value.TOM_TAILOR, 5);
         brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 5);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 7);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 5);
         brandProbabilityMap.put(Label.Value.VANS, 6);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 2);
         brandProbabilityMap.put(Label.Value.VERSACE, 2);
+        brandProbabilityMap.put(Label.Value.VILA, 1);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 3);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 2);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN,7);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 5);
 
     }
 

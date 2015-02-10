@@ -76,11 +76,23 @@ public class Preppy extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 6);
 		brandProbabilityMap.put(Label.Value.SPIRAL, 1);
 		brandProbabilityMap.put(Label.Value.SUPERDRY, 6);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 5);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 4);
+        brandProbabilityMap.put(Label.Value.SWING, 6);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 4);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 7);
 		brandProbabilityMap.put(Label.Value.TOM_TAILOR, 4);
 		brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 6);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 2);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 3);
 		brandProbabilityMap.put(Label.Value.VANS, 3);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 4);
 		brandProbabilityMap.put(Label.Value.VERSACE, 9);
-
+        brandProbabilityMap.put(Label.Value.VILA, 6);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 4);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 7);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN, 4);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 5);
 	}
 
 	private void buildAttributeMap() {

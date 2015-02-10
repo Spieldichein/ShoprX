@@ -122,10 +122,23 @@ public class Emo extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 3);
         brandProbabilityMap.put(Label.Value.SPIRAL, 9);
         brandProbabilityMap.put(Label.Value.SUPERDRY, 1);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 4);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 4);
+        brandProbabilityMap.put(Label.Value.SWING, 2);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 6);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 1);
         brandProbabilityMap.put(Label.Value.TOM_TAILOR, 2);
         brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 2);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 2);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 3);
         brandProbabilityMap.put(Label.Value.VANS, 3);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 5);
         brandProbabilityMap.put(Label.Value.VERSACE, 1);
+        brandProbabilityMap.put(Label.Value.VILA, 1);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 1);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 6);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN, 2);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 2);
     }
 
     private void buildMusicMap() {

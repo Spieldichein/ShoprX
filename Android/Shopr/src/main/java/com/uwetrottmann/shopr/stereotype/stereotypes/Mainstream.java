@@ -75,10 +75,23 @@ public class Mainstream extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 8);
 		brandProbabilityMap.put(Label.Value.SPIRAL, 1);
 		brandProbabilityMap.put(Label.Value.SUPERDRY, 7);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 2);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 4);
+        brandProbabilityMap.put(Label.Value.SWING, 3);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 5);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 4);
 		brandProbabilityMap.put(Label.Value.TOM_TAILOR, 8);
 		brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 8);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 5);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 6);
 		brandProbabilityMap.put(Label.Value.VANS, 5);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 5);
 		brandProbabilityMap.put(Label.Value.VERSACE, 4);
+        brandProbabilityMap.put(Label.Value.VILA, 4);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 4);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 7);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN, 4);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 9);
 
 	}
 

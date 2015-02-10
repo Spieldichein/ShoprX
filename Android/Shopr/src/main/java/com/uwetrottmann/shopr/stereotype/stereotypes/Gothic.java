@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 /**
  * Fashion style that is related to Gothic Rock music. A Gothic person enjoys a
- * romantic style and accepts that everyone’s di↵erent. Usually has dyed black hair, wears
+ * romantic style and accepts that everyone’s different. Usually has dyed black hair, wears
  * black lipstick and black clothes. The style is first and foremost known for using black as
  * the main color in contrast to pieces of red, scarlet or deep purple. Clothes are often made
  * of lather or lace.
@@ -76,10 +76,23 @@ public class Gothic extends AbstractStereotype {
 		brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 3);
 		brandProbabilityMap.put(Label.Value.SPIRAL, 9);
 		brandProbabilityMap.put(Label.Value.SUPERDRY, 4);
+        brandProbabilityMap.put(Label.Value.SUPERTRASH, 2);
+        brandProbabilityMap.put(Label.Value.SWEET_PANTS, 1);
+        brandProbabilityMap.put(Label.Value.SWING, 1);
+        brandProbabilityMap.put(Label.Value.TEDDY_SMITH, 4);
+        brandProbabilityMap.put(Label.Value.TIGER_OF_SWEDEN, 1);
 		brandProbabilityMap.put(Label.Value.TOM_TAILOR, 3);
 		brandProbabilityMap.put(Label.Value.TOMMY_HILFIGER, 2);
+        brandProbabilityMap.put(Label.Value.TWINTIP, 2);
+        brandProbabilityMap.put(Label.Value.URBAN_CLASSICS, 1);
 		brandProbabilityMap.put(Label.Value.VANS, 2);
+        brandProbabilityMap.put(Label.Value.VERO_MODA, 5);
 		brandProbabilityMap.put(Label.Value.VERSACE, 5);
+        brandProbabilityMap.put(Label.Value.VILA, 2);
+        brandProbabilityMap.put(Label.Value.VOSSEN, 1);
+        brandProbabilityMap.put(Label.Value.WRANGLER, 4);
+        brandProbabilityMap.put(Label.Value.YOUR_TURN, 2);
+        brandProbabilityMap.put(Label.Value.ZALANDO, 3);
 
 	}
 

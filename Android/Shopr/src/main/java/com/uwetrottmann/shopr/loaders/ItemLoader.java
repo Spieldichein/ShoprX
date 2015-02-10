@@ -15,13 +15,11 @@ import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.algorithm.model.Price;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
-import com.uwetrottmann.shopr.importer.CsvImportTask;
 import com.uwetrottmann.shopr.provider.ShoprContract.Items;
 import com.uwetrottmann.shopr.provider.ShoprContract.Shops;
 import com.uwetrottmann.shopr.settings.AppSettings;
 import com.uwetrottmann.shopr.stereotype.user.User;
 import com.uwetrottmann.shopr.utils.ShoprLocalizer;
-import com.uwetrottmann.shopr.utils.ValueConverter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -54,9 +52,9 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         if (mIsInit) {
             manager.setLocalizationModule(new ShoprLocalizer(getContext()));
 
-            Log.d(TAG, "Initializing case base.");
             List<Item> caseBase = getInitialCaseBase();
             manager.setInitialCaseBase(caseBase);
+            Log.d(TAG, "Initialized case base with " + caseBase.size() + " items.");
 
             int maxRecommendations = AppSettings.getMaxRecommendations(getContext());
             AdaptiveSelection.get().setMaxRecommendations(maxRecommendations);
@@ -78,12 +76,10 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         // Determine the sex of the user in order to reduce the search space and improve selection time!
         String selectionString = restrictQuerySelection();
 
-        Cursor query = getContext().getContentResolver().query(
-                Items.CONTENT_URI,
-                new String[] {
-                        Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,
-                        Items.COLOR, Items.SEX, Shops.REF_SHOP_ID
-                }, selectionString, null, null);
+        String[] columns = new String[] { Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,
+                Items.COLOR, Items.SEX, Shops.REF_SHOP_ID, Items.SEASON, Items.NAME };
+
+        Cursor query = getContext().getContentResolver().query( Items.CONTENT_URI, columns, selectionString, null, null);
 
         if (query != null) {
             while (query.moveToNext()) {
@@ -94,11 +90,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 item.shopId(query.getInt(7));
                 // name
                 ClothingType type = new ClothingType(query.getString(1));
-                String brand = query.getString(2);
 
-                item.name(ValueConverter.getLocalizedStringForValue(getContext(), type
-                        .currentValue().descriptor())
-                        + " " + brand);
+                item.name(query.getString(9));
 
                 // price
                 BigDecimal price = new BigDecimal(query.getDouble(3));
@@ -114,6 +107,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
                 //Sets the sex of the item.
                 item.setSex(new Sex(query.getString(6)));
+
+                item.setDescription(""); //TODO Fix this! We should have a description from the dataset!
 
                 caseBase.add(item);
             }
@@ -135,12 +130,16 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
             StringBuilder builder = new StringBuilder();
             builder.append(Items.SEX + " LIKE '");
             if (u.getSex().equals(Sex.Value.MALE)){
-                builder.append(CsvImportTask.SEX_MALE_DB);
+                builder.append(Sex.Value.MALE);
             } else {
-                builder.append(CsvImportTask.SEX_FEMALE_DB);
+                builder.append(Sex.Value.FEMALE);
             }
 
-            builder.append("' OR " + Items.SEX + " LIKE '" + CsvImportTask.SEX_UNISEX + "'");
+            builder.append("' OR ");
+            builder.append(Items.SEX);
+            builder.append(" LIKE '");
+            builder.append(Sex.Value.UNISEX.descriptor().toLowerCase());
+            builder.append("'");
 
             return builder.toString();
         } catch (RuntimeException re){

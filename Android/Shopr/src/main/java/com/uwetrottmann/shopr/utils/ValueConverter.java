@@ -25,7 +25,6 @@ public class ValueConverter {
         sDescriptorMap.put("Skirt", R.string.skirt);
         sDescriptorMap.put("Shorts", R.string.shorts);
         sDescriptorMap.put("Cardigan", R.string.cardigan);
-        sDescriptorMap.put("Top/T-Shirt", R.string.top_t_shirt);
 
         sDescriptorMap.put("Female", R.string.female);
         sDescriptorMap.put("Male", R.string.male);
@@ -34,11 +33,10 @@ public class ValueConverter {
         sDescriptorMap.put("Blue", R.string.blue);
         sDescriptorMap.put("Red", R.string.red);
         sDescriptorMap.put("Pink", R.string.pink);
-        sDescriptorMap.put("Purple", R.string.purple);
+        sDescriptorMap.put("Lilac", R.string.lilac);
         sDescriptorMap.put("Yellow", R.string.yellow);
         sDescriptorMap.put("Brown", R.string.brown);
         sDescriptorMap.put("Colored", R.string.colored);
-        sDescriptorMap.put("Mixed", R.string.mixed);
         sDescriptorMap.put("Grey", R.string.grey);
         sDescriptorMap.put("Green", R.string.green);
         sDescriptorMap.put("Orange", R.string.orange);

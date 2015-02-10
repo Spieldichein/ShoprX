@@ -20,6 +20,10 @@ public class ShoprContract {
         String PRICE = "item_price";
 
         String IMAGE_URL = "item_image";
+
+        String NAME = "item_name";
+        
+        String SEASON = "item_season";
     }
 
     interface ShopsColumns {

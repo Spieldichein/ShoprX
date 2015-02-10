@@ -13,11 +13,14 @@ import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.SimpleGraph;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Color extends GenericAttribute {
 
     private static UndirectedGraph<Color.Value, DefaultEdge> sSimilarValues;
+    private static Map<String, Value> sAvailableColors = new HashMap<String, Value>();
 
     static {
         sSimilarValues = new SimpleGraph<Color.Value, DefaultEdge>(DefaultEdge.class);
@@ -32,36 +35,45 @@ public class Color extends GenericAttribute {
          * subjective, e.g. white is similar to grey. Red is similar to pink,
          * etc.
          */
-        sSimilarValues.addEdge(Value.BLUE, Value.PURPLE);
+        sSimilarValues.addEdge(Value.BLUE, Value.LILAC);
         sSimilarValues.addEdge(Value.BLUE, Value.TURQUOISE);
-        sSimilarValues.addEdge(Value.RED, Value.PURPLE);
+        sSimilarValues.addEdge(Value.RED, Value.LILAC);
         sSimilarValues.addEdge(Value.RED, Value.PINK);
         sSimilarValues.addEdge(Value.YELLOW, Value.ORANGE);
         sSimilarValues.addEdge(Value.BLACK, Value.GREY);
         sSimilarValues.addEdge(Value.WHITE, Value.BEIGE);
         sSimilarValues.addEdge(Value.WHITE, Value.GREY);
-        sSimilarValues.addEdge(Value.COLORED, Value.MIXED);
         sSimilarValues.addEdge(Value.BROWN, Value.BEIGE);
+        sSimilarValues.addEdge(Value.BROWN, Value.OLIVE);
+        sSimilarValues.addEdge(Value.OLIVE, Value.GREEN);
+        sSimilarValues.addEdge(Value.PETROL, Value.BLUE);
+        sSimilarValues.addEdge(Value.PETROL, Value.GREEN);
+        sSimilarValues.addEdge(Value.GOLD, Value.YELLOW);
+        sSimilarValues.addEdge(Value.GOLD, Value.SILVER);
+        sSimilarValues.addEdge(Value.SILVER, Value.GREY);
     }
 
     public static final String ID = "color";
 
     public enum Value implements AttributeValue {
+        BEIGE(R.string.beige),
+        BLACK(R.string.black),
         BLUE(R.string.blue),
-        RED(R.string.black),
-        PINK(R.string.pink), // rosa zu Deutsch
-        PURPLE(R.string.purple),
-        YELLOW(R.string.yellow),
         BROWN(R.string.brown),
         COLORED(R.string.colored),
-        MIXED(R.string.mixed),
+        GOLD(R.string.gold), //TODO new add to stereotypes
         GREY(R.string.grey),
         GREEN(R.string.green),
+        LILAC(R.string.lilac),
+        OLIVE(R.string.olive), //TODO new add to stereotypes
         ORANGE(R.string.orange),
-        BLACK(R.string.black),
+        PETROL(R.string.petrol), //TODO new add to stereotypes
+        PINK(R.string.pink), // rosa zu Deutsch
+        RED(R.string.red),
+        SILVER(R.string.silver), //TODO new add to stereotypes
         TURQUOISE(R.string.turquoise),
         WHITE(R.string.white),
-        BEIGE(R.string.beige);
+        YELLOW(R.string.yellow);
 
         int mDescriptor;
 
@@ -80,6 +92,14 @@ public class Color extends GenericAttribute {
         }
     }
 
+    static {
+        if (sAvailableColors.size() == 0) {
+            for (Value value1 : Value.values()) {
+                sAvailableColors.put(value1.descriptor(), value1);
+            }
+        }
+    }
+
     public Color() {
         int numValues = Value.values().length;
         mValueWeights = new double[numValues];
@@ -94,54 +114,10 @@ public class Color extends GenericAttribute {
      * Tries to match the given string with a {@link Color.Value}.
      */
     public Color(String value) {
-        if ("Blau".equals(value)) {
-            setWeights(Color.Value.BLUE);
-        }
-        else if ("Braun".equals(value)) {
-            setWeights(Color.Value.BROWN);
-        }
-        else if ("Bunt".equals(value)) {
-            setWeights(Color.Value.COLORED);
-        }
-        else if ("Gelb".equals(value)) {
-            setWeights(Color.Value.YELLOW);
-        }
-        else if ("Gemischt".equals(value)) {
-            setWeights(Color.Value.MIXED);
-        }
-        else if ("Grau".equals(value)) {
-            setWeights(Color.Value.GREY);
-        }
-        else if ("Grün".equals(value)) {
-            setWeights(Color.Value.GREEN);
-        }
-        else if ("Orange".equals(value)) {
-            setWeights(Color.Value.ORANGE);
-        }
-        else if ("Rosa".equals(value)) {
-            setWeights(Color.Value.PINK);
-        }
-        else if ("Rot".equals(value)) {
-            setWeights(Color.Value.RED);
-        }
-        else if ("Schwarz".equals(value)) {
-            setWeights(Color.Value.BLACK);
-        }
-        else if ("Türkis".equals(value)) {
-            setWeights(Color.Value.TURQUOISE);
-        }
-        else if ("Violett".equals(value)) {
-            setWeights(Color.Value.PURPLE);
-        }
-        else if ("Weiß".equals(value)) {
-            setWeights(Color.Value.WHITE);
-        }
-        else if ("Beige".equals(value)) {
-            setWeights(Color.Value.BEIGE);
+        if (sAvailableColors.containsKey(value)){
+            setWeights(sAvailableColors.get(value));
         } else {
-            setWeights(Value.BEIGE);
             Log.d("Color", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");
-            Log.d("IMPORTANT", "Unknown color detected: " + value);
         }
     }
 

@@ -13,7 +13,6 @@ import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.loaders.ShopLoader;
 import com.uwetrottmann.shopr.provider.ShoprContract.Items;
 import com.uwetrottmann.shopr.provider.ShoprContract.Shops;
-import com.uwetrottmann.shopr.utils.Utils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,10 +28,6 @@ import au.com.bytecode.opencsv.CSVReader;
  * Imports items or shops from a CSV file into the database.
  */
 public class CsvImportTask extends AsyncTask<Void, Integer, String> {
-
-    public static final String SEX_MALE_DB = "Männlich";
-    public static final String SEX_FEMALE_DB = "Weiblich";
-    public static final String SEX_UNISEX = "Beide";
 
     public enum Type {
         IMPORT_SHOPS,
@@ -82,7 +77,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
             if (firstLine == null) {
                 return "No data.";
             }
-            if ((mType == Type.IMPORT_ITEMS && firstLine.length != 9) ||
+            if ((mType == Type.IMPORT_ITEMS && firstLine.length != 10) ||
                     mType == Type.IMPORT_SHOPS && firstLine.length != 9) {
                 Log.d(TAG, "Invalid column count.");
                 return "Invalid column count.";
@@ -118,16 +113,22 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                     case IMPORT_ITEMS:
                         // add values for one item
                         values.put(Items._ID, line[0]);
-                        values.put(Shops.REF_SHOP_ID, random.nextInt(numberOfShops) +1 ); // 0 is inclusive but n exclusive, we start at 1 with our IDs
-                        values.put(Items.CLOTHING_TYPE, line[1]);
-                        values.put(Items.SEX, line[2]);
-                        values.put(Items.COLOR, line[3]);
-                        values.put(Items.BRAND, line[4]);
-                        values.put(Items.PRICE, line[5]);
-                        // extract first image
-                        String imageUrl = line[6];
-                        imageUrl = Utils.extractFirstUrl(imageUrl);
-                        values.put(Items.IMAGE_URL, imageUrl);
+                        values.put(Shops.REF_SHOP_ID, random.nextInt(numberOfShops) + 1); // 0 is inclusive but n exclusive, we start at 1 with our IDs
+                        values.put(Items.COLOR, line[2]);
+                        values.put(Items.PRICE, line[3]);
+                        values.put(Items.SEASON, line[4]);
+                        values.put(Items.IMAGE_URL, line[5]);
+                        values.put(Items.NAME, line[6]);
+                        values.put(Items.BRAND, line[7]);
+                        values.put(Items.SEX, line[8]);
+                        String clothingType = line[9].replace("womens-clothing-", "").replace("mens-clothing-", "");
+                        if (clothingType.substring(clothingType.length() - 2).equals("es")){
+                            clothingType = clothingType.substring(0, clothingType.length() - 2);
+                        } else if (clothingType.charAt(clothingType.length()-1) == 's' && !clothingType.equalsIgnoreCase("Jeans")) {
+                            clothingType = clothingType.substring(0, clothingType.length() - 1);
+                        }
+                        clothingType = Character.toUpperCase(clothingType.charAt(0)) + clothingType.substring(1);
+                        values.put(Items.CLOTHING_TYPE, clothingType);
                         break;
                 }
 

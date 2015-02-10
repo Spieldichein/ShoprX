@@ -14,7 +14,7 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "shopr.db";
 
-    public static final int DATABASE_VERSION = 5;
+    public static final int DATABASE_VERSION = 6;
 
     public interface Tables {
         String ITEMS = "items";
@@ -45,7 +45,11 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
             + Items.SEX + " TEXT,"
 
-            + Items.IMAGE_URL + " TEXT"
+            + Items.IMAGE_URL + " TEXT,"
+
+            + Items.NAME + " TEXT,"
+
+            + Items.SEASON + " TEXT"
 
             + ");";
 

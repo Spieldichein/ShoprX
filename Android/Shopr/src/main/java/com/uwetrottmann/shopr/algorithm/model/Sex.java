@@ -45,13 +45,13 @@ public class Sex extends GenericAttribute {
      * Tries to match the given string with a {@link Sex.Value}.
      */
     public Sex(String value) {
-        if ("Weiblich".equals(value)) {
+        if ("FEMALE".equals(value)) {
             setWeights(Sex.Value.FEMALE);
         }
-        else if ("Männlich".equals(value)) {
+        else if ("MALE".equals(value)) {
             setWeights(Sex.Value.MALE);
         }
-        else if ("Beide".equals(value)) {
+        else if ("unisex".equals(value)) {
             setWeights(Sex.Value.UNISEX);
         } else {
             setWeights(Value.UNISEX);

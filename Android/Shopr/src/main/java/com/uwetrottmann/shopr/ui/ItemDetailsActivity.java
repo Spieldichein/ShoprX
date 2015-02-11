@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,10 +22,10 @@ import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.model.ClothingType;
 import com.uwetrottmann.shopr.algorithm.model.Color;
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.eval.ResultsActivity;
 import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
-import com.uwetrottmann.shopr.utils.ValueConverter;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -90,21 +91,30 @@ public class ItemDetailsActivity extends Activity {
 
         // title
         TextView itemTitle = (TextView) findViewById(R.id.textViewItemDetailsTitle);
-        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name()));
+        Log.d("Item-ID", ""+mItem.id());
+        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor()));
 
         // item attributes
         StringBuilder description = new StringBuilder();
-        description
-                .append(ValueConverter.getLocalizedStringForValue(this, mItem.attributes()
-                        .getAttributeById(ClothingType.ID).currentValue().descriptor()))
-                .append("\n")
-                .append(ValueConverter.getLocalizedStringForValue(this, mItem.getSex().currentValue().descriptor()))
-                .append("\n")
-                .append(ValueConverter.getLocalizedStringForValue(this, mItem.attributes()
-                        .getAttributeById(Color.ID).currentValue().descriptor()))
-                .append("\n")
-                .append(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(
-                        mItem.price().doubleValue()));
+        description.append(ShoprApp.getContext().getString(R.string.type));
+        description.append(": ");
+        description.append(mItem.attributes().getAttributeById(ClothingType.ID).currentValue().descriptor());
+        description.append("\n");
+        description.append(ShoprApp.getContext().getString(R.string.sex));
+        description.append(": ");
+        description.append(mItem.getSex().currentValue().descriptor());
+        description.append("\n");
+        description.append(ShoprApp.getContext().getString(R.string.color));
+        description.append(": ");
+        description.append(mItem.attributes().getAttributeById(Color.ID).currentValue().descriptor());
+        description.append("\n");
+//        description.append(ShoprApp.getContext().getString(R.string.label));
+//        description.append(": ");
+//        description.append(mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor());
+//        description.append("\n");
+        description.append(ShoprApp.getContext().getString(R.string.price));
+        description.append(": ");
+        description.append(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(mItem.price().doubleValue()));
         TextView itemDescription = (TextView) findViewById(R.id.textViewItemDetailsAttributes);
         itemDescription.setText(description);
     }

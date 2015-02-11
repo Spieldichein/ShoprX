@@ -27,6 +27,8 @@ public class Label extends GenericAttribute {
         ANERKJENDT("Anerkjendt"),
         ANNA_FIELD("Anna Field"), //TODO new brand - classify stereotypes
         ANTONY_MORATO("Antony Morato"),
+        APRIL_MAY("April May"),
+        ARMOR_LUX("Armor lux"),
         ARMY_OF_ME("Army of Me"), 
         ATELIER_GARDEUR("Atelier Gardeur"), 
         BANANA_MOON("Banana Moon"), //TODO new brand - classify stereotypes
@@ -39,6 +41,7 @@ public class Label extends GenericAttribute {
         BENETTON("Benetton"), //TODO new brand - classify stereotypes
         BIKINI_BAR("Bikini Bar"),
         BITCHING_N_JUNKFOOD("Bitching & Junkfood"),
+        BJOERN_BORG("Björn Borg"),
         BOOB_DESIGN("Boob Design"),
         BOOM_BAP("Boom Bap"),
         BOSS_ORANGE("BOSS Orange"), //TODO new brand - classify stereotypes
@@ -47,10 +50,12 @@ public class Label extends GenericAttribute {
         BREAD_N_BOXERS("Bread & Boxers"),
         BRIGITTE_BARDOT("Brigitte Bardot"),
         BRIXTOL("Brixtol"),
+        BROOKLYNS_OWN_BY_ROCAWEAR("Brooklyn's Own by Rocawear"),
         BRUNOTTI("Brunotti"), //TODO new brand - classify stereotypes
         BUFFALO("Buffalo"),
         BUGATTI("Bugatti"), //TODO new brand - classify stereotypes
-        BURTON("Burton"), 
+        BURTON("Burton"),
+        BYBLOS("Byblos"),
         BYE_BYE_KITTY("Bye bye Kitty"),
         C_DIOR("C. Dior"),
         CARHARTT("Carhartt"),
@@ -60,6 +65,7 @@ public class Label extends GenericAttribute {
         CANADIAN_CLASSICS("Canadian Classics"),
         CECEBA("Ceceba"), 
         CELIO("CELIO"), //TODO new brand - classify stereotypes
+        CENTZS("CENTŽS"),
         CHAMPION("Champion"),
         CHANEL("Chanel"),
         CHEAP_MONDAY("Cheap Monday"),
@@ -83,9 +89,12 @@ public class Label extends GenericAttribute {
         DAGMAR("Dagmar"),
         DALE_OF_NORWAY("Dale of Norway"),
         DANIEL_HECHTER("Daniel Hechter"),
+        DANTE6("Dante6"),
         DC("DC"),
         DENIM("Denim"),
+        DEPT("DEPT"),
         DERBE("Derbe"),
+        DEREK_LAM_10_CROSBY("Derek Lam 10 Crosby"),
         DESIGUAL("Desigual"),
         DICKIES("Dickies"),
         DIESEL("Diesel"),
@@ -93,12 +102,15 @@ public class Label extends GenericAttribute {
         DKNY_INTIMATES("DKNY Intimates"),
         DOCKERS("DOCKERS"), //TODO new brand - classify stereotypes
         DREIMASTER("Dreimaster"),
+        DRY_LAKE("Dry Lake"),
+        DUCA_DEL_COSMA("Duca Del Cosma"),
         ELEVEN_PARIS("Eleven Paris"), //TODO new brand - classify stereotypes
         ELEMENT("Element"),
         ELVINE("Elvine"), 
         EMOI_EN_PLUS("Emoi en Plus"),
         ESCADA("Escada"), 
         ESPRIT("Esprit"),
+        ESSENTIEL_ANTWERP("Essentiel Antwerp"),
         ETERNA("Eterna"), 
         ETNIES("Etnies"),
         EVEN_N_ODD("Even&Odd"), //TODO new brand - classify stereotypes
@@ -106,7 +118,8 @@ public class Label extends GenericAttribute {
         EXPRESSO("Expresso"), 
         EZEKIEL("Ezekiel"), 
         FAME_ON_YOU_PARIS("FAME ON YOU PARIS"),
-        FARAH_VINTAGE("Farah Vintage"), 
+        FARAH_VINTAGE("Farah Vintage"),
+        FEVER_LONDON("Fever London"),
         FILIPPA_K("Filippa K"), //TODO new brand - classify stereotypes
         FIRETRAP("Firetrap"), 
         FJÄLLRÄVEN("Fjällräven"),
@@ -116,12 +129,19 @@ public class Label extends GenericAttribute {
         FRANKIE_GARAGE("Frankie Garage"), 
         FRANKLIN_N_MARSHALL("Franklin & Marshall"),
         FREAKY_NATION("Freaky Nation"), 
-        FREEMAN_T_PORTER("Freeman T. Porter"), 
+        FREEMAN_T_PORTER("Freeman T. Porter"),
+        FRIEDA_N_FREDDIES("Frieda & Freddies"),
+        FROCK_AND_FRILL("Frock and Frill"),
         G_STAR("G-Star"),
         GAASTRA_BLUE("Gaastra Blue"),
         GANT("Gant"), //TODO new brand - classify stereotypes
+        GERRY_WEBER_EDITION("Gerry Weber Edition"),
+        GESTUZ("Gestuz"),
+        GLAMOROUS("Glamorous"),
         GLOVERALL("Gloverall"), 
         GOOSECRAFT("Goosecraft"),
+        GORE_RUNNING_WEAR("Gore Running Wear"),
+        GSUS_SINDUSTRIES("Gsus sindustries"),
         GUCCI("Gucci"),
         GUESS("Guess"), //TODO new brand - classify stereotypes
         H_N_M("H & M"),
@@ -130,9 +150,12 @@ public class Label extends GenericAttribute {
         HARRINGTON("HARRINGTON"), //TODO new brand - classify stereotypes
         HELLBUNNY("Hellbunny"),
         HOM("HOM"), //TODO new brand - classify stereotypes
+        HOODLAMB("Hoodlamb"),
         HRLONDON("Hrlondon"),
         HUGO_BOSS("Hugo Boss"),
-        HYPE("Hype"), 
+        HYPE("Hype"),
+        ICEPEAK("Icepeak"),
+        INDI_N_COLD("Indi & Cold"),
         INNOCENT("Innocent"),
         INWEAR("InWear"),
         J_CREW("J Crew"),
@@ -145,12 +168,15 @@ public class Label extends GenericAttribute {
         JOFAMA("Jofama"),
         JOHN_VARVATOS_STAR_USA("John Varvatos Star U.S.A."), 
         JOOP("JOOP!"), //TODO new brand - classify stereotypes
+        JUST_CAVALLI("Just Cavalli"),
         JUST_FEMALE("JUST FEMALE"),
         K_WAY("K-Way"),
         KAFFE("Kaffe"),
+        KALA("Kala"),
         KHUJO("Khujo"), //TODO new brand - classify stereotypes
         KILIWATCH("Kiliwatch"),
         KILIAN_KERNER_SENSES("Kilian Kerner Senses"),
+        KING_LOUIE("King Louie"),
         KIOMI("KIOMI"), //TODO new brand - classify stereotypes
         KIWI_SAINT_TROPEZ("Kiwi Saint Tropez"),
         KNOWLEDGE_COTTON_APPAREL("Knowledge Cotton Apparel"),
@@ -161,22 +187,30 @@ public class Label extends GenericAttribute {
         LAGERFELD("LAGERFELD"), //TODO new brand - classify stereotypes
         LAONA("Laona"), //TODO new brand - classify stereotypes
         LASCANA("LASCANA"),
+        LE_TEMPS_DES_CERISES("Le Temps Des Cerises"),
         LEE("Lee"), //TODO new brand - classify stereotypes
         LES_ECLAIRES_BORN_IN_FRANCE("Les Eclaires Born in France"),
         LEVI_S("Levi's"),
         LIGHTNING_BOLT("Lightning Bolt"), 
         LINGADORE("LingaDore"), 
-        LIPSY("Lipsy"), 
-        LITTLE_MISTRESS("Little Mistress"), 
+        LIPSY("Lipsy"),
+        LIST("List"),
+        LITTLE_MARCEL("Little Marcel"),
+        LITTLE_MISTRESS("Little Mistress"),
+        LITTLE_WHITE_LIES("Little White Lies"),
+        LIU_JO_JEANS("Liu Jo Jeans"),
         LIVIA("Livia"), 
         LIVINGDEADSOULS("Livingdeadsouls"),
-        LJUNG("Ljung"), 
+        LJUNG("Ljung"),
+        LK_BENNETT("LK Bennett"),
         LOGOSHIRT("LOGOSHIRT"), //TODO new brand - classify stereotypes
-        LOREAK_MENDIAN("Loreak Mendian"), 
+        LOREAK_MENDIAN("Loreak Mendian"),
+        LOUCHE("Louche"),
         LOUIS_VUITTON("Louis Vuitton"),
         LRG("LRG"),
         LTB("LTB"), //TODO new brand - classify stereotypes
         LYLE_N_SCOTT("Lyle & Scott"), //TODO new brand - classify stereotypes
+        MADS_NORGAARD("Mads Nørgaard"),
         MAKIA("Makia"), 
         MAMA_LICIOUS("Mama Licious"), //TODO new brand - classify stereotypes
         MARC_O_POLO("Marc O'Polo"), //TODO new brand - classify stereotypes
@@ -192,6 +226,9 @@ public class Label extends GenericAttribute {
         MICHAEL_KORS("Michael Kors"),
         MILLET("Millet"), 
         MINIMUM("Minimum"), //TODO new brand - classify stereotypes
+        MINUS("Minus"),
+        MISS_MISS("Miss Miss"),
+        MKT_STUDIO("MKT Studio"),
 	    MODSTROEM("Modström"), //TODO new brand - classify stereotypes
         MOLLY_BRACKEN("Molly Bracken"),
         MOM2MOM("Mom2moM"), //TODO new brand - classify stereotypes
@@ -199,13 +236,16 @@ public class Label extends GenericAttribute {
         MORGAN("Morgan"), //TODO new brand - classify stereotypes
 	    MOEVE("Möve"), //TODO new brand - classify stereotypes
 	    MUSTANG("Mustang"), //TODO new brand - classify stereotypes
+        MUUBAA("muubaa"),
         NAF_NAF("NAF NAF"), //TODO new brand - classify stereotypes
         NEEDLE_N_THREAD("Needle & Thread"),
         NEW_YORKER("New Yorker"),
         NIKE("Nike"),
+        NOA_NOA("Noa Noa"),
         NOISY_MAY("Noisy May"), 
         NOPPIES("Noppies"), //TODO new brand - classify stereotypes
         NUDIE("Nudie"), //TODO new brand - classify stereotypes
+        NUEMPH("Nümph"),
         OAKWOOD("Oakwood"), //TODO new brand - classify stereotypes
         ODLO("ODLO"), 
         OLYMP_LEVEL_5("Olymp Level 5"), //TODO new brand - classify stereotypes
@@ -213,6 +253,7 @@ public class Label extends GenericAttribute {
         ONEPIECE("Onepiece"), 
         ONLY("ONLY"), //TODO new brand - classify stereotypes
         ONLY_N_SONS("Only & Sons"), //TODO new brand - classify stereotypes
+        OPENING_CEREMONY("Opening Ceremony"),
         OPUS("Opus"), 
         ORIGINAL_PENGUIN("Original Penguin"),
         ORLEBAR_BROWN("Orlebar Brown"), //TODO new brand - classify stereotypes
@@ -223,7 +264,9 @@ public class Label extends GenericAttribute {
         PATAGONIA("Patagonia"), //TODO new brand - classify stereotypes
         PATRIZIA_PEPE("Patrizia Pepe"),
         PEPE("Pepe"),
+        PF_BY_PAOLA_FRANI("PF by Paola Frani"),
         PIER_ONE("Pier One"), //TODO new brand - classify stereotypes
+        PIERRE_BALMAIN("Pierre Balmain"),
         PRADA("Prada"),
         PUMA("Puma"), //TODO new brand - classify stereotypes
         QUEEN_MUM("Queen Mum"),
@@ -236,12 +279,16 @@ public class Label extends GenericAttribute {
         REELL("REELL"), 
         REGATTA("Regatta"),
         RELIGION("Religion"),
+        RENE_DERHY("René Derhy"),
 	    RENE_LEZARD("René Lezard"), //TODO new brand - classify stereotypes
-        REPLAY("Replay"), 
+        REPLAY("Replay"),
+        RESTEROEDS("Resteröds"),
         REVOLUTION("Revolution"),
         RIP_CURL("Rip Curl"),
         RIVER_ISLAND("River Island"),
         ROBINSON_LES_BAINS("Robinson Les Bains"),
+        ROCKANDBLUE("ROCKANDBLUE"),
+        ROSE_A_POIS("Rosé a Pois"),
         ROSEMUNDE("Rosemunde"), //TODO new brand - classify stereotypes
         ROXY("Roxy"),
         RUSTY("Rusty"),
@@ -258,14 +305,21 @@ public class Label extends GenericAttribute {
         SELECTED_HOMME("Selected Homme"), //TODO new brand - classify stereotypes
         SEIDENSTICKER("Seidensticker"), //TODO new brand - classify stereotypes
         SERGE_BLANCO("Serge Blanco"),
+        SET("SET"),
         SHINE_ORIGINAL("Shine Original"),
         SIGNUM("Signum"),
         SISLEY("Sisley"), //TODO new brand - classify stereotypes
+        SMASH("Smash"),
         SOAKED_IN_LUXURY("Soaked in Luxury"),
         SOFT_REBELS("Soft Rebels"),
         SOLID("Solid"),
         SOULLAND("Soulland"),
         SPIRAL("Spiral"),
+        SPOOKS("Spooks"),
+        SPORTALM("Sportalm"),
+        ST_EMILE("St. Emile"),
+        ST_MARTINS("st-martins"),
+        STELLA_NOVA("Stella Nova"),
         STRAND("Strand"), //TODO new brand - classify stereotypes
         SUBLEVEL("Sublevel"),
         SUNSPEL("Sunspel"),
@@ -273,10 +327,13 @@ public class Label extends GenericAttribute {
         SUPERTRASH("Supertrash"),
         SWEET_PANTS("Sweet Pants"),
         SWING("Swing"),
+        TAIFUN("Taifun"),
+        TAO("Tao"),
         TED_BAKER("Ted Baker"),
         TEDDY_SMITH("Teddy Smith"),
         TFNC("TFNC"),
         THE_NORTH_FACE("The North Face"),
+        TIBI("Tibi"),
         TIFFOSI("Tiffosi"),
         TIGER_OF_SWEDEN("Tiger of Sweden"),
         TIMBERLAND("Timberland"),
@@ -287,6 +344,7 @@ public class Label extends GenericAttribute {
         TWENTY8TWELVE("Twenty8Twelve"),
         TWINTIP("TWINTIP"),
         UCON_ACROBATICS("Ucon Acrobatics"),
+        UNIQUE("Unique"),
         URBAN_CLASSICS("Urban Classics"),
         VAN_LAACK("van Laack"),
         VANS("Vans"),
@@ -295,15 +353,19 @@ public class Label extends GenericAttribute {
         VENICE_BEACH("Venice Beach"),
         VERSACE("Versace"),
         VERO_MODA("Vero Moda"),
+        VERONIQUE_BRANQUINHO("Veronique Branquinho"),
         VILA("Vila"),
         VOLCOM("Volcom"),
         VOSSEN("Vossen"),
         WAL_G("WAL G."),
+        WANDA_NYLON("Wanda Nylon"),
         WATERCULT("watercult"),
         WRANGLER("Wrangler"),
         WOOD_WOOD("Wood Wood"),
         YOUR_TURN("YOUR TURN"),
+        YUMI("Yumi"),
         ZALANDO("Zalando"),
+        ZIZZI("Zizzi"),
         NOT_SET("Brand not set");
 
 
@@ -365,6 +427,8 @@ public class Label extends GenericAttribute {
             setWeights(Value.LEVI_S);
         } else if (value.startsWith("Seidensticker")) {
             setWeights(Value.SEIDENSTICKER);
+        } else if (value.startsWith("Brooklyn")) {
+            setWeights(Value.BROOKLYNS_OWN_BY_ROCAWEAR);
         } else if (value.startsWith("Jack & Jones")) {
             setWeights(Value.JACK_N_JONES);
         } else if (value.startsWith("Hilfiger") || value.startsWith("Tommy Hilfiger")) {
@@ -381,13 +445,20 @@ public class Label extends GenericAttribute {
             setWeights(Value.BURTON);
         } else if (value.startsWith("Tom Tailor")) {
             setWeights(Value.TOM_TAILOR);
+        } else if (value.startsWith("Calvin Klein")) {
+            setWeights(Value.CALVIN_KLEIN);
         } else if (value.startsWith("Mexx")) {
             setWeights(Value.MEXX);
+        } else if (value.startsWith("KARL LAGERFELD")) {
+            setWeights(Value.LAGERFELD);
+        } else if (value.startsWith("Tiger of Sweden")) {
+            setWeights(Value.TIGER_OF_SWEDEN);
         } else if (value.startsWith("Versace")) {
             setWeights(Value.VERSACE);
         } else if (value.startsWith("Zalando")) {
             setWeights(Value.ZALANDO);
         } else {
+            setWeights(Value.NOT_SET);
             Log.d("Label", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"),");
         }
     }

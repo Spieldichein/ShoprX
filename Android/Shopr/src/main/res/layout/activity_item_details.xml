@@ -46,7 +46,7 @@
         android:layout_marginTop="16dp"
         android:layout_toLeftOf="@+id/imageViewItemDetails"
         android:layout_toStartOf="@+id/imageViewItemDetails"
-        android:lineSpacingMultiplier="1.5"
+        android:lineSpacingMultiplier="1.1"
         android:text="@string/no_data"
         android:textAppearance="@style/TextAppearance.Light" />
 

@@ -47,7 +47,7 @@
     <string name="durationRecommendation">Duration since Recommendation start</string>
     <string name="cycle_count">Cycle count</string>
     <string name="title_activity_item_details">Item Details</string>
-    <string name="choice_confirmation">Are you happy with \"%s\"?</string>
+    <string name="choice_confirmation">Are you happy with \"%1$s\" from %2$s?</string>
     <string name="choice_instructions">If not, press back.</string>
     <string name="choice_finish">Select this and finish</string>
     <string name="your_selected_item">Your selected item</string>
@@ -336,6 +336,7 @@
     <string name="midday">Midday</string>
     <string name="afternoon">Afternoon</string>
     <string name="evening">Evening</string>
+    <string name="unknownClothingType">Unknown clothing type</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

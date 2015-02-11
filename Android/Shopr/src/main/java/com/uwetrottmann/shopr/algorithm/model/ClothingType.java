@@ -41,6 +41,8 @@ public class ClothingType extends GenericAttribute {
 //        sSimilarValues.addEdge(Value.SKIRT, Value.SHORTS);
 //        sSimilarValues.addEdge(Value.CARDIGAN, Value.SWEATER);
         sSimilarValues.addEdge(Value.TOP, Value.SHIRT);
+        sSimilarValues.addEdge(Value.T_SHIRT, Value.TOP);
+        sSimilarValues.addEdge(Value.T_SHIRT,Value.SHIRT);
         sSimilarValues.addEdge(Value.COAT, Value.JACKET);
 //        sSimilarValues.addEdge(Value.TOP, Value.BLOUSE);
 
@@ -72,7 +74,8 @@ public class ClothingType extends GenericAttribute {
         SWIMWEAR(R.string.swimwear), //TODO new - draw similarity graph
         //CARDIGAN(R.string.cardigan), // Strickjacke
         TOP(R.string.top), //TODO new - draw similiarity graph
-        T_SHIRT(R.string.t_shirt); //TODO new - draw similarity graph
+        T_SHIRT(R.string.t_shirt), //TODO new - draw similarity graph
+        UNKNOWN(R.string.unknownClothingType);
 
         int mDescriptor;
 
@@ -107,6 +110,7 @@ public class ClothingType extends GenericAttribute {
         } else if (value.equals("Trousers-chino")){ //TODO Revise!
             setWeights(Value.CHINO);
         } else {
+            setWeights(Value.UNKNOWN);
             Log.d("ClothingType", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");
         }
     }

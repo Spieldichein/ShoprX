@@ -30,7 +30,7 @@
         android:textSize="@dimen/textSize" />
 
     <Spinner
-        android:id="@+id/shopDistanceSpinner"
+        android:id="@+id/contextShopDistanceSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/shopDistance"
@@ -51,36 +51,36 @@
         android:textSize="@dimen/textSize" />
 
     <Spinner
-        android:id="@+id/shopOpeningHoursSpinner"
+        android:id="@+id/contextShopOpeningHoursSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/shopOpeningHours"
-        android:layout_below="@id/shopDistanceSpinner"
-        android:layout_alignStart="@id/shopDistanceSpinner"
-        android:layout_alignLeft="@id/shopDistanceSpinner"
+        android:layout_below="@id/contextShopDistanceSpinner"
+        android:layout_alignStart="@id/contextShopDistanceSpinner"
+        android:layout_alignLeft="@id/contextShopDistanceSpinner"
         android:layout_alignTop="@id/shopOpeningHoursTextView"
         android:gravity="end"
         />
 
     <Switch
+        android:id="@+id/contextShopStockOptions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/showItemsThatAreNotInStock"
-        android:id="@+id/shopStockOptions"
-        android:layout_below="@+id/shopOpeningHoursSpinner"
+        android:layout_below="@+id/contextShopOpeningHoursSpinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textOn="@string/yes"
         android:textOff="@string/no"
-        android:checked="true"
+        android:checked="false"
         android:textSize="@dimen/textSize"/>
 
     <Switch
-        android:id="@+id/shopCrowdedness"
+        android:id="@+id/contextShopCrowdedness"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/showCrowdedShops"
-        android:layout_below="@id/shopStockOptions"
+        android:layout_below="@id/contextShopStockOptions"
         android:layout_marginTop="15dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -97,6 +97,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/shopCrowdedness"/>
+        android:layout_below="@id/contextShopCrowdedness"/>
 
 </RelativeLayout>

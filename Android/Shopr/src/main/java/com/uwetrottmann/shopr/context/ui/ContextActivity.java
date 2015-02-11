@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
 import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.ui.MainActivity;
 
@@ -20,10 +21,13 @@ import com.uwetrottmann.shopr.ui.MainActivity;
 public class ContextActivity extends FragmentActivity{
 
     private ContextShopFragment mShopFragment;
+    private ScenarioContext mScenarioContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mScenarioContext = ScenarioContext.getInstance();
 
         setContentView(R.layout.fragment_only_activity);
 
@@ -79,6 +83,7 @@ public class ContextActivity extends FragmentActivity{
      * the main activity.
      */
     public void contextDeterminationFinished() {
+        mScenarioContext.logScenarioContext();
         Toast.makeText(this, R.string.startRecommendation, Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

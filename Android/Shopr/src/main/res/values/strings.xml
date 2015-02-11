@@ -329,6 +329,13 @@
     <string name="alone">Alone</string>
     <string name="withFamily">With Family</string>
     <string name="withAFriend">With (a) friend(s)</string>
+    <string name="workday">Workday</string>
+    <string name="holiday">Weekend or public holiday</string>
+    <string name="night">Night</string>
+    <string name="morning">Morning</string>
+    <string name="midday">Midday</string>
+    <string name="afternoon">Afternoon</string>
+    <string name="evening">Evening</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

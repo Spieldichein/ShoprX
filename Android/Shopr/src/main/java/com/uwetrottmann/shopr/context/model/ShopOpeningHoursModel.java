@@ -38,4 +38,9 @@ public enum ShopOpeningHoursModel {
         return sOpeningHours.get(description);
     }
 
+    @Override
+    public String toString(){
+        return ShoprApp.getContext().getString(mStringSelctor);
+    }
+
 }

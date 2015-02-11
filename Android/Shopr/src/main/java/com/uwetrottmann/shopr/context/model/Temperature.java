@@ -3,6 +3,9 @@ package com.uwetrottmann.shopr.context.model;
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.ShoprApp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Yannick on 11.02.15.
  *
@@ -20,6 +23,8 @@ public enum Temperature {
 
     private int mDegrees;
 
+    private static Map<String, Temperature> sAvailableTemperatures = new HashMap<String, Temperature>();
+
     Temperature(int degrees) {
          mDegrees = degrees;
     }
@@ -28,4 +33,18 @@ public enum Temperature {
         return ShoprApp.getContext().getString(mDegrees);
     }
 
+    public static Temperature getTemperature(String description){
+        if (sAvailableTemperatures.size() == 0){
+            for (Temperature temp : Temperature.values()){
+                sAvailableTemperatures.put(ShoprApp.getContext().getString(temp.mDegrees), temp);
+            }
+        }
+
+        return sAvailableTemperatures.get(description);
+    }
+
+    @Override
+    public String toString(){
+        return ShoprApp.getContext().getString(mDegrees);
+    }
 }

@@ -35,4 +35,9 @@ public enum DistanceToShop {
 
         return sAvailableDistances.get(description);
     }
+
+    @Override
+    public String toString(){
+        return ShoprApp.getContext().getString(mInstanceNumber);
+    }
 }

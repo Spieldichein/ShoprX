@@ -20,6 +20,8 @@ public class ScenarioContext {
     private DistanceToShop mDistanceToShop;
     private ShopOpeningHoursModel mOpeningHours;
     private Temperature mTemperature;
+    private Weather mWeather;
+    private Company mCompany;
     private boolean mCrowdedShopsAllowed;
     private boolean mOnlyItemsInStock;
 
@@ -40,7 +42,7 @@ public class ScenarioContext {
      * @param tempDesc the output string for the given temperature.
      */
     public void setTemperature(String tempDesc){
-        mTemperature = Temperature.valueOf(tempDesc);
+        mTemperature = Temperature.getTemperature(tempDesc);
     }
 
     /**
@@ -49,6 +51,38 @@ public class ScenarioContext {
      */
     public Temperature getTemperature(){
         return mTemperature;
+    }
+
+    /**
+     * Returns the currently selected weather conditions
+     * @return the current weather conditions
+     */
+    public Weather getWeather() {
+        return mWeather;
+    }
+
+    /**
+     * Sets the current weather
+     * @param weatherDescription a description of the current weather.
+     */
+    public void setWeather(String weatherDescription) {
+        this.mWeather = Weather.getWeather(weatherDescription);
+    }
+
+    /**
+     * Gets the current company of the active person.
+     * @return the current person's company.
+     */
+    public Company getCompany() {
+        return mCompany;
+    }
+
+    /**
+     * Sets the current person's company.
+     * @param companyDescription a string describing the current person's company.
+     */
+    public void setCompany(String companyDescription) {
+        this.mCompany = Company.getCompany(companyDescription);
     }
 
     /**
@@ -127,6 +161,8 @@ public class ScenarioContext {
         Log.d(TAG, "Only items in stock: " + mOnlyItemsInStock);
         Log.d(TAG, "Crowded Shops allowed: " + mCrowdedShopsAllowed);
         Log.d(TAG, "Temperature: " + mTemperature);
+        Log.d(TAG, "Weather: " + mWeather);
+        Log.d(TAG, "Company: " + mCompany);
     }
 
     /**

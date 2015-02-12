@@ -33,18 +33,32 @@ public class ClothingType extends GenericAttribute {
         /**
          * Store similar clothing type values in an undirected graph.
          */
-//        sSimilarValues.addEdge(Value.SHIRT, Value.POLOSHIRT);
-//        sSimilarValues.addEdge(Value.SHIRT, Value.BLOUSE);
-//        sSimilarValues.addEdge(Value.TROUSERS, Value.JEANS);
-//        sSimilarValues.addEdge(Value.TROUSERS, Value.SHORTS);
-//        sSimilarValues.addEdge(Value.TROUSERS, Value.SKIRT);
-//        sSimilarValues.addEdge(Value.SKIRT, Value.SHORTS);
-//        sSimilarValues.addEdge(Value.CARDIGAN, Value.SWEATER);
+        sSimilarValues.addEdge(Value.BLOUSE, Value.TUNIC);
+        sSimilarValues.addEdge(Value.CARDIGAN, Value.SWEATSHIRT);
+        sSimilarValues.addEdge(Value.CARDIGAN, Value.COAT);
+        sSimilarValues.addEdge(Value.CHINO, Value.JEANS);
+        sSimilarValues.addEdge(Value.CHINO, Value.SHORTS);
+        sSimilarValues.addEdge(Value.COAT, Value.JACKET);
+        sSimilarValues.addEdge(Value.DRESS, Value.TUNIC);
+        sSimilarValues.addEdge(Value.HOODIE, Value.JACKET);
+        sSimilarValues.addEdge(Value.HOODIE, Value.SHIRT);
+        sSimilarValues.addEdge(Value.HOODIE, Value.T_SHIRT);
+        sSimilarValues.addEdge(Value.JUMPER, Value.DRESS);
+        sSimilarValues.addEdge(Value.JUMPER, Value.SWEATSHIRT);
+        sSimilarValues.addEdge(Value.SHIRT, Value.BLOUSE);
+        sSimilarValues.addEdge(Value.SHORTS, Value.SWIMWEAR);
+        sSimilarValues.addEdge(Value.SHORTS, Value.TOP);
+        sSimilarValues.addEdge(Value.SWEATSHIRT, Value.T_SHIRT);
+        sSimilarValues.addEdge(Value.SKIRT, Value.SHORTS);
+        sSimilarValues.addEdge(Value.SWEATSHIRT, Value.HOODIE);
+        sSimilarValues.addEdge(Value.TROUSERS, Value.JEANS);
+        sSimilarValues.addEdge(Value.TROUSERS, Value.SHORTS);
+        sSimilarValues.addEdge(Value.TROUSERS, Value.SKIRT);
+        sSimilarValues.addEdge(Value.TROUSERS, Value.CHINO);
+        sSimilarValues.addEdge(Value.TOP, Value.BLOUSE);
         sSimilarValues.addEdge(Value.TOP, Value.SHIRT);
         sSimilarValues.addEdge(Value.T_SHIRT, Value.TOP);
         sSimilarValues.addEdge(Value.T_SHIRT,Value.SHIRT);
-        sSimilarValues.addEdge(Value.COAT, Value.JACKET);
-//        sSimilarValues.addEdge(Value.TOP, Value.BLOUSE);
 
         if (sAvailableClothing.size() == 0) {
             for (Value value1 : Value.values()) {
@@ -56,26 +70,24 @@ public class ClothingType extends GenericAttribute {
     public static final String ID = "clothing-type";
 
     public enum Value implements AttributeValue {
-        //SWIMSUIT(R.string.swim_suit),
-        //TRUNKS(R.string.trunks),
-        BLOUSE(R.string.blouse), // TODO new - draw similarity graph
-        CARDIGAN(R.string.cardigan), //TODO new - draw similarity graph
-        CHINO(R.string.chino), //TODO new - draw similarity graph
-        COAT(R.string.coat), //TODO new - draw similarity graph
+        BLOUSE(R.string.blouse),
+        CARDIGAN(R.string.cardigan),
+        CHINO(R.string.chino),
+        COAT(R.string.coat),
         DRESS(R.string.dress),
-        HOODIE(R.string.hoodie),//TODO new - draw similarity graph
-        JACKET(R.string.jacket), //TODO new - draw similarity graph
+        HOODIE(R.string.hoodie),
+        JACKET(R.string.jacket),
         JEANS(R.string.jeans),
-        JUMPER(R.string.jumper), //TODO new - draw similarity graph
+        JUMPER(R.string.jumper),
         SKIRT(R.string.skirt),
-        SHORTS(R.string.shorts),//TODO new - draw similarity graph
-        SHIRT(R.string.shirt), //TODO new - draw similarity graph
-        SWEATSHIRT(R.string.sweatshirt), //TODO new - draw similarity graph
-        SWIMWEAR(R.string.swimwear), //TODO new - draw similarity graph
-        TOP(R.string.top), //TODO new - draw similiarity graph
-        TROUSER(R.string.trousers),  //TODO new - draw similiarity graph
-        T_SHIRT(R.string.t_shirt), //TODO new - draw similarity graph
-        TUNIC(R.string.tunic),//TODO new - draw similarity graph
+        SHORTS(R.string.shorts),
+        SHIRT(R.string.shirt),
+        SWEATSHIRT(R.string.sweatshirt),
+        SWIMWEAR(R.string.swimwear),
+        TOP(R.string.top),
+        TROUSERS(R.string.trousers),
+        T_SHIRT(R.string.t_shirt),
+        TUNIC(R.string.tunic),
         UNKNOWN(R.string.unknownClothingType);
 
         int mDescriptor;
@@ -108,8 +120,6 @@ public class ClothingType extends GenericAttribute {
     public ClothingType(String value) {
         if (sAvailableClothing.containsKey(value)) {
             setWeights(sAvailableClothing.get(value));
-        } else if (value.equals("Trousers-chino")){ //TODO Revise!
-            setWeights(Value.CHINO);
         } else {
             setWeights(Value.UNKNOWN);
             Log.d("ClothingType", "Unknown: " + value.toUpperCase().replace(" ", "_") + "(\"" + value + "\"), ");

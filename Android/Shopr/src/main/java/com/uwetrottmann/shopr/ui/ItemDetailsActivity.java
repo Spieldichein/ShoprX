@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -91,7 +90,6 @@ public class ItemDetailsActivity extends Activity {
 
         // title
         TextView itemTitle = (TextView) findViewById(R.id.textViewItemDetailsTitle);
-        Log.d("Item-ID", ""+mItem.id());
         itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor()));
 
         // item attributes

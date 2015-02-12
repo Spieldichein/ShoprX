@@ -96,6 +96,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
             String[] line;
             Random random = new Random(123456); // seed to get fixed
                                                 // distribution
+            int id = 1;
             while ((line = reader.readNext()) != null) {
                 ContentValues values = new ContentValues();
 
@@ -112,7 +113,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         break;
                     case IMPORT_ITEMS:
                         // add values for one item
-                        values.put(Items._ID, line[0]);
+                        values.put(Items._ID, id++);
                         values.put(Shops.REF_SHOP_ID, random.nextInt(numberOfShops) + 1); // 0 is inclusive but n exclusive, we start at 1 with our IDs
                         values.put(Items.COLOR, line[2]);
                         values.put(Items.PRICE, line[3]);
@@ -134,6 +135,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         }
 
                         clothingType = Character.toUpperCase(clothingType.charAt(0)) + clothingType.substring(1);
+
                         values.put(Items.CLOTHING_TYPE, clothingType);
                         break;
                 }

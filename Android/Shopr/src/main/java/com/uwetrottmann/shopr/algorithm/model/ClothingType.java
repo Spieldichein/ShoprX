@@ -58,23 +58,24 @@ public class ClothingType extends GenericAttribute {
     public enum Value implements AttributeValue {
         //SWIMSUIT(R.string.swim_suit),
         //TRUNKS(R.string.trunks),
-        //BLOUSE(R.string.blouse),
-        //SHIRT(R.string.shirt),
-        //TROUSERS(R.string.trousers),
+        BLOUSE(R.string.blouse), // TODO new - draw similarity graph
+        CARDIGAN(R.string.cardigan), //TODO new - draw similarity graph
         CHINO(R.string.chino), //TODO new - draw similarity graph
         COAT(R.string.coat), //TODO new - draw similarity graph
         DRESS(R.string.dress),
+        HOODIE(R.string.hoodie),//TODO new - draw similarity graph
         JACKET(R.string.jacket), //TODO new - draw similarity graph
         JEANS(R.string.jeans),
-        //POLOSHIRT(R.string.poloshirt),
-        //SWEATER(R.string.sweater), // Pullover
+        JUMPER(R.string.jumper), //TODO new - draw similarity graph
         SKIRT(R.string.skirt),
-        //SHORTS(R.string.shorts),
+        SHORTS(R.string.shorts),//TODO new - draw similarity graph
         SHIRT(R.string.shirt), //TODO new - draw similarity graph
+        SWEATSHIRT(R.string.sweatshirt), //TODO new - draw similarity graph
         SWIMWEAR(R.string.swimwear), //TODO new - draw similarity graph
-        //CARDIGAN(R.string.cardigan), // Strickjacke
         TOP(R.string.top), //TODO new - draw similiarity graph
+        TROUSER(R.string.trousers),  //TODO new - draw similiarity graph
         T_SHIRT(R.string.t_shirt), //TODO new - draw similarity graph
+        TUNIC(R.string.tunic),//TODO new - draw similarity graph
         UNKNOWN(R.string.unknownClothingType);
 
         int mDescriptor;

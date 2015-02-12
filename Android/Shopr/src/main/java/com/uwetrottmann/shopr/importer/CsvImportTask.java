@@ -121,12 +121,18 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         values.put(Items.NAME, line[6]);
                         values.put(Items.BRAND, line[7]);
                         values.put(Items.SEX, line[8]);
-                        String clothingType = line[9].replace("womens-clothing-", "").replace("mens-clothing-", "");
-                        if (clothingType.substring(clothingType.length() - 2).equals("es")){
+
+                        //Do some really bad string operations!
+                        String clothingType = line[9].replace("womens-clothing-", "").replace("mens-clothing-", "").replace("mens-","");
+                        if (clothingType.substring(clothingType.length() - 2).equals("es") && !clothingType.equals("blouses") && ! clothingType.endsWith("hoodies")){
                             clothingType = clothingType.substring(0, clothingType.length() - 2);
-                        } else if (clothingType.charAt(clothingType.length()-1) == 's' && !clothingType.equalsIgnoreCase("Jeans")) {
+                        } else if (clothingType.charAt(clothingType.length()-1) == 's' && !clothingType.equalsIgnoreCase("Jeans") && !clothingType.equalsIgnoreCase("trousers") && !clothingType.equalsIgnoreCase("shorts")) {
                             clothingType = clothingType.substring(0, clothingType.length() - 1);
                         }
+                        if (clothingType.startsWith("jumpers-")){
+                            clothingType = clothingType.replace("jumpers-","");
+                        }
+
                         clothingType = Character.toUpperCase(clothingType.charAt(0)) + clothingType.substring(1);
                         values.put(Items.CLOTHING_TYPE, clothingType);
                         break;

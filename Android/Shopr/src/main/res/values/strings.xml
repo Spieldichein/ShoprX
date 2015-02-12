@@ -337,6 +337,10 @@
     <string name="afternoon">Afternoon</string>
     <string name="evening">Evening</string>
     <string name="unknownClothingType">Unknown clothing type</string>
+    <string name="sweatshirt">Sweatshirt</string>
+    <string name="hoodie">Hoodie</string>
+    <string name="jumper">Jumper</string>
+    <string name="tunic">Tunic</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

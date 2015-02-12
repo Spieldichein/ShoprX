@@ -28,6 +28,7 @@ public class Statistics {
     private String mUserName;
     private int mSelectedItemPosition;
     private List<Integer> mShowedIds;
+    private String mSelectedStereotype;
 
     private boolean mIsStarted;
 
@@ -103,6 +104,7 @@ public class Statistics {
         statValues.put(Stats.DURATION, duration);
         statValues.put(Stats.DURATION_RECOMMENDATION, durationFromRecommendationStart);
         statValues.put(Stats.ITEM_POSITION, mSelectedItemPosition);
+        statValues.put(Stats.STEREOTYPE, mSelectedStereotype);
 
         StringBuilder build = new StringBuilder();
         for(Integer i : mShowedIds){
@@ -134,6 +136,14 @@ public class Statistics {
 
     public synchronized void startRecommendingItems(){
         mStartTimeRecommendation = System.currentTimeMillis();
+    }
+
+    /**
+     * This method is used to set the name of the stereotype, that is currently used.
+     * @param stereotypeName the name of the currently selected stereotype
+     */
+    public synchronized void setStereotype(String stereotypeName){
+        mSelectedStereotype = stereotypeName;
     }
 
 }

@@ -51,6 +51,9 @@ public class ShoprContract {
         String ITEM_POSITION = "stats_item_position";
 
         String ITEM_COVERAGE = "stats_item_coverage";
+
+        String STEREOTYPE = "stats_stereotype";
+
     }
 
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://"

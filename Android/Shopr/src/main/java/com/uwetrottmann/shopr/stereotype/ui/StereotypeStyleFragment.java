@@ -12,6 +12,7 @@ import android.widget.GridView;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.context.ui.ContextActivity;
+import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.stereotype.adapter.StereotypeStylesAdapter;
 import com.uwetrottmann.shopr.stereotype.stereotypes.AbstractStereotype;
 import com.uwetrottmann.shopr.stereotype.user.User;
@@ -52,6 +53,7 @@ public class StereotypeStyleFragment extends Fragment {
                         .get(position);
                 User.getUser().setStereotype(stereotype);
 
+                Statistics.get().setStereotype(stereotype.getStereotype().name());
                 Log.d("Stereotype set to", stereotype.getStereotype().name());
 
                 Intent intent = new Intent(getActivity(), ContextActivity.class);

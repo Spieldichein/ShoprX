@@ -7,8 +7,11 @@ import android.preference.PreferenceManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.maps.model.LatLng;
+import com.uwetrottmann.shopr.model.Shop;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class ShoprApp extends Application {
 
@@ -20,6 +23,10 @@ public class ShoprApp extends Application {
     private static Context mContext;
 
     public static final String GOOGLE_ANALYTICS_ID = "UA-59068924-1";
+
+    private static LatLng sLastLocation;
+
+    private static List<Shop> sShopList;
 
     @Override
     public void onCreate() {
@@ -47,6 +54,22 @@ public class ShoprApp extends Application {
 
     public static Context getContext() {
         return mContext;
+    }
+
+    public static synchronized void setLastLocation(LatLng lastLocation){
+        sLastLocation = lastLocation;
+    }
+
+    public static synchronized LatLng getLastLocation(){
+        return sLastLocation;
+    }
+
+    public static synchronized void setShopList(List<Shop> shopList){
+        sShopList = shopList;
+    }
+
+    public static synchronized List<Shop> getShopList(){
+        return sShopList;
     }
 
 }

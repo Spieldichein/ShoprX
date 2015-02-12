@@ -65,8 +65,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     private GoogleApiClient mLocationClient;
 
-    private LatLng mLastLocation;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,7 +121,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         super.onStart();
         if (AppSettings.isUsingFakeLocation(this)) {
             // use fake location (Marienplatz, Munich)
-            mLastLocation = new LatLng(48.137314, 11.575253);
+            ShoprApp.setLastLocation(new LatLng(48.137314, 11.575253));
             // send out location update event immediately
             EventBus.getDefault().postSticky(new LocationUpdateEvent());
         } else {
@@ -374,13 +372,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         if (servicesConnected()) {
             // Get the current location
             Location lastLocation = LocationServices.FusedLocationApi.getLastLocation(mLocationClient);
-            mLastLocation = new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude());
+            ShoprApp.setLastLocation(new LatLng(lastLocation.getLatitude(), lastLocation.getLongitude()));
             EventBus.getDefault().postSticky(new LocationUpdateEvent());
         }
-    }
-
-    public LatLng getLastLocation() {
-        return mLastLocation;
     }
 
     public class LocationUpdateEvent {

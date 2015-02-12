@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.LatLng;
 import com.uwetrottmann.androidutils.Maps;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.adapters.ItemAdapter;
 import com.uwetrottmann.shopr.adapters.ItemAdapter.OnItemCritiqueListener;
 import com.uwetrottmann.shopr.adapters.ItemAdapter.OnItemDisplayListener;
@@ -120,7 +121,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         if (args != null) {
             isInit = args.getBoolean("is init");
         }
-        LatLng location = ((MainActivity) getActivity()).getLastLocation();
+        LatLng location = ShoprApp.getLastLocation();
         return new ItemLoader(getActivity(), location, isInit);
     }
 

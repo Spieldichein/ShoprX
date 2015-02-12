@@ -114,6 +114,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 //Sets the sex of the item.
                 item.setSex(new Sex(query.getString(6)));
 
+                item.shopId(query.getInt(7));
+
                 caseBase.add(item);
             }
 

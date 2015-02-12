@@ -175,4 +175,8 @@ public class ScenarioContext {
         }
         return _instance;
     }
+
+    public DistanceToShop getDistanceToShop() {
+        return mDistanceToShop;
+    }
 }

@@ -12,16 +12,16 @@ import java.util.Map;
  * This enum provides a measurement on how far away a given shop can be in order to display items from this shop
  */
 public enum DistanceToShop {
-    LESS_THAN_2KM(R.string.upTo2Km, 2),
-    LESS_THAN_5KM(R.string.upTo5Km, 5),
+    LESS_THAN_2KM(R.string.upTo2Km, 2000),
+    LESS_THAN_5KM(R.string.upTo5Km, 5000),
     ANY_DISTANCE(R.string.anyShop, 0);
 
-    int mDistance;
+    float mDistance;
     int mInstanceNumber;
 
     private static Map<String, DistanceToShop> sAvailableDistances = new HashMap<String, DistanceToShop>();
 
-    DistanceToShop(int idInR, int distanceToLocation) {
+    DistanceToShop(int idInR, float distanceToLocation) {
         this.mInstanceNumber = idInR;
         this.mDistance = distanceToLocation;
     }
@@ -39,5 +39,9 @@ public enum DistanceToShop {
     @Override
     public String toString(){
         return ShoprApp.getContext().getString(mInstanceNumber);
+    }
+
+    public float getDistance(){
+        return mDistance;
     }
 }

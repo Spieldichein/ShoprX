@@ -15,16 +15,19 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.uwetrottmann.androidutils.Lists;
 import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
+import com.uwetrottmann.shopr.context.model.DistanceToShop;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
 import com.uwetrottmann.shopr.loaders.ShopLoader;
 import com.uwetrottmann.shopr.model.Shop;
 import com.uwetrottmann.shopr.settings.AppSettings;
 import com.uwetrottmann.shopr.ui.ItemListFragment.ShopUpdateEvent;
 import com.uwetrottmann.shopr.ui.MainActivity.LocationUpdateEvent;
 
-import de.greenrobot.event.EventBus;
-
 import java.util.List;
 import java.util.Map;
+
+import de.greenrobot.event.EventBus;
 
 public class ShopMapFragment extends SupportMapFragment implements LoaderCallbacks<List<Shop>> {
 
@@ -70,18 +73,20 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
         if (!mIsInitialized) {
             Log.d(TAG, "Initializing map.");
 
-            LatLng userPosition = ((MainActivity) getActivity()).getLastLocation();
+            LatLng userPosition = ShoprApp.getLastLocation();
             if (userPosition == null) {
                 return;
             }
 
             // move camera to current position
-            getMap().moveCamera(
-                    CameraUpdateFactory.newLatLngZoom(userPosition, ZOOM_LEVEL_INITIAL));
+            getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(userPosition, ZOOM_LEVEL_INITIAL));
+
+            int radius = getRadius();
+
             // draw a circle around it
             getMap().addCircle(new CircleOptions()
                     .center(userPosition)
-                    .radius(RADIUS_METERS)
+                    .radius(radius)
                     .strokeColor(getResources().getColor(R.color.lilac))
                     .strokeWidth(4)
                     .fillColor(getResources().getColor(R.color.lilac_transparent)));
@@ -90,7 +95,24 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
         }
     }
 
+    /**
+     * Retrieves the radius currently specified by the person.
+     * @return the radius in meters.
+     */
+    private int getRadius(){
+        //Check whether we have a context scenario and draw the line accordingly.
+        ScenarioContext context = ScenarioContext.getInstance();
+        DistanceToShop distanceToShop = context.getDistanceToShop();
+        if (distanceToShop != null){
+            return (int) distanceToShop.getDistance();
+        }
+
+        return RADIUS_METERS;
+    }
+
     private void onUpdateShops(List<Shop> shops) {
+        ShoprApp.setShopList(shops);
+
         // remove existing markers
         if (mShopMarkers != null) {
             for (Marker marker : mShopMarkers) {

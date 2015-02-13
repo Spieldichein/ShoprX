@@ -83,7 +83,7 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
         }
 
         String[] columns = new String[] { Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,
-                Items.COLOR, Items.SEX, Shops.REF_SHOP_ID, Items.SEASON, Items.NAME };
+                Items.COLOR, Items.SEX, Shops.REF_SHOP_ID, Items.SEASON, Items.NAME, Items.STOCK };
 
         Cursor query = getContext().getContentResolver().query( Items.CONTENT_URI, columns, selectionString, null, limitString);
 
@@ -115,6 +115,8 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
                 item.setSex(new Sex(query.getString(6)));
 
                 item.shopId(query.getInt(7));
+
+                item.setItemsInStock(query.getInt(10));
 
                 caseBase.add(item);
             }

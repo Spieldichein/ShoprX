@@ -341,6 +341,9 @@
     <string name="hoodie">Hoodie</string>
     <string name="jumper">Jumper</string>
     <string name="tunic">Tunic</string>
+    <string name="stock">Stock</string>
+    <string name="items">Items</string>
+    <string name="item">Item</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

@@ -106,10 +106,16 @@ public class ItemDetailsActivity extends Activity {
         description.append(": ");
         description.append(mItem.attributes().getAttributeById(Color.ID).currentValue().descriptor());
         description.append("\n");
-//        description.append(ShoprApp.getContext().getString(R.string.label));
-//        description.append(": ");
-//        description.append(mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor());
-//        description.append("\n");
+        description.append(ShoprApp.getContext().getString(R.string.stock));
+        description.append(": ");
+        description.append(mItem.getItemsInStock());
+        description.append(" ");
+        if (mItem.getItemsInStock() != 1){ // Set the plural correctly
+            description.append(ShoprApp.getContext().getString(R.string.items));
+        } else {
+            description.append(ShoprApp.getContext().getString(R.string.item));
+        }
+        description.append("\n");
         description.append(ShoprApp.getContext().getString(R.string.price));
         description.append(": ");
         description.append(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(mItem.price().doubleValue()));

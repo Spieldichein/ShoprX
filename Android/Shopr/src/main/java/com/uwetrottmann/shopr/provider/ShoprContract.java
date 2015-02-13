@@ -24,6 +24,8 @@ public class ShoprContract {
         String NAME = "item_name";
         
         String SEASON = "item_season";
+
+        String STOCK = "item_stock";
     }
 
     interface ShopsColumns {

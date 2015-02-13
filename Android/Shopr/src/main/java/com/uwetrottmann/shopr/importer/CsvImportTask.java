@@ -137,6 +137,12 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         clothingType = Character.toUpperCase(clothingType.charAt(0)) + clothingType.substring(1);
 
                         values.put(Items.CLOTHING_TYPE, clothingType);
+
+                        int stock = random.nextInt(40); // Every 40th-item will have 0 in stock. That makes about 100 items per 4000 items in the case base
+                        if (stock > 10){
+                            stock = (stock % 10) + 1; //Modulo 10 in order to achieve an roughly equal distribution but only with every 40th-item being not in stock
+                        }
+                        values.put(Items.STOCK, stock);
                         break;
                 }
 

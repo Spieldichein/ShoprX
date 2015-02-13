@@ -28,6 +28,8 @@ public class Item {
 
     private double proximityToStereotype;
 
+    private int mItemsInStock;
+
     public int id() {
         return id;
     }
@@ -122,6 +124,18 @@ public class Item {
      */
     public void setProximityToStereotype(double proximityToStereotype) {
         this.proximityToStereotype = proximityToStereotype;
+    }
+
+    /**
+     * Method that sets the amount of items that are currently available in the given shop.
+     * @param numberOfItems the number of items in stock.
+     */
+    public void setItemsInStock(int numberOfItems){
+        mItemsInStock = numberOfItems;
+    }
+
+    public int getItemsInStock(){
+        return mItemsInStock;
     }
 
     @Override

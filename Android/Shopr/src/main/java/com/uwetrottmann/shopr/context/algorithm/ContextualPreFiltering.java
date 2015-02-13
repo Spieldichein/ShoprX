@@ -20,6 +20,8 @@ import java.util.List;
  */
 public class ContextualPreFiltering {
 
+    private static boolean sOnlyItemsInStock = true;
+
     /**
      * In this method everything concerning the shops will be pre-filtered. Therefore we ensure
      * that the user gets shops within the selected distance as well as within the given opening
@@ -42,6 +44,7 @@ public class ContextualPreFiltering {
         // Third we check whether there is a context set at the moment.
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
         DistanceToShop distanceToShop = scenarioContext.getDistanceToShop();
+        sOnlyItemsInStock = scenarioContext.isOnlyItemsInStock();
 
         //If there were shops and a context object for the distance to the shops, then we can proceed
         if (shops != null && distanceToShop != null){
@@ -62,7 +65,7 @@ public class ContextualPreFiltering {
                 //Create a new list in which we put all the items that are allowed. Afterwards we return the limited case base.
                 List<Item> newCases = new ArrayList<Item>();
                 for (Item item : cases) {
-                    if (shopAvailable[item.shopId()]){
+                    if (shopAvailable[item.shopId()] && itemInStock(item)){
                         newCases.add(item);
                     }
                 }
@@ -71,5 +74,15 @@ public class ContextualPreFiltering {
         }
 
         return cases;
+    }
+
+    /**
+     * Returns whether the item is in stock and whether it should be included/excluded from the calculation
+     * of the case base.
+     * @param item The item under investigation
+     * @return true if the item should be included, false if it is not in stock and only items in stock shall be shown
+     */
+    private static boolean itemInStock(Item item){
+        return !(sOnlyItemsInStock && item.getItemsInStock() == 0);
     }
 }

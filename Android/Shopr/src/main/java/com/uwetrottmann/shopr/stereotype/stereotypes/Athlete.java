@@ -10,7 +10,7 @@ import com.uwetrottmann.shopr.stereotype.user.Music;
 import java.util.HashMap;
 
 /**
- * Created by yannick on 29.01.15.
+ * Created by Yannick on 29.01.15.
  *
  * Mostly a male stereotype. Relates to a person that does a lot of sports or is
  * a big sports fan. Wears training outfits or outfits that emphasize their physique on a daily
@@ -37,8 +37,7 @@ public class Athlete extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cremeColored), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.triangle), 4);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.dark), 5);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.emo), 1);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.emo), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.tight), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.yellow), 5);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.girly), 3);
@@ -61,8 +60,7 @@ public class Athlete extends AbstractStereotype {
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.plush), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.retro), 2);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.romantic), 1);
-        attributeProbabilityMap.put(ShoprApp.getContext()
-                .getString(R.string.red), 4);
+        attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.red), 4);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.ribbon), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.cord), 1);
         attributeProbabilityMap.put(ShoprApp.getContext().getString(R.string.sport), 9);
@@ -83,13 +81,28 @@ public class Athlete extends AbstractStereotype {
 
     private void buildBrandMap() {
         this.brandProbabilityMap = new HashMap<Label.Value, Integer>();
+        brandProbabilityMap.put(Label.Value.A7_FOR_ALL_MANKIND, 3);
         brandProbabilityMap.put(Label.Value.ADIDAS, 9);
         brandProbabilityMap.put(Label.Value.ALLEGRA_K, 2);
+        brandProbabilityMap.put(Label.Value.ALPHA_INDUSTRIES, 7);
+        brandProbabilityMap.put(Label.Value.ANNA_FIELD, 3);
+        brandProbabilityMap.put(Label.Value.BEACH_PANTIES, 3);
+        brandProbabilityMap.put(Label.Value.BEN_SHERMAN, 2);
+        brandProbabilityMap.put(Label.Value.BENCH, 6);
+        brandProbabilityMap.put(Label.Value.BENETTON, 2);
+        brandProbabilityMap.put(Label.Value.BILLABONG, 5);
         brandProbabilityMap.put(Label.Value.BOOM_BAP, 5);
-        brandProbabilityMap.put(Label.Value.HUGO_BOSS, 5);
+        brandProbabilityMap.put(Label.Value.BOSS_ORANGE, 5);
         brandProbabilityMap.put(Label.Value.BRAX, 5);
+        brandProbabilityMap.put(Label.Value.BUGATTI, 2);
+        brandProbabilityMap.put(Label.Value.BURTON, 7);
         brandProbabilityMap.put(Label.Value.BYE_BYE_KITTY, 2);
+        brandProbabilityMap.put(Label.Value.C_DIOR, 2);
+        brandProbabilityMap.put(Label.Value.CALANDO, 4);
+        brandProbabilityMap.put(Label.Value.CALVIN_KLEIN, 5);
+        brandProbabilityMap.put(Label.Value.CAMEL_ACTIVE, 2);
         brandProbabilityMap.put(Label.Value.CARHARTT, 6);
+        brandProbabilityMap.put(Label.Value.CELIO, 3);
         brandProbabilityMap.put(Label.Value.CHANEL, 2);
         brandProbabilityMap.put(Label.Value.CONVERSE, 7);
         brandProbabilityMap.put(Label.Value.CUPCAKECULT, 2);
@@ -97,7 +110,6 @@ public class Athlete extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.DENIM, 7);
         brandProbabilityMap.put(Label.Value.DICKIES, 7);
         brandProbabilityMap.put(Label.Value.DIESEL, 7);
-        brandProbabilityMap.put(Label.Value.C_DIOR, 2);
         brandProbabilityMap.put(Label.Value.ESPRIT, 6);
         brandProbabilityMap.put(Label.Value.ETNIES, 7);
         brandProbabilityMap.put(Label.Value.FJÄLLRÄVEN, 8);
@@ -107,22 +119,45 @@ public class Athlete extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.H_N_M, 5);
         brandProbabilityMap.put(Label.Value.HRLONDON, 2);
         brandProbabilityMap.put(Label.Value.HELLBUNNY, 3);
+        brandProbabilityMap.put(Label.Value.HUGO_BOSS, 5);
         brandProbabilityMap.put(Label.Value.INNOCENT, 3);
         brandProbabilityMap.put(Label.Value.J_CREW, 4);
         brandProbabilityMap.put(Label.Value.LACOSTE, 5);
+        brandProbabilityMap.put(Label.Value.LAGERFELD, 2);
+        brandProbabilityMap.put(Label.Value.LEE, 4);
         brandProbabilityMap.put(Label.Value.LEVI_S, 6);
         brandProbabilityMap.put(Label.Value.LIVINGDEADSOULS, 2);
         brandProbabilityMap.put(Label.Value.LOUIS_VUITTON, 2);
         brandProbabilityMap.put(Label.Value.LRG, 5);
         brandProbabilityMap.put(Label.Value.MAZINE, 6);
+        brandProbabilityMap.put(Label.Value.MEXX, 3);
+        brandProbabilityMap.put(Label.Value.MODSTROEM, 1);
+        brandProbabilityMap.put(Label.Value.MORE_N_MORE, 1);
+        brandProbabilityMap.put(Label.Value.MORGAN, 2);
+        brandProbabilityMap.put(Label.Value.MOEVE, 6);
+        brandProbabilityMap.put(Label.Value.NAF_NAF, 2);
+        brandProbabilityMap.put(Label.Value.NAPAPIJRI, 2);
         brandProbabilityMap.put(Label.Value.NEW_YORKER, 6);
         brandProbabilityMap.put(Label.Value.NIKE, 9);
         brandProbabilityMap.put(Label.Value.PEPE, 6);
         brandProbabilityMap.put(Label.Value.PRADA, 2);
+        brandProbabilityMap.put(Label.Value.PUMA, 9);
+        brandProbabilityMap.put(Label.Value.QUIKSILVER, 7);
         brandProbabilityMap.put(Label.Value.RALPH_LAUREN, 4);
+        brandProbabilityMap.put(Label.Value.RAINS, 3);
         brandProbabilityMap.put(Label.Value.REEBOK, 9);
+        brandProbabilityMap.put(Label.Value.RENE_LEZARD, 2);
+        brandProbabilityMap.put(Label.Value.ROSEMUNDE, 2);
+        brandProbabilityMap.put(Label.Value.ROXY, 5);
         brandProbabilityMap.put(Label.Value.S_OLIVER, 6);
+        brandProbabilityMap.put(Label.Value.SCHIESSER, 4);
+        brandProbabilityMap.put(Label.Value.SCHOTT_NYC, 5);
         brandProbabilityMap.put(Label.Value.SCOTCH_N_SODA, 6);
+        brandProbabilityMap.put(Label.Value.SEAFOLLY, 3);
+        brandProbabilityMap.put(Label.Value.SELECTED_FEMME, 2);
+        brandProbabilityMap.put(Label.Value.SELECTED_HOMME, 2);
+        brandProbabilityMap.put(Label.Value.SEIDENSTICKER, 2);
+        brandProbabilityMap.put(Label.Value.SISLEY, 1);
         brandProbabilityMap.put(Label.Value.SPIRAL, 2);
         brandProbabilityMap.put(Label.Value.SUPERDRY, 5);
         brandProbabilityMap.put(Label.Value.SUPERTRASH, 2);
@@ -138,6 +173,7 @@ public class Athlete extends AbstractStereotype {
         brandProbabilityMap.put(Label.Value.VERO_MODA, 2);
         brandProbabilityMap.put(Label.Value.VERSACE, 2);
         brandProbabilityMap.put(Label.Value.VILA, 1);
+        brandProbabilityMap.put(Label.Value.VOLCOM, 5);
         brandProbabilityMap.put(Label.Value.VOSSEN, 3);
         brandProbabilityMap.put(Label.Value.WRANGLER, 2);
         brandProbabilityMap.put(Label.Value.YOUR_TURN,7);

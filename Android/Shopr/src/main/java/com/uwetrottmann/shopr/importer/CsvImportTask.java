@@ -108,6 +108,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         values.put(Shops.OPENING_HOURS, line[2]);
                         values.put(Shops.LAT, line[5]);
                         values.put(Shops.LONG, line[6]);
+                        values.put(Shops.CROWDED, random.nextInt(5)); // Every fifth shop will be crowded
 
                         numberOfShops++;
                         break;

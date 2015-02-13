@@ -118,6 +118,14 @@ public class ScenarioContext {
     }
 
     /**
+     * Gets the context setting for the shop opening hours.
+     * @return the shopOpeningHoursModel of the current context.
+     */
+    public ShopOpeningHoursModel getShopOpeningHoursModel(){
+        return mOpeningHours;
+    }
+
+    /**
      * This method sets whether items out of stock should be available as well or only items that are in stock
      * @param onlyItemsInStock true if only items in stock shall be displayed
      */

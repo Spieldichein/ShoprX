@@ -14,7 +14,7 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "shopr.db";
 
-    public static final int DATABASE_VERSION = 8;
+    public static final int DATABASE_VERSION = 9;
 
     public interface Tables {
         String ITEMS = "items";
@@ -66,7 +66,9 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
             + Shops.LAT + " REAL,"
 
-            + Shops.LONG + " REAL"
+            + Shops.LONG + " REAL,"
+
+            + Shops.CROWDED + " INTEGER"  //There is no explicit boolean type - therefore we use int 0 = false, 1 = true
 
             + ");";
 

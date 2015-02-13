@@ -20,7 +20,8 @@ import java.util.List;
  */
 public class ContextualPreFiltering {
 
-    private static boolean sOnlyItemsInStock = true;
+    private static boolean sOnlyItemsInStock = false;
+    private static boolean sShowCrowdedShops = true;
 
     /**
      * In this method everything concerning the shops will be pre-filtered. Therefore we ensure
@@ -45,6 +46,7 @@ public class ContextualPreFiltering {
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
         DistanceToShop distanceToShop = scenarioContext.getDistanceToShop();
         sOnlyItemsInStock = scenarioContext.isOnlyItemsInStock();
+        sShowCrowdedShops = scenarioContext.isCrowdedShopsAllowed();
 
         //If there were shops and a context object for the distance to the shops, then we can proceed
         if (shops != null && distanceToShop != null){
@@ -59,7 +61,7 @@ public class ContextualPreFiltering {
                 // Write into the array whether the shops are within the given distance.
                 for (Shop shop : shops) {
                     float distance = currentLocation.distanceTo(shop.getLocationObject());
-                    shopAvailable[shop.id()] = distance <= allowedDistance; // if the distance is smaller than the allowed distance, then it will write true, else false
+                    shopAvailable[shop.id()] = (distance <= allowedDistance && isCrowdednessOkay(shop) && shop.isOpen(scenarioContext.getShopOpeningHoursModel())); // if the distance is smaller than the allowed distance, then it will write true, else false
                 }
 
                 //Create a new list in which we put all the items that are allowed. Afterwards we return the limited case base.
@@ -74,6 +76,15 @@ public class ContextualPreFiltering {
         }
 
         return cases;
+    }
+
+    /**
+     * Checks whether a shop is usually crowded and returns whether the crowdedness is okay.
+     * @param shop the shop under inspection
+     * @return true if the crowdedness of the shop is okay.
+     */
+    private static boolean isCrowdednessOkay(Shop shop){
+        return sShowCrowdedShops || !shop.isUsuallyCrowded();
     }
 
     /**

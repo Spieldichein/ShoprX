@@ -18,29 +18,39 @@ public enum ShopOpeningHoursModel {
     NOW_PLUS_90(R.string.nowPlus90, 90),
     ANYTIME(R.string.anyShop, 2880);
 
-    int mStringSelctor;
+    int mStringSelector;
     int mOpeningHours;
 
     private static Map<String, ShopOpeningHoursModel> sOpeningHours = new HashMap<String, ShopOpeningHoursModel>();
 
     ShopOpeningHoursModel(int stringSelector, int openingHours) {
-        mStringSelctor = stringSelector;
+        mStringSelector = stringSelector;
         mOpeningHours = openingHours;
     }
 
-    public static ShopOpeningHoursModel getShopOpeningHoursModel(String description){
+    static {
         if (sOpeningHours.size() == 0){
             for (ShopOpeningHoursModel open : ShopOpeningHoursModel.values()){
-                sOpeningHours.put(ShoprApp.getContext().getString(open.mStringSelctor), open);
+                sOpeningHours.put(ShoprApp.getContext().getString(open.mStringSelector), open);
             }
         }
+    }
 
+    public static ShopOpeningHoursModel getShopOpeningHoursModel(String description){
         return sOpeningHours.get(description);
+    }
+
+    /**
+     * Retrieve the minutes in the future, that the shop shall be open in.
+     * @return the minutes in the future, when the shop shall be open
+     */
+    public int getOpeningHours(){
+        return mOpeningHours;
     }
 
     @Override
     public String toString(){
-        return ShoprApp.getContext().getString(mStringSelctor);
+        return ShoprApp.getContext().getString(mStringSelector);
     }
 
 }

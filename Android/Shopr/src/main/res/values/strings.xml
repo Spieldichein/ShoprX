@@ -262,11 +262,11 @@
     <string name="selectShopDistance">Distance to shop:</string>
 
     <string name="now">Now</string>
-    <string name="nowPlus30">Now + next 30 minutes</string>
-    <string name="nowPlus60">Now + next 60 minutes</string>
-    <string name="nowPlus90">Now + next 90 minutes</string>
+    <string name="nowPlus30">In 30 minutes</string>
+    <string name="nowPlus60">In 60 minutes</string>
+    <string name="nowPlus90">In 90 minutes</string>
     <string name="anyShop">Include all shops</string>
-    <string name="selectShopOpeningHours">Shop Opening Hours:</string>
+    <string name="selectShopOpeningHours">Shop shall be open:</string>
     <string name="showItemsThatAreNotInStock">Only show items in stock:</string>
     <string name="showCrowdedShops">Show shops that are crowded:</string>
 

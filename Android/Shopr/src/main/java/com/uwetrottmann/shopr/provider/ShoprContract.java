@@ -39,6 +39,8 @@ public class ShoprContract {
         String LONG = "shop_long";
 
         String OPENING_HOURS = "shop_opening_hours";
+
+        String CROWDED = "shop_crowded";
     }
 
     interface StatsColumns {

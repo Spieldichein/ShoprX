@@ -344,6 +344,11 @@
     <string name="stock">Stock</string>
     <string name="items">Items</string>
     <string name="item">Item</string>
+    <string name="open_today">Open today:</string>
+    <string name="DistanceToShop">Distance:</string>
+    <string name="crowded">Crowded</string>
+    <string name="not_crowded">Not crowded</string>
+    <string name="closed_today">Closed today</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/popup_shopTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:textSize="@dimen/textSizeHeading"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/popup_shopSellsXItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_below="@id/popup_shopTitle"/>
+
+    <TextView
+        android:id="@+id/popup_shopCrowded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_below="@id/popup_shopSellsXItems"/>
+
+
+    <TextView
+        android:id="@+id/popup_shopTitleOpeningHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_today"
+        android:textStyle="bold"
+        android:layout_below="@id/popup_shopCrowded"/>
+
+    <TextView
+        android:id="@+id/popup_shopOpeningHoursToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_toEndOf="@id/popup_shopTitleOpeningHours"
+        android:layout_toRightOf="@id/popup_shopTitleOpeningHours"
+        android:layout_alignBottom="@id/popup_shopTitleOpeningHours"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"/>
+
+    <TextView
+        android:id="@+id/popup_shopTitleDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_shopTitleOpeningHours"
+        android:text="@string/DistanceToShop"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/popup_shopDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_toRightOf="@id/popup_shopTitleDistance"
+        android:layout_toEndOf="@id/popup_shopTitleDistance"
+        android:layout_below="@id/popup_shopTitleOpeningHours"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"/>
+
+</RelativeLayout>

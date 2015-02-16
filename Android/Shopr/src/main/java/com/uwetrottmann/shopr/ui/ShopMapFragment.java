@@ -1,6 +1,7 @@
 
 package com.uwetrottmann.shopr.ui;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
@@ -23,6 +24,7 @@ import com.uwetrottmann.shopr.model.Shop;
 import com.uwetrottmann.shopr.settings.AppSettings;
 import com.uwetrottmann.shopr.ui.ItemListFragment.ShopUpdateEvent;
 import com.uwetrottmann.shopr.ui.MainActivity.LocationUpdateEvent;
+import com.uwetrottmann.shopr.ui.extensions.ShopInfoWindowAdapter;
 
 import java.util.List;
 import java.util.Map;
@@ -43,6 +45,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
     private List<Marker> mShopMarkers;
     private boolean mIsInitialized;
     private Map<Integer, Integer> mShopsWithItems;
+    private ShopInfoWindowAdapter mInfoWindowAdapter;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
 
         mIsInitialized = false;
 
+        mInfoWindowAdapter = new ShopInfoWindowAdapter(getLayoutInflater(savedInstanceState));
         // enable my location feature
         getMap().setMyLocationEnabled(!AppSettings.isUsingFakeLocation(getActivity()));
 
@@ -59,8 +63,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
     @Override
     public void onStart() {
         super.onStart();
-        EventBus.getDefault()
-                .registerSticky(this, LocationUpdateEvent.class, ShopUpdateEvent.class);
+        EventBus.getDefault().registerSticky(this, LocationUpdateEvent.class, ShopUpdateEvent.class);
     }
 
     @Override
@@ -120,6 +123,8 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
             }
         }
 
+        getMap().setInfoWindowAdapter(mInfoWindowAdapter);
+
         List<Marker> shopMarkersNew = Lists.newArrayList();
 
         for (Shop shop : shops) {
@@ -134,12 +139,32 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
                 color = BitmapDescriptorFactory.HUE_AZURE;
             }
 
+
+            StringBuilder snippetBuilder = new StringBuilder(getString(R.string.has_x_recommendations, itemCount));
+            snippetBuilder.append("\n");
+            if (shop.isUsuallyCrowded()){
+                snippetBuilder.append(getString(R.string.crowded));
+            } else {
+                snippetBuilder.append(getString(R.string.not_crowded));
+            }
+
+            snippetBuilder.append("\n");
+            snippetBuilder.append(shop.openToday());
+
+            snippetBuilder.append("\n");
+            LatLng loc = ShoprApp.getLastLocation();
+            Location location = new Location("Current position");
+            location.setLatitude(loc.latitude);
+            location.setLongitude(loc.longitude);
+            snippetBuilder.append(String.format("%.2f", shop.getLocationObject().distanceTo(location) / 1000));
+            snippetBuilder.append(" km");
+
             // place marker
             Marker marker = getMap().addMarker(
                     new MarkerOptions()
                             .position(shop.location())
                             .title(shop.name())
-                            .snippet(getString(R.string.has_x_recommendations, itemCount))
+                            .snippet(snippetBuilder.toString())
                             .icon(BitmapDescriptorFactory.defaultMarker(color)));
             shopMarkersNew.add(marker);
         }

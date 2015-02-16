@@ -4,6 +4,8 @@ package com.uwetrottmann.shopr.model;
 import android.location.Location;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.context.model.ShopOpeningHoursModel;
 
 import java.util.Calendar;
@@ -85,6 +87,39 @@ public class Shop {
      */
     public void setShopOpeningHours(OpeningHours[] openingHours){
         mOpeningHours = openingHours;
+    }
+
+    /**
+     * Returns a string containing the opening hours for today.
+     * @return string including the opening hours today
+     */
+    public String openToday(){
+        Calendar calendar = Calendar.getInstance();
+        OpeningHours openingHour = mOpeningHours[calendar.get(Calendar.DAY_OF_WEEK) - 1];
+
+        int open = openingHour.getShopOpeningTime();
+        int close = openingHour.getShopClosingTime();
+        if (open == close){
+            return ShoprApp.getContext().getString(R.string.closed_today);
+        }
+
+        int open_minutes = open % 100;
+        open = open / 100;
+
+        int close_minutes = close % 100;
+        close = close / 100;
+
+        StringBuilder builder = new StringBuilder();
+        builder.append(open);
+        builder.append(":");
+        builder.append(String.format("%02d",open_minutes));
+        builder.append(" - ");
+        builder.append(close);
+        builder.append(":");
+        builder.append(String.format("%02d",close_minutes));
+        builder.append("h");
+
+        return builder.toString();
     }
 
 }

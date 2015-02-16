@@ -42,4 +42,12 @@ public class OpeningHours {
 
         return (compare >= mShopOpeningTime && compare <= mShopClosingTime);
     }
+
+    public int getShopOpeningTime(){
+        return mShopOpeningTime;
+    }
+
+    public int getShopClosingTime(){
+        return mShopClosingTime;
+    }
 }

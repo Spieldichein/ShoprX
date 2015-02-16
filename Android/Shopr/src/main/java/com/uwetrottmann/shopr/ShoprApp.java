@@ -3,6 +3,7 @@ package com.uwetrottmann.shopr;
 
 import android.app.Application;
 import android.content.Context;
+import android.location.Location;
 import android.preference.PreferenceManager;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
@@ -70,6 +71,20 @@ public class ShoprApp extends Application {
 
     public static synchronized List<Shop> getShopList(){
         return sShopList;
+    }
+
+    /**
+     * Returns the distance to the current location in km.
+     * @param shopLocation An object containing the location of something
+     * @return A string with the distance
+     */
+    public static String getDistanceToCurrentLocationInKm(Location shopLocation){
+        LatLng loc = ShoprApp.getLastLocation();
+        Location location = new Location("Current position");
+        location.setLatitude(loc.latitude);
+        location.setLongitude(loc.longitude);
+
+        return String.format("%.2f", location.distanceTo(shopLocation) / 1000) + " km";
     }
 
 }

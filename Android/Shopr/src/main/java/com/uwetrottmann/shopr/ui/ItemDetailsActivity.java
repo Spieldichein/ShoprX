@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,6 +25,7 @@ import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.algorithm.model.Label;
 import com.uwetrottmann.shopr.eval.ResultsActivity;
 import com.uwetrottmann.shopr.eval.Statistics;
+import com.uwetrottmann.shopr.model.Shop;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
 
 import java.text.NumberFormat;
@@ -121,6 +123,33 @@ public class ItemDetailsActivity extends Activity {
         description.append(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(mItem.price().doubleValue()));
         TextView itemDescription = (TextView) findViewById(R.id.textViewItemDetailsAttributes);
         itemDescription.setText(description);
+
+        List<Shop> shops = ShoprApp.getShopList();
+        if (shops != null) {
+            for (Shop shop : shops) {
+                if (mItem.shopId() == shop.id()) {
+                    TextView titleShop = (TextView) findViewById(R.id.popup_shopTitle);
+                    TextView shopCrowded = (TextView) findViewById(R.id.popup_shopCrowded);
+                    TextView open = (TextView) findViewById(R.id.popup_shopOpeningHoursToday);
+                    TextView distance = (TextView) findViewById(R.id.popup_shopDistance);
+
+                    titleShop.setText(ShoprApp.getContext().getString(R.string.availableAt, shop.name()));
+                    if (shop.isUsuallyCrowded()) {
+                        shopCrowded.setText(R.string.crowded);
+                    } else {
+                        shopCrowded.setText(R.string.not_crowded);
+                    }
+
+                    open.setText(shop.openToday());
+                    String distanceString = ShoprApp.getDistanceToCurrentLocationInKm(shop.getLocationObject());
+                    Log.d("Distance String", distanceString);
+                    Log.d("Location object", ""+shop.getLocationObject());
+                    distance.setText(distanceString);
+
+                    break;
+                }
+            }
+        }
     }
 
     @Override

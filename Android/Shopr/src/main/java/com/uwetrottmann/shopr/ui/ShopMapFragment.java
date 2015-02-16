@@ -1,7 +1,6 @@
 
 package com.uwetrottmann.shopr.ui;
 
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.Loader;
@@ -152,12 +151,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
             snippetBuilder.append(shop.openToday());
 
             snippetBuilder.append("\n");
-            LatLng loc = ShoprApp.getLastLocation();
-            Location location = new Location("Current position");
-            location.setLatitude(loc.latitude);
-            location.setLongitude(loc.longitude);
-            snippetBuilder.append(String.format("%.2f", shop.getLocationObject().distanceTo(location) / 1000));
-            snippetBuilder.append(" km");
+            snippetBuilder.append(ShoprApp.getDistanceToCurrentLocationInKm(shop.getLocationObject()));
 
             // place marker
             Marker marker = getMap().addMarker(

@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/choice_confirmation"
-        android:textAppearance="@style/TextAppearance.Large.Light" />
+        android:textAppearance="@style/TextAppearance.Light"
+        android:textSize="18sp"/>
 
     <TextView
         android:id="@+id/textViewItemDetailsSubtitle"
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textViewItemDetailsTitle"
         android:text="@string/choice_instructions"
-        android:textAppearance="@style/TextAppearance" />
+        android:textAppearance="@style/TextAppearance.Light"/>
 
     <ImageView
         android:id="@+id/imageViewItemDetails"
@@ -30,7 +31,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textViewItemDetailsSubtitle"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:scaleType="fitCenter"
         android:src="@drawable/armani"
         android:contentDescription="@string/description_item_picture"
@@ -43,20 +44,110 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textViewItemDetailsSubtitle"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_toLeftOf="@+id/imageViewItemDetails"
         android:layout_toStartOf="@+id/imageViewItemDetails"
-        android:lineSpacingMultiplier="1.1"
+        android:textAppearance="@style/TextAppearance"
+        android:text="@string/no_data" />
+
+    <TextView
+        android:id="@+id/popup_shopTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewItemDetailsAttributes"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_marginTop="5dp"
+        android:text="@string/availableAt"
+        android:textSize="@dimen/textSizeHeading"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
+
+    <TextView
+        android:id="@+id/popup_shopCrowded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/no_data"
-        android:textAppearance="@style/TextAppearance.Light" />
+        android:layout_below="@id/popup_shopTitle"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-3dp"/>
+
+
+    <TextView
+        android:id="@+id/popup_shopTitleOpeningHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_today"
+        android:textStyle="bold"
+        android:layout_below="@id/popup_shopCrowded"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-3dp"/>
+
+    <TextView
+        android:id="@+id/popup_shopOpeningHoursToday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_toEndOf="@id/popup_shopTitleOpeningHours"
+        android:layout_toRightOf="@id/popup_shopTitleOpeningHours"
+        android:layout_below="@id/popup_shopTitleOpeningHours"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="-3dp"/>
+
+    <TextView
+        android:id="@+id/popup_shopTitleDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/popup_shopOpeningHoursToday"
+        android:text="@string/DistanceToShop"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-3dp"/>
+
+    <TextView
+        android:id="@+id/popup_shopDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:layout_toRightOf="@id/popup_shopTitleDistance"
+        android:layout_toEndOf="@id/popup_shopTitleDistance"
+        android:layout_below="@id/popup_shopTitleDistance"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:textAppearance="@style/TextAppearance"
+        android:layout_toStartOf="@id/imageViewItemDetails"
+        android:layout_toLeftOf="@id/imageViewItemDetails"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-3dp"/>
 
     <Button
         android:id="@+id/buttonItemDetailsFinish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageViewItemDetails"
+        android:layout_below="@id/popup_shopDistance"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/default_margin"
         android:text="@string/choice_finish" />
 
 </RelativeLayout>

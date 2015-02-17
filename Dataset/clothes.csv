@@ -246,9 +246,9 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17320,TW421J022-Q11,Black,21,SUMMER,https://secure-i3.ztat.net/detail/TW/42/1J/02/2Q/11/TW421J022-Q11@14.jpg,Hoodie - black,TWINTIP,FEMALE,womens-clothing-hoodies
 17321,TW421J022-C11,Grey,21,SUMMER,https://secure-i3.ztat.net/detail/TW/42/1J/02/2C/11/TW421J022-C11@12.jpg,Hoodie - grey melange,TWINTIP,FEMALE,womens-clothing-hoodies
 17322,HI121J01L-C11,Grey,70,SUMMER,https://secure-i3.ztat.net/detail/HI/12/1J/01/LC/11/HI121J01L-C11@14.jpg,MAGGY - Hoodie - light heather grey,Hilfiger Denim,FEMALE,womens-clothing-hoodies
-17323,E1321J00P-C11,Grey,55,SUMMER,https://secure-i5.ztat.net/detail/E1/32/1J/00/PC/11/E1321J00P-C11@14.jpg,SUNABICHE - Hoodie - melange light grey,Eleven Paris,FEMALE,womens-clothing-hoodies
+1.73E+04,E1321J00P-C11,Grey,55,SUMMER,https://secure-i5.ztat.net/detail/E1/32/1J/00/PC/11/E1321J00P-C11@14.jpg,SUNABICHE - Hoodie - melange light grey,Eleven Paris,FEMALE,womens-clothing-hoodies
 17324,NI121J01V-C13,Grey,46,SUMMER,https://secure-i3.ztat.net/detail/NI/12/1J/01/VC/13/NI121J01V-C13@14.jpg,RALLY FUNNEL - Sweatshirt - grey heather,Nike Sportswear,FEMALE,womens-clothing-hoodies
-17325,E1321J007-Q11,Black,50,SUMMER,https://secure-i6.ztat.net/detail/E1/32/1J/00/7Q/11/E1321J007-Q11@16.jpg,SUN MOKAT - Hoodie - black,Eleven Paris,FEMALE,womens-clothing-hoodies
+1.73E+04,E1321J007-Q11,Black,50,SUMMER,https://secure-i6.ztat.net/detail/E1/32/1J/00/7Q/11/E1321J007-Q11@16.jpg,SUN MOKAT - Hoodie - black,Eleven Paris,FEMALE,womens-clothing-hoodies
 17326,WI321J02K-K11,Blue,150,SUMMER,https://secure-i5.ztat.net/detail/WI/32/1J/02/KK/11/WI321J02K-K11@2.jpg,MISS AMERICA - Sweatshirt - multi,Wildfox,FEMALE,womens-clothing-hoodies
 17327,AD121J09V-Q11,Black,47,SUMMER,https://secure-i5.ztat.net/detail/AD/12/1J/09/VQ/11/AD121J09V-Q11@16.jpg,Hoodie - black,adidas Originals,FEMALE,womens-clothing-hoodies
 17328,HI121J01L-K11,Blue,70,SUMMER,https://secure-i1.ztat.net/detail/HI/12/1J/01/LK/11/HI121J01L-K11@14.jpg,MAGGY - Sweatshirt - blue,Hilfiger Denim,FEMALE,womens-clothing-hoodies
@@ -279,7 +279,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17353,FO521J000-Q11,Black,50,SUMMER,https://secure-i4.ztat.net/detail/FO/52/1J/00/0Q/11/FO521J000-Q11@2.jpg,KILLARNEY - Hoodie - black/grey,Forvert,FEMALE,womens-clothing-hoodies
 17354,FO521D00D-K12,Blue,37,WINTER,https://secure-i1.ztat.net/detail/FO/52/1D/00/DK/12/FO521D00D-K12@2.jpg,HILGI - Hoodie - blue,Forvert,FEMALE,womens-clothing-hoodies
 17355,TW421J01S-Q11,Black,17,SUMMER,https://secure-i6.ztat.net/detail/TW/42/1J/01/SQ/11/TW421J01S-Q11@14.jpg,Sweatshirt - black,TWINTIP,FEMALE,womens-clothing-hoodies
-17356,E1321J007-C11,Grey,55,SUMMER,https://secure-i4.ztat.net/detail/E1/32/1J/00/7C/11/E1321J007-C11@12.jpg,SUN MOKAT - Hoodie - melang light grey,Eleven Paris,FEMALE,womens-clothing-hoodies
+1.74E+04,E1321J007-C11,Grey,55,SUMMER,https://secure-i4.ztat.net/detail/E1/32/1J/00/7C/11/E1321J007-C11@12.jpg,SUN MOKAT - Hoodie - melang light grey,Eleven Paris,FEMALE,womens-clothing-hoodies
 17357,NI121J02W-Q11,Black,38,SUMMER,https://secure-i2.ztat.net/detail/NI/12/1J/02/WQ/11/NI121J02W-Q11@14.jpg,GYM VINTAGE - Sweatshirt - black,Nike Sportswear,FEMALE,womens-clothing-hoodies
 17358,AD121J0A1-C11,Grey,50,SUMMER,https://secure-i6.ztat.net/detail/AD/12/1J/0A/1C/11/AD121J0A1-C11@14.jpg,CITY - Hoodie - medium grey heather,adidas Originals,FEMALE,womens-clothing-hoodies
 17359,GA321J00S-D11,Grey,75,WINTER,https://secure-i6.ztat.net/detail/GA/32/1J/00/SD/11/GA321J00S-D11@2.jpg,Hoodie - light grey,Gant,FEMALE,womens-clothing-hoodies
@@ -589,7 +589,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17664,4BE21I073-K11,Blue,18,WINTER,https://secure-i1.ztat.net/detail/4B/E2/1I/07/3K/11/4BE21I073-K11@5.jpg,Jumper - darkblue,Benetton,FEMALE,womens-clothing-jumpers
 17665,TO121I02F-605,Petrol,65,WINTER,https://secure-i1.ztat.net/detail/TO/12/1I/02/F6/05/TO121I02F-605@7.jpg,MOLLY - Jumper - ocean depths,Tommy Hilfiger,FEMALE,womens-clothing-jumpers
 17666,S7021I019-503,Blue,20,WINTER,https://secure-i5.ztat.net/detail/S7/02/1I/01/95/03/S7021I019-503@1.1.jpg,Jumper - blue,Suncoo,FEMALE,womens-clothing-jumpers
-17667,E1321D05D-103,Grey,60,WINTER,https://secure-i3.ztat.net/detail/E1/32/1D/05/D1/03/E1321D05D-103@1.1.jpg,TWIGGY - Jumper - grey,Eleven Paris,FEMALE,womens-clothing-jumpers
+1.77E+04,E1321D05D-103,Grey,60,WINTER,https://secure-i3.ztat.net/detail/E1/32/1D/05/D1/03/E1321D05D-103@1.1.jpg,TWIGGY - Jumper - grey,Eleven Paris,FEMALE,womens-clothing-jumpers
 17668,AY321I005-202,Yellow,60,WINTER,https://secure-i3.ztat.net/detail/AY/32/1I/00/52/02/AY321I005-202@1.1.jpg,Jumper - yellow,Alysi,FEMALE,womens-clothing-jumpers
 17669,B2521I02M-602,Green,34,WINTER,https://secure-i5.ztat.net/detail/B2/52/1I/02/M6/02/B2521I02M-602@1.1.jpg,Jumper - sapin,Best Mountain,FEMALE,womens-clothing-jumpers
 17670,S7021I01H-304,Red,34,WINTER,https://secure-i6.ztat.net/detail/S7/02/1I/01/H3/04/S7021I01H-304@1.1.jpg,Jumper - red,Suncoo,FEMALE,womens-clothing-jumpers
@@ -602,8 +602,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17678,VE121J01J-K11,Blue,13,SUMMER,https://secure-i4.ztat.net/detail/VE/12/1J/01/JK/11/VE121J01J-K11@7.jpg,ANGRY TIGER - Sweatshirt - navy blue,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17679,UR621J003-505,Turquoise,25,ALL,https://secure-i3.ztat.net/detail/UR/62/1J/00/35/05/UR621J003-505@1.1.jpg,Tracksuit top - turquoise,Urban Classics,FEMALE,womens-clothing-sweatshirts
 17680,AD541G01D-Q11,Black,46,ALL,https://secure-i1.ztat.net/detail/AD/54/1G/01/DQ/11/AD541G01D-Q11@21.jpg,Sweatshirt - black/white,adidas Performance,FEMALE,womens-clothing-sweatshirts
-17681,TO721J01R-K11,Blue,42,ALL,https://secure-i1.ztat.net/detail/TO/72/1J/01/RK/11/TO721J01R-K11@14.jpg,Hoodie - knitted navy,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
-17682,TO721J01R-B11,Beige,42,ALL,https://secure-i1.ztat.net/detail/TO/72/1J/01/RB/11/TO721J01R-B11@13.jpg,Sweatshirt - alabaster beige,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
 17683,TO721J016-C12,Grey,30,ALL,https://secure-i5.ztat.net/detail/TO/72/1J/01/6C/12/TO721J016-C12@13.jpg,Sweatshirt - shale grey melange,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
 17684,TO721J016-K12,Blue,34,ALL,https://secure-i4.ztat.net/detail/TO/72/1J/01/6K/12/TO721J016-K12@14.jpg,Sweatshirt - patriot blue,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
 17685,TO721J01K-G11,Red,35,ALL,https://secure-i6.ztat.net/detail/TO/72/1J/01/KG/11/TO721J01K-G11@13.1.jpg,Sweatshirt - mauve wine red,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
@@ -631,17 +629,13 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17709,UR621J00D-102,Grey,17,SUMMER,https://secure-i3.ztat.net/detail/UR/62/1J/00/D1/02/UR621J00D-102@11.2.jpg,Sweatshirt - charcoal,Urban Classics,FEMALE,womens-clothing-sweatshirts
 17710,NM221J001-502,Blue,50,WINTER,https://secure-i6.ztat.net/detail/NM/22/1J/00/15/02/NM221J001-502@1.1.jpg,Sweatshirt - blue,Nell & Me,FEMALE,womens-clothing-sweatshirts
 17711,PF421J001-401,Pink,80,WINTER,https://secure-i2.ztat.net/detail/PF/42/1J/00/14/01/PF421J001-401@1.1.jpg,MAGLIA - Sweatshirt - rosa candy,PF by Paola Frani,FEMALE,womens-clothing-sweatshirts
-17712,NI121J01V-802,Black,45,SUMMER,https://secure-i2.ztat.net/detail/NI/12/1J/01/V8/02/NI121J01V-802@21.jpg,RALLY FUNNEL - Hoodie - black,Nike Sportswear,FEMALE,womens-clothing-sweatshirts
 17714,CO421J01V-C11,Grey,50,SUMMER,https://secure-i5.ztat.net/detail/CO/42/1J/01/VC/11/CO421J01V-C11@14.jpg,CORE - Tracksuit top - vintage grey heather,Converse,FEMALE,womens-clothing-sweatshirts
 17717,TW421J028-C11,Grey,19,SUMMER,https://secure-i6.ztat.net/detail/TW/42/1J/02/8C/11/TW421J028-C11@13.jpg,Sweatshirt - grey/white,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17718,VA221J00U-812,Black,50,SUMMER,https://secure-i2.ztat.net/detail/VA/22/1J/00/U8/12/VA221J00U-812@12.jpg,LINK - Tracksuit top - black heather,Vans,FEMALE,womens-clothing-sweatshirts
 17719,IC321J006-A11,White,110,SUMMER,https://secure-i2.ztat.net/detail/IC/32/1J/00/6A/11/IC321J006-A11@13.jpg,Sweatshirt - white,Iceberg,FEMALE,womens-clothing-sweatshirts
-17720,G1021J013-A11,White,85,SUMMER,https://secure-i2.ztat.net/detail/G1/02/1J/01/3A/11/G1021J013-A11@16.jpg,SEAWORTHY - Hoodie - white,Gaastra,FEMALE,womens-clothing-sweatshirts
-17721,GS121J02C-C11,Grey,80,SUMMER,https://secure-i3.ztat.net/detail/GS/12/1J/02/CC/11/GS121J02C-C11@15.jpg,MAYOSH - Hoodie - dark concrete heather,G-Star,FEMALE,womens-clothing-sweatshirts
 17722,GS121J02D-C11,Grey,80,SUMMER,https://secure-i5.ztat.net/detail/GS/12/1J/02/DC/11/GS121J02D-C11@14.jpg,ANYAMA - Sweatshirt - opela,G-Star,FEMALE,womens-clothing-sweatshirts
 17723,EV421J043-Q12,Black,25,SUMMER,https://secure-i5.ztat.net/detail/EV/42/1J/04/3Q/12/EV421J043-Q12@12.jpg,Sweatshirt - black / black,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17724,DE521J006-Q11,Black,85,SUMMER,https://secure-i1.ztat.net/detail/DE/52/1J/00/6Q/11/DE521J006-Q11@16.jpg,Tracksuit top - black,DEPT,FEMALE,womens-clothing-sweatshirts
-17725,GS121J02C-K11,Blue,80,SUMMER,https://secure-i6.ztat.net/detail/GS/12/1J/02/CK/11/GS121J02C-K11@16.jpg,MAYOSH - Sweatshirt - mazarine blue heather,G-Star,FEMALE,womens-clothing-sweatshirts
 17726,TW421J026-G11,Red,17,SUMMER,https://secure-i3.ztat.net/detail/TW/42/1J/02/6G/11/TW421J026-G11@14.jpg,Sweatshirt - coral,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17727,K2021J005-A11,White,50,SUMMER,https://secure-i6.ztat.net/detail/K2/02/1J/00/5A/11/K2021J005-A11@16.jpg,FAYET - Sweatshirt - white,Kaporal,FEMALE,womens-clothing-sweatshirts
 17728,K2021J006-J11,Pink,46,SUMMER,https://secure-i2.ztat.net/detail/K2/02/1J/00/6J/11/K2021J006-J11@14.1.jpg,FELIZE - Sweatshirt - ligpin,Kaporal,FEMALE,womens-clothing-sweatshirts
@@ -651,7 +645,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17732,TW421J026-K11,Blue,17,SUMMER,https://secure-i1.ztat.net/detail/TW/42/1J/02/6K/11/TW421J026-K11@16.jpg,Sweatshirt - electric blue,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17733,TW421J026-M11,Green,17,SUMMER,https://secure-i3.ztat.net/detail/TW/42/1J/02/6M/11/TW421J026-M11@14.jpg,Sweatshirt - mint,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17734,WO421J00B-C12,Grey,105,SUMMER,https://secure-i6.ztat.net/detail/WO/42/1J/00/BC/12/WO421J00B-C12@14.jpg,MAYA - Sweatshirt - dark grey,Wood Wood,FEMALE,womens-clothing-sweatshirts
-17735,AD121J0AI-Q11,Black,50,SUMMER,https://secure-i4.ztat.net/detail/AD/12/1J/0A/IQ/11/AD121J0AI-Q11@14.jpg,Hoodie - black,adidas Originals,FEMALE,womens-clothing-sweatshirts
 17736,EV421I02N-C00,Grey,34,SUMMER,https://secure-i6.ztat.net/detail/EV/42/1I/02/NC/00/EV421I02N-C00@2.jpg,Tracksuit top - grey melange,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17737,VE121J01H-Q11,Black,12,WINTER,https://secure-i1.ztat.net/detail/VE/12/1J/01/HQ/11/VE121J01H-Q11@6.jpg,AMELIA - Sweatshirt - black,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17738,US221J001-502,Blue,35,WINTER,https://secure-i6.ztat.net/detail/US/22/1J/00/15/02/US221J001-502@1.1.jpg,LUDY - Sweatshirt - blue,U.S. Polo Assn.,FEMALE,womens-clothing-sweatshirts
@@ -666,9 +659,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17747,AM221J00D-Q11,Black,60,SUMMER,https://secure-i3.ztat.net/detail/AM/22/1J/00/DQ/11/AM221J00D-Q11@14.jpg,SONOMA - Sweatshirt - noir,American Vintage,FEMALE,womens-clothing-sweatshirts
 17748,R6721J000-K11,Blue,45,SUMMER,https://secure-i1.ztat.net/detail/R6/72/1J/00/0K/11/R6721J000-K11@16.jpg,Sweatshirt - light blue,Soft Rebels,FEMALE,womens-clothing-sweatshirts
 17749,KO121I09F-T11,Multi-coloured,55,SUMMER,https://secure-i4.ztat.net/detail/KO/12/1I/09/FT/11/KO121I09F-T11@14.jpg,Sweatshirt - multicoloured/nocturne,Kookai,FEMALE,womens-clothing-sweatshirts
-17750,G1021J013-K11,Blue,85,SUMMER,https://secure-i4.ztat.net/detail/G1/02/1J/01/3K/11/G1021J013-K11@16.jpg,SEAWORTHY - Hoodie - navy,Gaastra,FEMALE,womens-clothing-sweatshirts
-17751,CO421J01W-H11,Orange,46,SUMMER,https://secure-i5.ztat.net/detail/CO/42/1J/01/WH/11/CO421J01W-H11@14.jpg,Sweatshirt - blush,Converse,FEMALE,womens-clothing-sweatshirts
-17752,G1021J013-M11,Green,85,SUMMER,https://secure-i2.ztat.net/detail/G1/02/1J/01/3M/11/G1021J013-M11@16.jpg,SEAWORTHY - Hoodie - light oxy,Gaastra,FEMALE,womens-clothing-sweatshirts
 17753,G1021J014-K11,Blue,100,SUMMER,https://secure-i3.ztat.net/detail/G1/02/1J/01/4K/11/G1021J014-K11@16.jpg,SEABOOTS - Tracksuit top - blue,Gaastra,FEMALE,womens-clothing-sweatshirts
 17754,CO421J020-H11,Orange,50,SUMMER,https://secure-i2.ztat.net/detail/CO/42/1J/02/0H/11/CO421J020-H11@14.jpg,Tracksuit top - blush,Converse,FEMALE,womens-clothing-sweatshirts
 17755,HY521J000-T11,Multi-coloured,46,SUMMER,https://secure-i2.ztat.net/detail/HY/52/1J/00/0T/11/HY521J000-T11@14.jpg,JEWELS - Sweatshirt - multi,Hype,FEMALE,womens-clothing-sweatshirts
@@ -680,7 +670,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17761,PE121J01Q-C11,Grey,60,SUMMER,https://secure-i4.ztat.net/detail/PE/12/1J/01/QC/11/PE121J01Q-C11@18.jpg,MONI - Sweatshirt - light grey marl,Pepe Jeans,FEMALE,womens-clothing-sweatshirts
 17762,NA621J014-A11,White,85,SUMMER,https://secure-i3.ztat.net/detail/NA/62/1J/01/4A/11/NA621J014-A11@2.jpg,BELAND - Tracksuit top - neutro,Napapijri,FEMALE,womens-clothing-sweatshirts
 17763,AM221J00D-A11,White,60,SUMMER,https://secure-i5.ztat.net/detail/AM/22/1J/00/DA/11/AM221J00D-A11@12.jpg,SONOMA - Sweatshirt - blanc,American Vintage,FEMALE,womens-clothing-sweatshirts
-17764,ED121J029-A11,White,39,SUMMER,https://secure-i2.ztat.net/detail/ED/12/1J/02/9A/11/ED121J029-A11@16.jpg,Hoodie - white,edc by Esprit,FEMALE,womens-clothing-sweatshirts
 17765,GD221D016-J11,Pink,60,SUMMER,https://secure-i4.ztat.net/detail/GD/22/1D/01/6J/11/GD221D016-J11@2.jpg,Sweatshirt - rose,Gaudi,FEMALE,womens-clothing-sweatshirts
 17766,GS221D018-P11,Petrol,50,SUMMER,https://secure-i6.ztat.net/detail/GS/22/1D/01/8P/11/GS221D018-P11@16.jpg,LINDS - Sweatshirt - reflecting pond,Gsus sindustries,FEMALE,womens-clothing-sweatshirts
 17767,LA221J007-C11,Grey,105,SUMMER,https://secure-i5.ztat.net/detail/LA/22/1J/00/7C/11/LA221J007-C11@12.1.jpg,Sweatshirt - grau,Lacoste,FEMALE,womens-clothing-sweatshirts
@@ -691,7 +680,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17772,EV421J04F-C11,Grey,21,SUMMER,https://secure-i5.ztat.net/detail/EV/42/1J/04/FC/11/EV421J04F-C11@12.1.jpg,Sweatshirt - light grey melange,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17773,PA941B00G-C12,Grey,90,SUMMER,https://secure-i3.ztat.net/detail/PA/94/1B/00/GC/12/PA941B00G-C12@16.jpg,BETTER SWEATER - Tracksuit top - raw linen,Patagonia,FEMALE,womens-clothing-sweatshirts
 17774,EV421J04A-A11,White,21,SUMMER,https://secure-i4.ztat.net/detail/EV/42/1J/04/AA/11/EV421J04A-A11@14.jpg,Sweatshirt - white/dark blue,Even&Odd,FEMALE,womens-clothing-sweatshirts
-17775,TO721J01S-K11,Blue,34,SUMMER,https://secure-i6.ztat.net/detail/TO/72/1J/01/SK/11/TO721J01S-K11@14.jpg,Sweatshirt - knitted navy,Tom Tailor Denim,FEMALE,womens-clothing-sweatshirts
 17776,AM221J00D-I11,Lilac,60,SUMMER,https://secure-i1.ztat.net/detail/AM/22/1J/00/DI/11/AM221J00D-I11@16.jpg,SONOMA - Sweatshirt - crepusule,American Vintage,FEMALE,womens-clothing-sweatshirts
 17777,GW221J01D-K11,Blue,65,SUMMER,https://secure-i5.ztat.net/detail/GW/22/1J/01/DK/11/GW221J01D-K11@16.jpg,SOSI - Sweatshirt - navy,Gwynedds,FEMALE,womens-clothing-sweatshirts
 17778,8AN21J006-A11,White,60,SUMMER,https://secure-i3.ztat.net/detail/8A/N2/1J/00/6A/11/8AN21J006-A11@14.jpg,Sweatshirt - off-white,Anna Scott,FEMALE,womens-clothing-sweatshirts
@@ -700,13 +688,11 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17781,EV421J04F-A11,White,21,SUMMER,https://secure-i1.ztat.net/detail/EV/42/1J/04/FA/11/EV421J04F-A11@16.jpg,Sweatshirt - offwhite,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17782,EV421J04I-C11,Grey,25,SUMMER,https://secure-i6.ztat.net/detail/EV/42/1J/04/IC/11/EV421J04I-C11@14.jpg,Sweatshirt - light grey melange,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17783,EV421J04I-A11,White,25,SUMMER,https://secure-i2.ztat.net/detail/EV/42/1J/04/IA/11/EV421J04I-A11@14.jpg,Sweatshirt - offwhite,Even&Odd,FEMALE,womens-clothing-sweatshirts
-17784,EV421J04J-J11,Pink,21,SUMMER,https://secure-i5.ztat.net/detail/EV/42/1J/04/JJ/11/EV421J04J-J11@2.jpg,Sweatshirt - rose,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17785,NI121J03C-Q11,Black,50,SUMMER,https://secure-i5.ztat.net/detail/NI/12/1J/03/CQ/11/NI121J03C-Q11@15.jpg,Sweatshirt - black / white,Nike Sportswear,FEMALE,womens-clothing-sweatshirts
 17786,N1429I007-C11,Grey,70,SUMMER,https://secure-i6.ztat.net/detail/N1/42/9I/00/7C/11/N1429I007-C11@14.jpg,SWEAT IS EMMY - Tracksuit top - dark shadow,Noppies,FEMALE,womens-clothing-sweatshirts
 17787,GW221J01C-C11,Grey,85,SUMMER,https://secure-i2.ztat.net/detail/GW/22/1J/01/CC/11/GW221J01C-C11@16.jpg,OBBY - Sweatshirt - hellgrau,Gwynedds,FEMALE,womens-clothing-sweatshirts
 17788,GW221J01B-A11,White,75,SUMMER,https://secure-i5.ztat.net/detail/GW/22/1J/01/BA/11/GW221J01B-A11@16.jpg,IKIM - Sweatshirt - white,Gwynedds,FEMALE,womens-clothing-sweatshirts
 17789,GS121J028-K11,Blue,80,SUMMER,https://secure-i3.ztat.net/detail/GS/12/1J/02/8K/11/GS121J028-K11@14.jpg,LYKER - Sweatshirt - bleach aged,G-Star,FEMALE,womens-clothing-sweatshirts
-17790,VE121J021-K11,Blue,25,SUMMER,https://secure-i5.ztat.net/detail/VE/12/1J/02/1K/11/VE121J021-K11@16.1.jpg,VMRIA - Sweatshirt - black iris,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17791,NA621J018-N11,Olive,150,SUMMER,https://secure-i6.ztat.net/detail/NA/62/1J/01/8N/11/NA621J018-N11@14.jpg,Tracksuit top - scout,Napapijri,FEMALE,womens-clothing-sweatshirts
 17792,GW221J01A-A11,White,75,SUMMER,https://secure-i4.ztat.net/detail/GW/22/1J/01/AA/11/GW221J01A-A11@14.jpg,IKI - Sweatshirt - white,Gwynedds,FEMALE,womens-clothing-sweatshirts
 17793,NA621J017-C11,Grey,150,SUMMER,https://secure-i6.ztat.net/detail/NA/62/1J/01/7C/11/NA621J017-C11@14.jpg,BASILIA - Tracksuit top - grau,Napapijri,FEMALE,womens-clothing-sweatshirts
@@ -714,7 +700,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17795,VE121J022-J11,Pink,29,SUMMER,https://secure-i4.ztat.net/detail/VE/12/1J/02/2J/11/VE121J022-J11@14.jpg,VMISABELLA  - Tracksuit top - raspberry rose,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17796,VE121J022-K11,Blue,29,SUMMER,https://secure-i6.ztat.net/detail/VE/12/1J/02/2K/11/VE121J022-K11@2.jpg,VMISABELLA  - Tracksuit top - black iris,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17797,RO521J03R-C11,Grey,42,SUMMER,https://secure-i3.ztat.net/detail/RO/52/1J/03/RC/11/RO521J03R-C11@14.jpg,Sweatshirt - grau meliert,Roxy,FEMALE,womens-clothing-sweatshirts
-17798,VE121J021-C11,Grey,25,SUMMER,https://secure-i2.ztat.net/detail/VE/12/1J/02/1C/11/VE121J021-C11@16.jpg,VMRIA - Sweatshirt - medium grey melange,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17799,VE121J022-C11,Grey,29,SUMMER,https://secure-i1.ztat.net/detail/VE/12/1J/02/2C/11/VE121J022-C11@16.jpg,VMISABELLA  - Tracksuit top - medium grey melange,Vero Moda,FEMALE,womens-clothing-sweatshirts
 17800,PE121J01Q-M11,Green,60,SUMMER,https://secure-i2.ztat.net/detail/PE/12/1J/01/QM/11/PE121J01Q-M11@16.jpg,MONI - Sweatshirt - 657water green,Pepe Jeans,FEMALE,womens-clothing-sweatshirts
 17801,K4421D030-A11,White,21,SUMMER,https://secure-i1.ztat.net/detail/K4/42/1D/03/0A/11/K4421D030-A11@12.jpg,Sweatshirt - off-white,KIOMI,FEMALE,womens-clothing-sweatshirts
@@ -731,8 +716,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17812,UR621J00J-802,Black,26,WINTER,https://secure-i3.ztat.net/detail/UR/62/1J/00/J8/02/UR621J00J-802@20.jpg,Tracksuit top - black/white,Urban Classics,FEMALE,womens-clothing-sweatshirts
 17813,NI121J01L-802,Black,40,SUMMER,https://secure-i6.ztat.net/detail/NI/12/1J/01/L8/02/NI121J01L-802@1.2.jpg,GYM VINTAGE - Tracksuit top - black/sail,Nike Sportswear,FEMALE,womens-clothing-sweatshirts
 17814,TW421J01R-M11,Green,21,SUMMER,https://secure-i5.ztat.net/detail/TW/42/1J/01/RM/11/TW421J01R-M11@14.jpg,Tracksuit top - light green melange,TWINTIP,FEMALE,womens-clothing-sweatshirts
-17815,RO521J03O-H11,Orange,38,SUMMER,https://secure-i3.ztat.net/detail/RO/52/1J/03/OH/11/RO521J03O-H11@16.jpg,SEASCAPE SURF - Sweatshirt - fiery orange,Roxy,FEMALE,womens-clothing-sweatshirts
-17816,RO521J03O-K11,Blue,38,SUMMER,https://secure-i1.ztat.net/detail/RO/52/1J/03/OK/11/RO521J03O-K11@2.1.jpg,SEASCAPE SURF - Hoodie - astral aura,Roxy,FEMALE,womens-clothing-sweatshirts
 17817,RO521I010-C11,Grey,60,SUMMER,https://secure-i1.ztat.net/detail/RO/52/1I/01/0C/11/RO521I010-C11@14.jpg,MIDNIGHT BLOOM  - Tracksuit top - grey,Roxy,FEMALE,womens-clothing-sweatshirts
 17818,UP121J005-112,Grey,15,WINTER,https://secure-i3.ztat.net/detail/UP/12/1J/00/51/12/UP121J005-112@1.1.jpg,Tracksuit top - grey,Ulla Popken,FEMALE,womens-clothing-sweatshirts
 17819,TW421J01W-C11,Grey,17,SUMMER,https://secure-i2.ztat.net/detail/TW/42/1J/01/WC/11/TW421J01W-C11@2.jpg,Sweatshirt - grey melange,TWINTIP,FEMALE,womens-clothing-sweatshirts
@@ -741,24 +724,16 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17822,TW421J020-G11,Red,25,SUMMER,https://secure-i5.ztat.net/detail/TW/42/1J/02/0G/11/TW421J020-G11@16.jpg,Tracksuit top - red,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17823,TW421J020-Q11,Black,25,SUMMER,https://secure-i5.ztat.net/detail/TW/42/1J/02/0Q/11/TW421J020-Q11@14.jpg,Tracksuit top - black,TWINTIP,FEMALE,womens-clothing-sweatshirts
 17824,TW421J020-K11,Blue,25,SUMMER,https://secure-i5.ztat.net/detail/TW/42/1J/02/0K/11/TW421J020-K11@14.jpg,Tracksuit top - blue melange,TWINTIP,FEMALE,womens-clothing-sweatshirts
-17825,FR321J027-G11,Red,70,SUMMER,https://secure-i4.ztat.net/detail/FR/32/1J/02/7G/11/FR321J027-G11@16.jpg,Hoodie - calypso,Franklin & Marshall,FEMALE,womens-clothing-sweatshirts
 17826,TR121J017-A11,White,160,SUMMER,https://secure-i1.ztat.net/detail/TR/12/1J/01/7A/11/TR121J017-A11@15.jpg,Tracksuit top - white,True Religion,FEMALE,womens-clothing-sweatshirts
 17827,TE421I00M-Q11,Black,110,SUMMER,https://secure-i6.ztat.net/detail/TE/42/1I/00/MQ/11/TE421I00M-Q11@14.jpg,LANIE - Sweatshirt - black,Ted Baker,FEMALE,womens-clothing-sweatshirts
 17829,P4321J007-A11,White,225,SUMMER,https://secure-i5.ztat.net/detail/P4/32/1J/00/7A/11/P4321J007-A11@2.1.jpg,Sweatshirt - white,Pierre Balmain,FEMALE,womens-clothing-sweatshirts
-17830,FR321J027-M11,Green,70,SUMMER,https://secure-i5.ztat.net/detail/FR/32/1J/02/7M/11/FR321J027-M11@14.1.jpg,Hoodie - avocado,Franklin & Marshall,FEMALE,womens-clothing-sweatshirts
 17831,TR121J017-J11,Pink,160,SUMMER,https://secure-i1.ztat.net/detail/TR/12/1J/01/7J/11/TR121J017-J11@16.jpg,Tracksuit top - pink,True Religion,FEMALE,womens-clothing-sweatshirts
-17833,ED121J02A-Q11,Black,39,SUMMER,https://secure-i4.ztat.net/detail/ED/12/1J/02/AQ/11/ED121J02A-Q11@16.2.jpg,Sweatshirt - grey,edc by Esprit,FEMALE,womens-clothing-sweatshirts
 17834,K4421J00I-A11,White,29,SUMMER,https://secure-i2.ztat.net/detail/K4/42/1J/00/IA/11/K4421J00I-A11@14.jpg,Sweatshirt - off-white,KIOMI,FEMALE,womens-clothing-sweatshirts
 17835,PE121J01R-C11,Grey,60,SUMMER,https://secure-i5.ztat.net/detail/PE/12/1J/01/RC/11/PE121J01R-C11@16.jpg,LOVI - Sweatshirt - 913lt grey marl,Pepe Jeans,FEMALE,womens-clothing-sweatshirts
 17836,K4421J000-C00,Grey,12,WINTER,https://secure-i6.ztat.net/detail/K4/42/1J/00/0C/00/K4421J000-C00@1.1.jpg,Sweatshirt - grey melange,KIOMI,FEMALE,womens-clothing-sweatshirts
-17839,NI121J03A-J11,Pink,75,SUMMER,https://secure-i3.ztat.net/detail/NI/12/1J/03/AJ/11/NI121J03A-J11@16.jpg,TECH FLEECE - Hoodie - pink/black,Nike Sportswear,FEMALE,womens-clothing-sweatshirts
-17844,ED121J02A-K11,Blue,39,SUMMER,https://secure-i5.ztat.net/detail/ED/12/1J/02/AK/11/ED121J02A-K11@16.1.jpg,Hoodie - blue,edc by Esprit,FEMALE,womens-clothing-sweatshirts
 17846,AD121D09R-A11,White,50,SUMMER,https://secure-i1.ztat.net/detail/AD/12/1D/09/RA/11/AD121D09R-A11@2.jpg,Tracksuit top - chalk white,adidas Originals,FEMALE,womens-clothing-sweatshirts
-17847,AD121D09P-C11,Grey,47,SUMMER,https://secure-i5.ztat.net/detail/AD/12/1D/09/PC/11/AD121D09P-C11@12.1.jpg,Sweatshirt - medium grey heather,adidas Originals,FEMALE,womens-clothing-sweatshirts
 17848,AD121J0A9-Q11,Black,45,SUMMER,https://secure-i4.ztat.net/detail/AD/12/1J/0A/9Q/11/AD121J0A9-Q11@16.jpg,GRAPHIC - Sweatshirt - black,adidas Originals,FEMALE,womens-clothing-sweatshirts
 17849,AD121J09Z-C11,Grey,45,SUMMER,https://secure-i2.ztat.net/detail/AD/12/1J/09/ZC/11/AD121J09Z-C11@15.jpg,GRAPHIC - Sweatshirt - medium grey heather,adidas Originals,FEMALE,womens-clothing-sweatshirts
-17850,AD121J0A5-G11,Red,40,SUMMER,https://secure-i1.ztat.net/detail/AD/12/1J/0A/5G/11/AD121J0A5-G11@12.1.jpg,ESSENTIALS - Hoodie - red,adidas Originals,FEMALE,womens-clothing-sweatshirts
-17851,AD121J0A7-C11,Grey,50,SUMMER,https://secure-i6.ztat.net/detail/AD/12/1J/0A/7C/11/AD121J0A7-C11@14.jpg,SLIM - Sweatshirt - medium grey heather,adidas Originals,FEMALE,womens-clothing-sweatshirts
 17852,DE121J00A-K11,Blue,80,SUMMER,https://secure-i6.ztat.net/detail/DE/12/1J/00/AK/11/DE121J00A-K11@14.jpg,Sweatshirt - twilight blue,Desigual,FEMALE,womens-clothing-sweatshirts
 17855,EV421J041-K11,Blue,21,SUMMER,https://secure-i4.ztat.net/detail/EV/42/1J/04/1K/11/EV421J041-K11@14.jpg,Sweatshirt - dark blue,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17856,PU141G00H-Q11,Black,60,SUMMER,https://secure-i5.ztat.net/detail/PU/14/1G/00/HQ/11/PU141G00H-Q11@14.jpg,Tracksuit top - black,Puma,FEMALE,womens-clothing-sweatshirts
@@ -766,7 +741,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 17860,EV421J04E-C11,Grey,21,SUMMER,https://secure-i6.ztat.net/detail/EV/42/1J/04/EC/11/EV421J04E-C11@16.jpg,Sweatshirt - light grey melange,Even&Odd,FEMALE,womens-clothing-sweatshirts
 17861,AD121D09I-C11,Grey,30,SUMMER,https://secure-i6.ztat.net/detail/AD/12/1D/09/IC/11/AD121D09I-C11@14.jpg,TKO - Sweatshirt - medium grey heather,adidas Originals,FEMALE,womens-clothing-sweatshirts
 17862,AD121J0A3-Q11,Black,45,SUMMER,https://secure-i2.ztat.net/detail/AD/12/1J/0A/3Q/11/AD121J0A3-Q11@14.jpg,Tracksuit top - black,adidas Originals,FEMALE,womens-clothing-sweatshirts
-17863,NI121J02W-L11,Turquoise,38,SUMMER,https://secure-i1.ztat.net/detail/NI/12/1J/02/WL/11/NI121J02W-L11@14.jpg,GYM VINTAGE - Sweatshirt - verde/sail,Nike Sportswear,FEMALE,womens-clothing-sweatshirts
 17864,RE321J00K-A11,White,70,SUMMER,https://secure-i2.ztat.net/detail/RE/32/1J/00/KA/11/RE321J00K-A11@16.jpg,Sweatshirt - offwhite,Replay,FEMALE,womens-clothing-sweatshirts
 17865,VA221J00U-Q11,Black,50,WINTER,https://secure-i6.ztat.net/detail/VA/22/1J/00/UQ/11/VA221J00U-Q11@16.jpg,LINK - Tracksuit top - mottled black,Vans,FEMALE,womens-clothing-sweatshirts
 17866,EV421J040-C11,Grey,29,SUMMER,https://secure-i1.ztat.net/detail/EV/42/1J/04/0C/11/EV421J040-C11@14.jpg,Tracksuit top - light grey melange,Even&Odd,FEMALE,womens-clothing-sweatshirts
@@ -978,18 +952,11 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18076,VL421E01H-002,White,100,ALL,https://secure-i4.ztat.net/detail/VL/42/1E/01/H0/02/VL421E01H-002@1.2.jpg,ALISA - Shirt - weiß,van Laack,unisex,womens-clothing-shirts
 18077,VL421E015-002,White,130,ALL,https://secure-i5.ztat.net/detail/VL/42/1E/01/50/02/VL421E015-002@1.1.jpg,COCO - Shirt - white,van Laack,FEMALE,womens-clothing-shirts
 18078,3SE21E00B-002,White,80,ALL,https://secure-i2.ztat.net/detail/3S/E2/1E/00/B0/02/3SE21E00B-002@25.jpg,Shirt - weiß,Seidensticker,FEMALE,womens-clothing-shirts
-18079,3SE21E00E-002,White,80,ALL,https://secure-i5.ztat.net/detail/3S/E2/1E/00/E0/02/3SE21E00E-002@1.1.jpg,Shirt - white,Seidensticker,FEMALE,womens-clothing-shirts
-18080,RE121E001-402,Pink,110,ALL,https://secure-i1.ztat.net/detail/RE/12/1E/00/14/02/RE121E001-402@1.1.jpg,Shirt - rose,René Lezard,FEMALE,womens-clothing-shirts
-18081,RE121E001-002,White,110,ALL,https://secure-i5.ztat.net/detail/RE/12/1E/00/10/02/RE121E001-002@1.1.jpg,Blouse - weiß,René Lezard,FEMALE,womens-clothing-shirts
 18082,ES421E02E-K11,Blue,39,ALL,https://secure-i2.ztat.net/detail/ES/42/1E/02/EK/11/ES421E02E-K11@1.1.jpg,Shirt - sky blue,ESPRIT Collection,FEMALE,womens-clothing-shirts
-18083,3SE21E00E-802,Black,60,ALL,https://secure-i3.ztat.net/detail/3S/E2/1E/00/E8/02/3SE21E00E-802@1.1.jpg,Blouse - black,Seidensticker,FEMALE,womens-clothing-shirts
 18084,ES421E01Y-802,Black,29,ALL,https://secure-i3.ztat.net/detail/ES/42/1E/01/Y8/02/ES421E01Y-802@1.1.jpg,Shirt - black,ESPRIT Collection,FEMALE,womens-clothing-shirts
 18085,MM421E00G-501,Blue,32,ALL,https://secure-i1.ztat.net/detail/MM/42/1E/00/G5/01/MM421E00G-501@7.jpg,Shirt - morning sky,Mexx Metropolitan,FEMALE,womens-clothing-shirts
 18086,MM421E00G-802,Black,32,ALL,https://secure-i5.ztat.net/detail/MM/42/1E/00/G8/02/MM421E00G-802@1.jpg,Shirt - schwarz,Mexx Metropolitan,FEMALE,womens-clothing-shirts
-18087,RE121E001-502,Blue,110,ALL,https://secure-i6.ztat.net/detail/RE/12/1E/00/15/02/RE121E001-502@1.1.jpg,Blouse - hellblau,René Lezard,FEMALE,womens-clothing-shirts
-18088,VE121X00A-002,White,21,ALL,https://secure-i2.ztat.net/detail/VE/12/1X/00/A0/02/VE121X00A-002@10.1.jpg,COUSIN - Blouse - optical white,Vero Moda,FEMALE,womens-clothing-shirts
 18089,HI121E01L-002,White,55,ALL,https://secure-i6.ztat.net/detail/HI/12/1E/01/L0/02/HI121E01L-002@6.jpg,FAYBE - Shirt - white,Hilfiger Denim,FEMALE,womens-clothing-shirts
-18090,VE121X00A-802,Black,21,ALL,https://secure-i5.ztat.net/detail/VE/12/1X/00/A8/02/VE121X00A-802@1.3.jpg,COUSIN - Shirt - black,Vero Moda,FEMALE,womens-clothing-shirts
 18091,HI121E01L-802,Black,55,ALL,https://secure-i6.ztat.net/detail/HI/12/1E/01/L8/02/HI121E01L-802@18.jpg,FAYBE - Shirt - black,Hilfiger Denim,FEMALE,womens-clothing-shirts
 18092,MM421E00G-002,White,32,ALL,https://secure-i1.ztat.net/detail/MM/42/1E/00/G0/02/MM421E00G-002@5.1.jpg,Shirt - weiß,Mexx Metropolitan,FEMALE,womens-clothing-shirts
 18094,7SI21E00G-002,White,37,SUMMER,https://secure-i5.ztat.net/detail/7S/I2/1E/00/G0/02/7SI21E00G-002@1.1.jpg,Shirt - white,Sisley,FEMALE,womens-clothing-shirts
@@ -1002,12 +969,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18101,M5821E04V-K11,Blue,30,ALL,https://secure-i2.ztat.net/detail/M5/82/1E/04/VK/11/M5821E04V-K11@13.jpg,Shirt - blau,More & More,FEMALE,womens-clothing-shirts
 18102,ES421E037-A11,White,29,ALL,https://secure-i1.ztat.net/detail/ES/42/1E/03/7A/11/ES421E037-A11@15.jpg,Shirt - white,ESPRIT Collection,FEMALE,womens-clothing-shirts
 18103,SO221E07W-Q11,Black,24,ALL,https://secure-i2.ztat.net/detail/SO/22/1E/07/WQ/11/SO221E07W-Q11@14.jpg,Shirt - black,s.Oliver,FEMALE,womens-clothing-shirts
-18104,ES421E038-A11,White,29,ALL,https://secure-i4.ztat.net/detail/ES/42/1E/03/8A/11/ES421E038-A11@14.2.jpg,Blouse - white,ESPRIT Collection,FEMALE,womens-clothing-shirts
-18105,ES421E038-K11,Blue,29,ALL,https://secure-i1.ztat.net/detail/ES/42/1E/03/8K/11/ES421E038-K11@12.jpg,Shirt - sky blue,ESPRIT Collection,FEMALE,womens-clothing-shirts
 18106,ES421E037-Q11,Black,29,ALL,https://secure-i4.ztat.net/detail/ES/42/1E/03/7Q/11/ES421E037-Q11@14.jpg,Shirt - black,ESPRIT Collection,FEMALE,womens-clothing-shirts
-18107,ES421E038-Q11,Black,29,ALL,https://secure-i3.ztat.net/detail/ES/42/1E/03/8Q/11/ES421E038-Q11@14.jpg,Shirt - black,ESPRIT Collection,FEMALE,womens-clothing-shirts
 18108,ES421E036-K11,Blue,29,ALL,https://secure-i1.ztat.net/detail/ES/42/1E/03/6K/11/ES421E036-K11@2.jpg,TINY STRIPE - Shirt - sky blue,ESPRIT Collection,FEMALE,womens-clothing-shirts
-18109,3SE21E00C-002,White,60,ALL,https://secure-i5.ztat.net/detail/3S/E2/1E/00/C0/02/3SE21E00C-002@1.1.jpg,Blouse - white,Seidensticker,FEMALE,womens-clothing-shirts
 18110,4BE21E02E-A11,White,30,SUMMER,https://secure-i1.ztat.net/detail/4B/E2/1E/02/EA/11/4BE21E02E-A11@6.jpg,Shirt - white,Benetton,FEMALE,womens-clothing-shirts
 18111,GA321E01M-503,Blue,55,WINTER,https://secure-i5.ztat.net/detail/GA/32/1E/01/M5/03/GA321E01M-503@1.1.jpg,Shirt - yankee blue,Gant,FEMALE,womens-clothing-shirts
 18112,M5921E00I-A11,White,35,SUMMER,https://secure-i6.ztat.net/detail/M5/92/1E/00/IA/11/M5921E00I-A11@1.1.jpg,CARRA - Shirt - blanc,Morgan,FEMALE,womens-clothing-shirts
@@ -1018,7 +981,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18117,4BE21E02E-K11,Blue,24,WINTER,https://secure-i1.ztat.net/detail/4B/E2/1E/02/EK/11/4BE21E02E-K11@4.jpg,Shirt - lightblue,Benetton,FEMALE,womens-clothing-shirts
 18118,SE521E029-A11,White,34,SUMMER,https://secure-i6.ztat.net/detail/SE/52/1E/02/9A/11/SE521E029-A11@14.jpg,SFPOPY  - Shirt - bright white,Selected Femme,FEMALE,womens-clothing-shirts
 18119,3SE21E01T-A11,Pink,80,SUMMER,https://secure-i5.ztat.net/detail/3S/E2/1E/01/TA/11/3SE21E01T-A11@8.jpg,Shirt - rose/weiß,Seidensticker,FEMALE,womens-clothing-shirts
-18120,RE121E001-802,Black,75,WINTER,https://secure-i3.ztat.net/detail/RE/12/1E/00/18/02/RE121E001-802@1.1.jpg,Shirt - schwarz,René Lezard,FEMALE,womens-clothing-shirts
 18121,LA221E00J-K12,Blue,85,SUMMER,https://secure-i1.ztat.net/detail/LA/22/1E/00/JK/12/LA221E00J-K12@2.jpg,Shirt - hellblau,Lacoste,FEMALE,womens-clothing-shirts
 18122,MA321E02R-002,White,75,WINTER,https://secure-i5.ztat.net/detail/MA/32/1E/02/R0/02/MA321E02R-002@6.jpg,Shirt - white,Marc O'Polo,FEMALE,womens-clothing-shirts
 18123,MA321E05S-A11,White,85,SUMMER,https://secure-i6.ztat.net/detail/MA/32/1E/05/SA/11/MA321E05S-A11@16.jpg,Shirt - white,Marc O'Polo,FEMALE,womens-clothing-shirts
@@ -1171,13 +1133,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18270,GA321E02U-G11,Red,50,WINTER,https://secure-i4.ztat.net/detail/GA/32/1E/02/UG/11/GA321E02U-G11@2.2.jpg,Shirt - port,Gant,FEMALE,womens-clothing-shirts
 18271,GA321E01S-K11,Blue,80,WINTER,https://secure-i6.ztat.net/detail/GA/32/1E/01/SK/11/GA321E01S-K11@14.jpg,Shirt - blue,Gant,FEMALE,womens-clothing-shirts
 18272,4EM21E003-K11,Blue,11,SUMMER,https://secure-i2.ztat.net/detail/4E/M2/1E/00/3K/11/4EM21E003-K11@3.jpg,Tunic - dazzling blue,Emoi en Plus,FEMALE,womens-clothing-tunics
-18273,SE521E012-Q00,Black,41,SUMMER,https://secure-i5.ztat.net/detail/SE/52/1E/01/2Q/00/SE521E012-Q00@4.jpg,DYNELLA - Tunic - black,Selected Femme,FEMALE,womens-clothing-tunics
-18274,AN621E026-Q11,Black,29,ALL,https://secure-i5.ztat.net/detail/AN/62/1E/02/6Q/11/AN621E026-Q11@7.jpg,Blouse - black,Anna Field,FEMALE,womens-clothing-tunics
 18275,ED121E02J-A11,White,25,ALL,https://secure-i4.ztat.net/detail/ED/12/1E/02/JA/11/ED121E02J-A11@13.jpg,Tunic - white,edc by Esprit,FEMALE,womens-clothing-tunics
 18276,ED121E02J-Q11,Black,25,ALL,https://secure-i5.ztat.net/detail/ED/12/1E/02/JQ/11/ED121E02J-Q11@16.jpg,Tunic - black,edc by Esprit,FEMALE,womens-clothing-tunics
-18277,M5821E04W-J11,Pink,50,ALL,https://secure-i6.ztat.net/detail/M5/82/1E/04/WJ/11/M5821E04W-J11@15.jpg,Tunic - original,More & More,FEMALE,womens-clothing-tunics
-18278,M5821E04W-Q11,Black,50,ALL,https://secure-i2.ztat.net/detail/M5/82/1E/04/WQ/11/M5821E04W-Q11@14.jpg,Blouse - black,More & More,FEMALE,womens-clothing-tunics
-18279,MA621E00I-A11,White,34,SUMMER,https://secure-i1.ztat.net/detail/MA/62/1E/00/IA/11/MA621E00I-A11@2.jpg,Blouse - antique white,Mavi,FEMALE,womens-clothing-tunics
 18280,ED121E02K-J11,Pink,25,SUMMER,https://secure-i5.ztat.net/detail/ED/12/1E/02/KJ/11/ED121E02K-J11@18.jpg,Tunic - light apricot,edc by Esprit,FEMALE,womens-clothing-tunics
 18281,ES421E02N-Q11,Black,31,WINTER,https://secure-i2.ztat.net/detail/ES/42/1E/02/NQ/11/ES421E02N-Q11@1.1.jpg,Tunic - black,ESPRIT Collection,FEMALE,womens-clothing-tunics
 18282,NN121E028-A11,White,85,SUMMER,https://secure-i1.ztat.net/detail/NN/12/1E/02/8A/11/NN121E028-A11@14.jpg,Tunic - white,Noa Noa,FEMALE,womens-clothing-tunics
@@ -1192,7 +1149,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18291,B2521E017-A11,White,47,SUMMER,https://secure-i4.ztat.net/detail/B2/52/1E/01/7A/11/B2521E017-A11@16.jpg,Tunic - ecru,Best Mountain,FEMALE,womens-clothing-tunics
 18292,MA321E04Y-T11,Multi-coloured,115,SUMMER,https://secure-i4.ztat.net/detail/MA/32/1E/04/YT/11/MA321E04Y-T11@2.jpg,Tunic - combo,Marc O'Polo,FEMALE,womens-clothing-tunics
 18293,KA321E02O-J00,Pink,26,WINTER,https://secure-i4.ztat.net/detail/KA/32/1E/02/OJ/00/KA321E02O-J00@1.2.jpg,ELLEN - Tunic - pink,Kaffe,FEMALE,womens-clothing-tunics
-18294,PC721E008-A00,White,34,WINTER,https://secure-i2.ztat.net/detail/PC/72/1E/00/8A/00/PC721E008-A00@1.1.jpg,FUMIKO - Tunic - milk,Opus,FEMALE,womens-clothing-tunics
 18295,CR221E02S-103,Grey,65,WINTER,https://secure-i3.ztat.net/detail/CR/22/1E/02/S1/03/CR221E02S-103@1.1.jpg,SANDY - Tunic - dark grey,Cream,FEMALE,womens-clothing-tunics
 18296,M6121E00F-A11,White,39,SUMMER,https://secure-i5.ztat.net/detail/M6/12/1E/00/FA/11/M6121E00F-A11@14.jpg,Tunic - ecru,Molly Bracken,FEMALE,womens-clothing-tunics
 18297,M5921E01V-A11,White,45,SUMMER,https://secure-i5.ztat.net/detail/M5/92/1E/01/VA/11/M5921E01V-A11@12.jpg,NIFLO - Tunic - ecru/fushia,Morgan,FEMALE,womens-clothing-tunics
@@ -1505,8 +1461,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18610,PI922E00C-A11,White,25,SUMMER,https://secure-i2.ztat.net/detail/PI/92/2E/00/CA/11/PI922E00C-A11@14.jpg,Chinos - off-white,Pier One,MALE,mens-clothing-chinos
 18611,PI922E00C-N11,Olive,25,SUMMER,https://secure-i1.ztat.net/detail/PI/92/2E/00/CN/11/PI922E00C-N11@14.jpg,Chinos - olive,Pier One,MALE,mens-clothing-chinos
 18612,T1022E00R-M11,Green,100,SUMMER,https://secure-i2.ztat.net/detail/T1/02/2E/00/RM/11/T1022E00R-M11@8.jpg,WILLIAM-W  - Chinos - green,Tommy Hilfiger Tailored,MALE,mens-clothing-chinos
-18613,E1322E00B-K11,Blue,55,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2E/00/BK/11/E1322E00B-K11@8.jpg,SUN CHAPLIN - Chinos - navy,Eleven Paris,MALE,mens-clothing-chinos
-18614,E1322E008-B11,Beige,55,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2E/00/8B/11/E1322E008-B11@4.jpg,SUN CHAPLIN - Chinos - gray morn,Eleven Paris,MALE,mens-clothing-chinos
+1.86E+04,E1322E00B-K11,Blue,55,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2E/00/BK/11/E1322E00B-K11@8.jpg,SUN CHAPLIN - Chinos - navy,Eleven Paris,MALE,mens-clothing-chinos
+1.86E+04,E1322E008-B11,Beige,55,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2E/00/8B/11/E1322E008-B11@4.jpg,SUN CHAPLIN - Chinos - gray morn,Eleven Paris,MALE,mens-clothing-chinos
 18615,K4422E005-G11,Red,25,WINTER,https://secure-i4.ztat.net/detail/K4/42/2E/00/5G/11/K4422E005-G11@14.jpg,Chinos - bordeaux,KIOMI,MALE,mens-clothing-chinos
 18616,MA322E010-O11,Brown,95,WINTER,https://secure-i3.ztat.net/detail/MA/32/2E/01/0O/11/MA322E010-O11@2.1.jpg,Chinos - bronze brown,Marc O'Polo,MALE,mens-clothing-chinos
 18617,BO122A01W-A12,White,100,SUMMER,https://secure-i5.ztat.net/detail/BO/12/2A/01/WA/12/BO122A01W-A12@14.jpg,SCHINO  - Chinos - off-white,BOSS Orange,MALE,mens-clothing-chinos
@@ -1519,7 +1475,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18624,SC322E016-C11,Grey,120,WINTER,https://secure-i3.ztat.net/detail/SC/32/2E/01/6C/11/SC322E016-C11@6.jpg,Chinos - dark gray,Scotch & Soda,MALE,mens-clothing-chinos
 18625,SC322E00W-K11,Blue,75,WINTER,https://secure-i3.ztat.net/detail/SC/32/2E/00/WK/11/SC322E00W-K11@13.jpg,MOTT - Chinos - blue,Scotch & Soda,MALE,mens-clothing-chinos
 18626,PI922E00A-Q11,Black,25,SUMMER,https://secure-i6.ztat.net/detail/PI/92/2E/00/AQ/11/PI922E00A-Q11@14.jpg,Chinos - black,Pier One,MALE,mens-clothing-chinos
-18627,E1322E00A-G11,Red,55,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2E/00/AG/11/E1322E00A-G11@12.jpg,SUN CHAPLIN - Chinos - brick,Eleven Paris,MALE,mens-clothing-chinos
+1.86E+04,E1322E00A-G11,Red,55,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2E/00/AG/11/E1322E00A-G11@12.jpg,SUN CHAPLIN - Chinos - brick,Eleven Paris,MALE,mens-clothing-chinos
 18628,C1422E006-A11,White,80,SUMMER,https://secure-i5.ztat.net/detail/C1/42/2E/00/6A/11/C1422E006-A11@14.1.jpg,CLUB DURANGO - Chinos - wheat rinsed,Carhartt,MALE,mens-clothing-chinos
 18629,V1922E003-N11,Olive,50,SUMMER,https://secure-i3.ztat.net/detail/V1/92/2E/00/3N/11/V1922E003-N11@9.jpg,FROZEN - Chinos - khaki,Volcom,MALE,mens-clothing-chinos
 18630,C1422E006-Q11,Black,80,SUMMER,https://secure-i2.ztat.net/detail/C1/42/2E/00/6Q/11/C1422E006-Q11@6.jpg,CLUB DURANGO - Chinos - blacksmith rinsed,Carhartt,MALE,mens-clothing-chinos
@@ -1529,7 +1485,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18634,GS122E01W-C11,Grey,90,SUMMER,https://secure-i2.ztat.net/detail/GS/12/2E/01/WC/11/GS122E01W-C11@2.jpg,VALDO BRONSON SLIM FIT - Chinos - gs grey,G-Star,MALE,mens-clothing-chinos
 18635,GS122E01W-B11,Beige,90,SUMMER,https://secure-i5.ztat.net/detail/GS/12/2E/01/WB/11/GS122E01W-B11@14.jpg,VALDO BRONSON SLIM FIT - Chinos - khaki,G-Star,MALE,mens-clothing-chinos
 18636,GS122E01W-K11,Blue,90,SUMMER,https://secure-i5.ztat.net/detail/GS/12/2E/01/WK/11/GS122E01W-K11@9.jpg,VALDO BRONSON SLIM FIT - Chinos - mazarine blue,G-Star,MALE,mens-clothing-chinos
-18637,E1322E00C-K11,Blue,55,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2E/00/CK/11/E1322E00C-K11@2.jpg,SUN CHAPLIN - Chinos - true blue,Eleven Paris,MALE,mens-clothing-chinos
+1.86E+04,E1322E00C-K11,Blue,55,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2E/00/CK/11/E1322E00C-K11@2.jpg,SUN CHAPLIN - Chinos - true blue,Eleven Paris,MALE,mens-clothing-chinos
 18638,YO122E00U-K11,Blue,29,SUMMER,https://secure-i2.ztat.net/detail/YO/12/2E/00/UK/11/YO122E00U-K11@12.jpg,Chinos - dark blue,YOUR TURN,MALE,mens-clothing-chinos
 18639,MA322E012-I11,Lilac,95,SUMMER,https://secure-i3.ztat.net/detail/MA/32/2E/01/2I/11/MA322E012-I11@2.jpg,Chinos - flint,Marc O'Polo,MALE,mens-clothing-chinos
 18640,YO122E00U-Q11,Black,29,SUMMER,https://secure-i4.ztat.net/detail/YO/12/2E/00/UQ/11/YO122E00U-Q11@14.jpg,Chinos - black,YOUR TURN,MALE,mens-clothing-chinos
@@ -1566,12 +1522,12 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18671,YO122E00N-Q11,Black,25,SUMMER,https://secure-i4.ztat.net/detail/YO/12/2E/00/NQ/11/YO122E00N-Q11@2.jpg,Chinos - black,YOUR TURN,MALE,mens-clothing-chinos
 18672,ED122F04Z-C11,Grey,29,SUMMER,https://secure-i1.ztat.net/detail/ED/12/2F/04/ZC/11/ED122F04Z-C11@14.jpg,Shorts - blackish grey,edc by Esprit,MALE,mens-clothing-shorts
 18673,LE022F000-C11,Grey,80,SUMMER,https://secure-i4.ztat.net/detail/LE/02/2F/00/0C/11/LE022F000-C11@6.jpg,Shorts - green,Les Eclaires Born in France,MALE,mens-clothing-shorts
-18674,E1322F000-C11,Grey,47,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2F/00/0C/11/E1322F000-C11@4.jpg,CHUCK - Shorts - ash,Eleven Paris,MALE,mens-clothing-shorts
+1.87E+04,E1322F000-C11,Grey,47,SUMMER,https://secure-i2.ztat.net/detail/E1/32/2F/00/0C/11/E1322F000-C11@4.jpg,CHUCK - Shorts - ash,Eleven Paris,MALE,mens-clothing-shorts
 18675,S3722A00B-909,Black,60,SUMMER,https://secure-i1.ztat.net/detail/S3/72/2A/00/B9/09/S3722A00B-909@1.1.jpg,Shorts - schwarz,Schott NYC,MALE,mens-clothing-shorts
 18676,S3722A003-002,White,60,SUMMER,https://secure-i5.ztat.net/detail/S/3/S3722A003-002@1.1.jpg,Shorts - white,Schott NYC,MALE,mens-clothing-shorts
 18677,ED122F04Z-K11,Blue,29,SUMMER,https://secure-i6.ztat.net/detail/ED/12/2F/04/ZK/11/ED122F04Z-K11@13.jpg,Shorts - dark washed blue,edc by Esprit,MALE,mens-clothing-shorts
 18678,GS122F068-K11,Blue,110,WINTER,https://secure-i2.ztat.net/detail/GS/12/2F/06/8K/11/GS122F068-K11@13.jpg,DROP 3 ROVIC COMBAT - Shorts - lead,G-Star,MALE,mens-clothing-shorts
-18679,E1322F000-K11,Blue,47,SUMMER,https://secure-i6.ztat.net/detail/E1/32/2F/00/0K/11/E1322F000-K11@4.jpg,CHUCK - Shorts - navy,Eleven Paris,MALE,mens-clothing-shorts
+1.87E+04,E1322F000-K11,Blue,47,SUMMER,https://secure-i6.ztat.net/detail/E1/32/2F/00/0K/11/E1322F000-K11@4.jpg,CHUCK - Shorts - navy,Eleven Paris,MALE,mens-clothing-shorts
 18680,S3722F000-A11,White,65,SUMMER,https://secure-i4.ztat.net/detail/S3/72/2F/00/0A/11/S3722F000-A11@4.jpg,Shorts - white,Schott NYC,MALE,mens-clothing-shorts
 18681,S3722A00A-704,Beige,60,SUMMER,https://secure-i2.ztat.net/detail/S3/72/2A/00/A7/04/S3722A00A-704@1.1.jpg,Shorts - beige,Schott NYC,MALE,mens-clothing-shorts
 18682,S3722A00B-606,Green,60,SUMMER,https://secure-i1.ztat.net/detail/S3/72/2A/00/B6/06/S3722A00B-606@1.1.jpg,Shorts - khaki,Schott NYC,MALE,mens-clothing-shorts
@@ -1650,7 +1606,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18755,BI722F015-C12,Grey,43,SUMMER,https://secure-i4.ztat.net/detail/BI/72/2F/01/5C/12/BI722F015-C12@13.jpg,CENTRAL - Trousers - char,Billabong,MALE,mens-clothing-shorts
 18756,AA222E000-C11,Grey,40,WINTER,https://secure-i1.ztat.net/detail/AA/22/2E/00/0C/11/AA222E000-C11@14.jpg,Shorts - zinc,American Apparel,MALE,mens-clothing-shorts
 18757,JJ542E00A-Q11,Black,17,SUMMER,https://secure-i6.ztat.net/detail/JJ/54/2E/00/AQ/11/JJ542E00A-Q11@14.jpg,JJTCLEAD - Shorts - black,Jack & Jones Tech,MALE,mens-clothing-shorts
-18758,E1322F000-G11,Red,47,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2F/00/0G/11/E1322F000-G11@1.jpg,CHUCK - Shorts - brick,Eleven Paris,MALE,mens-clothing-shorts
+1.88E+04,E1322F000-G11,Red,47,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2F/00/0G/11/E1322F000-G11@1.jpg,CHUCK - Shorts - brick,Eleven Paris,MALE,mens-clothing-shorts
 18759,P5222F00O-B11,Beige,45,SUMMER,https://secure-i1.ztat.net/detail/P5/22/2F/00/OB/11/P5222F00O-B11@14.jpg,MOJO  - Shorts - kelp,Original Penguin,MALE,mens-clothing-shorts
 18760,P5222F00O-K12,Blue,45,SUMMER,https://secure-i6.ztat.net/detail/P5/22/2F/00/OK/12/P5222F00O-K12@14.1.jpg,MOJO  - Shorts - dress blues,Original Penguin,MALE,mens-clothing-shorts
 18761,UN242E016-Q11,Black,18,WINTER,https://secure-i6.ztat.net/detail/UN/24/2E/01/6Q/11/UN242E016-Q11@7.jpg,HG FLYWEIGHT RUN 3 - Sports shorts - black,Under Armour,MALE,mens-clothing-shorts
@@ -1693,40 +1649,22 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18798,HU822A00R-B11,Beige,42,SUMMER,https://secure-i2.ztat.net/detail/HU/82/2A/00/RB/11/HU822A00R-B11@1.jpg,ONE & ONLY - Shorts - cardboard khaki,Hurley,MALE,mens-clothing-shorts
 18799,BE122A01A-K11,Blue,55,SUMMER,https://secure-i5.ztat.net/detail/BE/12/2A/01/AK/11/BE122A01A-K11@3.jpg,Shorts - dark navy,Ben Sherman,MALE,mens-clothing-shorts
 18800,BU122M002-102,Grey,100,ALL,https://secure-i2.ztat.net/detail/BU/12/2M/00/21/02/BU122M002-102@20.jpg,Trousers - grau,Bugatti,MALE,mens-clothing-trousers
-18801,DO122B003-802,Black,85,ALL,https://secure-i3.ztat.net/detail/DO/12/2B/00/38/02/DO122B003-802@1.1.jpg,D1 STRETCH - Chinos - schwarz,DOCKERS,MALE,mens-clothing-trousers
-18802,DO122B003-606,Beige,85,ALL,https://secure-i1.ztat.net/detail/DO/12/2B/00/36/06/DO122B003-606@1.jpg,D1 STRETCH - Chinos - beige,DOCKERS,MALE,mens-clothing-trousers
-18803,DO122B003-702,Brown,85,ALL,https://secure-i4.ztat.net/detail/DO/12/2B/00/37/02/DO122B003-702@1.1.jpg,D1 STRETCH - Trousers - brown,DOCKERS,MALE,mens-clothing-trousers
 18804,BU122M002-503,Blue,100,ALL,https://secure-i1.ztat.net/detail/BU/12/2M/00/25/03/BU122M002-503@20.jpg,Suit trousers - marine,Bugatti,MALE,mens-clothing-trousers
-18805,DO822A01G-802,Black,80,ALL,https://secure-i3.ztat.net/detail/DO/82/2A/01/G8/02/DO822A01G-802@1.1.jpg,SF KHAKI - Chinos - black,DOCKERS,MALE,mens-clothing-trousers
-18806,DI622X00N-802,Black,45,ALL,https://secure-i3.ztat.net/detail/DI/62/2X/00/N8/02/DI622X00N-802@1.1.jpg,ORIGINAL 874 WORK PANT - Trousers - black,Dickies,MALE,mens-clothing-trousers
 18807,JL122M002-802,Black,110,ALL,https://secure-i3.ztat.net/detail/JL/12/2M/00/28/02/JL122M002-802@1.1.jpg,PAULIE - Suit trousers - black,J.LINDEBERG,MALE,mens-clothing-trousers
-18808,DO822A01G-503,Blue,80,ALL,https://secure-i5.ztat.net/detail/DO/82/2A/01/G5/03/DO822A01G-503@1.1.jpg,SF KHAKI - Trousers - dockers navy,DOCKERS,MALE,mens-clothing-trousers
 18809,JL122M002-503,Blue,110,ALL,https://secure-i5.ztat.net/detail/JL/12/2M/00/25/03/JL122M002-503@1.1.jpg,PAULIE - Trousers - dk blue,J.LINDEBERG,MALE,mens-clothing-trousers
-18810,DO822A009-606,Beige,75,ALL,https://secure-i6.ztat.net/detail/DO/82/2A/00/96/06/DO822A009-606@20.jpg,ALPHA - Chinos - khaki,DOCKERS,MALE,mens-clothing-trousers
 18811,BU122M002-802,Black,100,ALL,https://secure-i1.ztat.net/detail/BU/12/2M/00/28/02/BU122M002-802@19.jpg,Trousers - black,Bugatti,MALE,mens-clothing-trousers
-18812,DO822A009-503,Blue,75,ALL,https://secure-i3.ztat.net/detail/DO/82/2A/00/95/03/DO822A009-503@18.jpg,ALPHA - Trousers - dunkelblau,DOCKERS,MALE,mens-clothing-trousers
-18813,DI622X00N-801,Grey,45,ALL,https://secure-i6.ztat.net/detail/DI/62/2X/00/N8/01/DI622X00N-801@20.jpg,ORIGINAL 874 WORK PANT - Chinos - charocal grey,Dickies,MALE,mens-clothing-trousers
 18814,JA222E00U-Q11,Black,38,ALL,https://secure-i3.ztat.net/detail/JA/22/2E/00/UQ/11/JA222E00U-Q11@2.jpg,JAMES TROY - Trousers - black,Jack & Jones,MALE,mens-clothing-trousers
 18815,SE622M00I-K11,Blue,75,ALL,https://secure-i6.ztat.net/detail/SE/62/2M/00/IK/11/SE622M00I-K11@5.3.jpg,MYLO - Trousers - blue,Selected Homme,MALE,mens-clothing-trousers
-18816,DO822A01G-606,Beige,65,ALL,https://secure-i1.ztat.net/detail/DO/82/2A/01/G6/06/DO822A01G-606@1.1.jpg,SF KHAKI - Trousers - beige,DOCKERS,MALE,mens-clothing-trousers
-18817,DO822A009-701,Brown,75,SUMMER,https://secure-i1.ztat.net/detail/DO/82/2A/00/97/01/DO822A009-701@20.1.jpg,ALPHA - Chinos - hellbraun,DOCKERS,MALE,mens-clothing-trousers
 18818,BW422J002-P11,Petrol,150,SUMMER,https://secure-i3.ztat.net/detail/BW/42/2J/00/2P/11/BW422J002-P11@2.jpg,SHEP - Tracksuit bottoms - petrol/ecru,Orlebar Brown,MALE,mens-clothing-trousers
 18819,BW422J002-C11,Grey,150,SUMMER,https://secure-i4.ztat.net/detail/BW/42/2J/00/2C/11/BW422J002-C11@2.jpg,SHEP - Trousers - mid grey melange,Orlebar Brown,MALE,mens-clothing-trousers
 18820,TI522E00I-K11,Blue,105,ALL,https://secure-i3.ztat.net/detail/TI/52/2E/00/IK/11/TI522E00I-K11@2.jpg,LISTON - Trousers - dark jeans,Tiger of Sweden,MALE,mens-clothing-trousers
 18821,JL122M002-C11,Grey,100,ALL,https://secure-i1.ztat.net/detail/JL/12/2M/00/2C/11/JL122M002-C11@1.jpg,PAULIE - Trousers - grey,J.LINDEBERG,MALE,mens-clothing-trousers
 18822,F1422A00I-K11,Blue,120,ALL,https://secure-i6.ztat.net/detail/F1/42/2A/00/IK/11/F1422A00I-K11@3.jpg,CHRISTIAN - Trousers - dark navy,Filippa K,MALE,mens-clothing-trousers
 18823,F1422A00I-Q11,Black,120,ALL,https://secure-i6.ztat.net/detail/F1/42/2A/00/IQ/11/F1422A00I-Q11@7.jpg,CHRISTIAN - Trousers - black,Filippa K,MALE,mens-clothing-trousers
-18824,DI622X00N-606,Beige,45,SUMMER,https://secure-i2.ztat.net/detail/DI/62/2X/00/N6/06/DI622X00N-606@1.2.jpg,ORIGINAL 874 WORK PANT - Trousers - khaki,Dickies,MALE,mens-clothing-trousers
 18825,NE821A02G-K11,Blue,140,SUMMER,https://secure-i4.ztat.net/detail/NE/82/1A/02/GK/11/NE821A02G-K11@5.jpg,STARS & STRIPES - Jumpsuit - blue,Onepiece,unisex,mens-clothing-trousers
 18826,FA522E000-Q11,Black,50,SUMMER,https://secure-i1.ztat.net/detail/FA/52/2E/00/0Q/11/FA522E000-Q11@7.jpg,THE DRAKE - Slim fit jeans - black,Farah Vintage,MALE,mens-clothing-trousers
-18827,DO822A00I-Q11,Black,65,SUMMER,https://secure-i3.ztat.net/detail/DO/82/2A/00/IQ/11/DO822A00I-Q11@2.jpg,D1 STANDARD ISSUE - Trousers - black,DOCKERS,MALE,mens-clothing-trousers
-18828,DO822A00I-K11,Blue,65,SUMMER,https://secure-i6.ztat.net/detail/DO/82/2A/00/IK/11/DO822A00I-K11@3.1.jpg,D1 STANDARD ISSUE - Chinos - dockers navy,DOCKERS,MALE,mens-clothing-trousers
-18829,DO822A00I-B11,Beige,65,SUMMER,https://secure-i2.ztat.net/detail/DO/82/2A/00/IB/11/DO822A00I-B11@4.jpg,D1 STANDARD ISSUE - Chinos - dockers khaki,DOCKERS,MALE,mens-clothing-trousers
-18830,DO822A009-802,Black,75,SUMMER,https://secure-i3.ztat.net/detail/DO/82/2A/00/98/02/DO822A009-802@1.jpg,ALPHA - Trousers - schwarz,DOCKERS,MALE,mens-clothing-trousers
 18831,NE821A006-503,Blue,150,WINTER,https://secure-i5.ztat.net/detail/NE/82/1A/00/65/03/NE821A006-503@1.1.jpg,MARIUS - Jumpsuit - blue,Onepiece,unisex,mens-clothing-trousers
 18832,R2342B002-802,Black,42,SUMMER,https://secure-i3.ztat.net/detail/R2/34/2B/00/28/02/R2342B002-802@1.1.jpg,ACTIVE PACKAWAY II - Trousers - black,Regatta,MALE,mens-clothing-trousers
-18833,DO822A009-102,Grey,75,SUMMER,https://secure-i2.ztat.net/detail/DO/82/2A/00/91/02/DO822A009-102@1.jpg,ALPHA - Trousers - dark pebble,DOCKERS,MALE,mens-clothing-trousers
-18834,DO122B003-503,Blue,85,SUMMER,https://secure-i3.ztat.net/detail/DO/12/2B/00/35/03/DO122B003-503@21.jpg,D1 STRETCH - Chinos - blue,DOCKERS,MALE,mens-clothing-trousers
 18835,JA222E01G-Q11,Black,30,ALL,https://secure-i2.ztat.net/detail/JA/22/2E/01/GQ/11/JA222E01G-Q11@14.2.jpg,Trousers - black,Jack & Jones,MALE,mens-clothing-trousers
 18836,ES422M012-Q00,Black,55,ALL,https://secure-i5.ztat.net/detail/ES/42/2M/01/2Q/00/ES422M012-Q00@4.jpg,Trousers - black,ESPRIT Collection,MALE,mens-clothing-trousers
 18837,ME422A01M-Q11,Black,43,WINTER,https://secure-i1.ztat.net/detail/ME/42/2A/01/MQ/11/ME422A01M-Q11@7.jpg,Trousers - black,Mexx,MALE,mens-clothing-trousers
@@ -1748,7 +1686,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18853,ES122E00Y-K12,Blue,45,SUMMER,https://secure-i3.ztat.net/detail/ES/12/2E/00/YK/12/ES122E00Y-K12@9.jpg,Trousers - insignia blue,Esprit,MALE,mens-clothing-trousers
 18854,NE821A001-504,Blue,120,WINTER,https://secure-i6.ztat.net/detail/NE/82/1A/00/15/04/NE821A001-504@1.jpg,ORIGINAL - Jumpsuit - royal blue,Onepiece,unisex,mens-clothing-trousers
 18855,NE821A001-102,Grey,120,WINTER,https://secure-i6.ztat.net/detail/NE/82/1A/00/11/02/NE821A001-102@23.jpg,ORIGINAL - Jumpsuit - grey melange,Onepiece,unisex,mens-clothing-trousers
-18856,E1322E009-C11,Grey,55,SUMMER,https://secure-i4.ztat.net/detail/E1/32/2E/00/9C/11/E1322E009-C11@14.jpg,SUN CHAPLIN - Trousers - ash,Eleven Paris,MALE,mens-clothing-trousers
+1.89E+04,E1322E009-C11,Grey,55,SUMMER,https://secure-i4.ztat.net/detail/E1/32/2E/00/9C/11/E1322E009-C11@14.jpg,SUN CHAPLIN - Trousers - ash,Eleven Paris,MALE,mens-clothing-trousers
 18857,C1422A00I-Q11,Black,42,WINTER,https://secure-i4.ztat.net/detail/C1/42/2A/00/IQ/11/C1422A00I-Q11@5.jpg,SKILL CORTEZ - Trousers - black,Carhartt,MALE,mens-clothing-trousers
 18858,H2742E001-C11,Grey,70,WINTER,https://secure-i2.ztat.net/detail/H2/74/2E/00/1C/11/H2742E001-C11@5.jpg,AMFIBIE - Trousers - grey,Haglöfs,MALE,mens-clothing-trousers
 18859,NE821A02C-K11,Blue,100,SUMMER,https://secure-i5.ztat.net/detail/NE/82/1A/02/CK/11/NE821A02C-K11@8.jpg,Jumpsuit - navy,Onepiece,unisex,mens-clothing-trousers
@@ -1780,9 +1718,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 18885,PI922E00B-Q11,Black,25,SUMMER,https://secure-i5.ztat.net/detail/PI/92/2E/00/BQ/11/PI922E00B-Q11@14.jpg,Trousers - black,Pier One,MALE,mens-clothing-trousers
 18886,4BE22A010-A11,White,50,SUMMER,https://secure-i2.ztat.net/detail/4B/E2/2A/01/0A/11/4BE22A010-A11@13.jpg,Trousers - black ,Benetton,MALE,mens-clothing-trousers
 18887,SE622A07H-O12,Brown,38,WINTER,https://secure-i3.ztat.net/detail/SE/62/2A/07/HO/12/SE622A07H-O12@15.jpg,ONE MYLO LOGAN - Suit trousers - brown,Selected Homme,MALE,mens-clothing-trousers
-18888,BI722F015-C11,Grey,43,SUMMER,https://secure-i2.ztat.net/detail/BI/72/2F/01/5C/11/BI722F015-C11@14.jpg,CENTRAL - Shorts - bone,Billabong,MALE,mens-clothing-trousers
-18889,BI722F015-Q11,Black,43,SUMMER,https://secure-i3.ztat.net/detail/BI/72/2F/01/5Q/11/BI722F015-Q11@5.jpg,CENTRAL - Shorts - black stripe,Billabong,MALE,mens-clothing-trousers
-18890,BI722F015-C12,Grey,43,SUMMER,https://secure-i4.ztat.net/detail/BI/72/2F/01/5C/12/BI722F015-C12@13.jpg,CENTRAL - Trousers - char,Billabong,MALE,mens-clothing-trousers
 18891,ES122E00X-C12,Grey,45,SUMMER,https://secure-i2.ztat.net/detail/ES/12/2E/00/XC/12/ES122E00X-C12@14.1.jpg,Trousers - chrom,Esprit,MALE,mens-clothing-trousers
 18892,BF622E003-K11,Blue,150,SUMMER,https://secure-i6.ztat.net/detail/BF/62/2E/00/3K/11/BF622E003-K11@5.jpg,Trousers - Navy,Brosbi,MALE,mens-clothing-trousers
 18893,BU122E005-K11,Blue,90,SUMMER,https://secure-i1.ztat.net/detail/BU/12/2E/00/5K/11/BU122E005-K11@14.1.jpg,TEXAS - Trousers - blau,Bugatti,MALE,mens-clothing-trousers
@@ -2092,7 +2027,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19198,PI922Q008-Q11,Black,25,SUMMER,https://secure-i2.ztat.net/detail/PI/92/2Q/00/8Q/11/PI922Q008-Q11@2.jpg,Cardigan - black,Pier One,MALE,mens-cardigans
 19199,QU122S001-C11,Blue,41,WINTER,https://secure-i5.ztat.net/detail/QU/12/2S/00/1C/11/QU122S001-C11@2.jpg,MAJOR STRIPES - Cardigan - washed navy heat,Quiksilver,MALE,mens-cardigans
 19200,S3422J007-802,Black,50,ALL,https://secure-i3.ztat.net/detail/S3/42/2J/00/78/02/S3422J007-802@1.1.jpg,BATMAN - Hoodie - black,LOGOSHIRT,MALE,mens-clothing-jumpers-hoodies
-19201,FY022J001-Q00,Black,250,ALL,https://secure-i4.ztat.net/detail/FY/02/2J/00/1Q/00/FY022J001-Q00@1.1.jpg,Cardigan - black,FAME ON YOU PARIS,MALE,mens-clothing-jumpers-hoodies
 19202,S3422J008-503,Blue,50,ALL,https://secure-i5.ztat.net/detail/S3/42/2J/00/85/03/S3422J008-503@1.1.jpg,SUPERMAN - Hoodie - blue,LOGOSHIRT,MALE,mens-clothing-jumpers-hoodies
 19203,UR622J001-802,Black,34,ALL,https://secure-i6.ztat.net/detail/UR/62/2J/00/18/02/UR622J001-802@1.2.jpg,BLANK - Hoodie - black,Urban Classics,MALE,mens-clothing-jumpers-hoodies
 19204,UR622J003-002,White,42,ALL,https://secure-i5.ztat.net/detail/UR/62/2J/00/30/02/UR622J003-002@1.1.jpg,ZIG ZAG - Hoodie - white,Urban Classics,MALE,mens-clothing-jumpers-hoodies
@@ -2100,10 +2034,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19206,UR622J003-802,Black,41,ALL,https://secure-i3.ztat.net/detail/UR/62/2J/00/38/02/UR622J003-802@1.1.jpg,ZIG ZAG - Hoodie - black,Urban Classics,MALE,mens-clothing-jumpers-hoodies
 19207,ED122I01U-502,Blue,45,WINTER,https://secure-i6.ztat.net/detail/ED/12/2I/01/U5/02/ED122I01U-502@1.1.jpg,NOOS - Hoodie - indigo blue,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
 19208,ED122I01U-112,Grey,45,WINTER,https://secure-i3.ztat.net/detail/ED/12/2I/01/U1/12/ED122I01U-112@1.1.jpg,NOOS - Jumper - medium grey melange,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
-19209,S3422S000-C11,Grey,50,ALL,https://secure-i4.ztat.net/detail/S3/42/2S/00/0C/11/S3422S000-C11@1.1.jpg,SUPERMAN - Hoodie - grau-meliert,LOGOSHIRT,unisex,mens-clothing-jumpers-hoodies
 19210,JA222Q03V-Q11,Black,40,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/03/VQ/11/JA222Q03V-Q11@14.jpg,MOISES - Hoodie - black,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
 19211,JA222Q03V-C11,Grey,39,ALL,https://secure-i5.ztat.net/detail/JA/22/2Q/03/VC/11/JA222Q03V-C11@14.jpg,MOISES - Hoodie - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
-19212,FR322J000-C11,Grey,55,WINTER,https://secure-i5.ztat.net/detail/FR/32/2J/00/0C/11/FR322J000-C11@1.jpg,Hoodie - grey,Franklin & Marshall,unisex,mens-clothing-jumpers-hoodies
 19213,FO522D00K-G11,Red,25,WINTER,https://secure-i5.ztat.net/detail/FO/52/2D/00/KG/11/FO522D00K-G11@2.1.jpg,ROCCO - Hoodie - red,Forvert,MALE,mens-clothing-jumpers-hoodies
 19214,3ME22J002-K11,Blue,55,SUMMER,https://secure-i2.ztat.net/detail/3M/E2/2J/00/2K/11/3ME22J002-K11@2.jpg,PILL - Hoodie - navy,Merc,MALE,mens-clothing-jumpers-hoodies
 19215,FO522D00K-550,Blue,50,WINTER,https://secure-i1.ztat.net/detail/FO/52/2D/00/K5/50/FO522D00K-550@3.1.jpg,ROCCO - Hoodie - blue,Forvert,MALE,mens-clothing-jumpers-hoodies
@@ -2147,11 +2079,10 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19255,FR322J00I-K12,Blue,75,SUMMER,https://secure-i2.ztat.net/detail/FR/32/2J/00/IK/12/FR322J00I-K12@13.jpg,Hoodie - navy,Franklin & Marshall,MALE,mens-clothing-jumpers-hoodies
 19256,JA222Q06P-C11,Grey,45,SUMMER,https://secure-i6.ztat.net/detail/JA/22/2Q/06/PC/11/JA222Q06P-C11@13.jpg,JJORSPEED REGULAR FIT - Hoodie - light grey melange,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
 19257,ED122S00R-Q11,Black,39,SUMMER,https://secure-i1.ztat.net/detail/ED/12/2S/00/RQ/11/ED122S00R-Q11@14.jpg,Hoodie - black,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
-19258,FR322J000-K11,Blue,60,WINTER,https://secure-i2.ztat.net/detail/FR/32/2J/00/0K/11/FR322J000-K11@6.jpg,Hoodie - blue,Franklin & Marshall,unisex,mens-clothing-jumpers-hoodies
 19259,JA222I03N-503,Blue,46,WINTER,https://secure-i5.ztat.net/detail/JA/22/2I/03/N5/03/JA222I03N-503@1.1.jpg,YANN - Hoodie - black navy,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
 19260,SE622J01H-K11,Blue,40,WINTER,https://secure-i2.ztat.net/detail/SE/62/2J/01/HK/11/SE622J01H-K11@1.1.jpg,ROCCO - Hoodie - peacoat,Selected Homme,MALE,mens-clothing-jumpers-hoodies
 19261,HI122J00Z-802,Black,70,WINTER,https://secure-i3.ztat.net/detail/HI/12/2J/00/Z8/02/HI122J00Z-802@1.1.jpg,HOGAN - Hoodie - black,Hilfiger Denim,MALE,mens-clothing-jumpers-hoodies
-19262,E1321D063-112,Grey,36,WINTER,https://secure-i3.ztat.net/detail/E1/32/1D/06/31/12/E1321D063-112@1.1.jpg,LENNY - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
+1.93E+04,E1321D063-112,Grey,36,WINTER,https://secure-i3.ztat.net/detail/E1/32/1D/06/31/12/E1321D063-112@1.1.jpg,LENNY - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
 19263,DI122J023-605,Petrol,55,WINTER,https://secure-i2.ztat.net/detail/DI/12/2J/02/36/05/DI122J023-605@1.1.jpg,SCENTYN - Hoodie - petrol,Diesel,MALE,mens-clothing-jumpers-hoodies
 19264,DI622J00A-503,Blue,35,WINTER,https://secure-i5.ztat.net/detail/DI/62/2J/00/A5/03/DI622J00A-503@1.1.jpg,PHILADELPHIA - Hoodie - navy blue,Dickies,MALE,mens-clothing-jumpers-hoodies
 19265,EL822J00A-113,Grey,40,WINTER,https://secure-i6.ztat.net/detail/EL/82/2J/00/A1/13/EL822J00A-113@1.jpg,GRIME - Hoodie - charcoal heather,Element,MALE,mens-clothing-jumpers-hoodies
@@ -2194,7 +2125,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19302,ED122S00R-C11,Grey,39,SUMMER,https://secure-i3.ztat.net/detail/ED/12/2S/00/RC/11/ED122S00R-C11@14.1.jpg,Sweatshirt - dark grey melange,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
 19303,ED122S00R-K12,Blue,39,SUMMER,https://secure-i3.ztat.net/detail/ED/12/2S/00/RK/12/ED122S00R-K12@15.jpg,Sweatshirt - indigo blue,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
 19304,ED122S00T-K11,Blue,55,SUMMER,https://secure-i5.ztat.net/detail/ED/12/2S/00/TK/11/ED122S00T-K11@11.2.jpg,Hoodie - indigo blue,edc by Esprit,MALE,mens-clothing-jumpers-hoodies
-19305,E1322S00O-C11,Grey,60,SUMMER,https://secure-i6.ztat.net/detail/E1/32/2S/00/OC/11/E1322S00O-C11@14.jpg,GADRY - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
+1.93E+04,E1322S00O-C11,Grey,60,SUMMER,https://secure-i6.ztat.net/detail/E1/32/2S/00/OC/11/E1322S00O-C11@14.jpg,GADRY - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
 19306,LR022S00M-Q11,Black,60,SUMMER,https://secure-i6.ztat.net/detail/LR/02/2S/00/MQ/11/LR022S00M-Q11@14.jpg,Tracksuit top - black,LRG,MALE,mens-clothing-jumpers-hoodies
 19307,SC322S00T-C11,Grey,75,WINTER,https://secure-i1.ztat.net/detail/SC/32/2S/00/TC/11/SC322S00T-C11@14.jpg,Hoodie - dark gray,Scotch & Soda,MALE,mens-clothing-jumpers-hoodies
 19308,QU122S00F-M11,Green,37,SUMMER,https://secure-i5.ztat.net/detail/QU/12/2S/00/FM/11/QU122S00F-M11@14.jpg,EVERYDAY - Sweatshirt - shamrock ,Quiksilver,MALE,mens-clothing-jumpers-hoodies
@@ -2220,12 +2151,12 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19328,GS122S016-G11,Red,75,SUMMER,https://secure-i2.ztat.net/detail/GS/12/2S/01/6G/11/GS122S016-G11@13.jpg,NUELIK - Hoodie - fig,G-Star,MALE,mens-clothing-jumpers-hoodies
 19329,M0822S00Q-C11,Grey,25,WINTER,https://secure-i4.ztat.net/detail/M0/82/2S/00/QC/11/M0822S00Q-C11@14.jpg,Tracksuit top - grey,Burton Menswear London,MALE,mens-clothing-jumpers-hoodies
 19330,C1422S00P-T11,Multi-coloured,110,SUMMER,https://secure-i6.ztat.net/detail/C1/42/2S/00/PT/11/C1422S00P-T11@14.jpg,TROPIC - Sweatshirt - multi,Carhartt,MALE,mens-clothing-jumpers-hoodies
-19331,E1322S00P-Q11,Black,60,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2S/00/PQ/11/E1322S00P-Q11@14.jpg,GADRY - Hoodie - black,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
+1.93E+04,E1322S00P-Q11,Black,60,SUMMER,https://secure-i3.ztat.net/detail/E1/32/2S/00/PQ/11/E1322S00P-Q11@14.jpg,GADRY - Hoodie - black,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
 19332,SO422S00N-K11,Blue,50,SUMMER,https://secure-i5.ztat.net/detail/SO/42/2S/00/NK/11/SO422S00N-K11@14.jpg,MATHUSAN - Hoodie - blue,Solid,MALE,mens-clothing-jumpers-hoodies
 19333,JA222S08T-C11,Grey,30,SUMMER,https://secure-i4.ztat.net/detail/JA/22/2S/08/TC/11/JA222S08T-C11@13.jpg,JJCOVAN REGULAR FIT - Sweatshirt - dark grey melange,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
 19334,QU122S00F-C12,Grey,37,SUMMER,https://secure-i2.ztat.net/detail/QU/12/2S/00/FC/12/QU122S00F-C12@14.jpg,EVERYDAY - Sweatshirt - Tarmac,Quiksilver,MALE,mens-clothing-jumpers-hoodies
 19335,JA222S08V-K11,Blue,30,SUMMER,https://secure-i3.ztat.net/detail/JA/22/2S/08/VK/11/JA222S08V-K11@14.jpg,JJORMOTOL REGULAR FIT - Hoodie - peacoat ,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
-19336,E1322S00Q-C11,Grey,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/QC/11/E1322S00Q-C11@13.jpg,FIX HOOP  - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
+1.93E+04,E1322S00Q-C11,Grey,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/QC/11/E1322S00Q-C11@13.jpg,FIX HOOP  - Hoodie - grey chine,Eleven Paris,MALE,mens-clothing-jumpers-hoodies
 19337,LE122Q000-C11,Grey,45,SUMMER,https://secure-i1.ztat.net/detail/LE/12/2Q/00/0C/11/LE122Q000-C11@14.jpg,CHRONIC  - Sweatshirt - light heather grey,le coq sportif,MALE,mens-clothing-jumpers-hoodies
 19338,BO122O010-C11,Grey,105,SUMMER,https://secure-i1.ztat.net/detail/BO/12/2O/01/0C/11/BO122O010-C11@14.jpg,WHIZZ - Hoodie - dark grey,BOSS Orange,MALE,mens-clothing-jumpers-hoodies
 19339,HI122S00N-Q11,Black,80,SUMMER,https://secure-i3.ztat.net/detail/HI/12/2S/00/NQ/11/HI122S00N-Q11@18.jpg,HUNTER - Hoodie - tommy black,Hilfiger Denim,MALE,mens-clothing-jumpers-hoodies
@@ -2291,9 +2222,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19399,JA222S08G-C11,Grey,29,SUMMER,https://secure-i5.ztat.net/detail/JA/22/2S/08/GC/11/JA222S08G-C11@2.jpg,JJLENNY REGULAR FIT - Hoodie - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-hoodies
 19400,GA322A002-503,Blue,85,ALL,https://secure-i6.ztat.net/detail/GA/32/2A/00/25/03/GA322A002-503@1.jpg,Jumper - blue,Gant,MALE,mens-sweatshirts
 19401,GA322A002-802,Black,85,ALL,https://secure-i2.ztat.net/detail/GA/32/2A/00/28/02/GA322A002-802@1.jpg,Jumper - black,Gant,MALE,mens-sweatshirts
-19402,UR622J003-002,White,42,ALL,https://secure-i5.ztat.net/detail/UR/62/2J/00/30/02/UR622J003-002@1.1.jpg,ZIG ZAG - Hoodie - white,Urban Classics,MALE,mens-sweatshirts
 19403,PA942B00F-102,Grey,85,ALL,https://secure-i4.ztat.net/detail/PA/94/2B/00/F1/02/PA942B00F-102@1.1.jpg,BETTER - Sweatshirt - stonewash,Patagonia,MALE,mens-sweatshirts
-19404,UR622J003-802,Black,41,ALL,https://secure-i3.ztat.net/detail/UR/62/2J/00/38/02/UR622J003-802@1.1.jpg,ZIG ZAG - Hoodie - black,Urban Classics,MALE,mens-sweatshirts
 19405,V1922S001-Q11,Black,40,SUMMER,https://secure-i3.ztat.net/detail/V1/92/2S/00/1Q/11/V1922S001-Q11@2.jpg,ICON - Sweatshirt - black,Volcom,MALE,mens-sweatshirts
 19406,S3722J007-102,Blue,34,WINTER,https://secure-i4.ztat.net/detail/S3/72/2J/00/71/02/S3722J007-102@21.jpg,Sweatshirt - heather grey,Schott NYC,MALE,mens-sweatshirts
 19407,S3722J007-503,Blue,34,WINTER,https://secure-i5.ztat.net/detail/S3/72/2J/00/75/03/S3722J007-503@1.1.jpg,Sweatshirt - navy,Schott NYC,MALE,mens-sweatshirts
@@ -2308,8 +2237,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19416,JA222S05X-C11,Grey,27,ALL,https://secure-i3.ztat.net/detail/JA/22/2S/05/XC/11/JA222S05X-C11@14.jpg,NOOS - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-sweatshirts
 19417,JA222S05T-K11,Blue,23,ALL,https://secure-i5.ztat.net/detail/JA/22/2S/05/TK/11/JA222S05T-K11@14.jpg,NOOS - Sweatshirt - midnight navy,Jack & Jones,MALE,mens-sweatshirts
 19418,LY222J00O-K01,Blue,65,WINTER,https://secure-i6.ztat.net/detail/LY/22/2J/00/OK/01/LY222J00O-K01@4.jpg,Sweatshirt - shallow end,Lyle & Scott,MALE,mens-sweatshirts
-19419,3ME22J002-K11,Blue,55,SUMMER,https://secure-i2.ztat.net/detail/3M/E2/2J/00/2K/11/3ME22J002-K11@2.jpg,PILL - Hoodie - navy,Merc,MALE,mens-sweatshirts
-19420,JA222S000-C11,Grey,28,WINTER,https://secure-i2.ztat.net/detail/JA/22/2S/00/0C/11/JA222S000-C11@4.jpg,ACCESS - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-sweatshirts
 19421,TS122D004-907,Blue,33,WINTER,https://secure-i3.ztat.net/detail/TS/12/2D/00/49/07/TS122D004-907@1.1.jpg,TROY - Sweatshirt - dark navy,Teddy Smith,MALE,mens-sweatshirts
 19422,JA222S09E-C11,Grey,29,ALL,https://secure-i4.ztat.net/detail/JA/22/2S/09/EC/11/JA222S09E-C11@14.jpg,SLIM FIT - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-sweatshirts
 19423,BW422J001-303,Red,100,WINTER,https://secure-i1.ztat.net/detail/BW/42/2J/00/13/03/BW422J001-303@1.1.jpg,Hester - Sweatshirt - riva/ecru melange,Orlebar Brown,MALE,mens-sweatshirts
@@ -2323,21 +2250,17 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19433,ES122S00D-K11,Blue,29,SUMMER,https://secure-i2.ztat.net/detail/ES/12/2S/00/DK/11/ES122S00D-K11@13.jpg,FLOW - Sweatshirt - dark night blue,Esprit,MALE,mens-sweatshirts
 19434,OS322S00P-Q11,Black,30,SUMMER,https://secure-i3.ztat.net/detail/OS/32/2S/00/PQ/11/OS322S00P-Q11@14.jpg,ONSFUNKY - Sweatshirt - black,Only & Sons,MALE,mens-sweatshirts
 19435,TO722S01A-A11,White,45,SUMMER,https://secure-i4.ztat.net/detail/TO/72/2S/01/AA/11/TO722S01A-A11@14.jpg,Sweatshirt - white,Tom Tailor Denim,MALE,mens-sweatshirts
-19436,GS122S01E-C11,Grey,80,SUMMER,https://secure-i4.ztat.net/detail/GS/12/2S/01/EC/11/GS122S01E-C11@14.jpg,MOIRIC HOODED - Sweatshirt - raw grey,G-Star,MALE,mens-sweatshirts
 19437,ES122S00D-K12,Blue,29,SUMMER,https://secure-i2.ztat.net/detail/ES/12/2S/00/DK/12/ES122S00D-K12@14.jpg,FLOW - Sweatshirt - river blue,Esprit,MALE,mens-sweatshirts
-19438,PE122S00D-C11,Grey,75,SUMMER,https://secure-i5.ztat.net/detail/PE/12/2S/00/DC/11/PE122S00D-C11@14.jpg,DENNY SLIM FIT - Sweatshirt - chrome,Pepe Jeans,MALE,mens-sweatshirts
 19439,ES122S00D-G11,Red,29,SUMMER,https://secure-i1.ztat.net/detail/ES/12/2S/00/DG/11/ES122S00D-G11@14.jpg,FLOW - Sweatshirt - deep melon,Esprit,MALE,mens-sweatshirts
 19440,JA222S09E-K11,Blue,29,ALL,https://secure-i6.ztat.net/detail/JA/22/2S/09/EK/11/JA222S09E-K11@12.jpg,SLIM FIT - Sweatshirt - dress blues,Jack & Jones,MALE,mens-sweatshirts
 19441,JA222J03M-A11,Grey,33,SUMMER,https://secure-i3.ztat.net/detail/JA/22/2J/03/MA/11/JA222J03M-A11@4.1.jpg,STORM - Sweatshirt - treated white,Jack & Jones,MALE,mens-sweatshirts
 19442,AM222S002-C11,Grey,75,SUMMER,https://secure-i5.ztat.net/detail/AM/22/2S/00/2C/11/AM222S002-C11@14.jpg,MFLOW - Sweatshirt - carbone vintage,American Vintage,MALE,mens-sweatshirts
 19443,LA242G002-K11,Blue,75,SUMMER,https://secure-i1.ztat.net/detail/LA/24/2G/00/2K/11/LA242G002-K11@9.jpg,Sweatshirt - navy blue,Lacoste,MALE,mens-sweatshirts
 19444,ED122J00O-K00,Blue,20,WINTER,https://secure-i4.ztat.net/detail/ED/12/2J/00/OK/00/ED122J00O-K00@1.1.jpg,Sweatshirt - blue,edc by Esprit,MALE,mens-sweatshirts
-19445,UR622J003-917,Multi-coloured,42,WINTER,https://secure-i2.ztat.net/detail/UR/62/2J/00/39/17/UR622J003-917@1.1.jpg,ZIG ZAG - Sweatshirt - black/rasta,Urban Classics,MALE,mens-sweatshirts
 19446,JA222J03M-503,Blue,33,SUMMER,https://secure-i4.ztat.net/detail/JA/22/2J/03/M5/03/JA222J03M-503@1.2.jpg,STORM - Tracksuit top - navy blue,Jack & Jones,MALE,mens-sweatshirts
 19447,PA942B00F-K11,Blue,90,SUMMER,https://secure-i1.ztat.net/detail/PA/94/2B/00/FK/11/PA942B00F-K11@14.jpg,BETTER - Sweatshirt - classic navy,Patagonia,MALE,mens-sweatshirts
 19448,FY022S006-Q11,Black,125,SUMMER,https://secure-i5.ztat.net/detail/FY/02/2S/00/6Q/11/FY022S006-Q11@14.jpg,Sweatshirt - black,FAME ON YOU PARIS,MALE,mens-sweatshirts
 19449,BO122S00K-C11,Grey,100,SUMMER,https://secure-i4.ztat.net/detail/BO/12/2S/00/KC/11/BO122S00K-C11@14.jpg,WHEEL - Sweatshirt - light/pastel grey,BOSS Orange,MALE,mens-sweatshirts
-19450,NS422S008-C11,Grey,70,SUMMER,https://secure-i4.ztat.net/detail/NS/42/2S/00/8C/11/NS422S008-C11@2.jpg,ICON POLKA DOT - Hoodie - dark grey heather/black,Nike SB,MALE,mens-sweatshirts
 19451,JA222J03M-801,Grey,33,SUMMER,https://secure-i5.ztat.net/detail/JA/22/2J/03/M8/01/JA222J03M-801@1.2.jpg,STORM - Sweatshirt - grey,Jack & Jones,MALE,mens-sweatshirts
 19452,R6222S005-C11,Grey,50,SUMMER,https://secure-i1.ztat.net/detail/R6/22/2S/00/5C/11/R6222S005-C11@2.jpg,Sweatshirt - grey,Resteröds,MALE,mens-sweatshirts
 19453,HY522S00A-Q11,Black,50,SUMMER,https://secure-i6.ztat.net/detail/HY/52/2S/00/AQ/11/HY522S00A-Q11@14.jpg,Sweatshirt - schwarz,Hype,MALE,mens-sweatshirts
@@ -2348,17 +2271,10 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19458,YO122S00R-N11,Olive,17,SUMMER,https://secure-i1.ztat.net/detail/YO/12/2S/00/RN/11/YO122S00R-N11@13.jpg,Sweatshirt - oliv,YOUR TURN,MALE,mens-sweatshirts
 19459,PA942B00F-N11,Olive,90,SUMMER,https://secure-i1.ztat.net/detail/PA/94/2B/00/FN/11/PA942B00F-N11@13.jpg,BETTER - Sweatshirt - fatigue green,Patagonia,MALE,mens-sweatshirts
 19460,K4422S003-K11,Blue,25,SUMMER,https://secure-i3.ztat.net/detail/K4/42/2S/00/3K/11/K4422S003-K11@13.jpg,Sweatshirt - dark blue,KIOMI,MALE,mens-sweatshirts
-19461,C1422J00L-G11,Red,85,SUMMER,https://secure-i3.ztat.net/detail/C1/42/2J/00/LG/11/C1422J00L-G11@12.jpg,HOLBROOK - Sweatshirt - alabama noise heather,Carhartt,MALE,mens-sweatshirts
-19462,C1422J00L-K11,Blue,85,SUMMER,https://secure-i5.ztat.net/detail/C1/42/2J/00/LK/11/C1422J00L-K11@12.jpg,HOLBROOK - Hoodie - resolution heather ,Carhartt,MALE,mens-sweatshirts
-19463,E1322S00L-K11,Blue,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/LK/11/E1322S00L-K11@14.1.jpg,GABOR - Sweatshirt - gardenia,Eleven Paris,MALE,mens-sweatshirts
+1.95E+04,E1322S00L-K11,Blue,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/LK/11/E1322S00L-K11@14.1.jpg,GABOR - Sweatshirt - gardenia,Eleven Paris,MALE,mens-sweatshirts
 19464,MN822S00E-K11,Blue,47,SUMMER,https://secure-i1.ztat.net/detail/MN/82/2S/00/EK/11/MN822S00E-K11@2.jpg,NEW YORK KNICKS - Sweatshirt - royal blue,Mitchell & Ness,MALE,mens-sweatshirts
-19465,C1822S007-K11,Blue,90,SUMMER,https://secure-i4.ztat.net/detail/C1/82/2S/00/7K/11/C1822S007-K11@14.jpg,Hoodie - night sky,Calvin Klein Jeans,MALE,mens-sweatshirts
-19466,QU122S00F-C11,Grey,37,SUMMER,https://secure-i3.ztat.net/detail/QU/12/2S/00/FC/11/QU122S00F-C11@14.jpg,EVERYDAY - Hoodie - light grey heather,Quiksilver,MALE,mens-sweatshirts
 19467,C1822S00A-K11,Blue,80,SUMMER,https://secure-i6.ztat.net/detail/C1/82/2S/00/AK/11/C1822S00A-K11@14.jpg,HUDSON - Sweatshirt - clematis blue,Calvin Klein Jeans,MALE,mens-sweatshirts
 19468,EL822S00O-K11,Blue,45,SUMMER,https://secure-i4.ztat.net/detail/EL/82/2S/00/OK/11/EL822S00O-K11@14.jpg,VERMONT - Sweatshirt - cobalt,Element,MALE,mens-sweatshirts
-19469,EL822S00W-C11,Grey,50,SUMMER,https://secure-i4.ztat.net/detail/EL/82/2S/00/WC/11/EL822S00W-C11@14.jpg,VERMONT - Sweatshirt - grey heather,Element,MALE,mens-sweatshirts
-19470,EL822S00V-C11,Grey,40,SUMMER,https://secure-i5.ztat.net/detail/EL/82/2S/00/VC/11/EL822S00V-C11@14.jpg,GRIME  - Sweatshirt - charcoal heathe ,Element,MALE,mens-sweatshirts
-19471,EL822S00W-M11,Green,50,SUMMER,https://secure-i6.ztat.net/detail/EL/82/2S/00/WM/11/EL822S00W-M11@13.1.jpg,VERMONT - Hoodie - surplus,Element,MALE,mens-sweatshirts
 19472,PE122S00E-M11,Green,70,SUMMER,https://secure-i6.ztat.net/detail/PE/12/2S/00/EM/11/PE122S00E-M11@14.jpg,KANOA - Sweatshirt - water green,Pepe Jeans,MALE,mens-sweatshirts
 19473,TO122S00S-A11,White,90,SUMMER,https://secure-i4.ztat.net/detail/TO/12/2S/00/SA/11/TO122S00S-A11@14.jpg,NARDO - Sweatshirt - white,Tommy Hilfiger,MALE,mens-sweatshirts
 19474,MA322S00K-K11,Blue,95,SUMMER,https://secure-i3.ztat.net/detail/MA/32/2S/00/KK/11/MA322S00K-K11@4.jpg,Sweatshirt - midnight blue,Marc O'Polo,MALE,mens-sweatshirts
@@ -2366,7 +2282,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19476,MN822S00D-L11,Turquoise,47,SUMMER,https://secure-i2.ztat.net/detail/MN/82/2S/00/DL/11/MN822S00D-L11@14.jpg,CHARLOTTE HORNETS - Sweatshirt - teal,Mitchell & Ness,MALE,mens-sweatshirts
 19477,MQ422S004-A11,White,55,SUMMER,https://secure-i1.ztat.net/detail/MQ/42/2S/00/4A/11/MQ422S004-A11@16.jpg,SWINI - Sweatshirt - ecru/bleu marine,Mister Marcel,MALE,mens-sweatshirts
 19478,LA242G002-C11,Grey,75,SUMMER,https://secure-i2.ztat.net/detail/LA/24/2G/00/2C/11/LA242G002-C11@11.jpg,Sweatshirt - silver chine,Lacoste,MALE,mens-sweatshirts
-19479,HU822J00U-103,Grey,42,WINTER,https://secure-i2.ztat.net/detail/HU/82/2J/00/U1/03/HU822J00U-103@19.jpg,ONE & ONLY - Hoodie - heather black,Hurley,MALE,mens-sweatshirts
 19480,AL522J00A-850,Black,65,WINTER,https://secure-i6.ztat.net/detail/AL/52/2J/00/A8/50/AL522J00A-850@1.1.jpg,TRACK - Sweatshirt - black/white,Alpha Industries,MALE,mens-sweatshirts
 19481,GA322A002-801,Grey,75,WINTER,https://secure-i5.ztat.net/detail/GA/32/2A/00/28/01/GA322A002-801@1.2.jpg,Sweatshirt - anthracite,Gant,MALE,mens-sweatshirts
 19482,SO422S00S-C11,Grey,45,SUMMER,https://secure-i4.ztat.net/detail/SO/42/2S/00/SC/11/SO422S00S-C11@10.jpg,NIELSDATTER - Sweatshirt - grey,Solid,MALE,mens-sweatshirts
@@ -2374,68 +2289,43 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19484,ED122S011-K11,Blue,42,SUMMER,https://secure-i4.ztat.net/detail/ED/12/2S/01/1K/11/ED122S011-K11@14.jpg,Sweatshirt - indigo blue,edc by Esprit,MALE,mens-sweatshirts
 19485,US222S00A-C11,Grey,60,SUMMER,https://secure-i6.ztat.net/detail/US/22/2S/00/AC/11/US222S00A-C11@9.jpg,Sweatshirt - grey melange,U.S. Polo Assn.,MALE,mens-sweatshirts
 19486,US222S00A-K11,Blue,60,SUMMER,https://secure-i5.ztat.net/detail/US/22/2S/00/AK/11/US222S00A-K11@13.jpg,Sweatshirt - navy,U.S. Polo Assn.,MALE,mens-sweatshirts
-19487,GS122S017-Q11,Black,90,SUMMER,https://secure-i3.ztat.net/detail/GS/12/2S/01/7Q/11/GS122S017-Q11@11.jpg,Sweatshirt - black,G-Star,MALE,mens-sweatshirts
-19488,GS122S014-A11,White,100,SUMMER,https://secure-i5.ztat.net/detail/GS/12/2S/01/4A/11/GS122S014-A11@14.jpg,OMAROS - Hoodie - bleach aged,G-Star,MALE,mens-sweatshirts
 19489,KW722S003-K11,Blue,65,SUMMER,https://secure-i6.ztat.net/detail/KW/72/2S/00/3K/11/KW722S003-K11@12.jpg,S-DAWSON - Sweatshirt - indigo blue,Kiliwatch,MALE,mens-sweatshirts
 19490,YO122S00R-K12,Blue,17,SUMMER,https://secure-i5.ztat.net/detail/YO/12/2S/00/RK/12/YO122S00R-K12@13.jpg,Sweatshirt - blue,YOUR TURN,MALE,mens-sweatshirts
 19491,KW722S002-Q11,Black,46,SUMMER,https://secure-i1.ztat.net/detail/KW/72/2S/00/2Q/11/KW722S002-Q11@12.jpg,Sweatshirt - noir chine,Kiliwatch,MALE,mens-sweatshirts
 19492,YT142G001-C11,Grey,25,SUMMER,https://secure-i1.ztat.net/detail/YT/14/2G/00/1C/11/YT142G001-C11@4.jpg,Sweatshirt - light grey melange,Your Turn Active,MALE,mens-sweatshirts
-19493,GS122S017-K11,Blue,90,SUMMER,https://secure-i4.ztat.net/detail/GS/12/2S/01/7K/11/GS122S017-K11@14.jpg,Hoodie - indigo,G-Star,MALE,mens-sweatshirts
 19494,YT142G001-K11,Blue,25,SUMMER,https://secure-i3.ztat.net/detail/YT/14/2G/00/1K/11/YT142G001-K11@2.jpg,Sweatshirt - dark blue,Your Turn Active,MALE,mens-sweatshirts
 19495,YO122S02O-Q11,Black,21,SUMMER,https://secure-i4.ztat.net/detail/YO/12/2S/02/OQ/11/YO122S02O-Q11@14.jpg,Sweatshirt - black,YOUR TURN,MALE,mens-sweatshirts
 19496,YO122S02O-C11,Grey,21,SUMMER,https://secure-i3.ztat.net/detail/YO/12/2S/02/OC/11/YO122S02O-C11@2.jpg,Sweatshirt - grey melange,YOUR TURN,MALE,mens-sweatshirts
-19497,QU122S00C-C11,Grey,50,SUMMER,https://secure-i6.ztat.net/detail/QU/12/2S/00/CC/11/QU122S00C-C11@14.jpg,HONEYTON   - Hoodie - light grey heather,Quiksilver,MALE,mens-sweatshirts
 19498,GS122S01H-K11,Blue,100,SUMMER,https://secure-i6.ztat.net/detail/GS/12/2S/01/HK/11/GS122S01H-K11@13.jpg,OMAROS - Sweatshirt - dark aged,G-Star,MALE,mens-sweatshirts
-19499,JA222S08K-C11,Grey,35,SUMMER,https://secure-i4.ztat.net/detail/JA/22/2S/08/KC/11/JA222S08K-C11@14.jpg,JJVC1975 REGULAR FIT - Hoodie - light grey melange,Jack & Jones,MALE,mens-sweatshirts
-19500,FR322J00I-K12,Blue,75,SUMMER,https://secure-i2.ztat.net/detail/FR/32/2J/00/IK/12/FR322J00I-K12@13.jpg,Hoodie - navy,Franklin & Marshall,MALE,mens-sweatshirts
 19501,AD122S01W-K11,Blue,65,SUMMER,https://secure-i2.ztat.net/detail/AD/12/2S/01/WK/11/AD122S01W-K11@14.jpg,Sweatshirt - washed blue,adidas Originals,MALE,mens-sweatshirts
-19502,ED122S00R-Q11,Black,39,SUMMER,https://secure-i1.ztat.net/detail/ED/12/2S/00/RQ/11/ED122S00R-Q11@14.jpg,Hoodie - black,edc by Esprit,MALE,mens-sweatshirts
 19503,YO122S02O-A11,White,21,SUMMER,https://secure-i2.ztat.net/detail/YO/12/2S/02/OA/11/YO122S02O-A11@14.jpg,Sweatshirt - white,YOUR TURN,MALE,mens-sweatshirts
 19504,PI922S00G-K11,Blue,25,SUMMER,https://secure-i6.ztat.net/detail/PI/92/2S/00/GK/11/PI922S00G-K11@14.jpg,Sweatshirt - navy,Pier One,MALE,mens-sweatshirts
 19505,GA322S007-G11,Red,85,SUMMER,https://secure-i3.ztat.net/detail/GA/32/2S/00/7G/11/GA322S007-G11@4.jpg,Sweatshirt - light coral,Gant,MALE,mens-sweatshirts
 19506,DI622J006-102,Grey,40,SUMMER,https://secure-i4.ztat.net/detail/DI/62/2J/00/61/02/DI622J006-102@1.1.jpg,WASHINGTON - Sweatshirt - grey melange,Dickies,MALE,mens-sweatshirts
 19507,AD122S01Z-C11,Grey,50,SUMMER,https://secure-i5.ztat.net/detail/AD/12/2S/01/ZC/11/AD122S01Z-C11@12.jpg,FITTED  - Sweatshirt - medium grey heather,adidas Originals,MALE,mens-sweatshirts
-19508,JA222S08J-K11,Blue,30,SUMMER,https://secure-i1.ztat.net/detail/JA/22/2S/08/JK/11/JA222S08J-K11@14.1.jpg,JJORBUG - Hoodie - PEACOAT,Jack & Jones,MALE,mens-sweatshirts
 19509,DC122S00I-K11,Blue,45,SUMMER,https://secure-i2.ztat.net/detail/DC/12/2S/00/IK/11/DC122S00I-K11@9.jpg,SPELUNKER CREW - Sweatshirt - indigo micro,DC Shoes,MALE,mens-sweatshirts
 19510,DC122S00H-C11,Grey,40,SUMMER,https://secure-i6.ztat.net/detail/DC/12/2S/00/HC/11/DC122S00H-C11@2.jpg,SUBURBAN CREW - Sweatshirt - heather grey,DC Shoes,MALE,mens-sweatshirts
-19511,E1322S00U-Q11,Black,60,SUMMER,https://secure-i4.ztat.net/detail/E1/32/2S/00/UQ/11/E1322S00U-Q11@14.jpg,FIX HOOP - Sweatshirt - black,Eleven Paris,MALE,mens-sweatshirts
+1.95E+04,E1322S00U-Q11,Black,60,SUMMER,https://secure-i4.ztat.net/detail/E1/32/2S/00/UQ/11/E1322S00U-Q11@14.jpg,FIX HOOP - Sweatshirt - black,Eleven Paris,MALE,mens-sweatshirts
 19512,DI122S00K-Q11,Black,130,SUMMER,https://secure-i3.ztat.net/detail/DI/12/2S/00/KQ/11/DI122S00K-Q11@13.jpg,CROSSHEAD - Sweatshirt - black,Diesel,MALE,mens-sweatshirts
-19513,E1322S00R-K11,Blue,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/RK/11/E1322S00R-K11@14.jpg,FIX HOOP  - Sweatshirt - oloop,Eleven Paris,MALE,mens-sweatshirts
+1.95E+04,E1322S00R-K11,Blue,60,SUMMER,https://secure-i1.ztat.net/detail/E1/32/2S/00/RK/11/E1322S00R-K11@14.jpg,FIX HOOP  - Sweatshirt - oloop,Eleven Paris,MALE,mens-sweatshirts
 19514,CO422O00J-Q11,Black,42,SUMMER,https://secure-i3.ztat.net/detail/CO/42/2O/00/JQ/11/CO422O00J-Q11@14.jpg,AMK CORE - Sweatshirt - jet black,Converse,MALE,mens-sweatshirts
-19515,E1322S00V-C11,Grey,60,SUMMER,https://secure-i5.ztat.net/detail/E1/32/2S/00/VC/11/E1322S00V-C11@14.jpg,FIX HAREL  - Sweatshirt - gris chine,Eleven Paris,MALE,mens-sweatshirts
+1.95E+04,E1322S00V-C11,Grey,60,SUMMER,https://secure-i5.ztat.net/detail/E1/32/2S/00/VC/11/E1322S00V-C11@14.jpg,FIX HAREL  - Sweatshirt - gris chine,Eleven Paris,MALE,mens-sweatshirts
 19516,NI122S020-C12,Grey,70,SUMMER,https://secure-i4.ztat.net/detail/NI/12/2S/02/0C/12/NI122S020-C12@12.jpg,Sweatshirt - carbon heather/white,Nike Sportswear,MALE,mens-sweatshirts
 19517,SE622J00X-K00,Blue,32,WINTER,https://secure-i4.ztat.net/detail/SE/62/2J/00/XK/00/SE622J00X-K00@1.1.jpg,Sweatshirt - blue,Selected Homme,MALE,mens-sweatshirts
 19518,SO422S00L-Q11,Black,45,SUMMER,https://secure-i3.ztat.net/detail/SO/42/2S/00/LQ/11/SO422S00L-Q11@7.jpg,MOCOW - Sweatshirt - raven,Solid,MALE,mens-sweatshirts
-19519,JA222S08J-Q11,Black,30,SUMMER,https://secure-i3.ztat.net/detail/JA/22/2S/08/JQ/11/JA222S08J-Q11@14.jpg,JJORBUG - Sweatshirt - black,Jack & Jones,MALE,mens-sweatshirts
-19520,ED122S00R-K11,Blue,39,SUMMER,https://secure-i1.ztat.net/detail/ED/12/2S/00/RK/11/ED122S00R-K11@14.jpg,Sweatshirt - azur blue,edc by Esprit,MALE,mens-sweatshirts
-19521,P6822S010-M11,Green,34,SUMMER,https://secure-i3.ztat.net/detail/P6/82/2S/01/0M/11/P6822S010-M11@14.jpg,Sweatshirt - grün,Petrol Industries,MALE,mens-sweatshirts
-19522,M0822S00V-C11,Grey,20,SUMMER,https://secure-i3.ztat.net/detail/M0/82/2S/00/VC/11/M0822S00V-C11@2.1.jpg,Hoodie - grey ,Burton Menswear London,MALE,mens-sweatshirts
 19523,M0822S00Z-Q11,Black,25,SUMMER,https://secure-i6.ztat.net/detail/M0/82/2S/00/ZQ/11/M0822S00Z-Q11@13.jpg,BLACK TRUE EAGLE - Sweatshirt - black,Burton Menswear London,MALE,mens-sweatshirts
-19524,M0822S013-K11,Blue,18,SUMMER,https://secure-i2.ztat.net/detail/M0/82/2S/01/3K/11/M0822S013-K11@14.jpg,Hoodie - navy,Burton Menswear London,MALE,mens-sweatshirts
-19525,M0822S012-C11,Grey,28,SUMMER,https://secure-i5.ztat.net/detail/M0/82/2S/01/2C/11/M0822S012-C11@14.jpg,Hoodie - stone,Burton Menswear London,MALE,mens-sweatshirts
-19526,M0822S00V-K11,Blue,20,SUMMER,https://secure-i3.ztat.net/detail/M0/82/2S/00/VK/11/M0822S00V-K11@14.jpg,Sweatshirt - navy,Burton Menswear London,MALE,mens-sweatshirts
-19527,C1822S00D-C11,Grey,110,SUMMER,https://secure-i5.ztat.net/detail/C1/82/2S/00/DC/11/C1822S00D-C11@14.jpg,Hoodie - light grey heather,Calvin Klein Jeans,MALE,mens-sweatshirts
 19528,M0822S011-C11,Grey,25,SUMMER,https://secure-i3.ztat.net/detail/M0/82/2S/01/1C/11/M0822S011-C11@14.1.jpg,Sweatshirt - grey,Burton Menswear London,MALE,mens-sweatshirts
-19529,C1822S00D-Q11,Black,110,SUMMER,https://secure-i3.ztat.net/detail/C1/82/2S/00/DQ/11/C1822S00D-Q11@14.jpg,Hoodie - meteorite,Calvin Klein Jeans,MALE,mens-sweatshirts
 19530,M0822S010-Q11,Black,25,SUMMER,https://secure-i5.ztat.net/detail/M0/82/2S/01/0Q/11/M0822S010-Q11@14.jpg,BLACK INTERSTATE - Sweatshirt - black,Burton Menswear London,MALE,mens-sweatshirts
-19531,ES122S00M-G11,Red,42,SUMMER,https://secure-i4.ztat.net/detail/ES/12/2S/00/MG/11/ES122S00M-G11@14.jpg,Sweatshirt - mars red,Esprit,MALE,mens-sweatshirts
 19532,S3722Q00B-K11,Blue,60,SUMMER,https://secure-i5.ztat.net/detail/S3/72/2Q/00/BK/11/S3722Q00B-K11@14.jpg,FALCON1 - Sweatshirt - navy,Schott NYC,MALE,mens-sweatshirts
 19533,4BE22S00A-K11,Blue,34,SUMMER,https://secure-i5.ztat.net/detail/4B/E2/2S/00/AK/11/4BE22S00A-K11@13.jpg,Sweatshirt - blue,Benetton,MALE,mens-sweatshirts
 19534,ON422S003-C11,Grey,75,SUMMER,https://secure-i4.ztat.net/detail/ON/42/2S/00/3C/11/ON422S003-C11@14.jpg,WINKLER - Sweatshirt - white stone,One Green Elephant,MALE,mens-sweatshirts
-19535,TO122S00Q-K11,Blue,125,SUMMER,https://secure-i4.ztat.net/detail/TO/12/2S/00/QK/11/TO122S00Q-K11@16.jpg,BERNY VINTAGE FIT - Sweatshirt - dunkelblau,Tommy Hilfiger,MALE,mens-sweatshirts
 19536,KK122O00G-Q11,Black,60,SUMMER,https://secure-i1.ztat.net/detail/KK/12/2O/00/GQ/11/KK122O00G-Q11@11.jpg,DECRUX - Sweatshirt - black,Karl Kani,MALE,mens-sweatshirts
 19537,UR622S00K-C11,Grey,29,SUMMER,https://secure-i3.ztat.net/detail/UR/62/2S/00/KC/11/UR622S00K-C11@11.jpg,Sweatshirt - charcoal/forest,Urban Classics,MALE,mens-sweatshirts
 19538,KK122S00H-Q11,Black,60,SUMMER,https://secure-i4.ztat.net/detail/KK/12/2S/00/HQ/11/KK122S00H-Q11@2.jpg,BECRUX - Sweatshirt - black,Karl Kani,MALE,mens-sweatshirts
-19539,AL522S00B-C11,Grey,65,SUMMER,https://secure-i6.ztat.net/detail/AL/52/2S/00/BC/11/AL522S00B-C11@2.jpg,BIG A CLASSIC - Hoodie - grey heather,Alpha Industries,MALE,mens-sweatshirts
 19540,SO222S017-K11,Blue,42,SUMMER,https://secure-i4.ztat.net/detail/SO/22/2S/01/7K/11/SO222S017-K11@4.jpg,Sweatshirt - midnight,s.Oliver,MALE,mens-sweatshirts
-19541,ES122S00M-C11,Grey,42,SUMMER,https://secure-i2.ztat.net/detail/ES/12/2S/00/MC/11/ES122S00M-C11@14.jpg,Hoodie - dark burnt metal,Esprit,MALE,mens-sweatshirts
-19542,GS122S01A-K11,Blue,90,SUMMER,https://secure-i6.ztat.net/detail/GS/12/2S/01/AK/11/GS122S01A-K11@10.jpg,LAMRIK - Hoodie - indigo,G-Star,MALE,mens-sweatshirts
-19543,MQ422S005-A11,White,60,SUMMER,https://secure-i3.ztat.net/detail/MQ/42/2S/00/5A/11/MQ422S005-A11@2.jpg,SCOUB RAYE - Hoodie - ecru/bleu marine,Mister Marcel,MALE,mens-sweatshirts
 19544,4BE22S009-A11,White,25,SUMMER,https://secure-i5.ztat.net/detail/4B/E2/2S/00/9A/11/4BE22S009-A11@14.1.jpg,Sweatshirt - off white/green,Benetton,MALE,mens-sweatshirts
 19545,AM122S008-C11,Grey,33,SUMMER,https://secure-i5.ztat.net/detail/AM/12/2S/00/8C/11/AM122S008-C11@14.jpg,ORANGE - Sweatshirt - light grey,American College,MALE,mens-sweatshirts
 19546,K4422S005-C11,Grey,21,SUMMER,https://secure-i2.ztat.net/detail/K4/42/2S/00/5C/11/K4422S005-C11@14.jpg,Sweatshirt - grey,KIOMI,MALE,mens-sweatshirts
-19547,P6822S00U-K12,Blue,42,SUMMER,https://secure-i2.ztat.net/detail/P6/82/2S/00/UK/12/P6822S00U-K12@2.jpg,Hoodie - hellblau,Petrol Industries,MALE,mens-sweatshirts
-19548,P6822S00U-K11,Blue,42,SUMMER,https://secure-i1.ztat.net/detail/P6/82/2S/00/UK/11/P6822S00U-K11@14.1.jpg,Sweatshirt - blau,Petrol Industries,MALE,mens-sweatshirts
 19549,AD122S01J-C11,Grey,50,SUMMER,https://secure-i5.ztat.net/detail/AD/12/2S/01/JC/11/AD122S01J-C11@14.jpg,Sweatshirt - dark grey heather,adidas Originals,MALE,mens-sweatshirts
 19550,LE422S007-C11,Grey,75,SUMMER,https://secure-i6.ztat.net/detail/LE/42/2S/00/7C/11/LE422S007-C11@14.jpg,Sweatshirt - grey melange,Lee,MALE,mens-sweatshirts
 19551,CN922S01B-Q11,Black,70,SUMMER,https://secure-i5.ztat.net/detail/CN/92/2S/01/BQ/11/CN922S01B-Q11@16.1.jpg,LENNOX  - Sweatshirt - black,Criminal Damage,MALE,mens-sweatshirts
@@ -2446,36 +2336,23 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19556,AD122S020-C11,Grey,50,SUMMER,https://secure-i5.ztat.net/detail/AD/12/2S/02/0C/11/AD122S020-C11@12.jpg,Sweatshirt - core heather,adidas Originals,MALE,mens-sweatshirts
 19557,BO122J00M-M12,Green,95,SUMMER,https://secure-i2.ztat.net/detail/BO/12/2J/00/MM/12/BO122J00M-M12@13.jpg,WHEEL - Sweatshirt - dark green,BOSS Orange,MALE,mens-sweatshirts
 19558,JA222J07G-K11,Blue,24,WINTER,https://secure-i2.ztat.net/detail/JA/22/2J/07/GK/11/JA222J07G-K11@6.jpg,DERICK - Sweatshirt - mood indigo,Jack & Jones,MALE,mens-sweatshirts
-19559,ED122S00R-C11,Grey,39,SUMMER,https://secure-i3.ztat.net/detail/ED/12/2S/00/RC/11/ED122S00R-C11@14.1.jpg,Sweatshirt - dark grey melange,edc by Esprit,MALE,mens-sweatshirts
-19560,ED122S00R-K12,Blue,39,SUMMER,https://secure-i3.ztat.net/detail/ED/12/2S/00/RK/12/ED122S00R-K12@15.jpg,Sweatshirt - indigo blue,edc by Esprit,MALE,mens-sweatshirts
 19561,ED122S00S-C11,Grey,29,SUMMER,https://secure-i4.ztat.net/detail/ED/12/2S/00/SC/11/ED122S00S-C11@13.1.jpg,Sweatshirt - dark grey melange,edc by Esprit,MALE,mens-sweatshirts
-19562,E1322S00O-C11,Grey,60,SUMMER,https://secure-i6.ztat.net/detail/E1/32/2S/00/OC/11/E1322S00O-C11@14.jpg,GADRY - Hoodie - grey chine,Eleven Paris,MALE,mens-sweatshirts
 19563,LR022S00J-C11,Grey,42,SUMMER,https://secure-i6.ztat.net/detail/LR/02/2S/00/JC/11/LR022S00J-C11@13.jpg,Sweatshirt - charcoal heather,LRG,MALE,mens-sweatshirts
 19564,SC322S00R-K11,Blue,65,WINTER,https://secure-i1.ztat.net/detail/SC/32/2S/00/RK/11/SC322S00R-K11@14.jpg,Sweatshirt - dark blue,Scotch & Soda,MALE,mens-sweatshirts
 19565,LR022S00L-C11,Grey,50,SUMMER,https://secure-i3.ztat.net/detail/LR/02/2S/00/LC/11/LR022S00L-C11@14.jpg,Sweatshirt - ash heather,LRG,MALE,mens-sweatshirts
 19566,WH122S004-A11,White,90,SUMMER,https://secure-i5.ztat.net/detail/WH/12/2S/00/4A/11/WH122S004-A11@14.jpg,MURRY - Sweatshirt - white,Whyred,MALE,mens-sweatshirts
 19567,SC322Q00K-Q11,Black,75,WINTER,https://secure-i2.ztat.net/detail/SC/32/2Q/00/KQ/11/SC322Q00K-Q11@14.jpg,Sweatshirt - black,Scotch & Soda,MALE,mens-sweatshirts
-19568,SC322S00T-C11,Grey,75,WINTER,https://secure-i1.ztat.net/detail/SC/32/2S/00/TC/11/SC322S00T-C11@14.jpg,Hoodie - dark gray,Scotch & Soda,MALE,mens-sweatshirts
 19569,SC322S007-C12,Grey,60,WINTER,https://secure-i5.ztat.net/detail/SC/32/2S/00/7C/12/SC322S007-C12@14.jpg,Sweatshirt - grey,Scotch & Soda,MALE,mens-sweatshirts
 19570,SC322S00R-N11,Olive,65,WINTER,https://secure-i4.ztat.net/detail/SC/32/2S/00/RN/11/SC322S00R-N11@14.jpg,Sweatshirt - khaki,Scotch & Soda,MALE,mens-sweatshirts
 19571,SC322O01B-Q11,Black,60,WINTER,https://secure-i5.ztat.net/detail/SC/32/2O/01/BQ/11/SC322O01B-Q11@14.jpg,Sweatshirt - schwarz,Scotch & Soda,MALE,mens-sweatshirts
-19572,QU122S00F-M11,Green,37,SUMMER,https://secure-i5.ztat.net/detail/QU/12/2S/00/FM/11/QU122S00F-M11@14.jpg,EVERYDAY - Sweatshirt - shamrock ,Quiksilver,MALE,mens-sweatshirts
 19573,SC322S00R-C11,Grey,65,WINTER,https://secure-i3.ztat.net/detail/SC/32/2S/00/RC/11/SC322S00R-C11@14.1.jpg,Sweatshirt - grey,Scotch & Soda,MALE,mens-sweatshirts
 19574,C1422S00B-C11,Grey,55,SUMMER,https://secure-i4.ztat.net/detail/C1/42/2S/00/BC/11/C1422S00B-C11@13.jpg,CHASE - Sweatshirt - grey heather,Carhartt,MALE,mens-sweatshirts
 19575,SC322S00U-C11,Grey,75,WINTER,https://secure-i6.ztat.net/detail/SC/32/2S/00/UC/11/SC322S00U-C11@14.jpg,Sweatshirt - dark gray,Scotch & Soda,MALE,mens-sweatshirts
-19576,LR022S00K-Q11,Black,60,SUMMER,https://secure-i2.ztat.net/detail/LR/02/2S/00/KQ/11/LR022S00K-Q11@14.jpg,Hoodie - black,LRG,MALE,mens-sweatshirts
 19577,SC322S00W-K11,Blue,100,WINTER,https://secure-i2.ztat.net/detail/SC/32/2S/00/WK/11/SC322S00W-K11@14.jpg,Sweatshirt - dark blue,Scotch & Soda,MALE,mens-sweatshirts
-19578,PI922S00D-M11,Green,25,SUMMER,https://secure-i5.ztat.net/detail/PI/92/2S/00/DM/11/PI922S00D-M11@14.1.jpg,Hoodie - green melange,Pier One,MALE,mens-sweatshirts
-19579,PI922S00D-K11,Blue,25,SUMMER,https://secure-i3.ztat.net/detail/PI/92/2S/00/DK/11/PI922S00D-K11@14.jpg,Sweatshirt - blue melange,Pier One,MALE,mens-sweatshirts
-19580,AL522S00D-C11,Grey,65,SUMMER,https://secure-i5.ztat.net/detail/AL/52/2S/00/DC/11/AL522S00D-C11@14.jpg,Sweatshirt - grey heather,Alpha Industries,MALE,mens-sweatshirts
 19581,AL522S00C-C11,Grey,55,SUMMER,https://secure-i5.ztat.net/detail/AL/52/2S/00/CC/11/AL522S00C-C11@13.jpg,X-FIT - Sweatshirt - grey heather,Alpha Industries,MALE,mens-sweatshirts
 19582,AL522S00C-M11,Green,55,SUMMER,https://secure-i2.ztat.net/detail/AL/52/2S/00/CM/11/AL522S00C-M11@14.jpg,X-FIT - Sweatshirt - woodland camo,Alpha Industries,MALE,mens-sweatshirts
-19583,AL522S00D-Q11,Black,65,SUMMER,https://secure-i3.ztat.net/detail/AL/52/2S/00/DQ/11/AL522S00D-Q11@14.jpg,Sweatshirt - black,Alpha Industries,MALE,mens-sweatshirts
-19584,AL522S00D-M11,Green,65,SUMMER,https://secure-i3.ztat.net/detail/AL/52/2S/00/DM/11/AL522S00D-M11@16.jpg,Hoodie - woodland camo,Alpha Industries,MALE,mens-sweatshirts
 19585,AL522S00C-Q11,Black,55,SUMMER,https://secure-i4.ztat.net/detail/AL/52/2S/00/CQ/11/AL522S00C-Q11@14.jpg,X-FIT - Sweatshirt - black,Alpha Industries,MALE,mens-sweatshirts
-19586,PI922S00D-G11,Red,25,SUMMER,https://secure-i5.ztat.net/detail/PI/92/2S/00/DG/11/PI922S00D-G11@14.1.jpg,Hoodie - red melange,Pier One,MALE,mens-sweatshirts
 19587,YO122S02M-K11,Blue,17,SUMMER,https://secure-i6.ztat.net/detail/YO/12/2S/02/MK/11/YO122S02M-K11@14.jpg,Sweatshirt - dark blue melange,YOUR TURN,MALE,mens-sweatshirts
-19588,JA222S08K-K11,Blue,35,SUMMER,https://secure-i2.ztat.net/detail/JA/22/2S/08/KK/11/JA222S08K-K11@14.jpg,JJVC1975 REGULAR FIT - Hoodie - dress blues,Jack & Jones,MALE,mens-sweatshirts
 19589,K4422S005-K11,Blue,21,SUMMER,https://secure-i6.ztat.net/detail/K4/42/2S/00/5K/11/K4422S005-K11@14.jpg,Sweatshirt - navy,KIOMI,MALE,mens-sweatshirts
 19590,AM122S007-K11,Blue,33,SUMMER,https://secure-i3.ztat.net/detail/AM/12/2S/00/7K/11/AM122S007-K11@2.jpg,JUNGLE - Sweatshirt - navy,American College,MALE,mens-sweatshirts
 19591,FR322S00E-Q11,Black,70,SUMMER,https://secure-i2.ztat.net/detail/FR/32/2S/00/EQ/11/FR322S00E-Q11@14.jpg,Sweatshirt - black,Franklin & Marshall,MALE,mens-sweatshirts
@@ -2484,9 +2361,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 19594,LE422S005-K11,Blue,55,SUMMER,https://secure-i5.ztat.net/detail/LE/42/2S/00/5K/11/LE422S005-K11@2.jpg,CREW REGULAR FIT - Sweatshirt - navy,Lee,MALE,mens-sweatshirts
 19595,TN222S00A-A11,White,100,SUMMER,https://secure-i6.ztat.net/detail/TN/22/2S/00/AA/11/TN222S00A-A11@16.jpg,NOMAD - Sweatshirt - offwhite,Tiger of Sweden Jeans,MALE,mens-sweatshirts
 19596,TN222S00A-Q11,Black,100,SUMMER,https://secure-i6.ztat.net/detail/TN/22/2S/00/AQ/11/TN222S00A-Q11@14.jpg,NOMAD - Sweatshirt - black,Tiger of Sweden Jeans,MALE,mens-sweatshirts
-19597,JA222S08K-A11,White,35,SUMMER,https://secure-i6.ztat.net/detail/JA/22/2S/08/KA/11/JA222S08K-A11@14.jpg,JJVC1975 REGULAR FIT - Sweatshirt - white,Jack & Jones,MALE,mens-sweatshirts
 19598,SO222S017-C11,Grey,42,SUMMER,https://secure-i1.ztat.net/detail/SO/22/2S/01/7C/11/SO222S017-C11@11.jpg,Sweatshirt - medium grey melange,s.Oliver,MALE,mens-sweatshirts
-19599,NA622S00O-N11,Olive,75,SUMMER,https://secure-i3.ztat.net/detail/NA/62/2S/00/ON/11/NA622S00O-N11@7.jpg,BAYK - Sweatshirt - thyme,Napapijri,MALE,mens-sweatshirts
 19601,ON321H02V-A11,White,50,SUMMER,https://secure-i1.ztat.net/detail/ON/32/1H/02/VA/11/ON321H02V-A11@7.jpg,VALENTINE - Trenchcoat - oatmeal,ONLY,FEMALE,womens-clothing-coats
 19602,RI021G003-B11,Beige,85,SUMMER,https://secure-i5.ztat.net/detail/RI/02/1G/00/3B/11/RI021G003-B11@14.jpg,LONG - Parka - sand,Rains,unisex,womens-clothing-coats
 19606,EV421H00X-702,Brown,60,WINTER,https://secure-i4.ztat.net/detail/EV/42/1H/00/X7/02/EV421H00X-702@1.1.jpg,Parka - brown,Even&Odd,FEMALE,womens-clothing-coats
@@ -2874,7 +2749,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20012,PA941B026-302,Red,110,ALL,https://secure-i2.ztat.net/detail/PA/94/1B/02/63/02/PA941B026-302@1.1.jpg,TORRENTSHELL - Hardshell jacket - red,Patagonia,FEMALE,womens-clothing-jackets
 20013,PA941B026-802,Black,110,ALL,https://secure-i3.ztat.net/detail/PA/94/1B/02/68/02/PA941B026-802@1.1.jpg,TORRENTSHELL - Hardshell jacket - black,Patagonia,FEMALE,womens-clothing-jackets
 20014,MU221G00Z-802,Black,250,ALL,https://secure-i1.ztat.net/detail/MU/22/1G/00/Z8/02/MU221G00Z-802@8.jpg,Leather jacket - black,muubaa,FEMALE,womens-clothing-jackets
-20015,UR621J002-850,Black,34,ALL,https://secure-i5.ztat.net/detail/UR/62/1J/00/28/50/UR621J002-850@9.jpg,Light jacket - black/white,Urban Classics,FEMALE,womens-clothing-jackets
 20016,S2921M000-Q11,Black,120,SUMMER,https://secure-i1.ztat.net/detail/S2/92/1M/00/0Q/11/S2921M000-Q11@1.jpg,Blazer - schwarz,Sir Oliver,FEMALE,womens-clothing-jackets
 20017,S3721G000-C11,Grey,80,ALL,https://secure-i4.ztat.net/detail/S3/72/1G/00/0C/11/S3721G000-C11@6.jpg,Light jacket - grey leopard,Schott NYC,FEMALE,womens-clothing-jackets
 20018,SE521G01H-Q00,Black,65,ALL,https://secure-i2.ztat.net/detail/SE/52/1G/01/HQ/00/SE521G01H-Q00@5.jpg,GLORIA - Blazer - black,Selected Femme,FEMALE,womens-clothing-jackets
@@ -2923,7 +2797,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20062,P1421G01K-802,Black,295,WINTER,https://secure-i6.ztat.net/detail/P1/42/1G/01/K8/02/P1421G01K-802@1.2.jpg,Blazer - nero,Patrizia Pepe,FEMALE,womens-clothing-jackets
 20063,M5921G01O-Q11,Black,65,WINTER,https://secure-i5.ztat.net/detail/M5/92/1G/01/OQ/11/M5921G01O-Q11@7.jpg,VELAO - Faux leather jacket - noir,Morgan,FEMALE,womens-clothing-jackets
 20064,ON321E02O-K11,Blue,26,SUMMER,https://secure-i4.ztat.net/detail/ON/32/1E/02/OK/11/ON321E02O-K11@7.jpg,ONLWESTA - Denim jacket - medium blue denim,ONLY,FEMALE,womens-clothing-jackets
-20065,RI021G003-B11,Beige,85,SUMMER,https://secure-i5.ztat.net/detail/RI/02/1G/00/3B/11/RI021G003-B11@14.jpg,LONG - Parka - sand,Rains,unisex,womens-clothing-jackets
 20066,SC921G004-909,Black,310,SUMMER,https://secure-i1.ztat.net/detail/SC/92/1G/00/49/09/SC921G004-909@1.1.jpg,Leather jacket - black,Schott NYC,FEMALE,womens-clothing-jackets
 20067,T3341B00A-301,Red,165,ALL,https://secure-i3.ztat.net/detail/T3/34/1B/00/A3/01/T3341B00A-301@1.1.jpg,PALADIN - Outdoor jacket - venere,Tao,FEMALE,womens-clothing-jackets
 20068,M5821K00T-K11,Blue,110,ALL,https://secure-i5.ztat.net/detail/M5/82/1K/00/TK/11/M5821K00T-K11@14.jpg,SALLY - Blazer - marine,More & More,FEMALE,womens-clothing-jackets
@@ -2954,25 +2827,19 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20093,ON321G08B-K11,Blue,24,SUMMER,https://secure-i2.ztat.net/detail/ON/32/1G/08/BK/11/ON321G08B-K11@2.jpg,WESTA - Denim jacket - dark blue denim,ONLY,FEMALE,womens-clothing-jackets
 20094,WN321G000-Q11,Black,270,SUMMER,https://secure-i4.ztat.net/detail/WN/32/1G/00/0Q/11/WN321G000-Q11@2.jpg,BIKER JOHNNY - Summer jacket - black,Wanda Nylon,FEMALE,womens-clothing-jackets
 20095,WN321G00E-Q11,Black,290,SUMMER,https://secure-i1.ztat.net/detail/WN/32/1G/00/EQ/11/WN321G00E-Q11@2.jpg,TEDDY PETE - Summer jacket - black,Wanda Nylon,FEMALE,womens-clothing-jackets
-20096,EV421H00X-702,Brown,60,WINTER,https://secure-i4.ztat.net/detail/EV/42/1H/00/X7/02/EV421H00X-702@1.1.jpg,Parka - brown,Even&Odd,FEMALE,womens-clothing-jackets
 20097,ON321G07U-Q11,Black,50,SUMMER,https://secure-i5.ztat.net/detail/ON/32/1G/07/UQ/11/ON321G07U-Q11@7.jpg,ALYNA - Faux leather jacket - black,ONLY,FEMALE,womens-clothing-jackets
-20098,RI021G003-K11,Blue,85,SUMMER,https://secure-i1.ztat.net/detail/RI/02/1G/00/3K/11/RI021G003-K11@15.jpg,LONG - Summer jacket - blue,Rains,unisex,womens-clothing-jackets
 20099,AD121J06X-802,Black,50,SUMMER,https://secure-i6.ztat.net/detail/AD/12/1J/06/X8/02/AD121J06X-802@1.2.jpg,FIREBIRD - Tracksuit top - schwarz,adidas Originals,FEMALE,womens-clothing-jackets
 20100,ES421K00G-K11,Blue,100,ALL,https://secure-i5.ztat.net/detail/ES/42/1K/00/GK/11/ES421K00G-K11@2.jpg,SLIM FIT - Blazer - dark navy,ESPRIT Collection,FEMALE,womens-clothing-jackets
-20101,MO421H004-602,Green,170,WINTER,https://secure-i4.ztat.net/detail/MO/42/1H/00/46/02/MO421H004-602@1.2.jpg,GONE - Parka - green,Modström,FEMALE,womens-clothing-jackets
 20102,CO121K007-K11,Blue,75,ALL,https://secure-i4.ztat.net/detail/CO/12/1K/00/7K/11/CO121K007-K11@14.jpg,Blazer - dunkelblau,"comma,",FEMALE,womens-clothing-jackets
 20103,CO121K006-K11,Blue,110,ALL,https://secure-i1.ztat.net/detail/CO/12/1K/00/6K/11/CO121K006-K11@10.jpg,Blazer - dark blue,"comma,",FEMALE,womens-clothing-jackets
 20104,TW441B06V-503,Blue,17,SUMMER,https://secure-i4.ztat.net/detail/TW/44/1B/06/V5/03/TW441B06V-503@12.jpg,Fleece - blue,TWINTIP,FEMALE,womens-clothing-jackets
 20105,UR621G005-Q11,Black,25,WINTER,https://secure-i2.ztat.net/detail/UR/62/1G/00/5Q/11/UR621G005-Q11@7.jpg,OLDSCHOOL - Summer jacket - black/white,Urban Classics,FEMALE,womens-clothing-jackets
-20106,UR621J002-C11,Grey,34,SUMMER,https://secure-i4.ztat.net/detail/UR/62/1J/00/2C/11/UR621J002-C11@7.1.jpg,Tracksuit top - grey/white,Urban Classics,FEMALE,womens-clothing-jackets
 20107,M5921G01P-K11,Blue,85,SUMMER,https://secure-i2.ztat.net/detail/M5/92/1G/01/PK/11/M5921G01P-K11@7.1.jpg,Faux leather jacket - bleu jean,Morgan,FEMALE,womens-clothing-jackets
 20108,M5921G01P-C11,Grey,85,SUMMER,https://secure-i6.ztat.net/detail/M5/92/1G/01/PC/11/M5921G01P-C11@7.jpg,Faux leather jacket - gris moyen,Morgan,FEMALE,womens-clothing-jackets
 20109,RO021L004-B11,Beige,235,SUMMER,https://secure-i3.ztat.net/detail/RO/02/1L/00/4B/11/RO021L004-B11@8.jpg,CAVITY - Leather jacket - sand,ROCKANDBLUE,FEMALE,womens-clothing-jackets
 20110,ON321G07T-Q11,Black,42,WINTER,https://secure-i6.ztat.net/detail/ON/32/1G/07/TQ/11/ON321G07T-Q11@7.jpg,ONLSOUND - Faux leather jacket - black,ONLY,FEMALE,womens-clothing-jackets
-20111,RI021G001-Q11,Black,70,SUMMER,https://secure-i6.ztat.net/detail/RI/02/1G/00/1Q/11/RI021G001-Q11@18.2.jpg,Waterproof jacket - black,Rains,unisex,womens-clothing-jackets
 20112,GO221G000-Q11,Brown,195,SUMMER,https://secure-i1.ztat.net/detail/GO/22/1G/00/0Q/11/GO221G000-Q11@7.jpg,BOMBER - Leather jacket - cognac,Goosecraft,FEMALE,womens-clothing-jackets
 20113,GO221G01H-Q11,Black,250,SUMMER,https://secure-i2.ztat.net/detail/GO/22/1G/01/HQ/11/GO221G01H-Q11@1.jpg,Leather jacket - black,Goosecraft,FEMALE,womens-clothing-jackets
-20114,RI021G003-Q11,Black,85,SUMMER,https://secure-i2.ztat.net/detail/RI/02/1G/00/3Q/11/RI021G003-Q11@14.jpg,LONG - Waterproof jacket - black,Rains,unisex,womens-clothing-jackets
 20115,SG721G006-Q11,Black,65,SUMMER,https://secure-i2.ztat.net/detail/SG/72/1G/00/6Q/11/SG721G006-Q11@6.jpg,Summer jacket - black,Swing,FEMALE,womens-clothing-jackets
 20116,CR221G00F-Q00,Black,50,WINTER,https://secure-i1.ztat.net/detail/CR/22/1G/00/FQ/00/CR221G00F-Q00@21.jpg,JENNIFER - Summer jacket - pitch black,Cream,FEMALE,womens-clothing-jackets
 20117,OA121L005-Q11,Black,165,SUMMER,https://secure-i2.ztat.net/detail/OA/12/1L/00/5Q/11/OA121L005-Q11@1.1.jpg,Leather jacket - schwarz,Oakwood,FEMALE,womens-clothing-jackets
@@ -3013,7 +2880,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20154,RI0210009-Q11,Black,70,SUMMER,https://secure-i5.ztat.net/detail/RI/02/10/00/9Q/11/RI0210009-Q11@8.jpg,BREAKER - Waterproof jacket - black,Rains,unisex,womens-clothing-jackets
 20156,M5921Q005-Q11,Black,85,SUMMER,https://secure-i2.ztat.net/detail/M5/92/1Q/00/5Q/11/M5921Q005-Q11@18.jpg,GIBIS - Down jacket - NOIR,Morgan,FEMALE,womens-clothing-jackets
 20157,RI021000I-M11,Green,90,SUMMER,https://secure-i5.ztat.net/detail/RI/02/10/00/IM/11/RI021000I-M11@8.jpg,Waterproof jacket - green,Rains,unisex,womens-clothing-jackets
-20159,RI021000J-C11,Grey,90,SUMMER,https://secure-i2.ztat.net/detail/RI/02/10/00/JC/11/RI021000J-C11@8.jpg,Waterproof jacket - grey,Rains,unisex,womens-clothing-jackets
 20160,RI0210003-C11,Grey,70,SUMMER,https://secure-i3.ztat.net/detail/RI/02/10/00/3C/11/RI0210003-C11@8.jpg,Waterproof jacket - grey/orange,Rains,unisex,womens-clothing-jackets
 20161,G1021G02V-K11,Blue,125,SUMMER,https://secure-i5.ztat.net/detail/G1/02/1G/02/VK/11/G1021G02V-K11@16.jpg,MIDNIGHT SEA - Fleece - navy,Gaastra,FEMALE,womens-clothing-jackets
 20164,ON321K01I-K11,Blue,42,SUMMER,https://secure-i6.ztat.net/detail/ON/32/1K/01/IK/11/ON321K01I-K11@16.jpg,ONLNEW KIM - Blazer - mood indigo,ONLY,FEMALE,womens-clothing-jackets
@@ -3492,11 +3358,11 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20651,V1771A000-C11,Grey,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1A/00/0C/11/V1771A000-C11@4.jpg,DALLAS - Dressing gown - flanell,Vossen,unisex,womens-clothing-swimwear
 20652,S1921L04D-A11,White,42,ALL,https://secure-i6.ztat.net/detail/S1/92/1L/04/DA/11/S1921L04D-A11@1.1.jpg,GODDESS - Bikini bottoms - white,Seafolly,FEMALE,womens-clothing-swimwear
 20653,M7871A002-A11,White,115,ALL,https://secure-i6.ztat.net/detail/M7/87/1A/00/2A/11/M7871A002-A11@11.jpg,CROCO - Dressing gown - snow,Möve,unisex,womens-clothing-swimwear
-20654,E2271B00E-K00,Blue,75,ALL,https://secure-i4.ztat.net/detail/E2/27/1B/00/EK/00/E2271B00E-K00@1.1.jpg,CANNES - Dressing gown - ultrablue,Escada Home,FEMALE,womens-clothing-swimwear
+2.07E+04,E2271B00E-K00,Blue,75,ALL,https://secure-i4.ztat.net/detail/E2/27/1B/00/EK/00/E2271B00E-K00@1.1.jpg,CANNES - Dressing gown - ultrablue,Escada Home,FEMALE,womens-clothing-swimwear
 20655,C5471B00A-002,White,21,ALL,https://secure-i6.ztat.net/detail/C5/47/1B/00/A0/02/C5471B00A-002@1.4.jpg,Dressing gown - white,CALANDO,unisex,womens-clothing-swimwear
-20656,E2271B00E-I00,Lilac,75,ALL,https://secure-i6.ztat.net/detail/E2/27/1B/00/EI/00/E2271B00E-I00@1.1.jpg,CANNES - Dressing gown - light purple,Escada Home,FEMALE,womens-clothing-swimwear
-20657,E2271B00D-I00,Lilac,85,ALL,https://secure-i5.ztat.net/detail/E2/27/1B/00/DI/00/E2271B00D-I00@12.jpg,NICE - Dressing gown - puple,Escada Home,FEMALE,womens-clothing-swimwear
-20658,E2171B006-405,Pink,120,ALL,https://secure-i6.ztat.net/detail/E2/17/1B/00/64/05/E2171B006-405@20.jpg,Dressing gown - raspberry,Escada Home,FEMALE,womens-clothing-swimwear
+2.07E+04,E2271B00E-I00,Lilac,75,ALL,https://secure-i6.ztat.net/detail/E2/27/1B/00/EI/00/E2271B00E-I00@1.1.jpg,CANNES - Dressing gown - light purple,Escada Home,FEMALE,womens-clothing-swimwear
+2.07E+04,E2271B00D-I00,Lilac,85,ALL,https://secure-i5.ztat.net/detail/E2/27/1B/00/DI/00/E2271B00D-I00@12.jpg,NICE - Dressing gown - puple,Escada Home,FEMALE,womens-clothing-swimwear
+2.07E+04,E2171B006-405,Pink,120,ALL,https://secure-i6.ztat.net/detail/E2/17/1B/00/64/05/E2171B006-405@20.jpg,Dressing gown - raspberry,Escada Home,FEMALE,womens-clothing-swimwear
 20659,V1771B01G-401,Pink,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1B/01/G4/01/V1771B01G-401@1.1.jpg,POPPY - Dressing gown - cranberry,Vossen,unisex,womens-clothing-swimwear
 20660,V1771B01G-502,Blue,60,ALL,https://secure-i6.ztat.net/detail/V1/77/1B/01/G5/02/V1771B01G-502@1.1.jpg,POPPY - Dressing gown - curacao,Vossen,unisex,womens-clothing-swimwear
 20661,V1771B01G-602,Green,60,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/01/G6/02/V1771B01G-602@1.1.jpg,POPPY - Dressing gown - valleygreen,Vossen,unisex,womens-clothing-swimwear
@@ -3644,7 +3510,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20803,ON321D084-802,Black,16,SUMMER,https://secure-i3.ztat.net/detail/ON/32/1D/08/48/02/ON321D084-802@1.1.jpg,LIVE LOVE LONG 2 PACK - Top - black and white,ONLY,FEMALE,womens-clothing-tops
 20804,VE121D07N-802,Black,10,SUMMER,https://secure-i4.ztat.net/detail/VE/12/1D/07/N8/02/VE121D07N-802@18.1.jpg,LUKAS LOVE - Basic T-shirt - black,Vero Moda,FEMALE,womens-clothing-tops
 20805,GS121D00X-112,Grey,23,ALL,https://secure-i4.ztat.net/detail/GS/12/1D/00/X1/12/GS121D00X-112@1.jpg,BASE V T - Basic T-shirt - grey heather,G-Star,FEMALE,womens-clothing-tops
-20806,V1021D05G-003,White,16,ALL,https://secure-i5.ztat.net/detail/V1/02/1D/05/G0/03/V1021D05G-003@1.2.jpg,OFFICIEL - Long sleeved top - white,Vila,FEMALE,womens-clothing-tops
 20807,GS121D01R-802,Black,23,ALL,https://secure-i6.ztat.net/detail/GS/12/1D/01/R8/02/GS121D01R-802@1.2.jpg,BASE DEEP - Basic T-shirt - black,G-Star,FEMALE,womens-clothing-tops
 20808,HI121D03Q-002,White,40,ALL,https://secure-i4.ztat.net/detail/HI/12/1D/03/Q0/02/HI121D03Q-002@1.2.jpg,LOLA - Long sleeved top - classic white,Hilfiger Denim,FEMALE,womens-clothing-tops
 20809,ES421D02U-503,Blue,19,ALL,https://secure-i5.ztat.net/detail/ES/42/1D/02/U5/03/ES421D02U-503@1.1.jpg,Basic T-shirt - dark navy,ESPRIT Collection,FEMALE,womens-clothing-tops
@@ -3729,7 +3594,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20894,ES921D03U-112,Grey,20,ALL,https://secure-i3.ztat.net/detail/ES/92/1D/03/U1/12/ES921D03U-112@1.1.jpg,Top - grey melange,Esprit Maternity,FEMALE,womens-clothing-tops
 20895,ES421D02U-002,White,19,ALL,https://secure-i5.ztat.net/detail/ES/42/1D/02/U0/02/ES421D02U-002@1.1.jpg,Basic T-shirt - white,ESPRIT Collection,FEMALE,womens-clothing-tops
 20896,ES421D02V-002,White,18,ALL,https://secure-i5.ztat.net/detail/ES/42/1D/02/V0/02/ES421D02V-002@1.1.jpg,Basic T-shirt - white,ESPRIT Collection,FEMALE,womens-clothing-tops
-20897,E1321D05V-103,Black,26,ALL,https://secure-i6.ztat.net/detail/E1/32/1D/05/V1/03/E1321D05V-103@1.2.jpg,BIEBER - Print T-shirt - covin black,Eleven Paris,FEMALE,womens-clothing-tops
+2.09E+04,E1321D05V-103,Black,26,ALL,https://secure-i6.ztat.net/detail/E1/32/1D/05/V1/03/E1321D05V-103@1.2.jpg,BIEBER - Print T-shirt - covin black,Eleven Paris,FEMALE,womens-clothing-tops
 20898,EV421D07L-802,Black,17,ALL,https://secure-i3.ztat.net/detail/EV/42/1D/07/L8/02/EV421D07L-802@1.1.jpg,Top - black,Even&Odd,FEMALE,womens-clothing-tops
 20899,EV421D05Q-802,Black,18,ALL,https://secure-i3.ztat.net/detail/EV/42/1D/05/Q8/02/EV421D05Q-802@1.1.jpg,Top - black/black,Even&Odd,FEMALE,womens-clothing-tops
 20900,HI121D03Q-802,Black,40,ALL,https://secure-i6.ztat.net/detail/HI/12/1D/03/Q8/02/HI121D03Q-802@1.2.jpg,LOLA - Long sleeved top - schwarz,Hilfiger Denim,FEMALE,womens-clothing-tops
@@ -3784,7 +3649,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20949,ES421D02V-K11,Blue,18,ALL,https://secure-i5.ztat.net/detail/ES/42/1D/02/VK/11/ES421D02V-K11@4.1.jpg,Basic T-shirt - dark navy,ESPRIT Collection,FEMALE,womens-clothing-tops
 20951,ZA821D02H-M11,Green,13,ALL,https://secure-i3.ztat.net/detail/ZA/82/1D/02/HM/11/ZA821D02H-M11@14.jpg,Basic T-shirt - emerald green,Zalando Essentials,FEMALE,womens-clothing-tops
 20952,TO221D05B-K11,Blue,18,ALL,https://secure-i2.ztat.net/detail/TO/22/1D/05/BK/11/TO221D05B-K11@7.jpg,CARLI - Basic T-shirt - real navy blue,Tom Tailor,FEMALE,womens-clothing-tops
-20953,V1021D05G-802,Black,15,ALL,https://secure-i6.ztat.net/detail/V1/02/1D/05/G8/02/V1021D05G-802@1.2.jpg,OFFICIEL - Jersey dress - black,Vila,FEMALE,womens-clothing-tops
 20954,ES421D02U-704,Beige,19,SUMMER,https://secure-i2.ztat.net/detail/ES/42/1D/02/U7/04/ES421D02U-704@1.1.jpg,Basic T-shirt - beige,ESPRIT Collection,FEMALE,womens-clothing-tops
 20955,ZA821D02H-K12,Blue,13,ALL,https://secure-i1.ztat.net/detail/ZA/82/1D/02/HK/12/ZA821D02H-K12@13.1.jpg,Basic T-shirt - victoria blue,Zalando Essentials,FEMALE,womens-clothing-tops
 20956,ZA821D02H-G11,Red,13,ALL,https://secure-i6.ztat.net/detail/ZA/82/1D/02/HG/11/ZA821D02H-G11@13.1.jpg,Basic T-shirt - coral,Zalando Essentials,FEMALE,womens-clothing-tops
@@ -3812,7 +3676,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 20978,2VE41B05I-K11,Blue,29,ALL,https://secure-i4.ztat.net/detail/2V/E4/1B/05/IK/11/2VE41B05I-K11@2.jpg,Jumpsuit - blue,Venice Beach,FEMALE,womens-clothing-tops
 20979,M5821D03Z-Q11,Black,17,ALL,https://secure-i6.ztat.net/detail/M5/82/1D/03/ZQ/11/M5821D03Z-Q11@5.jpg,Top - black,More & More,FEMALE,womens-clothing-tops
 20980,EV421D06O-Q00,Black,17,ALL,https://secure-i3.ztat.net/detail/EV/42/1D/06/OQ/00/EV421D06O-Q00@6.jpg,Top - black,Even&Odd,FEMALE,womens-clothing-tops
-20981,E1321D060-103,Black,26,ALL,https://secure-i3.ztat.net/detail/E1/32/1D/06/01/03/E1321D060-103@1.1.jpg,WONDERWOMAN - Print T-shirt - black,Eleven Paris,FEMALE,womens-clothing-tops
+2.10E+04,E1321D060-103,Black,26,ALL,https://secure-i3.ztat.net/detail/E1/32/1D/06/01/03/E1321D060-103@1.1.jpg,WONDERWOMAN - Print T-shirt - black,Eleven Paris,FEMALE,womens-clothing-tops
 20982,S5321D004-002,White,37,ALL,https://secure-i2.ztat.net/detail/S5/32/1D/00/40/02/S5321D004-002@1.jpg,AGATHE - Top - white,Schiesser Revival,FEMALE,womens-clothing-tops
 20983,GS121D00W-802,Black,28,ALL,https://secure-i1.ztat.net/detail/GS/12/1D/00/W8/02/GS121D00W-802@9.1.jpg,BASE DEEP R T - Long sleeved top - black,G-Star,FEMALE,womens-clothing-tops
 20984,S5321D009-802,Black,46,ALL,https://secure-i3.ztat.net/detail/S5/32/1D/00/98/02/S5321D009-802@1.jpg,IRMA - Vest - schwarz,Schiesser Revival,FEMALE,womens-clothing-tops
@@ -3834,12 +3698,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21001,K4422H00A-N11,Olive,60,SUMMER,https://secure-i5.ztat.net/detail/K4/42/2H/00/AN/11/K4422H00A-N11@7.1.jpg,Parka - olive,KIOMI,MALE,mens-clothing-coats
 21002,SE622H00U-102,Grey,100,WINTER,https://secure-i4.ztat.net/detail/SE/62/2H/00/U1/02/SE622H00U-102@1.1.jpg,SHMERCER - Short coat - light grey melange,Selected Homme,MALE,mens-clothing-coats
 21003,RE622H00B-K11,Blue,120,SUMMER,https://secure-i1.ztat.net/detail/RE/62/2H/00/BK/11/RE622H00B-K11@1.jpg,Parka - navy,Revolution,MALE,mens-clothing-coats
-21004,RI021G003-B11,Beige,85,SUMMER,https://secure-i5.ztat.net/detail/RI/02/1G/00/3B/11/RI021G003-B11@14.jpg,LONG - Parka - sand,Rains,unisex,mens-clothing-coats
 21005,SD022H000-Q11,Black,320,WINTER,https://secure-i2.ztat.net/detail/SD/02/2H/00/0Q/11/SD022H000-Q11@1.1.jpg,740 - Classic coat - black,Schott Made in USA,MALE,mens-clothing-coats
-21006,RI021G003-K11,Blue,85,SUMMER,https://secure-i1.ztat.net/detail/RI/02/1G/00/3K/11/RI021G003-K11@15.jpg,LONG - Summer jacket - blue,Rains,unisex,mens-clothing-coats
 21007,SD022H000-K11,Blue,320,WINTER,https://secure-i3.ztat.net/detail/SD/02/2H/00/0K/11/SD022H000-K11@14.3.jpg,740 - Classic coat - navy,Schott Made in USA,MALE,mens-clothing-coats
-21008,RI021G001-Q11,Black,70,SUMMER,https://secure-i6.ztat.net/detail/RI/02/1G/00/1Q/11/RI021G001-Q11@18.2.jpg,Waterproof jacket - black,Rains,unisex,mens-clothing-coats
-21009,RI021G003-Q11,Black,85,SUMMER,https://secure-i2.ztat.net/detail/RI/02/1G/00/3Q/11/RI021G003-Q11@14.jpg,LONG - Waterproof jacket - black,Rains,unisex,mens-clothing-coats
 21010,SE622G05L-503,Blue,130,WINTER,https://secure-i5.ztat.net/detail/SE/62/2G/05/L5/03/SE622G05L-503@1.1.jpg,MILES - Winter jacket - blue,Selected Homme,MALE,mens-clothing-coats
 21011,BX922G004-604,Olive,260,SUMMER,https://secure-i3.ztat.net/detail/BX/92/2G/00/46/04/BX922G004-604@1.1.jpg,WINTER WOOD - Parka - olive,Brixtol,MALE,mens-clothing-coats
 21012,BX922G006-503,Blue,115,WINTER,https://secure-i5.ztat.net/detail/BX/92/2G/00/65/03/BX922G006-503@1.1.jpg,Parka - blue,Brixtol,MALE,mens-clothing-coats
@@ -3852,8 +3712,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21019,AL522D00A-102,Grey,195,WINTER,https://secure-i4.ztat.net/detail/AL/52/2D/00/A1/02/AL522D00A-102@15.3.jpg,EXPLORER - Winter jacket - grey,Alpha Industries,MALE,mens-clothing-coats
 21020,TO122H00H-707,Beige,355,WINTER,https://secure-i5.ztat.net/detail/TO/12/2H/00/H7/07/TO122H00H-707@1.1.jpg,Classic coat - desert taupe,Tommy Hilfiger,MALE,mens-clothing-coats
 21021,SE622H00N-802,Black,90,SUMMER,https://secure-i3.ztat.net/detail/SE/62/2H/00/N8/02/SE622H00N-802@1.1.jpg,ADAMS - Trenchcoat - black,Selected Homme,MALE,mens-clothing-coats
-21022,RI021000J-C11,Grey,90,SUMMER,https://secure-i2.ztat.net/detail/RI/02/10/00/JC/11/RI021000J-C11@8.jpg,Waterproof jacket - grey,Rains,unisex,mens-clothing-coats
-21023,RI021000H-Q11,Black,90,SUMMER,https://secure-i1.ztat.net/detail/RI/02/10/00/HQ/11/RI021000H-Q11@7.jpg,Parka - black,Rains,unisex,mens-clothing-coats
 21025,YO122H000-Q11,Black,26,WINTER,https://secure-i1.ztat.net/detail/YO/12/2H/00/0Q/11/YO122H000-Q11@14.1.jpg,FIELDJACKET - Light jacket - black,YOUR TURN,MALE,mens-clothing-coats
 21026,GS122G03Y-503,Blue,195,WINTER,https://secure-i5.ztat.net/detail/GS/12/2G/03/Y5/03/GS122G03Y-503@1.1.jpg,RAW RADAR GARBER - Classic coat - mazarine blue,G-Star,MALE,mens-clothing-coats
 21027,AL522H007-604,Olive,240,WINTER,https://secure-i3.ztat.net/detail/AL/52/2H/00/76/04/AL522H007-604@1.1.jpg,Parka - dark green,Alpha Industries,MALE,mens-clothing-coats
@@ -3863,7 +3721,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21031,KL022N007-K11,Blue,335,SUMMER,https://secure-i4.ztat.net/detail/KL/02/2N/00/7K/11/KL022N007-K11@14.jpg,Trenchcoat - dunkelblau,LAGERFELD,MALE,mens-clothing-coats
 21032,KL022H000-Q11,Black,335,SUMMER,https://secure-i5.ztat.net/detail/KL/02/2H/00/0Q/11/KL022H000-Q11@14.jpg,Trenchcoat - schwarz,LAGERFELD,MALE,mens-clothing-coats
 21033,KL022N007-Q11,Black,335,SUMMER,https://secure-i5.ztat.net/detail/KL/02/2N/00/7Q/11/KL022N007-Q11@15.jpg,Trenchcoat - schwarz,LAGERFELD,MALE,mens-clothing-coats
-21034,RI021G003-H11,Orange,85,SUMMER,https://secure-i1.ztat.net/detail/RI/02/1G/00/3H/11/RI021G003-H11@4.2.jpg,LONG - Summer jacket - orange,Rains,unisex,mens-clothing-coats
 21035,C1422H007-802,Black,125,WINTER,https://secure-i1.ztat.net/detail/C1/42/2H/00/78/02/C1422H007-802@23.jpg,MENTOR JACKET - Parka - black,Carhartt,MALE,mens-clothing-coats
 21036,JA222H000-K11,Blue,46,WINTER,https://secure-i2.ztat.net/detail/JA/22/2H/00/0K/11/JA222H000-K11@1.1.jpg,Parka - mood indigo,Jack & Jones,MALE,mens-clothing-coats
 21037,EZ122H002-604,Olive,145,WINTER,https://secure-i3.ztat.net/detail/EZ/12/2H/00/26/04/EZ122H002-604@1.1.jpg,HAWKEYE - Parka - olive,Ezekiel,MALE,mens-clothing-coats
@@ -4158,7 +4015,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21326,OS322G00E-K11,Blue,34,ALL,https://secure-i2.ztat.net/detail/OS/32/2G/00/EK/11/OS322G00E-K11@14.jpg,AVI - Slim fit jeans - dark blue denim,Only & Sons,MALE,mens-clothing-jeans
 21327,OS322G00C-K11,Blue,50,ALL,https://secure-i2.ztat.net/detail/OS/32/2G/00/CK/11/OS322G00C-K11@9.jpg,AVI - Slim fit jeans - light blue denim,Only & Sons,MALE,mens-clothing-jeans
 21328,SO222G040-K11,Blue,60,SUMMER,https://secure-i6.ztat.net/detail/SO/22/2G/04/0K/11/SO222G040-K11@13.jpg,Slim fit jeans - blue,s.Oliver,MALE,mens-clothing-jeans
-21329,GS122G084-K11,Blue,120,ALL,https://secure-i1.ztat.net/detail/GS/12/2G/08/4K/11/GS122G084-K11@14.1.jpg,DEFEND - Straight leg jeans - it aged,G-Star,unisex,mens-clothing-jeans
 21330,OS322G00B-K11,Blue,50,ALL,https://secure-i4.ztat.net/detail/OS/32/2G/00/BK/11/OS322G00B-K11@2.jpg,AVI - Straight leg jeans - dark blue denim,Only & Sons,MALE,mens-clothing-jeans
 21331,OS322G00D-C11,Grey,50,ALL,https://secure-i5.ztat.net/detail/OS/32/2G/00/DC/11/OS322G00D-C11@14.jpg,ONSAVI - Slim fit jeans - light grey denim,Only & Sons,MALE,mens-clothing-jeans
 21332,ES122G02O-K11,Blue,45,ALL,https://secure-i4.ztat.net/detail/ES/12/2G/02/OK/11/ES122G02O-K11@14.jpg,Relaxed fit jeans - deep ocean,Esprit,MALE,mens-clothing-jeans
@@ -4286,9 +4142,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21454,LY222G00B-502,Blue,90,ALL,https://secure-i3.ztat.net/detail/LY/22/2G/00/B5/02/LY222G00B-502@1.2.jpg,Summer jacket - true blue,Lyle & Scott,MALE,mens-clothing-jackets
 21455,HA422G002-907,Blue,60,ALL,https://secure-i3.ztat.net/detail/HA/42/2G/00/29/07/HA422G002-907@1.1.jpg,HARRINGTON - Summer jacket - marine,HARRINGTON,MALE,mens-clothing-jackets
 21456,ES422A013-K11,Blue,130,ALL,https://secure-i1.ztat.net/detail/ES/42/2A/01/3K/11/ES422A013-K11@14.1.jpg,MANCHESTER SLIM FIT  - Suit jacket - dark navy,ESPRIT Collection,MALE,mens-clothing-jackets
-21457,SE622H00U-102,Grey,100,WINTER,https://secure-i4.ztat.net/detail/SE/62/2H/00/U1/02/SE622H00U-102@1.1.jpg,SHMERCER - Short coat - light grey melange,Selected Homme,MALE,mens-clothing-jackets
 21458,TH342B0D3-802,Black,100,SUMMER,https://secure-i1.ztat.net/detail/TH/34/2B/0D/38/02/TH342B0D3-802@2.2.jpg,SANGRO - Hardshell jacket - black,The North Face,MALE,mens-clothing-jackets
-21459,RE622H00B-K11,Blue,120,SUMMER,https://secure-i1.ztat.net/detail/RE/62/2H/00/BK/11/RE622H00B-K11@1.jpg,Parka - navy,Revolution,MALE,mens-clothing-jackets
 21460,PI922G00I-K11,Blue,65,SUMMER,https://secure-i6.ztat.net/detail/PI/92/2G/00/IK/11/PI922G00I-K11@7.jpg,Suit jacket - dark blue,Pier One,MALE,mens-clothing-jackets
 21461,SC922D007-802,Black,265,WINTER,https://secure-i1.ztat.net/detail/S/C/SC922D007-802@1.jpg,ICEBERG - Down jacket - black,Schott NYC,MALE,mens-clothing-jackets
 21462,UR622H004-Q11,Black,75,SUMMER,https://secure-i1.ztat.net/detail/UR/62/2H/00/4Q/11/UR622H004-Q11@5.jpg,Faux leather jacket - black,Urban Classics,MALE,mens-clothing-jackets
@@ -4296,7 +4150,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21464,B3242F001-K11,Blue,70,WINTER,https://secure-i4.ztat.net/detail/B3/24/2F/00/1K/11/B3242F001-K11@5.jpg,MARONAS - Outdoor jacket - blue,Brunotti,MALE,mens-clothing-jackets
 21465,TS122G00L-Q11,Black,55,WINTER,https://secure-i6.ztat.net/detail/TS/12/2G/00/LQ/11/TS122G00L-Q11@2.jpg,NEW SWING - Light jacket - black,Teddy Smith,MALE,mens-clothing-jackets
 21466,1FN22G002-802,Black,150,WINTER,https://secure-i3.ztat.net/detail/1F/N2/2G/00/28/02/1FN22G002-802@1.1.jpg,Leather jacket - black,Freaky Nation,MALE,mens-clothing-jackets
-21467,RI021G003-B11,Beige,85,SUMMER,https://secure-i5.ztat.net/detail/RI/02/1G/00/3B/11/RI021G003-B11@14.jpg,LONG - Parka - sand,Rains,unisex,mens-clothing-jackets
 21468,SE622B026-Q11,Black,95,ALL,https://secure-i5.ztat.net/detail/SE/62/2B/02/6Q/11/SE622B026-Q11@14.jpg,Suit jacket - black,Selected Homme,MALE,mens-clothing-jackets
 21469,SD022J001-K11,Blue,775,ALL,https://secure-i4.ztat.net/detail/SD/02/2J/00/1K/11/SD022J001-K11@14.jpg,120 - Leather jacket - dark navy,Schott Made in USA,MALE,mens-clothing-jackets
 21470,JA222L01A-K11,Black,55,ALL,https://secure-i3.ztat.net/detail/JA/22/2L/01/AK/11/JA222L01A-K11@15.jpg,SAMMO - Winter jacket - black,Jack & Jones,MALE,mens-clothing-jackets
@@ -4310,7 +4163,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21478,TI522B00G-M11,Green,175,ALL,https://secure-i6.ztat.net/detail/TI/52/2B/00/GM/11/TI522B00G-M11@3.jpg,OLLIE - Suit jacket - soft teal,Tiger of Sweden,MALE,mens-clothing-jackets
 21479,JL122A016-C11,Grey,250,ALL,https://secure-i5.ztat.net/detail/JL/12/2A/01/6C/11/JL122A016-C11@2.jpg,HOPPER - Suit jacket - grey,J.LINDEBERG,MALE,mens-clothing-jackets
 21480,S3722H00D-K11,Blue,80,SUMMER,https://secure-i4.ztat.net/detail/S3/72/2H/00/DK/11/S3722H00D-K11@4.2.jpg,BOMBER - Summer jacket - navy,Schott NYC,MALE,mens-clothing-jackets
-21481,RI021G003-K11,Blue,85,SUMMER,https://secure-i1.ztat.net/detail/RI/02/1G/00/3K/11/RI021G003-K11@15.jpg,LONG - Summer jacket - blue,Rains,unisex,mens-clothing-jackets
 21482,CH522H005-302,Red,145,WINTER,https://secure-i1.ztat.net/detail/CH/52/2H/00/53/02/CH522H005-302@1.2.jpg,K-SMOOTH - Down jacket - rouge,Chevignon,MALE,mens-clothing-jackets
 21483,SD022J003-O11,Brown,780,ALL,https://secure-i4.ztat.net/detail/SD/02/2J/00/3O/11/SD022J003-O11@18.jpg,141 - Leather jacket - brown,Schott Made in USA,MALE,mens-clothing-jackets
 21484,TI522B00G-K11,Blue,175,ALL,https://secure-i1.ztat.net/detail/TI/52/2B/00/GK/11/TI522B00G-K11@2.1.jpg,OLLIE - Suit jacket - dark jeans,Tiger of Sweden,MALE,mens-clothing-jackets
@@ -4319,10 +4171,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21487,JA222H013-K11,Blue,31,WINTER,https://secure-i1.ztat.net/detail/JA/22/2H/01/3K/11/JA222H013-K11@5.jpg,GENUINE - Light jacket - mood indigo,Jack & Jones,MALE,mens-clothing-jackets
 21488,JA222H013-O11,Brown,39,WINTER,https://secure-i6.ztat.net/detail/JA/22/2H/01/3O/11/JA222H013-O11@6.jpg,GENUINE - Light jacket - sudan brown,Jack & Jones,MALE,mens-clothing-jackets
 21489,BE122G00T-B11,Beige,80,SUMMER,https://secure-i5.ztat.net/detail/BE/12/2G/00/TB/11/BE122G00T-B11@6.jpg,HARRINGTON - Summer jacket - moon,Ben Sherman,MALE,mens-clothing-jackets
-21490,RI021G001-Q11,Black,70,SUMMER,https://secure-i6.ztat.net/detail/RI/02/1G/00/1Q/11/RI021G001-Q11@18.2.jpg,Waterproof jacket - black,Rains,unisex,mens-clothing-jackets
 21491,S3722H00J-Q11,Black,255,SUMMER,https://secure-i6.ztat.net/detail/S3/72/2H/00/JQ/11/S3722H00J-Q11@6.jpg,Leather jacket - black,Schott NYC,MALE,mens-clothing-jackets
 21492,B3242F000-Q11,Black,60,WINTER,https://secure-i6.ztat.net/detail/B3/24/2F/00/0Q/11/B3242F000-Q11@4.jpg,MOSKOS - Outdoor jacket - black,Brunotti,MALE,mens-clothing-jackets
-21493,RI021G003-Q11,Black,85,SUMMER,https://secure-i2.ztat.net/detail/RI/02/1G/00/3Q/11/RI021G003-Q11@14.jpg,LONG - Waterproof jacket - black,Rains,unisex,mens-clothing-jackets
 21494,S3722H00F-K11,Blue,80,SUMMER,https://secure-i4.ztat.net/detail/S3/72/2H/00/FK/11/S3722H00F-K11@6.jpg,KEN - Summer jacket - navy,Schott NYC,MALE,mens-clothing-jackets
 21495,K2922G000-Q00,Black,310,SUMMER,https://secure-i2.ztat.net/detail/K2/92/2G/00/0Q/00/K2922G000-Q00@4.jpg,PERF MAN - Leather jacket - noir,Korintage by Serge Pariente,MALE,mens-clothing-jackets
 21496,3ME22G00D-B11,Beige,90,SUMMER,https://secure-i6.ztat.net/detail/3M/E2/2G/00/DB/11/3ME22G00D-B11@1.jpg,HARRINGTON - Summer jacket - tan,Merc,MALE,mens-clothing-jackets
@@ -4337,14 +4187,12 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21505,DI622G00A-103,Grey,55,WINTER,https://secure-i2.ztat.net/detail/DI/62/2G/00/A1/03/DI622G00A-103@14.1.jpg,CORNWELL - Winter jacket - charcoal grey,Dickies,MALE,mens-clothing-jackets
 21506,JA222G06L-802,Black,55,WINTER,https://secure-i3.ztat.net/detail/JA/22/2G/06/L8/02/JA222G06L-802@1.1.jpg,Light jacket - black,Jack & Jones,MALE,mens-clothing-jackets
 21507,J1822H004-909,Black,80,WINTER,https://secure-i1.ztat.net/detail/J1/82/2H/00/49/09/J1822H004-909@1.1.jpg,SEPIK - Light jacket - black,JAPAN RAGS,MALE,mens-clothing-jackets
-21508,SE622G05L-503,Blue,130,WINTER,https://secure-i5.ztat.net/detail/SE/62/2G/05/L5/03/SE622G05L-503@1.1.jpg,MILES - Winter jacket - blue,Selected Homme,MALE,mens-clothing-jackets
 21509,AM122G003-502,Blue,125,WINTER,https://secure-i6.ztat.net/detail/AM/12/2G/00/35/02/AM122G003-502@1.1.jpg,VARSM - Leather jacket - navy,American College,MALE,mens-clothing-jackets
 21510,CH522G00J-909,Black,350,WINTER,https://secure-i2.ztat.net/detail/CH/52/2G/00/J9/09/CH522G00J-909@1.2.jpg,B-MUSSILA - Leather jacket - noir,Chevignon,MALE,mens-clothing-jackets
 21511,CH522H005-K00,Blue,285,WINTER,https://secure-i5.ztat.net/detail/CH/52/2H/00/5K/00/CH522H005-K00@1.2.jpg,K-SMOOTH - Down jacket - navy,Chevignon,MALE,mens-clothing-jackets
 21512,UR622G009-102,Grey,50,WINTER,https://secure-i4.ztat.net/detail/UR/62/2G/00/91/02/UR622G009-102@1.1.jpg,Waistcoat - schwarz,Urban Classics,MALE,mens-clothing-jackets
 21513,M4942B03H-802,Black,120,WINTER,https://secure-i3.ztat.net/detail/M4/94/2B/03/H8/02/M4942B03H-802@1.1.jpg,RAMBLE - Outdoor jacket - black,Marmot,MALE,mens-clothing-jackets
 21514,PI922G00W-503,Blue,60,SUMMER,https://secure-i5.ztat.net/detail/PI/92/2G/00/W5/03/PI922G00W-503@1.1.jpg,Winter jacket - dark blue,Pier One,MALE,mens-clothing-jackets
-21515,BX922G006-503,Blue,115,WINTER,https://secure-i5.ztat.net/detail/BX/92/2G/00/65/03/BX922G006-503@1.1.jpg,Parka - blue,Brixtol,MALE,mens-clothing-jackets
 21516,P5222G008-802,Black,85,SUMMER,https://secure-i3.ztat.net/detail/P5/22/2G/00/88/02/P5222G008-802@1.1.jpg,RATNER - Summer jacket - black,Original Penguin,MALE,mens-clothing-jackets
 21517,AL522G00T-604,Olive,140,WINTER,https://secure-i3.ztat.net/detail/AL/52/2G/00/T6/04/AL522G00T-604@1.1.jpg,MA-1 VF 59 - Light jacket - sage,Alpha Industries,MALE,mens-clothing-jackets
 21518,AL522G00T-502,Blue,140,WINTER,https://secure-i6.ztat.net/detail/AL/52/2G/00/T5/02/AL522G00T-502@1.1.jpg,MA-1 VF 59 - Light jacket - replica blue,Alpha Industries,MALE,mens-clothing-jackets
@@ -4367,10 +4215,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21535,HA422G001-802,Black,65,WINTER,https://secure-i6.ztat.net/detail/HA/42/2G/00/18/02/HA422G001-802@1.2.jpg,HARRINGTON HOODED - Summer jacket - black,HARRINGTON,MALE,mens-clothing-jackets
 21536,S3722G00J-003,Beige,85,SUMMER,https://secure-i1.ztat.net/detail/S3/72/2G/00/J0/03/S3722G00J-003@1.jpg,CABL - Summer jacket - beige,Schott NYC,MALE,mens-clothing-jackets
 21537,AL522D00M-502,Blue,110,SUMMER,https://secure-i2.ztat.net/detail/AL/52/2D/00/M5/02/AL522D00M-502@1.jpg,Summer jacket - replica blue,Alpha Industries,MALE,mens-clothing-jackets
-21538,FO522H001-802,Black,80,WINTER,https://secure-i1.ztat.net/detail/FO/52/2H/00/18/02/FO522H001-802@1.jpg,OBSERVER - Parka - black,Forvert,MALE,mens-clothing-jackets
 21539,SC922D002-802,Black,205,WINTER,https://secure-i2.ztat.net/detail/SC/92/2D/00/28/02/SC922D002-802@1.jpg,WARREN - Winter jacket - black,Schott NYC,MALE,mens-clothing-jackets
 21540,AL522D009-802,Black,160,WINTER,https://secure-i6.ztat.net/detail/AL/52/2D/00/98/02/AL522D009-802@1.2.jpg,Summer jacket - black,Alpha Industries,MALE,mens-clothing-jackets
-21541,AL522D005-602,Olive,205,WINTER,https://secure-i5.ztat.net/detail/AL/52/2D/00/56/02/AL522D005-602@1.1.jpg,N3 B PARKA - Parka - sage green,Alpha Industries,MALE,mens-clothing-jackets
 21542,AL522D002-802,Black,160,WINTER,https://secure-i3.ztat.net/detail/AL/52/2D/00/28/02/AL522D002-802@1.1.jpg,ENGINE - Jacket - black,Alpha Industries,MALE,mens-clothing-jackets
 21543,CF522H001-K11,Blue,40,SUMMER,https://secure-i6.ztat.net/detail/CF/52/2H/00/1K/11/CF522H001-K11@7.jpg,TUCOTTON - Light jacket - marine,CELIO,MALE,mens-clothing-jackets
 21544,BX922G001-M11,Green,210,SUMMER,https://secure-i2.ztat.net/detail/BX/92/2G/00/1M/11/BX922G001-M11@3.jpg,COLE - Light jacket - olive,Brixtol,MALE,mens-clothing-jackets
@@ -4384,8 +4230,6 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21552,TO222G01P-801,Grey,150,WINTER,https://secure-i4.ztat.net/detail/TO/22/2G/01/P8/01/TO222G01P-801@1.1.jpg,Leather jacket - grey,Tom Tailor,MALE,mens-clothing-jackets
 21553,BE122G00T-K11,Blue,80,SUMMER,https://secure-i4.ztat.net/detail/BE/12/2G/00/TK/11/BE122G00T-K11@2.jpg,HARRINGTON - Summer jacket - navy blazer,Ben Sherman,MALE,mens-clothing-jackets
 21554,TH342B05Y-802,Black,100,SUMMER,https://secure-i4.ztat.net/detail/TH/34/2B/05/Y8/02/TH342B05Y-802@1.jpg,RESOLVE - Hardshell jacket - tnf black,The North Face,MALE,mens-clothing-jackets
-21555,FO522H001-602,Olive,60,WINTER,https://secure-i5.ztat.net/detail/FO/52/2H/00/16/02/FO522H001-602@1.1.jpg,OBSERVER - Winter jacket - olive,Forvert,MALE,mens-clothing-jackets
-21556,AL522D00A-102,Grey,195,WINTER,https://secure-i4.ztat.net/detail/AL/52/2D/00/A1/02/AL522D00A-102@15.3.jpg,EXPLORER - Winter jacket - grey,Alpha Industries,MALE,mens-clothing-jackets
 21557,OA122G02E-Q11,Black,220,WINTER,https://secure-i4.ztat.net/detail/OA/12/2G/02/EQ/11/OA122G02E-Q11@5.1.jpg,Leather jacket - black,Oakwood,MALE,mens-clothing-jackets
 21558,PI922G00W-802,Black,60,SUMMER,https://secure-i3.ztat.net/detail/PI/92/2G/00/W8/02/PI922G00W-802@1.1.jpg,Winter jacket - black,Pier One,MALE,mens-clothing-jackets
 21559,HA422G001-704,Beige,65,WINTER,https://secure-i3.ztat.net/detail/HA/42/2G/00/17/04/HA422G001-704@1.4.jpg,HARRINGTON HOODED - Summer jacket - beige,HARRINGTON,MALE,mens-clothing-jackets
@@ -4398,17 +4242,12 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21566,G6022G001-103,Grey,125,WINTER,https://secure-i2.ztat.net/detail/G6/02/2G/00/11/03/G6022G001-103@8.jpg,TUNDRA - Winter jacket - huski,Gaastra Blue,MALE,mens-clothing-jackets
 21567,13M22G010-102,Blue,37,WINTER,https://secure-i4.ztat.net/detail/13/M2/2G/01/01/02/13M22G010-102@1.1.jpg,CRAG - Summer jacket - grey,Mazine,MALE,mens-clothing-jackets
 21569,ES122H00U-K11,Blue,100,SUMMER,https://secure-i4.ztat.net/detail/ES/12/2H/00/UK/11/ES122H00U-K11@14.jpg,Summer jacket - dark night blue,Esprit,MALE,mens-clothing-jackets
-21572,RI0210009-Q11,Black,70,SUMMER,https://secure-i5.ztat.net/detail/RI/02/10/00/9Q/11/RI0210009-Q11@8.jpg,BREAKER - Waterproof jacket - black,Rains,unisex,mens-clothing-jackets
 21573,SE622A07T-K11,Blue,110,SUMMER,https://secure-i5.ztat.net/detail/SE/62/2A/07/TK/11/SE622A07T-K11@14.jpg,SHFINCHLEY - Suit jacket - blue depths,Selected Homme,MALE,mens-clothing-jackets
 21574,TO722H00I-Q11,Black,105,SUMMER,https://secure-i4.ztat.net/detail/TO/72/2H/00/IQ/11/TO722H00I-Q11@14.jpg,Summer jacket - night watch black,Tom Tailor Denim,MALE,mens-clothing-jackets
 21575,TH342F01H-N11,Olive,200,SUMMER,https://secure-i6.ztat.net/detail/TH/34/2F/01/HN/11/TH342F01H-N11@2.jpg,1985 HERITAGE MOUNTAIN  - Hardshell jacket - laurel wreath green/cosmic blue,The North Face,MALE,mens-clothing-jackets
 21576,TO722H00H-Q11,Black,85,SUMMER,https://secure-i5.ztat.net/detail/TO/72/2H/00/HQ/11/TO722H00H-Q11@14.jpg,Summer jacket - night watch black,Tom Tailor Denim,MALE,mens-clothing-jackets
 21577,JA222H039-K11,Blue,80,SUMMER,https://secure-i2.ztat.net/detail/JA/22/2H/03/9K/11/JA222H039-K11@14.jpg,JJORCALL REGULAR FIT - Summer jacket - black navy ,Jack & Jones,MALE,mens-clothing-jackets
-21578,RI021000I-M11,Green,90,SUMMER,https://secure-i5.ztat.net/detail/RI/02/10/00/IM/11/RI021000I-M11@8.jpg,Waterproof jacket - green,Rains,unisex,mens-clothing-jackets
-21579,RI021000J-C11,Grey,90,SUMMER,https://secure-i2.ztat.net/detail/RI/02/10/00/JC/11/RI021000J-C11@8.jpg,Waterproof jacket - grey,Rains,unisex,mens-clothing-jackets
-21580,RI0210003-C11,Grey,70,SUMMER,https://secure-i3.ztat.net/detail/RI/02/10/00/3C/11/RI0210003-C11@8.jpg,Waterproof jacket - grey/orange,Rains,unisex,mens-clothing-jackets
 21581,3CR42F008-C11,Grey,85,SUMMER,https://secure-i3.ztat.net/detail/3C/R4/2F/00/8C/11/3CR42F008-C11@5.jpg,VILTA - Hardshell jacket - granite combo,Craghoppers,MALE,mens-clothing-jackets
-21586,RI0210006-C11,Grey,70,SUMMER,https://secure-i6.ztat.net/detail/RI/02/10/00/6C/11/RI0210006-C11@8.jpg,Waterproof jacket - grey,Rains,unisex,mens-clothing-jackets
 21587,OA122J012-B11,Beige,225,SUMMER,https://secure-i3.ztat.net/detail/OA/12/2J/01/2B/11/OA122J012-B11@15.jpg,KEN - Leather jacket - toffee,Oakwood,MALE,mens-clothing-jackets
 21589,K2022H00N-Q11,Black,65,SUMMER,https://secure-i4.ztat.net/detail/K2/02/2H/00/NQ/11/K2022H00N-Q11@2.jpg,TONY - Summer jacket - black,Kaporal,MALE,mens-clothing-jackets
 21590,R2342F01H-O11,Brown,135,SUMMER,https://secure-i5.ztat.net/detail/R2/34/2F/01/HO/11/R2342F01H-O11@10.jpg,MINNIESOTA - Hardshell jacket - gold cumin,Regatta,MALE,mens-clothing-jackets
@@ -4424,17 +4263,13 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21601,ED122I01T-602,Green,25,SUMMER,https://secure-i6.ztat.net/detail/ED/12/2I/01/T6/02/ED122I01T-602@18.jpg,ESSENT - Jumper - grün,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21602,ED122I01T-502,Blue,25,SUMMER,https://secure-i6.ztat.net/detail/ED/12/2I/01/T5/02/ED122I01T-502@1.1.jpg,ESSENT - Jumper - imperial blue,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21603,ED122I01T-113,Grey,25,SUMMER,https://secure-i2.ztat.net/detail/ED/12/2I/01/T1/13/ED122I01T-113@1.1.jpg,ESSENT - Jumper - dark grey melange,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
-21604,S3422J007-802,Black,50,ALL,https://secure-i3.ztat.net/detail/S3/42/2J/00/78/02/S3422J007-802@1.1.jpg,BATMAN - Hoodie - black,LOGOSHIRT,MALE,mens-clothing-jumpers-cardigans
 21605,TO122I00W-802,Black,80,ALL,https://secure-i2.ztat.net/detail/TO/12/2I/00/W8/02/TO122I00W-802@8.1.jpg,PACIFIC - Jumper - new black,Tommy Hilfiger,MALE,mens-clothing-jumpers-cardigans
-21606,TI522Q001-K11,Blue,100,ALL,https://secure-i3.ztat.net/detail/TI/52/2Q/00/1K/11/TI522Q001-K11@2.jpg,REEVES - Cardigan - light ink,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21607,TI522Q005-K11,Blue,85,ALL,https://secure-i2.ztat.net/detail/TI/52/2Q/00/5K/11/TI522Q005-K11@7.jpg,HARVARD - Jumper - light ink,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21608,TI522Q005-C12,Grey,85,ALL,https://secure-i6.ztat.net/detail/TI/52/2Q/00/5C/12/TI522Q005-C12@4.1.jpg,HARVARD - Jumper - plutonium,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
-21609,FY022J001-Q00,Black,250,ALL,https://secure-i4.ztat.net/detail/FY/02/2J/00/1Q/00/FY022J001-Q00@1.1.jpg,Cardigan - black,FAME ON YOU PARIS,MALE,mens-clothing-jumpers-cardigans
 21610,TI522I00Z-102,Grey,100,ALL,https://secure-i6.ztat.net/detail/TI/52/2I/00/Z1/02/TI522I00Z-102@20.1.jpg,TERRY - Jumper - grey street,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21611,JL122I00P-802,Black,85,ALL,https://secure-i3.ztat.net/detail/JL/12/2I/00/P8/02/JL122I00P-802@1.1.jpg,LYMANN - Jumper - black,J.LINDEBERG,MALE,mens-clothing-jumpers-cardigans
 21612,TI522I00Z-503,Blue,100,ALL,https://secure-i5.ztat.net/detail/TI/52/2I/00/Z5/03/TI522I00Z-503@1.1.jpg,TERRY - Jumper - dark blue,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21613,TI522I00Z-802,Black,100,ALL,https://secure-i3.ztat.net/detail/TI/52/2I/00/Z8/02/TI522I00Z-802@1.1.jpg,TERRY - Jumper - black,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
-21614,S3422J008-503,Blue,50,ALL,https://secure-i5.ztat.net/detail/S3/42/2J/00/85/03/S3422J008-503@1.1.jpg,SUPERMAN - Hoodie - blue,LOGOSHIRT,MALE,mens-clothing-jumpers-cardigans
 21615,LY222I00U-909,Black,85,ALL,https://secure-i1.ztat.net/detail/LY/22/2I/00/U9/09/LY222I00U-909@1.1.jpg,Jumper - true black,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21616,SE622I03V-802,Black,32,ALL,https://secure-i3.ztat.net/detail/SE/62/2I/03/V8/02/SE622I03V-802@1.1.jpg,TOWER - Jumper - schwarz,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21617,SE622I03V-503,Blue,32,ALL,https://secure-i5.ztat.net/detail/SE/62/2I/03/V5/03/SE622I03V-503@1.1.jpg,TOWER - Jumper - night sky,Selected Homme,MALE,mens-clothing-jumpers-cardigans
@@ -4445,15 +4280,11 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21622,SE622D071-802,Black,39,ALL,https://secure-i3.ztat.net/detail/SE/62/2D/07/18/02/SE622D071-802@1.1.jpg,NOOS - Jumper - black,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21623,SE622D071-502,Blue,39,ALL,https://secure-i6.ztat.net/detail/SE/62/2D/07/15/02/SE622D071-502@1.1.jpg,NOOS - Jumper - maritime navy,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21624,SE622D071-112,Grey,40,ALL,https://secure-i3.ztat.net/detail/SE/62/2D/07/11/12/SE622D071-112@1.1.jpg,NOOS - Jumper - mid grey melange,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21625,GA322A002-503,Blue,85,ALL,https://secure-i6.ztat.net/detail/GA/32/2A/00/25/03/GA322A002-503@1.jpg,Jumper - blue,Gant,MALE,mens-clothing-jumpers-cardigans
-21626,GA322A002-802,Black,85,ALL,https://secure-i2.ztat.net/detail/GA/32/2A/00/28/02/GA322A002-802@1.jpg,Jumper - black,Gant,MALE,mens-clothing-jumpers-cardigans
 21627,UR622J005-850,Black,41,ALL,https://secure-i6.ztat.net/detail/UR/62/2J/00/58/50/UR622J005-850@1.1.jpg,ZIG ZAG - Tracksuit top - black,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21628,UR622J007-850,Black,38,ALL,https://secure-i1.ztat.net/detail/UR/62/2J/00/78/50/UR622J007-850@20.2.jpg,2-TONE ZIP - Tracksuit top - black/white,Urban Classics,MALE,mens-clothing-jumpers-cardigans
-21629,UR622J001-802,Black,34,ALL,https://secure-i6.ztat.net/detail/UR/62/2J/00/18/02/UR622J001-802@1.2.jpg,BLANK - Hoodie - black,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21630,UR622J008-802,Black,38,ALL,https://secure-i2.ztat.net/detail/UR/62/2J/00/88/02/UR622J008-802@10.jpg,Tracksuit top - black,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21631,UR622J007-851,Grey,41,ALL,https://secure-i4.ztat.net/detail/UR/62/2J/00/78/51/UR622J007-851@1.2.jpg,2-TONE ZIP - Tracksuit top - black / grey,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21632,TO122A00A-802,Blue,80,ALL,https://secure-i5.ztat.net/detail/TO/12/2A/00/A8/02/TO122A00A-802@5.1.jpg,PACIFIC - Jumper - dunkelblau,Tommy Hilfiger,MALE,mens-clothing-jumpers-cardigans
-21633,TI522Q001-Q11,Black,100,ALL,https://secure-i6.ztat.net/detail/TI/52/2Q/00/1Q/11/TI522Q001-Q11@7.jpg,REEVES - Cardigan - black,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21634,LY222I00U-503,Blue,85,ALL,https://secure-i4.ztat.net/detail/LY/22/2I/00/U5/03/LY222I00U-503@1.2.jpg,Jumper - new navy,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21635,CF522P002-C11,Grey,26,ALL,https://secure-i6.ztat.net/detail/CF/52/2P/00/2C/11/CF522P002-C11@4.jpg,JEGILET - Tracksuit top - gris chine,CELIO,MALE,mens-clothing-jumpers-cardigans
 21636,F1422I00K-Q11,Black,110,ALL,https://secure-i3.ztat.net/detail/F1/42/2I/00/KQ/11/F1422I00K-Q11@17.jpg,Jumper - black,Filippa K,MALE,mens-clothing-jumpers-cardigans
@@ -4464,29 +4295,23 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21641,BO122J00T-104,Silver,105,ALL,https://secure-i2.ztat.net/detail/BO/12/2J/00/T1/04/BO122J00T-104@1.1.jpg,ZIPUP - Tracksuit top - silver,BOSS Orange,MALE,mens-clothing-jumpers-cardigans
 21642,HI122I00X-802,Black,70,ALL,https://secure-i3.ztat.net/detail/HI/12/2I/00/X8/02/HI122I00X-802@1.1.jpg,TIMBER - Jumper - black,Hilfiger Denim,MALE,mens-clothing-jumpers-cardigans
 21643,JA222G03T-909,Black,31,ALL,https://secure-i1.ztat.net/detail/JA/22/2G/03/T9/09/JA222G03T-909@1.1.jpg,NOOS - Jumper - black,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21644,UR622J003-002,White,42,ALL,https://secure-i5.ztat.net/detail/UR/62/2J/00/30/02/UR622J003-002@1.1.jpg,ZIG ZAG - Hoodie - white,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21645,F1422I00L-C11,Grey,110,ALL,https://secure-i1.ztat.net/detail/F1/42/2I/00/LC/11/F1422I00L-C11@3.jpg,Jumper - grey,Filippa K,MALE,mens-clothing-jumpers-cardigans
 21646,OL422I005-101,Grey,70,ALL,https://secure-i5.ztat.net/detail/OL/42/2I/00/51/01/OL422I005-101@18.jpg,LEVEL 5 - Jumper - grau,Olymp Level 5,MALE,mens-clothing-jumpers-cardigans
 21647,LY222I00U-112,Grey,85,ALL,https://secure-i3.ztat.net/detail/LY/22/2I/00/U1/12/LY222I00U-112@1.1.jpg,Jumper - grey,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21648,HI122I00X-503,Blue,70,ALL,https://secure-i5.ztat.net/detail/HI/12/2I/00/X5/03/HI122I00X-503@1.1.jpg,TIMBER - Jumper - blue,Hilfiger Denim,MALE,mens-clothing-jumpers-cardigans
 21649,CF522P002-Q11,Black,26,ALL,https://secure-i5.ztat.net/detail/CF/52/2P/00/2Q/11/CF522P002-Q11@4.1.jpg,JEGILET - Tracksuit top - noir,CELIO,MALE,mens-clothing-jumpers-cardigans
-21650,UR622J001-103,Grey,34,ALL,https://secure-i3.ztat.net/detail/UR/62/2J/00/11/03/UR622J001-103@1.1.jpg,BLANK - Hoodie - grey,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21651,BU122I00V-801,Grey,85,ALL,https://secure-i4.ztat.net/detail/BU/12/2I/00/V8/01/BU122I00V-801@1.1.jpg,BRISTOL - Jumper - grey,Bugatti,MALE,mens-clothing-jumpers-cardigans
-21652,PA942B00F-102,Grey,85,ALL,https://secure-i4.ztat.net/detail/PA/94/2B/00/F1/02/PA942B00F-102@1.1.jpg,BETTER - Sweatshirt - stonewash,Patagonia,MALE,mens-clothing-jumpers-cardigans
 21653,JA222Q00D-K11,Blue,27,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/00/DK/11/JA222Q00D-K11@1.jpg,WERNER - Jumper - blue,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21654,SE622D070-112,Grey,40,ALL,https://secure-i3.ztat.net/detail/SE/62/2D/07/01/12/SE622D070-112@1.1.jpg,TOWER - Jumper - mid grey melange,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21655,TI522Q001-C11,Grey,100,ALL,https://secure-i5.ztat.net/detail/TI/52/2Q/00/1C/11/TI522Q001-C11@2.jpg,REEVES - Cardigan - grey street,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21656,TI522I00Z-101,Grey,100,ALL,https://secure-i6.ztat.net/detail/TI/52/2I/00/Z1/01/TI522I00Z-101@21.jpg,TERRY - Jumper - plutonium,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21657,CF522S011-K11,Blue,22,ALL,https://secure-i2.ztat.net/detail/CF/52/2S/01/1K/11/CF522S011-K11@2.jpg,JEGILET - Tracksuit top - indigo,CELIO,MALE,mens-clothing-jumpers-cardigans
 21658,F1422I00K-503,Blue,110,ALL,https://secure-i6.ztat.net/detail/F1/42/2I/00/K5/03/F1422I00K-503@8.3.jpg,Jumper - navy,Filippa K,MALE,mens-clothing-jumpers-cardigans
-21659,JA222Q00C-C11,Grey,41,ALL,https://secure-i2.ztat.net/detail/JA/22/2Q/00/CC/11/JA222Q00C-C11@3.1.jpg,BASTIAN - Cardigan - grey,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21660,JA222Q00D-G11,Red,29,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/00/DG/11/JA222Q00D-G11@4.1.jpg,WERNER - Jumper - red,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21661,TI522Q005-C11,Grey,85,ALL,https://secure-i4.ztat.net/detail/TI/52/2Q/00/5C/11/TI522Q005-C11@1.jpg,HARVARD - Jumper - grey street,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21662,BU122I00V-702,Brown,85,ALL,https://secure-i4.ztat.net/detail/BU/12/2I/00/V7/02/BU122I00V-702@1.1.jpg,BRISTOL - Jumper - brown,Bugatti,MALE,mens-clothing-jumpers-cardigans
 21663,ED122I01T-503,Blue,25,SUMMER,https://secure-i6.ztat.net/detail/ED/12/2I/01/T5/03/ED122I01T-503@18.jpg,ESSENT - Jumper - indigo blue,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21664,SE622J00N-503,Blue,32,ALL,https://secure-i4.ztat.net/detail/SE/62/2J/00/N5/03/SE622J00N-503@1.2.jpg,NEVADA NOOS C - Jumper - dark sky,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21665,SE622J00N-102,Grey,32,ALL,https://secure-i1.ztat.net/detail/SE/62/2J/00/N1/02/SE622J00N-102@10.1.jpg,NEVADA NOOS C - Jumper - mid grey,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21666,UR622J003-802,Black,41,ALL,https://secure-i3.ztat.net/detail/UR/62/2J/00/38/02/UR622J003-802@1.1.jpg,ZIG ZAG - Hoodie - black,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21667,LY222J00N-I00,Lilac,75,ALL,https://secure-i1.ztat.net/detail/LY/22/2J/00/NI/00/LY222J00N-I00@6.1.jpg,Tracksuit top - berry,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21668,JA222Q06N-G11,Red,30,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/06/NG/11/JA222Q06N-G11@14.jpg,JJORBEACH REGULAR FIT - Jumper - baked apple,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21669,JA222Q06N-Q11,Black,30,ALL,https://secure-i5.ztat.net/detail/JA/22/2Q/06/NQ/11/JA222Q06N-Q11@14.jpg,JJORBEACH REGULAR FIT - Jumper - black,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
@@ -4496,14 +4321,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21673,JA222G03T-503,Blue,33,ALL,https://secure-i5.ztat.net/detail/JA/22/2G/03/T5/03/JA222G03T-503@1.1.jpg,NOOS - Jumper - black navy,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21674,LY222I018-C00,Grey,75,WINTER,https://secure-i5.ztat.net/detail/LY/22/2I/01/8C/00/LY222I018-C00@2.jpg,Jumper - light grey marl,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21675,SE622S000-C11,Grey,30,ALL,https://secure-i2.ztat.net/detail/SE/62/2S/00/0C/11/SE622S000-C11@4.jpg,HANK - Tracksuit top - light grey melange,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21676,V1922S001-Q11,Black,40,SUMMER,https://secure-i3.ztat.net/detail/V1/92/2S/00/1Q/11/V1922S001-Q11@2.jpg,ICON - Sweatshirt - black,Volcom,MALE,mens-clothing-jumpers-cardigans
-21677,S3722J007-102,Blue,34,WINTER,https://secure-i4.ztat.net/detail/S3/72/2J/00/71/02/S3722J007-102@21.jpg,Sweatshirt - heather grey,Schott NYC,MALE,mens-clothing-jumpers-cardigans
-21678,S3722J007-503,Blue,34,WINTER,https://secure-i5.ztat.net/detail/S3/72/2J/00/75/03/S3722J007-503@1.1.jpg,Sweatshirt - navy,Schott NYC,MALE,mens-clothing-jumpers-cardigans
-21679,GA322A002-511,Blue,85,SUMMER,https://secure-i6.ztat.net/detail/GA/32/2A/00/25/11/GA322A002-511@1.1.jpg,Sweatshirt - light blue melange,Gant,MALE,mens-clothing-jumpers-cardigans
-21680,GA322A002-709,Beige,85,SUMMER,https://secure-i3.ztat.net/detail/GA/32/2A/00/27/09/GA322A002-709@1.1.jpg,Sweatshirt - sand melange,Gant,MALE,mens-clothing-jumpers-cardigans
 21682,JA222G03T-102,Grey,33,ALL,https://secure-i4.ztat.net/detail/JA/22/2G/03/T1/02/JA222G03T-102@1.1.jpg,NOOS - Jumper - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21683,ED122I01U-502,Blue,45,WINTER,https://secure-i6.ztat.net/detail/ED/12/2I/01/U5/02/ED122I01U-502@1.1.jpg,NOOS - Hoodie - indigo blue,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
-21684,ED122I01U-112,Grey,45,WINTER,https://secure-i3.ztat.net/detail/ED/12/2I/01/U1/12/ED122I01U-112@1.1.jpg,NOOS - Jumper - medium grey melange,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21685,OL422I005-302,Red,70,WINTER,https://secure-i2.ztat.net/detail/OL/42/2I/00/53/02/OL422I005-302@1.1.jpg,LEVEL 5 - Jumper - rot,Olymp Level 5,MALE,mens-clothing-jumpers-cardigans
 21686,MI422J00D-K11,Blue,60,WINTER,https://secure-i2.ztat.net/detail/MI/42/2J/00/DK/11/MI422J00D-K11@2.jpg,FAUSTO - Tracksuit top - slate blue melange,Minimum,MALE,mens-clothing-jumpers-cardigans
 21687,BU122I00V-802,Black,85,WINTER,https://secure-i3.ztat.net/detail/BU/12/2I/00/V8/02/BU122I00V-802@1.1.jpg,BRISTOL - Jumper - black,Bugatti,MALE,mens-clothing-jumpers-cardigans
@@ -4520,14 +4338,9 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21698,SO222Q01K-I11,Lilac,25,ALL,https://secure-i4.ztat.net/detail/SO/22/2Q/01/KI/11/SO222Q01K-I11@14.jpg,Jumper - lila,s.Oliver,MALE,mens-clothing-jumpers-cardigans
 21699,OS322S00F-N11,Olive,34,ALL,https://secure-i4.ztat.net/detail/OS/32/2S/00/FN/11/OS322S00F-N11@14.1.jpg,Tracksuit top - olive night,Only & Sons,MALE,mens-clothing-jumpers-cardigans
 21700,TO222Q00C-M12,Green,27,ALL,https://secure-i1.ztat.net/detail/TO/22/2Q/00/CM/12/TO222Q00C-M12@14.jpg,Jumper - fresh apple melange,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
-21701,TO722O03B-K11,Blue,35,ALL,https://secure-i6.ztat.net/detail/TO/72/2O/03/BK/11/TO722O03B-K11@13.jpg,Sweatshirt - night sky blue,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
-21702,TO722O03B-Q11,Black,35,ALL,https://secure-i5.ztat.net/detail/TO/72/2O/03/BQ/11/TO722O03B-Q11@14.jpg,Sweatshirt - black,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
 21703,SE622Q01H-Q11,Black,32,ALL,https://secure-i5.ztat.net/detail/SE/62/2Q/01/HQ/11/SE622Q01H-Q11@14.jpg,SHCLASH - Jumper - pirate black ,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21704,SE622Q01H-K11,Blue,32,ALL,https://secure-i5.ztat.net/detail/SE/62/2Q/01/HK/11/SE622Q01H-K11@14.jpg,SHCLASH - Jumper - moonlight blue,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21705,SE622Q01H-K12,Blue,32,ALL,https://secure-i4.ztat.net/detail/SE/62/2Q/01/HK/12/SE622Q01H-K12@14.jpg,SHCLASH - Jumper - navy blazer ,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21706,S3422S000-C11,Grey,50,ALL,https://secure-i4.ztat.net/detail/S3/42/2S/00/0C/11/S3422S000-C11@1.1.jpg,SUPERMAN - Hoodie - grau-meliert,LOGOSHIRT,unisex,mens-clothing-jumpers-cardigans
-21707,TO222Q00M-Q11,Black,60,ALL,https://secure-i6.ztat.net/detail/TO/22/2Q/00/MQ/11/TO222Q00M-Q11@14.jpg,Cardigan - black,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
-21708,TO222Q00M-K11,Blue,60,ALL,https://secure-i6.ztat.net/detail/TO/22/2Q/00/MK/11/TO222Q00M-K11@14.jpg,Cardigan - navy,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21709,TO222Q00N-K11,Blue,55,ALL,https://secure-i5.ztat.net/detail/TO/22/2Q/00/NK/11/TO222Q00N-K11@14.jpg,Jumper - knitted navy,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21710,TO222Q00N-Q11,Black,55,ALL,https://secure-i4.ztat.net/detail/TO/22/2Q/00/NQ/11/TO222Q00N-Q11@15.jpg,Jumper - black,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21711,TO222Q00N-C11,Grey,55,ALL,https://secure-i4.ztat.net/detail/TO/22/2Q/00/NC/11/TO222Q00N-C11@13.jpg,Jumper - stormy gray,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
@@ -4536,11 +4349,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21714,JA222Q047-C11,Grey,32,ALL,https://secure-i6.ztat.net/detail/JA/22/2Q/04/7C/11/JA222Q047-C11@14.jpg,JJPRALEXANDER - Jumper - dark grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21715,JA222Q04B-C11,Grey,40,ALL,https://secure-i2.ztat.net/detail/JA/22/2Q/04/BC/11/JA222Q04B-C11@2.jpg,MOUNTAIN - Jumper - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21716,JA222Q04B-K11,Blue,40,ALL,https://secure-i5.ztat.net/detail/JA/22/2Q/04/BK/11/JA222Q04B-K11@14.jpg,MOUNTAIN - Jumper - dark navy,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21717,F1422Q002-Q11,Black,125,ALL,https://secure-i3.ztat.net/detail/F1/42/2Q/00/2Q/11/F1422Q002-Q11@14.jpg,Cardigan - black,Filippa K,MALE,mens-clothing-jumpers-cardigans
-21718,JA222Q03V-Q11,Black,40,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/03/VQ/11/JA222Q03V-Q11@14.jpg,MOISES - Hoodie - black,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21719,JA222Q03V-C11,Grey,39,ALL,https://secure-i5.ztat.net/detail/JA/22/2Q/03/VC/11/JA222Q03V-C11@14.jpg,MOISES - Hoodie - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21720,TT322Q000-K11,Blue,31,ALL,https://secure-i1.ztat.net/detail/TT/32/2Q/00/0K/11/TT322Q000-K11@16.jpg,Jumper - washed navy blue,Tom Tailor Polo Team,MALE,mens-clothing-jumpers-cardigans
-21721,TO222Q00E-Q11,Black,35,ALL,https://secure-i3.ztat.net/detail/TO/22/2Q/00/EQ/11/TO222Q00E-Q11@13.jpg,Cardigan - black,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21722,ED122I01T-G11,Red,25,SUMMER,https://secure-i3.ztat.net/detail/ED/12/2I/01/TG/11/ED122I01T-G11@14.jpg,ESSENT - Jumper - basque red,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21723,TO222S00F-K11,Blue,45,ALL,https://secure-i4.ztat.net/detail/TO/22/2S/00/FK/11/TO222S00F-K11@13.jpg,Tracksuit top - navy,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21724,JA222S065-C11,Grey,40,ALL,https://secure-i3.ztat.net/detail/JA/22/2S/06/5C/11/JA222S065-C11@14.1.jpg,NOOS - Tracksuit top - light grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
@@ -4550,72 +4359,42 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 21728,ED122S00A-C11,Grey,39,SUMMER,https://secure-i2.ztat.net/detail/ED/12/2S/00/AC/11/ED122S00A-C11@14.jpg,Tracksuit top - medium grey melange,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21729,TO722S00L-G11,Red,34,ALL,https://secure-i5.ztat.net/detail/TO/72/2S/00/LG/11/TO722S00L-G11@14.jpg,Tracksuit top - red grape,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
 21730,TO722S00L-K11,Blue,34,ALL,https://secure-i1.ztat.net/detail/TO/72/2S/00/LK/11/TO722S00L-K11@14.1.jpg,Tracksuit top - night sky blue,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
-21731,JA222Q03R-K11,Blue,32,ALL,https://secure-i1.ztat.net/detail/JA/22/2Q/03/RK/11/JA222Q03R-K11@14.jpg,Cardigan - dress blues,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21732,JA222S038-G12,Red,32,ALL,https://secure-i5.ztat.net/detail/JA/22/2S/03/8G/12/JA222S038-G12@13.jpg,STORM SWEAT - Tracksuit top - fig,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21733,JA222S038-M11,Green,32,ALL,https://secure-i1.ztat.net/detail/JA/22/2S/03/8M/11/JA222S038-M11@14.jpg,STORM SWEAT - Tracksuit top - ponderosa pine,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21734,JA222S05T-C11,Grey,25,ALL,https://secure-i1.ztat.net/detail/JA/22/2S/05/TC/11/JA222S05T-C11@14.jpg,NOOS - Sweatshirt - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21735,JA222Q03Q-C11,Grey,32,ALL,https://secure-i4.ztat.net/detail/JA/22/2Q/03/QC/11/JA222Q03Q-C11@14.jpg,JJCOSHARP - Jumper - grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21736,JA222S05X-Q11,Black,27,ALL,https://secure-i1.ztat.net/detail/JA/22/2S/05/XQ/11/JA222S05X-Q11@14.jpg,NOOS - Sweatshirt - black,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21737,JA222S05X-G11,Red,28,ALL,https://secure-i5.ztat.net/detail/JA/22/2S/05/XG/11/JA222S05X-G11@14.jpg,NOOS - Sweatshirt - fig,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21738,SE622I03V-O11,Brown,32,ALL,https://secure-i5.ztat.net/detail/SE/62/2I/03/VO/11/SE622I03V-O11@14.jpg,TOWER - Jumper - walnut,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21739,JA222S05X-K11,Blue,28,ALL,https://secure-i1.ztat.net/detail/JA/22/2S/05/XK/11/JA222S05X-K11@14.jpg,NOOS - Sweatshirt - dress blues,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21740,JA222S05X-C11,Grey,27,ALL,https://secure-i3.ztat.net/detail/JA/22/2S/05/XC/11/JA222S05X-C11@14.jpg,NOOS - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21741,JA222Q03Q-K11,Blue,32,ALL,https://secure-i3.ztat.net/detail/JA/22/2Q/03/QK/11/JA222Q03Q-K11@13.jpg,JJCOSHARP - Jumper - dress blue,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21742,JA222S05T-K11,Blue,23,ALL,https://secure-i5.ztat.net/detail/JA/22/2S/05/TK/11/JA222S05T-K11@14.jpg,NOOS - Sweatshirt - midnight navy,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21743,F1422Q000-K11,Blue,130,ALL,https://secure-i2.ztat.net/detail/F1/42/2Q/00/0K/11/F1422Q000-K11@6.jpg,Jumper - blue,Filippa K,MALE,mens-clothing-jumpers-cardigans
 21744,JL122I00P-C11,Grey,75,ALL,https://secure-i4.ztat.net/detail/JL/12/2I/00/PC/11/JL122I00P-C11@2.jpg,LYMANN - Jumper - grey melange,J.LINDEBERG,MALE,mens-clothing-jumpers-cardigans
 21745,JL122I00P-K11,Blue,75,ALL,https://secure-i2.ztat.net/detail/JL/12/2I/00/PK/11/JL122I00P-K11@2.jpg,LYMANN - Jumper - navy,J.LINDEBERG,MALE,mens-clothing-jumpers-cardigans
 21746,TI522Q005-Q11,Black,85,ALL,https://secure-i2.ztat.net/detail/TI/52/2Q/00/5Q/11/TI522Q005-Q11@5.jpg,HARVARD - Jumper - black,Tiger of Sweden,MALE,mens-clothing-jumpers-cardigans
 21747,SE622J019-313,Red,32,WINTER,https://secure-i6.ztat.net/detail/SE/62/2J/01/93/13/SE622J019-313@1.1.jpg,HANK - Tracksuit top - red,Selected Homme,MALE,mens-clothing-jumpers-cardigans
 21748,GA322I00I-Q11,Black,85,ALL,https://secure-i4.ztat.net/detail/GA/32/2I/00/IQ/11/GA322I00I-Q11@14.jpg,Jumper - light antracit melange,Gant,MALE,mens-clothing-jumpers-cardigans
-21749,TO222Q00E-C11,Grey,35,ALL,https://secure-i4.ztat.net/detail/TO/22/2Q/00/EC/11/TO222Q00E-C11@14.jpg,Cardigan - dark grey heather,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21750,TO222Q00C-K12,Blue,27,ALL,https://secure-i2.ztat.net/detail/TO/22/2Q/00/CK/12/TO222Q00C-K12@13.jpg,Jumper - indigo blue melange,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21751,TO222Q00C-M11,Green,27,ALL,https://secure-i3.ztat.net/detail/TO/22/2Q/00/CM/11/TO222Q00C-M11@13.jpg,Jumper - green melange,Tom Tailor,MALE,mens-clothing-jumpers-cardigans
 21752,LY222I018-K01,Blue,55,WINTER,https://secure-i5.ztat.net/detail/LY/22/2I/01/8K/01/LY222I018-K01@7.jpg,Jumper - shallow end,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
-21753,FR322J000-C11,Grey,55,WINTER,https://secure-i5.ztat.net/detail/FR/32/2J/00/0C/11/FR322J000-C11@1.jpg,Hoodie - grey,Franklin & Marshall,unisex,mens-clothing-jumpers-cardigans
-21754,LY222J00O-K01,Blue,65,WINTER,https://secure-i6.ztat.net/detail/LY/22/2J/00/OK/01/LY222J00O-K01@4.jpg,Sweatshirt - shallow end,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21755,LY222I00Q-113,Grey,75,WINTER,https://secure-i2.ztat.net/detail/LY/22/2I/00/Q1/13/LY222I00Q-113@1.1.jpg,Jumper - charcoal melange,Lyle & Scott,MALE,mens-clothing-jumpers-cardigans
 21756,JO922I00A-802,Black,55,ALL,https://secure-i5.ztat.net/detail/JO/92/2I/00/A8/02/JO922I00A-802@1.jpg,DAMIEN - Jumper - schwarz,JOOP!,MALE,mens-clothing-jumpers-cardigans
 21757,SG822J000-K11,Blue,90,SUMMER,https://secure-i4.ztat.net/detail/SG/82/2J/00/0K/11/SG822J000-K11@15.jpg,Tracksuit top - navy,Sail Racing,MALE,mens-clothing-jumpers-cardigans
-21758,FO522D00K-G11,Red,25,WINTER,https://secure-i5.ztat.net/detail/FO/52/2D/00/KG/11/FO522D00K-G11@2.1.jpg,ROCCO - Hoodie - red,Forvert,MALE,mens-clothing-jumpers-cardigans
 21759,BE122I00O-C11,Grey,60,SUMMER,https://secure-i1.ztat.net/detail/BE/12/2I/00/OC/11/BE122I00O-C11@4.jpg,Jumper - silver chalice marl,Ben Sherman,MALE,mens-clothing-jumpers-cardigans
 21760,TF322Q001-Q11,Blue,17,WINTER,https://secure-i3.ztat.net/detail/TF/32/2Q/00/1Q/11/TF322Q001-Q11@2.jpg,CATARGO NOOS - Jumper - dark blue,Tiffosi,MALE,mens-clothing-jumpers-cardigans
 21761,GA322J016-C11,Grey,120,SUMMER,https://secure-i4.ztat.net/detail/GA/32/2J/01/6C/11/GA322J016-C11@3.jpg,GANT FULL ZIP HOOD SWEAT - Tracksuit top - light grey melange,Gant,MALE,mens-clothing-jumpers-cardigans
-21762,3ME22J002-K11,Blue,55,SUMMER,https://secure-i2.ztat.net/detail/3M/E2/2J/00/2K/11/3ME22J002-K11@2.jpg,PILL - Hoodie - navy,Merc,MALE,mens-clothing-jumpers-cardigans
 21763,V1922S002-Q11,Black,50,SUMMER,https://secure-i5.ztat.net/detail/V1/92/2S/00/2Q/11/V1922S002-Q11@5.jpg,Tracksuit top - black,Volcom,MALE,mens-clothing-jumpers-cardigans
-21764,FO522D00K-550,Blue,50,WINTER,https://secure-i1.ztat.net/detail/FO/52/2D/00/K5/50/FO522D00K-550@3.1.jpg,ROCCO - Hoodie - blue,Forvert,MALE,mens-clothing-jumpers-cardigans
-21765,JA222S000-C11,Grey,28,WINTER,https://secure-i2.ztat.net/detail/JA/22/2S/00/0C/11/JA222S000-C11@4.jpg,ACCESS - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
-21766,SE622Q003-K11,Blue,45,WINTER,https://secure-i3.ztat.net/detail/SE/62/2Q/00/3K/11/SE622Q003-K11@4.jpg,BATES - Cardigan - blue,Selected Homme,MALE,mens-clothing-jumpers-cardigans
-21767,MC222I00D-503,Blue,60,WINTER,https://secure-i2.ztat.net/detail/MC/22/2I/00/D5/03/MC222I00D-503@7.jpg,PAUL - Cardigan - blue,McGregor,MALE,mens-clothing-jumpers-cardigans
 21768,TS122I00N-801,Grey,60,WINTER,https://secure-i4.ztat.net/detail/TS/12/2I/00/N8/01/TS122I00N-801@1.1.jpg,GERO - Tracksuit top - grey,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
-21769,TS122D004-907,Blue,33,WINTER,https://secure-i3.ztat.net/detail/TS/12/2D/00/49/07/TS122D004-907@1.1.jpg,TROY - Sweatshirt - dark navy,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
 21770,OL422I005-503,Blue,35,WINTER,https://secure-i5.ztat.net/detail/OL/42/2I/00/55/03/OL422I005-503@1.1.jpg,LEVEL 5 - Jumper - blau,Olymp Level 5,MALE,mens-clothing-jumpers-cardigans
 21771,TB422J002-101,Grey,38,WINTER,https://secure-i5.ztat.net/detail/TB/42/2J/00/21/01/TB422J002-101@1.1.jpg,Tracksuit top - grey,The Blue Uniform,MALE,mens-clothing-jumpers-cardigans
 21772,TS122I002-907,Blue,33,SUMMER,https://secure-i3.ztat.net/detail/TS/12/2I/00/29/07/TS122I002-907@1.1.jpg,PULSER - Jumper - dark navy,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
 21773,TS122I00G-909,Black,41,WINTER,https://secure-i1.ztat.net/detail/TS/12/2I/00/G9/09/TS122I00G-909@1.1.jpg,PANTONY - Jumper - noir,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
-21774,UR622J004-851,Black,32,WINTER,https://secure-i2.ztat.net/detail/UR/62/2J/00/48/51/UR622J004-851@12.jpg,Tracksuit top - grau,Urban Classics,MALE,mens-clothing-jumpers-cardigans
-21775,UR622J004-850,Black,42,SUMMER,https://secure-i1.ztat.net/detail/UR/62/2J/00/48/50/UR622J004-850@12.1.jpg,Summer jacket - black/white,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21776,TS122I00G-503,Blue,37,WINTER,https://secure-i5.ztat.net/detail/TS/12/2I/00/G5/03/TS122I00G-503@1.1.jpg,PANTONY - Jumper - dark navy,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
 21777,TS122J003-112,Grey,50,WINTER,https://secure-i3.ztat.net/detail/TS/12/2J/00/31/12/TS122J003-112@1.1.jpg,GESTI - Tracksuit top - gris chine,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
-21778,AL522J005-802,Black,75,WINTER,https://secure-i3.ztat.net/detail/AL/52/2J/00/58/02/AL522J005-802@1.1.jpg,BIG A - Hoodie - black,Alpha Industries,MALE,mens-clothing-jumpers-cardigans
 21779,HA422I001-102,Grey,37,SUMMER,https://secure-i4.ztat.net/detail/HA/42/2I/00/11/02/HA422I001-102@1.1.jpg,Jumper - gris,HARRINGTON,MALE,mens-clothing-jumpers-cardigans
-21780,DI622J00B-802,Black,50,SUMMER,https://secure-i3.ztat.net/detail/DI/62/2J/00/B8/02/DI622J00B-802@1.1.jpg,NEVADA - Hoodie - black,Dickies,MALE,mens-clothing-jumpers-cardigans
 21781,TS122I002-002,White,33,SUMMER,https://secure-i6.ztat.net/detail/TS/12/2I/00/20/02/TS122I002-002@1.jpg,PULSER - Jumper - blanc,Teddy Smith,MALE,mens-clothing-jumpers-cardigans
-21782,AL522J005-503,Blue,75,WINTER,https://secure-i5.ztat.net/detail/AL/52/2J/00/55/03/AL522J005-503@1.1.jpg,BIG A - Hoodie - navy,Alpha Industries,MALE,mens-clothing-jumpers-cardigans
 21783,UR622J008-102,Grey,38,WINTER,https://secure-i3.ztat.net/detail/UR/62/2J/00/81/02/UR622J008-102@12.jpg,Tracksuit top - grey,Urban Classics,MALE,mens-clothing-jumpers-cardigans
 21784,AL522C001-802,Black,75,WINTER,https://secure-i1.ztat.net/detail/AL/52/2C/00/18/02/AL522C001-802@1.jpg,TRACK - Tracksuit top - black,Alpha Industries,MALE,mens-clothing-jumpers-cardigans
-21785,CF522S004-Q11,Black,30,SUMMER,https://secure-i2.ztat.net/detail/CF/52/2S/00/4Q/11/CF522S004-Q11@4.jpg,NEGILET - Cardigan - noir,CELIO,MALE,mens-clothing-jumpers-cardigans
-21786,BE122I00I-K11,Blue,65,SUMMER,https://secure-i1.ztat.net/detail/BE/12/2I/00/IK/11/BE122I00I-K11@2.1.jpg,Cardigan - navy,Ben Sherman,MALE,mens-clothing-jumpers-cardigans
 21787,UR622S002-C11,Grey,29,WINTER,https://secure-i6.ztat.net/detail/UR/62/2S/00/2C/11/UR622S002-C11@4.jpg,Tracksuit top - grey,Urban Classics,MALE,mens-clothing-jumpers-cardigans
-21788,MC222I00D-704,Beige,55,WINTER,https://secure-i4.ztat.net/detail/MC/22/2I/00/D7/04/MC222I00D-704@4.jpg,PAUL - Cardigan - beige,McGregor,MALE,mens-clothing-jumpers-cardigans
 21789,PU142B0EL-102,Grey,29,WINTER,https://secure-i4.ztat.net/detail/PU/14/2B/0E/L1/02/PU142B0EL-102@1.1.jpg,Tracksuit top - medium gray heather,Puma,MALE,mens-clothing-jumpers-cardigans
 21790,HA422I001-909,Black,40,SUMMER,https://secure-i1.ztat.net/detail/HA/42/2I/00/19/09/HA422I001-909@1.1.jpg,Jumper - black,HARRINGTON,MALE,mens-clothing-jumpers-cardigans
-21791,DI622J00A-802,Black,45,WINTER,https://secure-i3.ztat.net/detail/DI/62/2J/00/A8/02/DI622J00A-802@1.1.jpg,PHILADELPHIA - Hoodie - black,Dickies,MALE,mens-clothing-jumpers-cardigans
-21792,JA222S09E-C11,Grey,29,ALL,https://secure-i4.ztat.net/detail/JA/22/2S/09/EC/11/JA222S09E-C11@14.jpg,SLIM FIT - Sweatshirt - light grey melange,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21793,TT322Q000-C11,Grey,31,ALL,https://secure-i1.ztat.net/detail/TT/32/2Q/00/0C/11/TT322Q000-C11@14.jpg,Jumper - dark grey melange,Tom Tailor Polo Team,MALE,mens-clothing-jumpers-cardigans
-21794,TO722S00M-G11,Red,35,ALL,https://secure-i4.ztat.net/detail/TO/72/2S/00/MG/11/TO722S00M-G11@14.jpg,Hoodie - red grape,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
-21795,TO722S00M-K11,Blue,31,ALL,https://secure-i6.ztat.net/detail/TO/72/2S/00/MK/11/TO722S00M-K11@14.jpg,Hoodie - night sky blue,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
-21796,TO722S00M-M11,Green,35,ALL,https://secure-i4.ztat.net/detail/TO/72/2S/00/MM/11/TO722S00M-M11@14.jpg,Hoodie - huntsman green,Tom Tailor Denim,MALE,mens-clothing-jumpers-cardigans
 21797,ED122I01T-O11,Brown,25,SUMMER,https://secure-i4.ztat.net/detail/ED/12/2I/01/TO/11/ED122I01T-O11@22.jpg,ESSENT - Jumper - lounge brown,edc by Esprit,MALE,mens-clothing-jumpers-cardigans
 21798,JA222Q03X-G11,Red,32,ALL,https://secure-i6.ztat.net/detail/JA/22/2Q/03/XG/11/JA222Q03X-G11@13.jpg,Jumper - fig,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
 21799,JA222Q03X-A11,White,31,ALL,https://secure-i6.ztat.net/detail/JA/22/2Q/03/XA/11/JA222Q03X-A11@13.1.jpg,Jumper - vaporous gray,Jack & Jones,MALE,mens-clothing-jumpers-cardigans
@@ -4852,7 +4631,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 22035,S3422D000-Q11,Black,22,ALL,https://secure-i2.ztat.net/detail/S3/42/2D/00/0Q/11/S3422D000-Q11@1.1.jpg,SUPERMAN - Print T-shirt - black,LOGOSHIRT,MALE,mens-clothing-t-shirts
 22036,2HA22K025-503,Blue,38,ALL,https://secure-i5.ztat.net/detail/2H/A2/2K/02/55/03/2HA22K025-503@1.1.jpg,SUPERIOR - Basic T-shirt - midnight navy,Hanro,MALE,mens-clothing-t-shirts
 22037,ES122D08F-002,White,15,ALL,https://secure-i5.ztat.net/detail/ES/12/2D/08/F0/02/ES122D08F-002@1.1.jpg,Long sleeved top - white,Esprit,MALE,mens-clothing-t-shirts
-22038,E1322D05A-909,Black,24,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/05/A9/09/E1322D05A-909@1.1.jpg,LILY - Print T-shirt - black,Eleven Paris,MALE,mens-clothing-t-shirts
+2.20E+04,E1322D05A-909,Black,24,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/05/A9/09/E1322D05A-909@1.1.jpg,LILY - Print T-shirt - black,Eleven Paris,MALE,mens-clothing-t-shirts
 22039,BO122D03N-802,Black,60,ALL,https://secure-i3.ztat.net/detail/BO/12/2D/03/N8/02/BO122D03N-802@1.1.jpg,PASCHA SLIM FIT - Polo shirt - black,BOSS Orange,MALE,mens-clothing-t-shirts
 22040,GA322K00L-802,Black,25,ALL,https://secure-i3.ztat.net/detail/GA/32/2K/00/L8/02/GA322K00L-802@1.1.jpg,COTTON STRETCH - Basic T-shirt - black,Gant,MALE,mens-clothing-t-shirts
 22041,GA322K00L-002,White,25,ALL,https://secure-i5.ztat.net/detail/GA/32/2K/00/L0/02/GA322K00L-002@1.1.jpg,COTTON STRETCH - Basic T-shirt - weiß,Gant,MALE,mens-clothing-t-shirts
@@ -4860,8 +4639,8 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 22043,TO122K08L-002,White,28,ALL,https://secure-i5.ztat.net/detail/TO/12/2K/08/L0/02/TO122K08L-002@1.1.jpg,FLAG - Long sleeved top - bright white,Tommy Hilfiger,MALE,mens-clothing-t-shirts
 22044,F1422D00Q-111,Grey,42,ALL,https://secure-i4.ztat.net/detail/F1/42/2D/00/Q1/11/F1422D00Q-111@1.1.jpg,Basic T-shirt - grey melange,Filippa K,MALE,mens-clothing-t-shirts
 22045,SE622D00L-513,Blue,16,ALL,https://secure-i3.ztat.net/detail/SE/62/2D/00/L5/13/SE622D00L-513@8.1.jpg,ARO - Polo shirt - blue,Selected Homme,MALE,mens-clothing-t-shirts
-22046,E1322D033-002,White,23,ALL,https://secure-i5.ztat.net/detail/E1/32/2D/03/30/02/E1322D033-002@1.1.jpg,TUPAC - Print T-shirt - weiß,Eleven Paris,MALE,mens-clothing-t-shirts
-22047,E1322D033-909,Black,32,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/03/39/09/E1322D033-909@1.1.jpg,TUPAC - Print T-shirt - schwarz,Eleven Paris,MALE,mens-clothing-t-shirts
+2.20E+04,E1322D033-002,White,23,ALL,https://secure-i5.ztat.net/detail/E1/32/2D/03/30/02/E1322D033-002@1.1.jpg,TUPAC - Print T-shirt - weiß,Eleven Paris,MALE,mens-clothing-t-shirts
+2.20E+04,E1322D033-909,Black,32,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/03/39/09/E1322D033-909@1.1.jpg,TUPAC - Print T-shirt - schwarz,Eleven Paris,MALE,mens-clothing-t-shirts
 22048,S3422D01A-302,Red,24,ALL,https://secure-i2.ztat.net/detail/S3/42/2D/01/A3/02/S3422D01A-302@1.1.jpg,FLASH - Print T-shirt - rot,LOGOSHIRT,MALE,mens-clothing-t-shirts
 22049,S3422D01J-102,Grey,24,ALL,https://secure-i4.ztat.net/detail/S3/42/2D/01/J1/02/S3422D01J-102@1.1.jpg,SNOOPY - Print T-shirt - grey,LOGOSHIRT,MALE,mens-clothing-t-shirts
 22050,S3422D01C-602,Green,22,ALL,https://secure-i5.ztat.net/detail/S3/42/2D/01/C6/02/S3422D01C-602@1.1.jpg,LOONEY TUNES - ARRIBA! ANDALE! - Print T-shirt - grün,LOGOSHIRT,MALE,mens-clothing-t-shirts
@@ -4929,7 +4708,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 22112,JV222O005-C11,Grey,50,ALL,https://secure-i1.ztat.net/detail/JV/22/2O/00/5C/11/JV222O005-C11@3.2.jpg,Basic T-shirt - grey,John Varvatos Star U.S.A.,MALE,mens-clothing-t-shirts
 22113,ES122D08F-K11,Blue,15,ALL,https://secure-i6.ztat.net/detail/ES/12/2D/08/FK/11/ES122D08F-K11@4.jpg,Long sleeved top - cinder blue,Esprit,MALE,mens-clothing-t-shirts
 22114,B9322D003-C00,Grey,25,ALL,https://secure-i2.ztat.net/detail/B9/32/2D/00/3C/00/B9322D003-C00@1.3.jpg,Basic T-shirt - grey,Bread & Boxers,MALE,mens-clothing-t-shirts
-22115,E1322D03B-909,Black,32,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/03/B9/09/E1322D03B-909@1.1.jpg,WIZKA M - Print T-shirt - black,Eleven Paris,MALE,mens-clothing-t-shirts
+2.21E+04,E1322D03B-909,Black,32,ALL,https://secure-i1.ztat.net/detail/E1/32/2D/03/B9/09/E1322D03B-909@1.1.jpg,WIZKA M - Print T-shirt - black,Eleven Paris,MALE,mens-clothing-t-shirts
 22116,HI122D03S-802,Black,28,ALL,https://secure-i3.ztat.net/detail/HI/12/2D/03/S8/02/HI122D03S-802@1.1.jpg,TRUMP - Long sleeved top - tommy black,Hilfiger Denim,MALE,mens-clothing-t-shirts
 22117,DI622D00H-113,Grey,30,ALL,https://secure-i2.ztat.net/detail/DI/62/2D/00/H1/13/DI622D00H-113@1.1.jpg,3 PACK basic - Vest - grey,Dickies,MALE,mens-clothing-t-shirts
 22118,S5322K00A-503,Blue,50,ALL,https://secure-i3.ztat.net/detail/S5/32/2K/00/A5/03/S5322K00A-503@1.jpg,KARL HEINZ - Long sleeved top - indigo,Schiesser Revival,MALE,mens-clothing-t-shirts
@@ -4971,7 +4750,7 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 22154,BO122D02I-A00,White,55,ALL,https://secure-i1.ztat.net/detail/BO/12/2D/02/IA/00/BO122D02I-A00@8.1.jpg,TYLL - 2 PACK - Basic T-shirt - white,BOSS Orange,MALE,mens-clothing-t-shirts
 22155,F1422D00Q-802,Black,42,ALL,https://secure-i3.ztat.net/detail/F1/42/2D/00/Q8/02/F1422D00Q-802@1.1.jpg,Basic T-shirt - schwarz,Filippa K,MALE,mens-clothing-t-shirts
 22156,F1422D00Q-503,Blue,42,ALL,https://secure-i5.ztat.net/detail/F1/42/2D/00/Q5/03/F1422D00Q-503@1.1.jpg,Basic T-shirt - navy,Filippa K,MALE,mens-clothing-t-shirts
-22157,E1322D03B-002,White,26,ALL,https://secure-i5.ztat.net/detail/E1/32/2D/03/B0/02/E1322D03B-002@1.1.jpg,WIZKA M - Print T-shirt - weiß,Eleven Paris,MALE,mens-clothing-t-shirts
+2.22E+04,E1322D03B-002,White,26,ALL,https://secure-i5.ztat.net/detail/E1/32/2D/03/B0/02/E1322D03B-002@1.1.jpg,WIZKA M - Print T-shirt - weiß,Eleven Paris,MALE,mens-clothing-t-shirts
 22158,HI122D03T-111,Grey,20,ALL,https://secure-i4.ztat.net/detail/HI/12/2D/03/T1/11/HI122D03T-111@1.1.jpg,HANSON - Basic T-shirt - light grey heather,Hilfiger Denim,MALE,mens-clothing-t-shirts
 22159,GA322E00J-514,Blue,65,ALL,https://secure-i3.ztat.net/detail/GA/32/2E/00/J5/14/GA322E00J-514@1.1.jpg,SOLID PIQUE - Polo shirt - marine,Gant,MALE,mens-clothing-t-shirts
 22160,F1422D00R-802,Black,42,ALL,https://secure-i3.ztat.net/detail/F1/42/2D/00/R8/02/F1422D00R-802@1.1.jpg,Basic T-shirt - black,Filippa K,MALE,mens-clothing-t-shirts
@@ -5014,80 +4793,20 @@ id,product_id,color,price,season,image_url,name,brand,gender,category
 22197,OS322O00Y-A12,White,14,ALL,https://secure-i2.ztat.net/detail/OS/32/2O/00/YA/12/OS322O00Y-A12@13.jpg,ONSTHOR - Basic T-shirt - cranberry,Only & Sons,MALE,mens-clothing-t-shirts
 22198,TI522P000-A11,White,65,ALL,https://secure-i2.ztat.net/detail/TI/52/2P/00/0A/11/TI522P000-A11@2.jpg,ECOLE - Polo shirt - bright white,Tiger of Sweden,MALE,mens-clothing-t-shirts
 22199,OS322O00Y-A13,White,14,ALL,https://secure-i1.ztat.net/detail/OS/32/2O/00/YA/13/OS322O00Y-A13@2.jpg,ONSTHOR - Basic T-shirt - caviar,Only & Sons,MALE,mens-clothing-t-shirts
-22200,V1771A000-L11,Turquoise,60,ALL,https://secure-i6.ztat.net/detail/V1/77/1A/00/0L/11/V1771A000-L11@3.jpg,DALLAS - Dressing gown - turquoise,Vossen,unisex,mens-clothing-swimwear
-22201,V1771A00E-C12,Grey,55,ALL,https://secure-i3.ztat.net/detail/V1/77/1A/00/EC/12/V1771A00E-C12@1.jpg,TORONTO - Dressing gown - slate grey,Vossen,unisex,mens-clothing-swimwear
-22202,V1771B01G-503,Blue,60,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/01/G5/03/V1771B01G-503@1.1.jpg,POPPY - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
-22203,V1771B01G-103,Grey,60,ALL,https://secure-i3.ztat.net/detail/V1/77/1B/01/G1/03/V1771B01G-103@1.1.jpg,POPPY - Dressing gown - flanell,Vossen,unisex,mens-clothing-swimwear
-22204,TO271B00M-303,Red,60,ALL,https://secure-i2.ztat.net/detail/TO/27/1B/00/M3/03/TO271B00M-303@1.2.jpg,BASIC VELOURS - Dressing gown - berry,Tom Tailor,unisex,mens-clothing-swimwear
-22205,TO271B00M-405,Lilac,60,ALL,https://secure-i4.ztat.net/detail/TO/27/1B/00/M4/05/TO271B00M-405@1.1.jpg,BASIC VELOURS - Dressing gown - fuchsia,Tom Tailor,unisex,mens-clothing-swimwear
-22206,TO271B00M-503,Blue,55,ALL,https://secure-i5.ztat.net/detail/TO/27/1B/00/M5/03/TO271B00M-503@1.1.jpg,BASIC VELOURS - Dressing gown - navy,Tom Tailor,unisex,mens-clothing-swimwear
-22207,TO271B004-002,White,42,ALL,https://secure-i5.ztat.net/detail/TO/27/1B/00/40/02/TO271B004-002@1.1.jpg,BASIC KIMONO - Dressing gown - white,Tom Tailor,unisex,mens-clothing-swimwear
-22208,C5471B00C-801,Grey,34,ALL,https://secure-i5.ztat.net/detail/C5/47/1B/00/C8/01/C5471B00C-801@1.2.jpg,Dressing gown - anthracite,CALANDO,unisex,mens-clothing-swimwear
 22209,MA322K01S-112,Grey,65,ALL,https://secure-i3.ztat.net/detail/MA/32/2K/01/S1/12/MA322K01S-112@1.1.jpg,Dressing gown - pure grey melange,Marc O'Polo,MALE,mens-clothing-swimwear
 22210,H1282D000-A11,White,29,ALL,https://secure-i6.ztat.net/detail/H1/28/2D/00/0A/11/H1282D000-A11@3.3.jpg,MARINE Chic - Swimming shorts - white,HOM,MALE,mens-clothing-swimwear
 22211,MA382D000-Q11,Black,25,ALL,https://secure-i2.ztat.net/detail/MA/38/2D/00/0Q/11/MA382D000-Q11@1.1.jpg,PURE - Swimming shorts - black,Marc O'Polo,MALE,mens-clothing-swimwear
-22212,C5471B00A-Q11,Black,21,ALL,https://secure-i6.ztat.net/detail/C5/47/1B/00/AQ/11/C5471B00A-Q11@5.3.jpg,Dressing gown - black,CALANDO,unisex,mens-clothing-swimwear
 22213,H1282D004-C11,Grey,65,ALL,https://secure-i1.ztat.net/detail/H1/28/2D/00/4C/11/H1282D004-C11@4.1.jpg,MARINE CHIC - Swimming shorts - grey combination,HOM,MALE,mens-clothing-swimwear
 22214,SX582D000-K12,Blue,120,ALL,https://secure-i6.ztat.net/detail/SX/58/2D/00/0K/12/SX582D000-K12@3.jpg,Swimming shorts - cobalt,Sunspel,MALE,mens-clothing-swimwear
-22215,V1771A00A-Q11,Black,60,ALL,https://secure-i1.ztat.net/detail/V1/77/1A/00/AQ/11/V1771A00A-Q11@1.2.jpg,POLLY - Dressing gown - schwarz,Vossen,unisex,mens-clothing-swimwear
-22216,V1771A00A-J11,Pink,60,ALL,https://secure-i1.ztat.net/detail/V1/77/1A/00/AJ/11/V1771A00A-J11@4.4.jpg,POLLY - Dressing gown - cranberry,Vossen,unisex,mens-clothing-swimwear
 22217,BW422L00F-C11,Grey,140,SUMMER,https://secure-i5.ztat.net/detail/BW/42/2L/00/FC/11/BW422L00F-C11@1.2.jpg,Swimming shorts - chalk/chassis,Orlebar Brown,MALE,mens-clothing-swimwear
-22218,V1771A00A-G11,Red,60,ALL,https://secure-i5.ztat.net/detail/V1/77/1A/00/AG/11/V1771A00A-G11@3.2.jpg,POLLY - Dressing gown - purpur,Vossen,unisex,mens-clothing-swimwear
-22219,V1721K002-202,Yellow,70,ALL,https://secure-i2.ztat.net/detail/V1/72/1K/00/22/02/V1721K002-202@9.jpg,TEXAS - Dressing gown - sunflower,Vossen,unisex,mens-clothing-swimwear
-22220,V1771A00E-G11,Red,55,ALL,https://secure-i5.ztat.net/detail/V1/77/1A/00/EG/11/V1771A00E-G11@3.2.jpg,TORONTO - Dressing gown - rubin,Vossen,unisex,mens-clothing-swimwear
-22221,V1771A00E-K11,Blue,55,ALL,https://secure-i4.ztat.net/detail/V1/77/1A/00/EK/11/V1771A00E-K11@1.jpg,TORONTO - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
-22222,V1771A000-A11,White,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1A/00/0A/11/V1771A000-A11@2.jpg,DALLAS - Dressing gown - weiß,Vossen,unisex,mens-clothing-swimwear
-22223,V1771A000-K11,Blue,60,ALL,https://secure-i6.ztat.net/detail/V1/77/1A/00/0K/11/V1771A000-K11@4.jpg,DALLAS - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
-22224,V1771A000-G11,Red,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1A/00/0G/11/V1771A000-G11@2.jpg,DALLAS - Dressing gown - rubin,Vossen,unisex,mens-clothing-swimwear
 22225,V1771A006-C11,Grey,85,ALL,https://secure-i3.ztat.net/detail/V1/77/1A/00/6C/11/V1771A006-C11@3.jpg,FINLEY - Dressing gown - pepplestone,Vossen,MALE,mens-clothing-swimwear
 22226,V1771A006-K11,Blue,85,ALL,https://secure-i5.ztat.net/detail/V1/77/1A/00/6K/11/V1771A006-K11@3.jpg,FINLEY - Dressing gown - night,Vossen,MALE,mens-clothing-swimwear
-22227,V1771A000-J11,Pink,60,ALL,https://secure-i6.ztat.net/detail/V1/77/1A/00/0J/11/V1771A000-J11@1.jpg,DALLAS - Dressing gown - cranberry,Vossen,unisex,mens-clothing-swimwear
-22228,V1771A00E-A11,White,55,ALL,https://secure-i5.ztat.net/detail/V1/77/1A/00/EA/11/V1771A00E-A11@2.jpg,TORONTO - Dressing gown - weiß,Vossen,unisex,mens-clothing-swimwear
-22229,V1771A000-C11,Grey,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1A/00/0C/11/V1771A000-C11@4.jpg,DALLAS - Dressing gown - flanell,Vossen,unisex,mens-clothing-swimwear
-22230,M7871A002-A11,White,115,ALL,https://secure-i6.ztat.net/detail/M7/87/1A/00/2A/11/M7871A002-A11@11.jpg,CROCO - Dressing gown - snow,Möve,unisex,mens-clothing-swimwear
-22231,C5471B00A-002,White,21,ALL,https://secure-i6.ztat.net/detail/C5/47/1B/00/A0/02/C5471B00A-002@1.4.jpg,Dressing gown - white,CALANDO,unisex,mens-clothing-swimwear
 22232,S5922K02T-503,Blue,65,ALL,https://secure-i5.ztat.net/detail/S5/92/2K/02/T5/03/S5922K02T-503@1.1.jpg,Dressing gown - navy,Schiesser,MALE,mens-clothing-swimwear
 22233,S5922K02S-002,White,85,ALL,https://secure-i5.ztat.net/detail/S5/92/2K/02/S0/02/S5922K02S-002@1.1.jpg,Dressing gown - white,Schiesser,MALE,mens-clothing-swimwear
-22234,V1771B01G-401,Pink,60,ALL,https://secure-i2.ztat.net/detail/V1/77/1B/01/G4/01/V1771B01G-401@1.1.jpg,POPPY - Dressing gown - cranberry,Vossen,unisex,mens-clothing-swimwear
-22235,V1771B01G-502,Blue,60,ALL,https://secure-i6.ztat.net/detail/V1/77/1B/01/G5/02/V1771B01G-502@1.1.jpg,POPPY - Dressing gown - curacao,Vossen,unisex,mens-clothing-swimwear
-22236,V1771B01G-602,Green,60,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/01/G6/02/V1771B01G-602@1.1.jpg,POPPY - Dressing gown - valleygreen,Vossen,unisex,mens-clothing-swimwear
-22237,M7871B024-003,Beige,135,ALL,https://secure-i4.ztat.net/detail/M7/87/1B/02/40/03/M7871B024-003@1.1.jpg,PIMA LUXE - Dressing gown - elfenbein,Möve,unisex,mens-clothing-swimwear
-22238,M7871B024-103,Grey,135,ALL,https://secure-i3.ztat.net/detail/M7/87/1B/02/41/03/M7871B024-103@1.1.jpg,PIMA LUXE - Dressing gown - graphit,Möve,unisex,mens-clothing-swimwear
-22239,M7871B027-304,Red,44,ALL,https://secure-i6.ztat.net/detail/M7/87/1B/02/73/04/M7871B027-304@1.1.jpg,Dressing gown - bordeaux,Möve,unisex,mens-clothing-swimwear
-22240,M7871B027-102,Grey,50,ALL,https://secure-i4.ztat.net/detail/M7/87/1B/02/71/02/M7871B027-102@1.1.jpg,Dressing gown - graphit,Möve,unisex,mens-clothing-swimwear
-22241,TO271B00M-103,Grey,48,ALL,https://secure-i3.ztat.net/detail/TO/27/1B/00/M1/03/TO271B00M-103@1.1.jpg,BASIC VELOURS - Dressing gown - dark grey,Tom Tailor,unisex,mens-clothing-swimwear
-22242,M7871B010-505,Turquoise,100,ALL,https://secure-i6.ztat.net/detail/M7/87/1B/01/05/05/M7871B010-505@1.2.jpg,ESSENTIAL - Dressing gown - pool,Möve,unisex,mens-clothing-swimwear
-22243,V1771B00A-505,Blue,50,ALL,https://secure-i3.ztat.net/detail/V1/77/1B/00/A5/05/V1771B00A-505@1.1.jpg,TEXAS - Dressing gown - blau,Vossen,unisex,mens-clothing-swimwear
-22244,V1771B008-503,Blue,75,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/00/85/03/V1771B008-503@1.1.jpg,FEELING - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
-22245,V1771B00J-505,Turquoise,34,ALL,https://secure-i3.ztat.net/detail/V1/77/1B/00/J5/05/V1771B00J-505@1.1.jpg,ROM - Dressing gown - turquoise,Vossen,unisex,mens-clothing-swimwear
-22246,V1771B00J-602,Green,34,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/00/J6/02/V1771B00J-602@1.1.jpg,ROM - Dressing gown - meaddowgreen,Vossen,unisex,mens-clothing-swimwear
-22247,V1771B00J-002,White,34,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/00/J0/02/V1771B00J-002@1.1.jpg,ROM - Dressing gown - weiss,Vossen,unisex,mens-clothing-swimwear
-22248,M7871B010-303,Red,100,ALL,https://secure-i2.ztat.net/detail/M7/87/1B/01/03/03/M7871B010-303@1.2.jpg,ESSENTIAL - Dressing gown - dunkelrot,Möve,unisex,mens-clothing-swimwear
-22249,M7871B010-601,Green,100,ALL,https://secure-i1.ztat.net/detail/M7/87/1B/01/06/01/M7871B010-601@12.jpg,ESSENTIAL - Dressing gown - apple,Möve,unisex,mens-clothing-swimwear
-22250,M7871B00X-802,Black,90,ALL,https://secure-i6.ztat.net/detail/M7/87/1B/00/X8/02/M7871B00X-802@1.2.jpg,HOMEWEAR - Dressing gown - schwarz,Möve,unisex,mens-clothing-swimwear
-22251,M7871B00X-003,White,90,ALL,https://secure-i5.ztat.net/detail/M7/87/1B/00/X0/03/M7871B00X-003@1.2.jpg,HOMEWEAR - Dressing gown - offwhite,Möve,unisex,mens-clothing-swimwear
-22252,V1771B00J-303,Pink,34,ALL,https://secure-i1.ztat.net/detail/V1/77/1B/00/J3/03/V1771B00J-303@1.1.jpg,ROM - Dressing gown - cranberry,Vossen,unisex,mens-clothing-swimwear
-22253,V1771B00A-205,Orange,50,ALL,https://secure-i6.ztat.net/detail/V1/77/1B/00/A2/05/V1771B00A-205@1.1.jpg,TEXAS - Dressing gown - nectarin,Vossen,unisex,mens-clothing-swimwear
-22254,TO271B004-303,Red,42,ALL,https://secure-i1.ztat.net/detail/TO/27/1B/00/43/03/TO271B004-303@1.1.jpg,BASIC KIMONO - Dressing gown - rot,Tom Tailor,unisex,mens-clothing-swimwear
-22255,TO271B00M-704,Beige,60,ALL,https://secure-i2.ztat.net/detail/TO/27/1B/00/M7/04/TO271B00M-704@1.1.jpg,BASIC VELOURS - Dressing gown - beige,Tom Tailor,unisex,mens-clothing-swimwear
-22256,TO271B00M-002,White,60,ALL,https://secure-i5.ztat.net/detail/TO/27/1B/00/M0/02/TO271B00M-002@1.1.jpg,BASIC VELOURS - Dressing gown - weiß,Tom Tailor,unisex,mens-clothing-swimwear
-22257,V1771B008-802,Black,75,ALL,https://secure-i3.ztat.net/detail/V1/77/1B/00/88/02/V1771B008-802@1.1.jpg,FEELING - Dressing gown - schwarz,Vossen,unisex,mens-clothing-swimwear
-22258,V1771B00A-303,Pink,50,ALL,https://secure-i1.ztat.net/detail/V1/77/1B/00/A3/03/V1771B00A-303@1.1.jpg,TEXAS - Dressing gown - cranberry,Vossen,unisex,mens-clothing-swimwear
-22259,V1771B008-002,White,75,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/00/80/02/V1771B008-002@1.1.jpg,FEELING - Dressing gown - weiß,Vossen,unisex,mens-clothing-swimwear
-22260,V1771B00A-601,Green,50,ALL,https://secure-i6.ztat.net/detail/V1/77/1B/00/A6/01/V1771B00A-601@1.1.jpg,TEXAS - Dressing gown - meadowgreen,Vossen,unisex,mens-clothing-swimwear
-22261,V1771B00A-503,Blue,50,ALL,https://secure-i5.ztat.net/detail/V1/77/1B/00/A5/03/V1771B00A-503@1.1.jpg,TEXAS - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
 22262,S5922K00Z-503,Blue,75,ALL,https://secure-i4.ztat.net/detail/S5/92/2K/00/Z5/03/S5922K00Z-503@1.jpg,Dressing gown - blue,Schiesser,MALE,mens-clothing-swimwear
 22263,MA342B003-802,Black,42,ALL,https://secure-i3.ztat.net/detail/M/A/MA342B003-802@1.jpg,Swimming shorts - black,Marc O'Polo,MALE,mens-clothing-swimwear
 22264,H1282D005-A11,White,55,ALL,https://secure-i5.ztat.net/detail/H1/28/2D/00/5A/11/H1282D005-A11@3.2.jpg,MARINE CHIC - Swimming shorts - white,HOM,MALE,mens-clothing-swimwear
-22265,M7871B025-704,Beige,165,ALL,https://secure-i2.ztat.net/detail/M7/87/1B/02/57/04/M7871B025-704@1.1.jpg,WELLNESS - Dressing gown - natur,Möve,unisex,mens-clothing-swimwear
-22266,TO271B004-709,Beige,42,ALL,https://secure-i3.ztat.net/detail/TO/27/1B/00/47/09/TO271B004-709@1.1.jpg,BASIC KIMONO - Dressing gown - sand,Tom Tailor,unisex,mens-clothing-swimwear
-22267,TO271B004-103,Grey,34,ALL,https://secure-i3.ztat.net/detail/TO/27/1B/00/41/03/TO271B004-103@1.1.jpg,BASIC KIMONO - Dressing gown - dark grey,Tom Tailor,unisex,mens-clothing-swimwear
-22268,TO271B004-503,Blue,42,ALL,https://secure-i5.ztat.net/detail/TO/27/1B/00/45/03/TO271B004-503@1.1.jpg,BASIC KIMONO - Dressing gown - navy,Tom Tailor,unisex,mens-clothing-swimwear
 22269,MA382D003-Q11,Black,42,ALL,https://secure-i6.ztat.net/detail/MA/38/2D/00/3Q/11/MA382D003-Q11@3.1.jpg,WOVEN - Swimming shorts - black,Marc O'Polo,MALE,mens-clothing-swimwear
-22270,C5471B00A-801,Grey,21,ALL,https://secure-i4.ztat.net/detail/C5/47/1B/00/A8/01/C5471B00A-801@1.1.jpg,Dressing gown - grey,CALANDO,unisex,mens-clothing-swimwear
-22271,TO271B00P-405,Pink,60,ALL,https://secure-i4.ztat.net/detail/TO/27/1B/00/P4/05/TO271B00P-405@1.1.jpg,FEEL GOOD - Dressing gown - pink,Tom Tailor,unisex,mens-clothing-swimwear
-22272,V1771B008-103,Grey,75,ALL,https://secure-i3.ztat.net/detail/V1/77/1B/00/81/03/V1771B008-103@1.1.jpg,FEELING - Dressing gown - flanell,Vossen,unisex,mens-clothing-swimwear
-22273,V1771A00A-K11,Blue,60,ALL,https://secure-i4.ztat.net/detail/V1/77/1A/00/AK/11/V1771A00A-K11@4.2.jpg,POLLY - Dressing gown - curacao,Vossen,unisex,mens-clothing-swimwear
 22274,B3242B00E-302,Red,34,ALL,https://secure-i2.ztat.net/detail/B3/24/2B/00/E3/02/B3242B00E-302@1.1.jpg,CRUNOT - Swimming shorts - tomato,Brunotti,MALE,mens-clothing-swimwear
 22275,V1771A00A-K12,Blue,60,ALL,https://secure-i4.ztat.net/detail/V1/77/1A/00/AK/12/V1771A00A-K12@4.1.jpg,POLLY - Dressing gown - winternight,Vossen,unisex,mens-clothing-swimwear
 22276,M7871A002-B11,Beige,120,ALL,https://secure-i4.ztat.net/detail/M7/87/1A/00/2B/11/M7871A002-B11@3.4.jpg,CROCO - Dressing gown - papyrus,Möve,unisex,mens-clothing-swimwear

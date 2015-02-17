@@ -47,4 +47,7 @@ public enum Weather {
         return ShoprApp.getContext().getString(mWeatherIndicator);
     }
 
+    public int getWeatherIndicator(){
+        return mWeatherIndicator;
+    }
 }

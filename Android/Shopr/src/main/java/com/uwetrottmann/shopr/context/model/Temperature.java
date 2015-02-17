@@ -47,4 +47,8 @@ public enum Temperature {
     public String toString(){
         return ShoprApp.getContext().getString(mDegrees);
     }
+
+    public int getDegrees(){
+        return mDegrees;
+    }
 }

@@ -17,7 +17,7 @@ public enum TimeOfTheDay {
     AFTERNOON(R.string.afternoon),
     EVENING(R.string.evening);
 
-    private int day;
+    private int mTime;
 
     private static int END_OF_NIGHT = 6;
     private static int END_OF_MORNING = 11;
@@ -26,13 +26,13 @@ public enum TimeOfTheDay {
     private static int END_OF_EVENING = 22;
 
 
-    TimeOfTheDay(int day) {
-         this.day = day;
+    TimeOfTheDay(int time) {
+         this.mTime = time;
     }
 
     @Override
     public String toString(){
-        return ShoprApp.getContext().getString(day);
+        return ShoprApp.getContext().getString(mTime);
     }
 
     public static TimeOfTheDay getMatchingTimeOfTheDay(Calendar now){
@@ -77,5 +77,9 @@ public enum TimeOfTheDay {
 
         //In this case it is really late!
         return NIGHT;
+    }
+
+    public int getTime(){
+        return mTime;
     }
 }

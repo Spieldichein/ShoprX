@@ -179,8 +179,7 @@ public class ItemDetailsActivity extends Activity {
 
         // display results
         Intent intent = new Intent(this, ResultsActivity.class);
-        intent.putExtra(ResultsActivity.InitBundle.STATS_ID,
-                Integer.valueOf(Stats.getStatId(statUri)));
+        intent.putExtra(ResultsActivity.InitBundle.STATS_ID, Integer.valueOf(Stats.getStatId(statUri)));
         intent.putExtra(ResultsActivity.InitBundle.ITEM_ID, mItem.id());
         startActivity(intent);
     }

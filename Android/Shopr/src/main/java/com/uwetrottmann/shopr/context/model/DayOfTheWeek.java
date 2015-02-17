@@ -32,4 +32,8 @@ public enum DayOfTheWeek {
             return WORKDAY;
         }
     }
+
+    public int getDay(){
+        return day;
+    }
 }

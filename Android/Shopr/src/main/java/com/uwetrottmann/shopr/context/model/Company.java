@@ -42,4 +42,8 @@ public enum Company {
     public String toString(){
         return ShoprApp.getContext().getString(mCompanyType);
     }
+
+    public int getCompanyType(){
+        return mCompanyType;
+    }
 }

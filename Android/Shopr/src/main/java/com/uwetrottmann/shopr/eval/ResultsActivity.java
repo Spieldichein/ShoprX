@@ -2,8 +2,10 @@
 package com.uwetrottmann.shopr.eval;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.view.Menu;
@@ -15,6 +17,8 @@ import com.squareup.picasso.Picasso;
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
+import com.uwetrottmann.shopr.provider.ShoprContract;
 import com.uwetrottmann.shopr.provider.ShoprContract.Stats;
 
 import java.util.List;
@@ -60,7 +64,28 @@ public class ResultsActivity extends Activity {
             return;
         }
 
+        saveTheContext();
+
         setupViews();
+    }
+
+    /**
+     * This method is called in order to save the current context of the user scenario, together with
+     * the item, such that it can be used in further instances to provide better recommendations.
+     */
+    private void saveTheContext() {
+        ScenarioContext scenarioContext = ScenarioContext.getInstance();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ShoprContract.ContextItemRelation.REF_ITEM_ID, mItem.id());
+        contentValues.put(ShoprContract.ContextItemRelation.CONTEXT_TIME, scenarioContext.getTimeOfTheDay().getTime());
+        contentValues.put(ShoprContract.ContextItemRelation.CONTEXT_DAY, scenarioContext.getDayOfTheWeek().getDay());
+        contentValues.put(ShoprContract.ContextItemRelation.CONTEXT_TEMPERATURE, scenarioContext.getTemperature().getDegrees());
+        contentValues.put(ShoprContract.ContextItemRelation.CONTEXT_HUMIDITY, scenarioContext.getWeather().getWeatherIndicator());
+        contentValues.put(ShoprContract.ContextItemRelation.CONTEXT_COMPANY, scenarioContext.getCompany().getCompanyType());
+
+        Uri uri = ShoprContract.ContextItemRelation.CONTENT_URI;
+        getContentResolver().insert(uri, contentValues);
     }
 
     private void setupViews() {

@@ -14,7 +14,7 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "shopr.db";
 
-    public static final int DATABASE_VERSION = 9;
+    public static final int DATABASE_VERSION = 11;
 
     public interface Tables {
         String ITEMS = "items";
@@ -22,10 +22,14 @@ public class ShoprDatabase extends SQLiteOpenHelper {
         String SHOPS = "shops";
 
         String STATS = "stats";
+
+        String CONTEXT_ITEM_RELATION = "context_item";
     }
 
     public interface References {
         String SHOP_ID = "REFERENCES " + Tables.SHOPS + "(" + Shops._ID + ")";
+
+        String ITEM_ID = "REFERENCES " + Tables.ITEMS + "(" + Items._ID + ")";
     }
 
     private static final String CREATE_ITEMS_TABLE = "CREATE TABLE "
@@ -93,6 +97,25 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
             + ");";
 
+    private static final String CREATE_CONTEXT_ITEM_RELATION = "CREATE TABLE "
+            + Tables.CONTEXT_ITEM_RELATION + "("
+
+            + ShoprContract.ContextItemRelation._ID + " INTEGER PRIMARY KEY," // AUTOINCREMENT is not needed. It is explicitly done by SQlite.
+
+            + ShoprContract.ContextItemRelation.REF_ITEM_ID + " INTEGER " + References.ITEM_ID + ","
+
+            + ShoprContract.ContextItemRelation.CONTEXT_TIME + " INTEGER,"
+
+            + ShoprContract.ContextItemRelation.CONTEXT_DAY + " INTEGER,"
+
+            + ShoprContract.ContextItemRelation.CONTEXT_TEMPERATURE + " INTEGER,"
+
+            + ShoprContract.ContextItemRelation.CONTEXT_HUMIDITY + " INTEGER,"
+
+            + ShoprContract.ContextItemRelation.CONTEXT_COMPANY + " INTEGER"
+
+            + ");";
+
     private static final String TAG = "ShoprDatabase";
 
     public ShoprDatabase(Context context) {
@@ -107,6 +130,8 @@ public class ShoprDatabase extends SQLiteOpenHelper {
         db.execSQL(CREATE_ITEMS_TABLE);
 
         db.execSQL(CREATE_STATS_TABLE);
+
+        db.execSQL(CREATE_CONTEXT_ITEM_RELATION);
     }
 
     @Override
@@ -124,6 +149,7 @@ public class ShoprDatabase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Tables.ITEMS);
         db.execSQL("DROP TABLE IF EXISTS " + Tables.SHOPS);
         db.execSQL("DROP TABLE IF EXISTS " + Tables.STATS);
+        db.execSQL("DROP TABLE IF EXISTS " + Tables.CONTEXT_ITEM_RELATION);
 
         onCreate(db);
     }

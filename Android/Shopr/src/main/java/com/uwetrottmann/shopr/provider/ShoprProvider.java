@@ -31,6 +31,9 @@ public class ShoprProvider extends ContentProvider {
     private static final int STATS = 300;
     private static final int STAT_ID = 301;
 
+    private static final int CONTEXT_ITEM_RELATION = 400;
+    private static final int CONTEXT_ITEM_RELATION_ID = 401;
+
     private static final String TAG = "ShoprProvider";
 
     private static final boolean LOGV = false;
@@ -54,6 +57,9 @@ public class ShoprProvider extends ContentProvider {
         // Stats
         matcher.addURI(authority, ShoprContract.PATH_STATS, STATS);
         matcher.addURI(authority, ShoprContract.PATH_STATS + "/*", STAT_ID);
+
+        matcher.addURI(authority, ShoprContract.PATH_CONTEXT_ITEM, CONTEXT_ITEM_RELATION);
+        matcher.addURI(authority, ShoprContract.PATH_CONTEXT_ITEM + "/*", CONTEXT_ITEM_RELATION_ID);
 
         return matcher;
     }
@@ -84,6 +90,10 @@ public class ShoprProvider extends ContentProvider {
                 return Stats.CONTENT_TYPE;
             case STAT_ID:
                 return Stats.CONTENT_ITEM_TYPE;
+            case CONTEXT_ITEM_RELATION:
+                return ShoprContract.ContextItemRelation.CONTENT_TYPE;
+            case CONTEXT_ITEM_RELATION_ID:
+                return ShoprContract.ContextItemRelation.CONTENT_ITEM_TYPE;
             default:
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
         }
@@ -129,6 +139,11 @@ public class ShoprProvider extends ContentProvider {
                 getContext().getContentResolver().notifyChange(uri, null);
                 return Stats.buildStatUri((int) id);
             }
+            case CONTEXT_ITEM_RELATION: {
+                long id = db.insertOrThrow(Tables.CONTEXT_ITEM_RELATION, null, values);
+                getContext().getContentResolver().notifyChange(uri, null);
+                return ShoprContract.ContextItemRelation.buildStatUri((int) id);
+            }
             default: {
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
             }
@@ -159,6 +174,11 @@ public class ShoprProvider extends ContentProvider {
                 getContext().getContentResolver().notifyChange(uri, null);
                 break;
             }
+            case CONTEXT_ITEM_RELATION: {
+                numValues = bulkInsertHelper(Tables.CONTEXT_ITEM_RELATION, values);
+                getContext().getContentResolver().notifyChange(uri, null);
+                break;
+            }
             default: {
                 throw new UnsupportedOperationException("Unknown uri: " + uri);
             }
@@ -171,13 +191,12 @@ public class ShoprProvider extends ContentProvider {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         db.beginTransaction();
         try {
-            int numValues = values.length;
-            for (int i = 0; i < numValues; i++) {
-                db.insertOrThrow(table, null, values[i]);
+            for (ContentValues value : values) {
+                db.insertOrThrow(table, null, value);
                 db.yieldIfContendedSafely();
             }
             db.setTransactionSuccessful();
-            return numValues;
+            return values.length;
         } finally {
             db.endTransaction();
         }
@@ -235,6 +254,13 @@ public class ShoprProvider extends ContentProvider {
             case STAT_ID: {
                 final String id = Stats.getStatId(uri);
                 return builder.table(Tables.STATS).where(Stats._ID + "=?", id);
+            }
+            case CONTEXT_ITEM_RELATION: {
+                return builder.table(Tables.CONTEXT_ITEM_RELATION);
+            }
+            case CONTEXT_ITEM_RELATION_ID: {
+                String id = ShoprContract.ContextItemRelation.getStatId(uri);
+                return builder.table(Tables.CONTEXT_ITEM_RELATION).where(ShoprContract.ContextItemRelation._ID + "=?", id);
             }
             default: {
                 throw new UnsupportedOperationException("Unknown uri: " + uri);

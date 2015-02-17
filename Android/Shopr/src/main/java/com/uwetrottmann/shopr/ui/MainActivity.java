@@ -145,7 +145,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     @Override
     public void onBackPressed() {
-        // do nothing, prevents accidential back presses
+        // do nothing, prevents accidental back presses
     }
 
     @Override

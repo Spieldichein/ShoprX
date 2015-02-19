@@ -151,7 +151,7 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
             snippetBuilder.append(shop.openToday());
 
             snippetBuilder.append("\n");
-            snippetBuilder.append(ShoprApp.getDistanceToCurrentLocationInKm(shop.getLocationObject()));
+            snippetBuilder.append(ShoprApp.getDistanceToCurrentLocationInKmAsString(shop.getLocationObject()));
 
             // place marker
             Marker marker = getMap().addMarker(

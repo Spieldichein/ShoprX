@@ -1,7 +1,6 @@
 package com.uwetrottmann.shopr.context.algorithm;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Item;
@@ -82,7 +81,7 @@ public class ContextualPostFiltering {
                 query.close();
             }
 
-            Log.d("Item Context: ", ""+ itemContext);
+//            Log.d("Item Context: ", ""+ itemContext);
         }
     }
 }

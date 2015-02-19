@@ -141,7 +141,7 @@ public class ItemDetailsActivity extends Activity {
                     }
 
                     open.setText(shop.openToday());
-                    String distanceString = ShoprApp.getDistanceToCurrentLocationInKm(shop.getLocationObject());
+                    String distanceString = ShoprApp.getDistanceToCurrentLocationInKmAsString(shop.getLocationObject());
                     Log.d("Distance String", distanceString);
                     Log.d("Location object", ""+shop.getLocationObject());
                     distance.setText(distanceString);

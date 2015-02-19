@@ -1,8 +1,7 @@
 package com.uwetrottmann.shopr.context.algorithm;
 
-import android.location.Location;
+import android.util.Log;
 
-import com.google.android.gms.maps.model.LatLng;
 import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.context.model.DistanceToShop;
@@ -20,8 +19,7 @@ import java.util.List;
  */
 public class ContextualPreFiltering {
 
-    private static boolean sOnlyItemsInStock = false;
-    private static boolean sShowCrowdedShops = true;
+    private static final int MINIMUM_ITEMS_NUMBER = 300; //Minimum number of items, that have to be returned.
 
     /**
      * In this method everything concerning the shops will be pre-filtered. Therefore we ensure
@@ -31,47 +29,38 @@ public class ContextualPreFiltering {
      * @return a new (limited) case base
      */
     public static List<Item> filterShops(List<Item> cases){
-        //Filter out shops (and their items) which are too far away.
-        //First we get the current coordinates - where are we now.
-        // And build a location object based on these coordinates.
-        LatLng latLng = ShoprApp.getLastLocation();
-        Location currentLocation = new Location("Current Location");
-        currentLocation.setLatitude(latLng.latitude);
-        currentLocation.setLongitude(latLng.longitude);
-
-        // Second we get a list of all shops within the current data set
+        // Get a list of all shops within the current data set
         List<Shop> shops = ShoprApp.getShopList();
 
         // Third we check whether there is a context set at the moment.
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
-        DistanceToShop distanceToShop = scenarioContext.getDistanceToShop();
-        sOnlyItemsInStock = scenarioContext.isOnlyItemsInStock();
-        sShowCrowdedShops = scenarioContext.isCrowdedShopsAllowed();
 
         //If there were shops and a context object for the distance to the shops, then we can proceed
-        if (shops != null && distanceToShop != null){
+        if (shops != null && scenarioContext.isSet()){
 
-            // Initialize the allowed distance to the shop and check whether this distance is other than 0 (which means to include all objects.
-            float allowedDistance = distanceToShop.getDistance();
-            if (allowedDistance != 0) {
+            // Initialize a new array where we can store whether a store should be accessed or not.
+            boolean[] shopAvailable = listAvailableShops(shops, scenarioContext);
 
-                // Initialize a new array where we can store whether a store should be accessed or not.
-                boolean[] shopAvailable = new boolean[shops.size() + 1];
-
-                // Write into the array whether the shops are within the given distance.
-                for (Shop shop : shops) {
-                    float distance = currentLocation.distanceTo(shop.getLocationObject());
-                    shopAvailable[shop.id()] = (distance <= allowedDistance && isCrowdednessOkay(shop) && shop.isOpen(scenarioContext.getShopOpeningHoursModel())); // if the distance is smaller than the allowed distance, then it will write true, else false
+            //Create a new list in which we put all the items that are allowed. Afterwards we return the limited case base.
+            List<Item> newCases = new ArrayList<Item>();
+            for (Item item : cases) {
+                if (shopAvailable[item.shopId()] && itemInStock(scenarioContext, item)){
+                    newCases.add(item);
                 }
+            }
 
-                //Create a new list in which we put all the items that are allowed. Afterwards we return the limited case base.
-                List<Item> newCases = new ArrayList<Item>();
-                for (Item item : cases) {
-                    if (shopAvailable[item.shopId()] && itemInStock(item)){
-                        newCases.add(item);
-                    }
-                }
+            Log.d("New cases size after contextual pre-filtering", "" + newCases.size());
+
+            //Check if the number of items is large enough. Otherwise we have to lessen some restrictions.
+            // Also this number of cases is returned, if the Scenario Context restrictions cannot be relaxed further
+            if (newCases.size() >= MINIMUM_ITEMS_NUMBER || !scenarioContext.relaxSomeConditions()){
+                Log.d("Return", "Return");
                 return newCases;
+            } else {
+                // try returning items again.
+                Log.d("Relaxed restrictions", "true");
+                scenarioContext.logScenarioContext();
+                return filterShops(cases); // We already loosened some conditions (see above condition)
             }
         }
 
@@ -83,8 +72,8 @@ public class ContextualPreFiltering {
      * @param shop the shop under inspection
      * @return true if the crowdedness of the shop is okay.
      */
-    private static boolean isCrowdednessOkay(Shop shop){
-        return sShowCrowdedShops || !shop.isUsuallyCrowded();
+    private static boolean isCrowdednessOkay(ScenarioContext scenarioContext, Shop shop){
+        return scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded();
     }
 
     /**
@@ -93,7 +82,36 @@ public class ContextualPreFiltering {
      * @param item The item under investigation
      * @return true if the item should be included, false if it is not in stock and only items in stock shall be shown
      */
-    private static boolean itemInStock(Item item){
-        return !(sOnlyItemsInStock && item.getItemsInStock() == 0);
+    private static boolean itemInStock(ScenarioContext scenarioContext, Item item){
+        return !(scenarioContext.isOnlyItemsInStock() && item.getItemsInStock() == 0);
+    }
+
+    /**
+     * Checks whether the distance to the shop is okay. Which means that the context object is checked,
+     * whether it should include all items or not and the allowed distance is compared with the real distance.
+     * @param distanceToShop the context object holding the allowed distance.
+     * @param distance the real calculated distance to the shop
+     * @return true if the distance is okay.
+     */
+    private static boolean isDistanceOkay(DistanceToShop distanceToShop, float distance){
+        return (distanceToShop.getDistance() == 0 || distance <= distanceToShop.getDistance());
+    }
+
+    /**
+     * Returns an array of booleans identified with the shops id. This id does <b>not</b> have to be decreased by 1.
+     * @param shops All the shops that should be checked
+     * @param scenarioContext The current context for this scenario
+     * @return An array containing true, if the shop should be included.
+     */
+    private static boolean[] listAvailableShops(List<Shop> shops, ScenarioContext scenarioContext){
+        boolean[] shopAvailable = new boolean[shops.size() + 1];
+
+        // Write into the array whether the shops are within the given distance.
+        for (Shop shop : shops) {
+            float distance = ShoprApp.getDistanceToCurrentLocationInKmAsFloat(shop.getLocationObject());
+            shopAvailable[shop.id()] = (isDistanceOkay(scenarioContext.getDistanceToShop(), distance) && isCrowdednessOkay(scenarioContext, shop) && shop.isOpen(scenarioContext.getShopOpeningHoursModel())); // if the distance is smaller than the allowed distance, then it will write true, else false
+        }
+
+        return shopAvailable;
     }
 }

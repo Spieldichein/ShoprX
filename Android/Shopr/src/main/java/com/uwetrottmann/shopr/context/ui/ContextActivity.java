@@ -40,12 +40,6 @@ public class ContextActivity extends FragmentActivity{
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         transaction.add(R.id.fragment_only_container, mShopFragment).commit();
-
-
-//        Button submit = ((Button) findViewById(R.id.button_context_proceed));
-//
-//        submit.setOnClickListener(this);
-
     }
 
     @Override

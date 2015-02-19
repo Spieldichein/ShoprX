@@ -42,7 +42,7 @@ public class ContextShopFragment extends Fragment implements View.OnClickListene
      * in order to get a full description of the current context.
      */
     private void processFormData() {
-        ScenarioContext scenarioContext = ScenarioContext.getInstance();
+        ScenarioContext scenarioContext = ScenarioContext.createNewInstance();
 
         Spinner shopDistance = (Spinner) getActivity().findViewById(R.id.contextShopDistanceSpinner);
         Spinner shopOpeningHours = (Spinner) getActivity().findViewById(R.id.contextShopOpeningHoursSpinner);

@@ -78,7 +78,7 @@ public class ShoprApp extends Application {
      * @param shopLocation An object containing the location of something
      * @return A string with the distance
      */
-    public static String getDistanceToCurrentLocationInKm(Location shopLocation){
+    public static String getDistanceToCurrentLocationInKmAsString(Location shopLocation){
         LatLng loc = ShoprApp.getLastLocation();
         Location location = new Location("Current position");
         location.setLatitude(loc.latitude);
@@ -87,4 +87,17 @@ public class ShoprApp extends Application {
         return String.format("%.2f", location.distanceTo(shopLocation) / 1000) + " km";
     }
 
+    /**
+     * Returns the distance to the current location in km.
+     * @param shopLocation An object containing the location of something
+     * @return A string with the distance
+     */
+    public static float getDistanceToCurrentLocationInKmAsFloat(Location shopLocation){
+        LatLng loc = ShoprApp.getLastLocation();
+        Location location = new Location("Current position");
+        location.setLatitude(loc.latitude);
+        location.setLongitude(loc.longitude);
+
+        return location.distanceTo(shopLocation);
+    }
 }

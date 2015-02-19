@@ -38,6 +38,14 @@ public class ScenarioContext {
     }
 
     /**
+     * Returns whether the context is set or not, meaning whether we can work with it, or not.
+     * @return true if working with the context is allowed.
+     */
+    public boolean isSet(){
+        return mDistanceToShop != null;
+    }
+
+    /**
      * Sets the temperature according to the given output string of the temperature
      * @param tempDesc the output string for the given temperature.
      */
@@ -159,6 +167,37 @@ public class ScenarioContext {
     }
 
     /**
+     * Relaxes some of the conditions used in this scenario, in order to be able to retrieve more cases
+     * from the case base. We start with the condition whether the shop has to not crowded. The next thing we check is
+     * whether items in stock are included and at last we try to increase the searching distance.
+     * @return a boolean indicating whether the relaxation of at least one condition has been successful
+     */
+    public boolean relaxSomeConditions(){
+        //First relax the crowded shops restriction
+        if (!isCrowdedShopsAllowed()){
+            setCrowdedShopsAllowed(true);
+            return true;
+        }
+
+        //Then relax the items in stock restriction, because the shop might have updated its collection, but not send the data to us.
+        if (isOnlyItemsInStock()){
+            setOnlyItemsInStock(false);
+            return true;
+        }
+
+        //Then increase the allowed distance
+        if (getDistanceToShop().equals(DistanceToShop.LESS_THAN_2KM)){
+            setDistanceToShop(DistanceToShop.LESS_THAN_5KM.toString());
+            return true;
+        } else if (getDistanceToShop().equals(DistanceToShop.LESS_THAN_5KM)){
+            setDistanceToShop(DistanceToShop.ANY_DISTANCE.toString());
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Logs the current scenario context to the console
      */
     public void logScenarioContext(){
@@ -181,6 +220,15 @@ public class ScenarioContext {
         if (_instance == null) {
             _instance = new ScenarioContext();
         }
+        return _instance;
+    }
+
+    /**
+     * This method creates a new ScenarioContext object (equal to resetting all entries)
+     * @return A new ScenarioContextObject.
+     */
+    public synchronized static ScenarioContext createNewInstance(){
+        _instance = new ScenarioContext();
         return _instance;
     }
 

@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class ContextualPreFiltering {
 
-    private static final int MINIMUM_ITEMS_NUMBER = 300; //Minimum number of items, that have to be returned.
+    private static final int MINIMUM_ITEMS_NUMBER = 3000; //Minimum number of items, that have to be returned.
 
     /**
      * In this method everything concerning the shops will be pre-filtered. Therefore we ensure
@@ -28,12 +28,9 @@ public class ContextualPreFiltering {
      * @param cases the current case base
      * @return a new (limited) case base
      */
-    public static List<Item> filterShops(List<Item> cases){
+    public static List<Item> filterShops(List<Item> cases, ScenarioContext scenarioContext){
         // Get a list of all shops within the current data set
         List<Shop> shops = ShoprApp.getShopList();
-
-        // Third we check whether there is a context set at the moment.
-        ScenarioContext scenarioContext = ScenarioContext.getInstance();
 
         //If there were shops and a context object for the distance to the shops, then we can proceed
         if (shops != null && scenarioContext.isSet()){
@@ -49,7 +46,7 @@ public class ContextualPreFiltering {
                 }
             }
 
-            Log.d("New cases size after contextual pre-filtering", "" + newCases.size());
+            Log.d("New case base size after contextual pre-filtering", "" + newCases.size());
 
             //Check if the number of items is large enough. Otherwise we have to lessen some restrictions.
             // Also this number of cases is returned, if the Scenario Context restrictions cannot be relaxed further
@@ -60,7 +57,7 @@ public class ContextualPreFiltering {
                 // try returning items again.
                 Log.d("Relaxed restrictions", "true");
                 scenarioContext.logScenarioContext();
-                return filterShops(cases); // We already loosened some conditions (see above condition)
+                return filterShops(cases, scenarioContext); // We already loosened some conditions (see above condition)
             }
         }
 

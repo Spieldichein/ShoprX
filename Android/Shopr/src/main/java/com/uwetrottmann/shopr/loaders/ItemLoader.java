@@ -79,7 +79,7 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
         String limitString = null;
         if (selectionString == null){
-            //limitString = " RANDOM() LIMIT " + LIMIT_ITEMS; //TODO This currently causes problems in conjunction with the contextual pre-filtering, because of the minimum number of items. The restrictions might be relaxed too far, because the first query is executed on the old case base, rather than a newly loaded one.
+            limitString = " RANDOM() LIMIT " + LIMIT_ITEMS;
         }
 
         String[] columns = new String[] { Items._ID, Items.CLOTHING_TYPE, Items.BRAND, Items.PRICE, Items.IMAGE_URL,

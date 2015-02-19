@@ -10,7 +10,7 @@ import java.util.Calendar;
  * This class stores the context data of the scenario, which the user entered at the beginning of the app.
  * It matches the data to internal constants and provides methods for the retrieval of the context data.
  */
-public class ScenarioContext {
+public class ScenarioContext implements Cloneable {
 
     private static ScenarioContext _instance;
     private static final String TAG = "ScenarioContext";
@@ -230,6 +230,48 @@ public class ScenarioContext {
     public synchronized static ScenarioContext createNewInstance(){
         _instance = new ScenarioContext();
         return _instance;
+    }
+
+    /**
+     * This method provides a copy of the currently active instance of the context scenario. This copy
+     * may be manipulated without having an influence on the standard scenario context. The alteration
+     * of context caused problems in conjunction with the 300 items that shall be loaded by the item loader.
+     * @return A new instance of the scenario context with the same variables as the current instances
+     */
+    public synchronized static ScenarioContext getACopy(){
+        if (_instance == null){
+            return getInstance();
+        }
+        try {
+            return _instance.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Clones the current object.
+     * @return  new instance of the scenario context with this object's functions.
+     */
+    protected ScenarioContext clone() throws CloneNotSupportedException {
+        try {
+            super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        ScenarioContext copy = new ScenarioContext();
+        copy.mDistanceToShop = mDistanceToShop;
+        copy.mCrowdedShopsAllowed = mCrowdedShopsAllowed;
+        copy.mCompany = mCompany;
+        copy.mOnlyItemsInStock = mOnlyItemsInStock;
+        copy.mWeather = mWeather;
+        copy.mDayOfTheWeek = mDayOfTheWeek;
+        copy.mOpeningHours = mOpeningHours;
+        copy.mTemperature = mTemperature;
+        copy.mTimeOfTheDay = mTimeOfTheDay;
+
+        return copy;
     }
 
     public DistanceToShop getDistanceToShop() {

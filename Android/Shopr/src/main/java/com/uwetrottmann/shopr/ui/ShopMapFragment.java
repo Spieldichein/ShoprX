@@ -80,6 +80,17 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
                 return;
             }
 
+            //Draw a circle for current position, when fake location is active
+            if (AppSettings.isUsingFakeLocation(getActivity())){
+                getMap().addCircle(new CircleOptions()
+                        .center(userPosition)
+                        .radius(10)
+                        .strokeColor(getResources().getColor(R.color.blue))
+                        .strokeWidth(4)
+                        .fillColor(getResources().getColor(R.color.blue))
+                        .zIndex(200));
+            }
+
             // move camera to current position
             getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(userPosition, ZOOM_LEVEL_INITIAL));
 

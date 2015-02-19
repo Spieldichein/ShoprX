@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
 import com.uwetrottmann.androidutils.Maps;
@@ -28,6 +29,7 @@ import com.uwetrottmann.shopr.adapters.ItemAdapter.OnItemDisplayListener;
 import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
 import com.uwetrottmann.shopr.algorithm.Query;
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
 import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.loaders.ItemLoader;
 import com.uwetrottmann.shopr.ui.MainActivity.LocationUpdateEvent;
@@ -131,6 +133,16 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         mAdapter.clear();
         mAdapter.addAll(data);
         Statistics.get().itemCoverageStatistics(data);
+        StringBuilder text = new StringBuilder();
+        for (String string : ScenarioContext.getInstance().getRelaxations()){
+            text.append("\n - ");
+            text.append(string);
+        }
+
+        if (text.length() != 0) {
+            Toast.makeText(getActivity().getBaseContext(), getString(R.string.obtain_good_results) + text.toString(), Toast.LENGTH_LONG).show();
+            Log.d("Relaxations", "" + ScenarioContext.getInstance().getRelaxations());
+        }
         onUpdateReason();
         onUpdateShops(data);
     }

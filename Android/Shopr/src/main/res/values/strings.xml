@@ -350,6 +350,11 @@
     <string name="not_crowded">Not crowded</string>
     <string name="closed_today">Closed today</string>
     <string name="availableAt">Available at: %s</string>
+    <string name="relaxedCrowdednessRestriction">crowded shops included</string>
+    <string name="relaxedItemInStockRestriction">items not in stock included</string>
+    <string name="relaxedDistanceToShopTo5KM">maximum distance to a shop: 5km</string>
+    <string name="relaxedDistanceToShopToAnyDistance">any distance to a shop acceptable</string>
+    <string name="obtain_good_results">Adjustments made:</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>

@@ -2,7 +2,12 @@ package com.uwetrottmann.shopr.context.model;
 
 import android.util.Log;
 
+import com.uwetrottmann.shopr.R;
+import com.uwetrottmann.shopr.ShoprApp;
+
 import java.util.Calendar;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by Yannick on 11.02.15.
@@ -24,6 +29,8 @@ public class ScenarioContext implements Cloneable {
     private Company mCompany;
     private boolean mCrowdedShopsAllowed;
     private boolean mOnlyItemsInStock;
+
+    private List<String> mRelaxations = new LinkedList<String>();
 
     /**
      * Private Constructor to ensure the usage of the singleton. Instantiates the day of the week as
@@ -176,20 +183,27 @@ public class ScenarioContext implements Cloneable {
         //First relax the crowded shops restriction
         if (!isCrowdedShopsAllowed()){
             setCrowdedShopsAllowed(true);
+            mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxedCrowdednessRestriction));
             return true;
         }
 
         //Then relax the items in stock restriction, because the shop might have updated its collection, but not send the data to us.
         if (isOnlyItemsInStock()){
+            mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxedItemInStockRestriction));
             setOnlyItemsInStock(false);
             return true;
         }
 
         //Then increase the allowed distance
         if (getDistanceToShop().equals(DistanceToShop.LESS_THAN_2KM)){
+            mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxedDistanceToShopTo5KM));
             setDistanceToShop(DistanceToShop.LESS_THAN_5KM.toString());
             return true;
         } else if (getDistanceToShop().equals(DistanceToShop.LESS_THAN_5KM)){
+            if (mRelaxations.contains(ShoprApp.getContext().getString(R.string.relaxedDistanceToShopTo5KM))){
+                mRelaxations.remove(ShoprApp.getContext().getString(R.string.relaxedDistanceToShopTo5KM));
+            }
+            mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxedDistanceToShopToAnyDistance));
             setDistanceToShop(DistanceToShop.ANY_DISTANCE.toString());
             return true;
         }
@@ -276,5 +290,21 @@ public class ScenarioContext implements Cloneable {
 
     public DistanceToShop getDistanceToShop() {
         return mDistanceToShop;
+    }
+
+    /**
+     * Sets the relaxations
+     * @param relaxations a list of done relaxations.
+     */
+    public void setRelaxations(List<String> relaxations){
+        this.mRelaxations = relaxations;
+    }
+
+    /**
+     * Returns the relaxations that were done.
+     * @return a list containing the made relaxations.
+     */
+    public List<String> getRelaxations(){
+        return mRelaxations;
     }
 }

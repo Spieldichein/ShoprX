@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class ContextualPreFiltering {
 
-    private static final int MINIMUM_ITEMS_NUMBER = 3000; //Minimum number of items, that have to be returned.
+    private static final int MINIMUM_ITEMS_NUMBER = 300; //Minimum number of items, that have to be returned.
 
     /**
      * In this method everything concerning the shops will be pre-filtered. Therefore we ensure

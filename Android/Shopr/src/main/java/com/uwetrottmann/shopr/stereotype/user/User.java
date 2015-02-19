@@ -5,7 +5,6 @@ import android.util.Log;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
 import com.uwetrottmann.shopr.stereotype.stereotypes.AbstractStereotype;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -15,8 +14,6 @@ import java.util.Set;
  * Class to store the User model, which is needed for the stereotypes part of the app.
  */
 public class User {
-
-    private String userName;
 
     private Job job;
 
@@ -30,24 +27,17 @@ public class User {
 
     private static User INSTANCE = null;
 
-    private Date timeStarted;
-
-    private int critiqueCycles;
-
     private List<AbstractStereotype> potentialStereotypes;
 
-    private User(String userName, Job job, Sex.Value sex, Set<Music> musicTaste) {
-        this.userName = userName;
+    private User(Job job, Sex.Value sex, Set<Music> musicTaste) {
         this.job = job;
         this.sex = sex;
         this.musicTaste = musicTaste;
-        this.timeStarted = new Date();
-        this.critiqueCycles = 0;
     }
 
-    public static User initializeUser(String userName, Job job, Sex.Value sex,
+    public static User initializeUser(Job job, Sex.Value sex,
                                       Set<Music> musicTaste) {
-        INSTANCE = new User(userName, job, sex, musicTaste);
+        INSTANCE = new User(job, sex, musicTaste);
         return INSTANCE;
     }
 
@@ -69,11 +59,6 @@ public class User {
     /** * @param stereotype The stereotype to set. */
     public void setStereotype(AbstractStereotype stereotype) {
         this.stereotype = stereotype;
-    }
-
-    /** * @return Returns the userName. */
-    public String getUserName() {
-        return userName;
     }
 
     /** * @return Returns the job. */
@@ -104,48 +89,28 @@ public class User {
     }
 
     /**
-     * @param job
-     *            the job to set
+     * @param job the job to set
      */
     public void setJob(Job job) {
         this.job = job;
     }
 
     /**
-     * @param age
-     *            the age to set
+     * @param age the age to set
      */
     public void setAge(int age) {
         this.age = age;
     }
 
     /**
-     * @param musicTaste
-     *            the musicTaste to set
+     * @param musicTaste the musicTaste to set
      */
     public void setMusicTaste(Set<Music> musicTaste) {
         this.musicTaste = musicTaste;
     }
 
-    public Date getTimeStarted() {
-        return timeStarted;
-    }
-
-    public int getCritiqueCycles() {
-        return critiqueCycles;
-    }
-
-    public void increaseCritiqueCycle() {
-        this.critiqueCycles += 1;
-    }
-
-    public void reset() {
-        this.critiqueCycles = 0;
-        this.timeStarted = new Date();
-
-    }
-
     /**
+     * Returns the potential stereotypes, that the user could be.
      * @return the potentialStereotypes
      */
     public List<AbstractStereotype> getPotentialStereotypes() {
@@ -153,10 +118,10 @@ public class User {
     }
 
     /**
+     * Sets the potential stereotypes based on the calculation made by the {@link com.uwetrottmann.shopr.stereotype.controller.StereotypeDeterminator}.
      * @param potentialStereotypes the potentialStereotypes to set
      */
-    public void setPotentialStereotypes(
-            List<AbstractStereotype> potentialStereotypes) {
+    public void setPotentialStereotypes(List<AbstractStereotype> potentialStereotypes) {
         this.potentialStereotypes = potentialStereotypes;
     }
 }

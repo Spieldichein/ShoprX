@@ -14,7 +14,6 @@ import android.widget.Spinner;
 
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.algorithm.model.Sex;
-import com.uwetrottmann.shopr.eval.Statistics;
 import com.uwetrottmann.shopr.stereotype.dto.StereotypeForm;
 import com.uwetrottmann.shopr.stereotype.user.Job;
 import com.uwetrottmann.shopr.stereotype.user.Music;
@@ -110,7 +109,7 @@ public class StereotypeFormFragment extends Fragment{
         }
 
         // Create a new user
-        User.initializeUser(Statistics.get().getUserName(), job, sex, musicTaste);
+        User.initializeUser(job, sex, musicTaste);
 
         StereotypeForm form = new StereotypeForm(age, sex, job, musicTaste);
         form.setValid(valid);

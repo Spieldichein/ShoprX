@@ -1,6 +1,8 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
+import com.uwetrottmann.shopr.context.model.ItemSelectedContext;
+
 import java.math.BigDecimal;
 
 /**
@@ -29,6 +31,8 @@ public class Item {
     private double proximityToStereotype;
 
     private int mItemsInStock;
+
+    private ItemSelectedContext mItemContext;
 
     public int id() {
         return id;
@@ -136,6 +140,22 @@ public class Item {
 
     public int getItemsInStock(){
         return mItemsInStock;
+    }
+
+    /**
+     * Gets the context object, that states in which contexts the item has been selected how often.
+     * @return The context object.
+     */
+    public ItemSelectedContext getItemContext() {
+        return mItemContext;
+    }
+
+    /**
+     * Sets a new Context Object which states in which contexts the item has been selected how often.
+     * @param itemContext An item Context object that contains information about in which contexts the given item has been selected.
+     */
+    public void setItemContext(ItemSelectedContext itemContext) {
+        this.mItemContext = itemContext;
     }
 
     @Override

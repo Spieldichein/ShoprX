@@ -46,4 +46,13 @@ public enum Company {
     public int getCompanyType(){
         return mCompanyType;
     }
+
+    public static Company getCompany(int match){
+        for (Company value: values()){
+            if (value.mCompanyType == match){
+                return value;
+            }
+        }
+        return null;
+    }
 }

@@ -35,6 +35,15 @@ public enum TimeOfTheDay {
         return ShoprApp.getContext().getString(mTime);
     }
 
+    public static TimeOfTheDay getTimeOfTheDay(int match){
+        for (TimeOfTheDay value: values()){
+            if (value.mTime == match){
+                return value;
+            }
+        }
+        return null;
+    }
+
     public static TimeOfTheDay getMatchingTimeOfTheDay(Calendar now){
         //Set the two calendars to exactly the same time of the day.
         Calendar compareTime = Calendar.getInstance();

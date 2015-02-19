@@ -14,15 +14,15 @@ public enum DayOfTheWeek {
     WORKDAY(R.string.workday),
     HOLIDAY(R.string.holiday);
 
-    private int day;
+    private int mDay;
 
     DayOfTheWeek(int day) {
-         this.day = day;
+         this.mDay = day;
     }
 
     @Override
     public String toString(){
-        return ShoprApp.getContext().getString(day);
+        return ShoprApp.getContext().getString(mDay);
     }
 
     public static DayOfTheWeek getDay(Calendar cal) {
@@ -34,6 +34,15 @@ public enum DayOfTheWeek {
     }
 
     public int getDay(){
-        return day;
+        return mDay;
+    }
+
+    public static DayOfTheWeek getDayOfTheWeek(int match){
+        for (DayOfTheWeek value: values()){
+            if (value.mDay == match){
+                return value;
+            }
+        }
+        return null;
     }
 }

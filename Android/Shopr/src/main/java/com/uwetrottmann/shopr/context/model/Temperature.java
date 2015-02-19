@@ -51,4 +51,13 @@ public enum Temperature {
     public int getDegrees(){
         return mDegrees;
     }
+
+    public static Temperature getTemperature(int match){
+        for (Temperature value: values()){
+            if (value.mDegrees == match){
+                return value;
+            }
+        }
+        return null;
+    }
 }

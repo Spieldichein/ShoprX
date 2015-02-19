@@ -50,4 +50,13 @@ public enum Weather {
     public int getWeatherIndicator(){
         return mWeatherIndicator;
     }
+
+    public static Weather getWeather(int match){
+        for (Weather value: values()){
+            if (value.mWeatherIndicator == match){
+                return value;
+            }
+        }
+        return null;
+    }
 }

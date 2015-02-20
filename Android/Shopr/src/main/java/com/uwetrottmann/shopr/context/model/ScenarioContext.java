@@ -200,6 +200,50 @@ public class ScenarioContext implements Cloneable {
      * @return a boolean indicating whether the relaxation of at least one condition has been successful
      */
     public boolean relaxSomeConditions(){
+        // In the night normally nothing is open, so we have to relax this to any shop open.
+        if (getTimeOfTheDay().equals(TimeOfTheDay.NIGHT) && !(getShopOpeningHoursModel().equals(ShopOpeningHoursModel.ANYTIME))){
+            setOpennessOfShops(ShopOpeningHoursModel.ANYTIME.toString());
+            mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxed_to_anytime_open));
+            return true;
+        }
+
+        // If it is evening it might be the case, that we restrict too hard. So here we also use every time open.
+        if (getTimeOfTheDay().equals(TimeOfTheDay.EVENING) && ! getShopOpeningHoursModel().equals(ShopOpeningHoursModel.ANYTIME)){
+            setOpennessOfShops(ShopOpeningHoursModel.ANYTIME.toString());
+            mRelaxations.add(ShoprApp.getContext().getString((R.string.relaxed_to_anytime_open)));
+            return true;
+        }
+
+        //In the morning, we might have to relax it in small intervals.
+        if (getTimeOfTheDay().equals(TimeOfTheDay.MORNING)){
+            if (getShopOpeningHoursModel().equals(ShopOpeningHoursModel.NOW)){
+                setOpennessOfShops(ShopOpeningHoursModel.NOW_PLUS_30.toString());
+                mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_30));
+                return true;
+            } else if (getShopOpeningHoursModel().equals(ShopOpeningHoursModel.NOW_PLUS_30)){
+                if (mRelaxations.contains(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_30))){
+                    mRelaxations.remove(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_30));
+                }
+                setOpennessOfShops(ShopOpeningHoursModel.NOW_PLUS_60.toString());
+                mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_60));
+                return true;
+            } else if (getShopOpeningHoursModel().equals(ShopOpeningHoursModel.NOW_PLUS_60)){
+                if (mRelaxations.contains(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_60))){
+                    mRelaxations.remove(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_60));
+                }
+                setOpennessOfShops(ShopOpeningHoursModel.NOW_PLUS_90.toString());
+                mRelaxations.add(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_90));
+                return true;
+            } else if (getShopOpeningHoursModel().equals(ShopOpeningHoursModel.NOW_PLUS_90)){
+                if (mRelaxations.contains(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_90))){
+                    mRelaxations.remove(ShoprApp.getContext().getString(R.string.relaxed_to_open_in_90));
+                }
+                setOpennessOfShops(ShopOpeningHoursModel.ANYTIME.toString());
+                mRelaxations.add(ShoprApp.getContext().getString((R.string.relaxed_to_anytime_open)));
+                return true;
+            }
+        }
+
         //First relax the crowded shops restriction
         if (!isCrowdedShopsAllowed()){
             setCrowdedShopsAllowed(true);

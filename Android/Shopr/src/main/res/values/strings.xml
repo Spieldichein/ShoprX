@@ -369,6 +369,10 @@
     <string name="Karlsplatz">Karlsplatz</string>
     <string name="Universitaet">Universität</string>
     <string name="Deutsches_Museum">Deutsches Museum</string>
+    <string name="relaxed_to_anytime_open">anytime open</string>
+    <string name="relaxed_to_open_in_30">Shop open in 30 minutes</string>
+    <string name="relaxed_to_open_in_60">Shop open in 60 minutes</string>
+    <string name="relaxed_to_open_in_90">Shop open in 90 minutes</string>
     <string-array name="availableLocations">
         <item>@string/Marienplatz</item>
         <item>@string/Universitaet</item>

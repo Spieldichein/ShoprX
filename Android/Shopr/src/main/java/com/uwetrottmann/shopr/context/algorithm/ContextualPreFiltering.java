@@ -69,7 +69,7 @@ public class ContextualPreFiltering {
      * @return true if the crowdedness of the shop is okay.
      */
     private static boolean isCrowdednessOkay(ScenarioContext scenarioContext, Shop shop){
-        Log.d("Crowded okay", "" + (scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded()));
+        //Log.d("Crowded okay", "" + (scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded()));
         return (scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded());
     }
 

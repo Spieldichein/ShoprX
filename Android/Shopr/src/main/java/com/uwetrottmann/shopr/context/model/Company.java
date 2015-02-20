@@ -3,6 +3,9 @@ package com.uwetrottmann.shopr.context.model;
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.ShoprApp;
 
+import org.jgrapht.graph.DefaultWeightedEdge;
+import org.jgrapht.graph.SimpleDirectedWeightedGraph;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +22,26 @@ public enum Company implements DistanceMetric{
     private int mCompanyType;
 
     private static Map<String, Company> sAvailableCompany = new HashMap<String, Company>();
+
+    private static SimpleDirectedWeightedGraph<Company, DefaultWeightedEdge> sDistanceGraph;
+
+    static {
+        sDistanceGraph = new SimpleDirectedWeightedGraph<Company, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+
+        sDistanceGraph.addVertex(ALONE);
+        sDistanceGraph.addVertex(WITH_FAMILY);
+        sDistanceGraph.addVertex(WITH_FRIEND);
+
+        //Unfortunately there is no undirected weighted graph. :(
+        DefaultWeightedEdge edge = sDistanceGraph.addEdge(ALONE, WITH_FAMILY);
+        sDistanceGraph.setEdgeWeight(edge, 0.7);
+
+        edge = sDistanceGraph.addEdge(WITH_FRIEND, ALONE);
+        sDistanceGraph.setEdgeWeight(edge, 0.4);
+
+        edge = sDistanceGraph.addEdge(WITH_FRIEND, WITH_FAMILY);
+        sDistanceGraph.setEdgeWeight(edge, 0.9);
+    }
 
     Company(int company) {
          mCompanyType = company;
@@ -63,7 +86,14 @@ public enum Company implements DistanceMetric{
 
     @Override
     public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
-        return 0; //TODO
+        // If the scenario context is exactly the same, as this object, we are going to return 0 (because we are equal)
+        // Otherwise we have to search in a graph structure (undirected) to see how far the distance between
+        // the context and this object is.
+        if (scenarioContext.getCompany().equals(this)){
+            return 0;
+        }
+
+        return sDistanceGraph.getEdgeWeight(sDistanceGraph.getEdge(scenarioContext.getCompany(), this));
     }
 
     @Override

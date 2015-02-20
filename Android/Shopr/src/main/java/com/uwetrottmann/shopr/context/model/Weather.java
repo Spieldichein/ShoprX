@@ -3,6 +3,9 @@ package com.uwetrottmann.shopr.context.model;
 import com.uwetrottmann.shopr.R;
 import com.uwetrottmann.shopr.ShoprApp;
 
+import org.jgrapht.graph.DefaultWeightedEdge;
+import org.jgrapht.graph.ListenableUndirectedWeightedGraph;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +26,63 @@ public enum Weather implements DistanceMetric{
     private int mWeatherIndicator;
 
     private static Map<String, Weather> sAvailableWeatherStates = new HashMap<String, Weather>();
+
+    private static ListenableUndirectedWeightedGraph<Weather, DefaultWeightedEdge> sDistanceGraph;
+
+    static {
+        sDistanceGraph = new ListenableUndirectedWeightedGraph<Weather, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+
+        sDistanceGraph.addVertex(SUNNY);
+        sDistanceGraph.addVertex(PARTLY_CLOUDY);
+        sDistanceGraph.addVertex(CLOUDY);
+        sDistanceGraph.addVertex(VERY_CLOUDY);
+        sDistanceGraph.addVertex(RAINING);
+        sDistanceGraph.addVertex(SNOWING);
+        sDistanceGraph.addVertex(OTHER_CONDITIONS);
+
+        DefaultWeightedEdge edge = sDistanceGraph.addEdge(SUNNY, PARTLY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.1);
+
+        edge = sDistanceGraph.addEdge(CLOUDY, SUNNY);
+        sDistanceGraph.setEdgeWeight(edge, 0.3);
+
+        edge = sDistanceGraph.addEdge(SUNNY, VERY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.6);
+
+        edge = sDistanceGraph.addEdge(RAINING, SUNNY);
+        sDistanceGraph.setEdgeWeight(edge, 1);
+
+        edge = sDistanceGraph.addEdge(SUNNY, SNOWING);
+        sDistanceGraph.setEdgeWeight(edge, 1);
+
+        edge = sDistanceGraph.addEdge(CLOUDY, PARTLY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.1);
+
+        edge = sDistanceGraph.addEdge(PARTLY_CLOUDY, VERY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.3);
+
+        edge = sDistanceGraph.addEdge(RAINING, PARTLY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.8);
+
+        edge = sDistanceGraph.addEdge(PARTLY_CLOUDY, SNOWING);
+        sDistanceGraph.setEdgeWeight(edge, 0.8);
+
+        edge = sDistanceGraph.addEdge(VERY_CLOUDY, CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.1);
+
+        edge = sDistanceGraph.addEdge(CLOUDY, RAINING);
+        sDistanceGraph.setEdgeWeight(edge, 0.7);
+
+        edge = sDistanceGraph.addEdge(RAINING, VERY_CLOUDY);
+        sDistanceGraph.setEdgeWeight(edge, 0.4);
+
+        edge = sDistanceGraph.addEdge(VERY_CLOUDY, SNOWING);
+        sDistanceGraph.setEdgeWeight(edge, 0.4);
+
+        edge = sDistanceGraph.addEdge(SNOWING, RAINING);
+        sDistanceGraph.setEdgeWeight(edge, 0.6);
+
+    }
 
     Weather(int weather) {
          mWeatherIndicator = weather;
@@ -67,7 +127,17 @@ public enum Weather implements DistanceMetric{
 
     @Override
     public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
-        return 0; // TODO
+        // If the scenario context is exactly the same, as this object, we are going to return 0 (because we are equal)
+        // Otherwise we have to search in a graph structure (undirected) to see how far the distance between
+        // the context and this object is.
+        if (scenarioContext.getWeather().equals(this)){
+            return 0;
+        } else if (scenarioContext.getWeather().equals(OTHER_CONDITIONS) || this.equals(OTHER_CONDITIONS)){
+            return 1;
+        }
+
+        return sDistanceGraph.getEdgeWeight(sDistanceGraph.getEdge(scenarioContext.getWeather(), this));
+
     }
 
     @Override

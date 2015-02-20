@@ -119,11 +119,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     @Override
     public void onStart() {
         super.onStart();
+        // only reset the location if we do not have a location yet, else the settings by the scenario context would be overwritten.
         if (AppSettings.isUsingFakeLocation(this)) {
-            // use fake location (Marienplatz, Munich)
-            ShoprApp.setLastLocation(new LatLng(48.137314, 11.575253));
-            // send out location update event immediately
-            EventBus.getDefault().postSticky(new LocationUpdateEvent());
+            if (ShoprApp.getLastLocation() == null) {
+                // use fake location (Marienplatz, Munich)
+                ShoprApp.setLastLocation(new LatLng(48.137314, 11.575253));
+                // send out location update event immediately
+                EventBus.getDefault().postSticky(new LocationUpdateEvent());
+            }
         } else {
             mLocationClient.connect();
         }

@@ -355,9 +355,24 @@
     <string name="relaxedDistanceToShopTo5KM">maximum distance to a shop: 5km</string>
     <string name="relaxedDistanceToShopToAnyDistance">any distance to a shop acceptable</string>
     <string name="obtain_good_results">Adjustments made:</string>
+    <string name="headingLocation">Location settings</string>
+    <string name="context_current_location">My location:</string>
     <string-array name="contextCompany">
         <item>@string/alone</item>
         <item>@string/withFamily</item>
         <item>@string/withAFriend</item>
+    </string-array>
+
+    <string name="Marienplatz">Marienplatz</string>
+    <string name="MuenchnerFreiheit">Münchner Freiheit</string>
+    <string name="Garching">Garching</string>
+    <string name="Karlsplatz">Karlsplatz</string>
+    <string name="Universitaet">Universität</string>
+    <string name="Deutsches_Museum">Deutsches Museum</string>
+    <string-array name="availableLocations">
+        <item>@string/Marienplatz</item>
+        <item>@string/Universitaet</item>
+        <item>@string/Deutsches_Museum</item>
+        <item>@string/Karlsplatz</item>
     </string-array>
 </resources>

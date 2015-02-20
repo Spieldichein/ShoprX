@@ -29,6 +29,7 @@ public class ScenarioContext implements Cloneable {
     private Company mCompany;
     private boolean mCrowdedShopsAllowed;
     private boolean mOnlyItemsInStock;
+    private CurrentLocation mCurrentLocation;
 
     private List<String> mRelaxations = new LinkedList<String>();
 
@@ -171,6 +172,25 @@ public class ScenarioContext implements Cloneable {
      */
     public boolean isCrowdedShopsAllowed() {
         return mCrowdedShopsAllowed;
+    }
+
+    /**
+     * With this method you can get the current location of the user.
+     * @return a current location object containing the user's current location
+     */
+    public CurrentLocation getCurrentLocation() {
+        return mCurrentLocation;
+    }
+
+    /**
+     * Method that sets the current location within the scenario context and as well updates the current location
+     * in the whole app wherever this is necessary.
+     * @param place the place the user selected to be
+     */
+    public void setCurrentLocation(String place) {
+        this.mCurrentLocation = CurrentLocation.getCurrentLocation(place);
+
+        ShoprApp.setLastLocation(getCurrentLocation().getLatLng());
     }
 
     /**

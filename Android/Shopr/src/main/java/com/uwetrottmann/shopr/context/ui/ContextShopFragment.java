@@ -44,11 +44,13 @@ public class ContextShopFragment extends Fragment implements View.OnClickListene
     private void processFormData() {
         ScenarioContext scenarioContext = ScenarioContext.createNewInstance();
 
+        Spinner currentLocation = (Spinner) getActivity().findViewById(R.id.context_spinner_my_location);
         Spinner shopDistance = (Spinner) getActivity().findViewById(R.id.contextShopDistanceSpinner);
         Spinner shopOpeningHours = (Spinner) getActivity().findViewById(R.id.contextShopOpeningHoursSpinner);
         Switch onlyStock = (Switch) getActivity().findViewById(R.id.contextShopStockOptions);
         Switch crowdedShopsIncluded = (Switch) getActivity().findViewById(R.id.contextShopCrowdedness);
 
+        scenarioContext.setCurrentLocation((String) currentLocation.getSelectedItem());
         scenarioContext.setDistanceToShop((String) shopDistance.getSelectedItem());
         scenarioContext.setOpennessOfShops((String) shopOpeningHours.getSelectedItem());
         scenarioContext.setOnlyItemsInStock(onlyStock.isChecked());

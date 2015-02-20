@@ -74,11 +74,14 @@ public class ShopMapFragment extends SupportMapFragment implements LoaderCallbac
     private void onInitializeMap() {
         if (!mIsInitialized) {
             Log.d(TAG, "Initializing map.");
+            getMap().clear();
 
             LatLng userPosition = ShoprApp.getLastLocation();
             if (userPosition == null) {
                 return;
             }
+
+            //Log.d("User location", ""+ userPosition);
 
             //Draw a circle for current position, when fake location is active
             if (AppSettings.isUsingFakeLocation(getActivity())){

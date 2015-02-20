@@ -51,7 +51,6 @@ public class ContextualPreFiltering {
             //Check if the number of items is large enough. Otherwise we have to lessen some restrictions.
             // Also this number of cases is returned, if the Scenario Context restrictions cannot be relaxed further
             if (newCases.size() >= MINIMUM_ITEMS_NUMBER || !scenarioContext.relaxSomeConditions()){
-                Log.d("Return", "Return");
                 return newCases;
             } else {
                 // try returning items again.
@@ -70,7 +69,8 @@ public class ContextualPreFiltering {
      * @return true if the crowdedness of the shop is okay.
      */
     private static boolean isCrowdednessOkay(ScenarioContext scenarioContext, Shop shop){
-        return scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded();
+        Log.d("Crowded okay", "" + (scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded()));
+        return (scenarioContext.isCrowdedShopsAllowed() || !shop.isUsuallyCrowded());
     }
 
     /**
@@ -80,18 +80,20 @@ public class ContextualPreFiltering {
      * @return true if the item should be included, false if it is not in stock and only items in stock shall be shown
      */
     private static boolean itemInStock(ScenarioContext scenarioContext, Item item){
+        //Log.d("Items in stock okay", ""+ !(scenarioContext.isOnlyItemsInStock() && item.getItemsInStock() == 0));
         return !(scenarioContext.isOnlyItemsInStock() && item.getItemsInStock() == 0);
     }
 
     /**
      * Checks whether the distance to the shop is okay. Which means that the context object is checked,
      * whether it should include all items or not and the allowed distance is compared with the real distance.
-     * @param distanceToShop the context object holding the allowed distance.
+     * @param allowedDistanceToShop the context object holding the allowed distance.
      * @param distance the real calculated distance to the shop
      * @return true if the distance is okay.
      */
-    private static boolean isDistanceOkay(DistanceToShop distanceToShop, float distance){
-        return (distanceToShop.getDistance() == 0 || distance <= distanceToShop.getDistance());
+    private static boolean isDistanceOkay(DistanceToShop allowedDistanceToShop, float distance){
+        //Log.d("Distance okay",""+(allowedDistanceToShop.getDistance() == 0 || distance <= allowedDistanceToShop.getDistance()));
+        return (allowedDistanceToShop.getDistance() == 0 || distance <= allowedDistanceToShop.getDistance());
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * This class stores the current temperature within the given context scenario.
  */
-public enum Weather {
+public enum Weather implements DistanceMetric{
     SUNNY(R.string.sunnyWeather),
     PARTLY_CLOUDY(R.string.partlyCloudyWeather),
     CLOUDY(R.string.cloudyWeather),
@@ -58,5 +58,25 @@ public enum Weather {
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean isMetricWithEuclideanDistance() {
+        return false;
+    }
+
+    @Override
+    public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
+        return 0; // TODO
+    }
+
+    @Override
+    public int numberOfItems() throws UnsupportedOperationException {
+        return values().length;
+    }
+
+    @Override
+    public int currentOrdinal() throws UnsupportedOperationException {
+        return ordinal();
     }
 }

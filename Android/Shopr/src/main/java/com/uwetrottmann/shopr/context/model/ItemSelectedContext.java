@@ -11,90 +11,54 @@ import java.util.Map;
  */
 public class ItemSelectedContext {
 
-    private Map<TimeOfTheDay, Integer> mTimeOfTheDay;
-    private Map<DayOfTheWeek, Integer> mDayOfTheWeek;
-    private Map<Temperature, Integer> mTemperature;
-    private Map<Weather, Integer> mWeather;
-    private Map<Company, Integer> mCompany;
+    private Map<DistanceMetric, Integer> mDistanceMetrics;
 
     /**
      * Initializes the local data stores.
      */
     public ItemSelectedContext(){
-        mTimeOfTheDay = new HashMap<TimeOfTheDay, Integer>();
+        mDistanceMetrics = new HashMap<DistanceMetric, Integer>();
         for (TimeOfTheDay t : TimeOfTheDay.values()){
-            mTimeOfTheDay.put(t, 0);
+            mDistanceMetrics.put(t, 0);
         }
 
-        mDayOfTheWeek = new HashMap<DayOfTheWeek, Integer>();
         for (DayOfTheWeek d : DayOfTheWeek.values()){
-            mDayOfTheWeek.put(d, 0);
+            mDistanceMetrics.put(d, 0);
         }
 
-        mTemperature = new HashMap<Temperature, Integer>();
         for (Temperature t : Temperature.values()){
-            mTemperature.put(t, 0);
+            mDistanceMetrics.put(t, 0);
         }
 
-        mWeather = new HashMap<Weather, Integer>();
         for (Weather w : Weather.values()){
-            mWeather.put(w, 0);
+            mDistanceMetrics.put(w, 0);
         }
 
-        mCompany = new HashMap<Company, Integer>();
         for (Company c : Company.values()){
-            mCompany.put(c, 0);
+            mDistanceMetrics.put(c, 0);
         }
     }
 
     /**
      * Increases the counter for the times of the day in which this item has been selected.
-     * @param t the TimeOfTheDay to increase.
+     * @param d the TimeOfTheDay to increase.
      */
-    public void increaseTimeOfTheDay(TimeOfTheDay t){
-        mTimeOfTheDay.put(t, mTimeOfTheDay.get(t) + 1);
+    public void increaseDistanceMetric(DistanceMetric d){
+        mDistanceMetrics.put(d, mDistanceMetrics.get(d) + 1);
     }
 
     /**
-     * Increases the counter for the day of the week in which this item has been selected.
-     * @param d the DayOfTheWeek to increase
+     * Returns all the different distance metrics that we do have here.
+     * @return a map with all the distance metrics possible
      */
-    public void increaseDayOfTheWeek(DayOfTheWeek d){
-        mDayOfTheWeek.put(d, mDayOfTheWeek.get(d) + 1);
-    }
-
-    /**
-     * Increases the counter for the temperature in which this item has been selected.
-     * @param t the Temperature to increase
-     */
-    public void increaseTemperature(Temperature t){
-        mTemperature.put(t, mTemperature.get(t) + 1);
-    }
-
-    /**
-     * Increases the counter for the weather in which this item has been selected.
-     * @param w the Weather to increase
-     */
-    public void increaseWeather(Weather w){
-        mWeather.put(w, mWeather.get(w) + 1);
-    }
-
-    /**
-     * Increases the counter for the company in which this item has been selected.
-     * @param c the Company to increase
-     */
-    public void increaseCompany(Company c){
-        mCompany.put(c, mCompany.get(c) + 1);
+    public Map<DistanceMetric, Integer> getContextsForItem(){
+        return mDistanceMetrics;
     }
 
     @Override
     public String toString() {
         return "ItemSelectedContext{" +
-                "mTimeOfTheDay=" + mTimeOfTheDay +
-                ", mDayOfTheWeek=" + mDayOfTheWeek +
-                ", mTemperature=" + mTemperature +
-                ", mWeather=" + mWeather +
-                ", mCompany=" + mCompany +
+                "mDistanceMetrics=" + mDistanceMetrics +
                 '}';
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * This class stores the current temperature within the given context scenario.
  */
-public enum Company {
+public enum Company implements DistanceMetric{
     ALONE(R.string.alone),
     WITH_FAMILY(R.string.withFamily),
     WITH_FRIEND(R.string.withAFriend);
@@ -54,5 +54,25 @@ public enum Company {
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean isMetricWithEuclideanDistance() {
+        return false;
+    }
+
+    @Override
+    public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
+        return 0; //TODO
+    }
+
+    @Override
+    public int numberOfItems() {
+        return values().length;
+    }
+
+    @Override
+    public int currentOrdinal() {
+        return ordinal();
     }
 }

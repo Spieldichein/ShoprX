@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * This class stores the current temperature within the given context scenario.
  */
-public enum Temperature {
+public enum Temperature implements DistanceMetric{
     LESS_THAN_0(R.string.below0Degrees),
     BETWEEN_0_AND_5(R.string.between0And5Degrees),
     BETWEEN_5_AND_10(R.string.between5And10Degrees),
@@ -59,5 +59,25 @@ public enum Temperature {
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean isMetricWithEuclideanDistance() {
+        return true;
+    }
+
+    @Override
+    public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Is Euclidean Distance");
+    }
+
+    @Override
+    public int numberOfItems() throws UnsupportedOperationException {
+        return values().length;
+    }
+
+    @Override
+    public int currentOrdinal() throws UnsupportedOperationException {
+        return ordinal();
     }
 }

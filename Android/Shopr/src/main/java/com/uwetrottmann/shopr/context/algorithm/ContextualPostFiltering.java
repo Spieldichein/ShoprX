@@ -1,12 +1,15 @@
 package com.uwetrottmann.shopr.context.algorithm;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import com.uwetrottmann.shopr.ShoprApp;
 import com.uwetrottmann.shopr.algorithm.model.Item;
 import com.uwetrottmann.shopr.context.model.Company;
 import com.uwetrottmann.shopr.context.model.DayOfTheWeek;
+import com.uwetrottmann.shopr.context.model.DistanceMetric;
 import com.uwetrottmann.shopr.context.model.ItemSelectedContext;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
 import com.uwetrottmann.shopr.context.model.Temperature;
 import com.uwetrottmann.shopr.context.model.TimeOfTheDay;
 import com.uwetrottmann.shopr.context.model.Weather;
@@ -14,6 +17,7 @@ import com.uwetrottmann.shopr.provider.ShoprContract;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by yannick on 17.02.15.
@@ -39,7 +43,28 @@ public class ContextualPostFiltering {
         List<Item> updatedRecommendation = new ArrayList<Item>();
 
         //Updates the items, such that we can see in which contexts these items were selected
-        retrieveSelectedInTheseContexts(currentRecommendation);
+        retrieveContextInformationForItems(currentRecommendation);
+
+        ScenarioContext scenarioContext = ScenarioContext.getInstance();
+
+        //Only if we have a scenario context, we are allowed to check whether the scenario matches the item contexts.
+        if (scenarioContext.isSet()) {
+            //Calculate the distances
+            for (Item item : currentRecommendation) {
+                ItemSelectedContext itemContext = item.getItemContext();
+                Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem();
+                for (DistanceMetric metric : distanceMetrics.keySet()) {
+                    double distance;
+                    int times = distanceMetrics.get(metric);
+                    if (metric.isMetricWithEuclideanDistance()){
+                        distance = times * getAdaptedEuclideanDistance(scenarioContext.getDayOfTheWeek().ordinal(), metric.currentOrdinal(), metric.numberOfItems());
+                    } else {
+                        distance = times * metric.distanceToContext(scenarioContext);
+                    }
+                    Log.d("Distance", "" + distance);
+                }
+            }
+        }
 
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
@@ -56,12 +81,11 @@ public class ContextualPostFiltering {
      * Updates the items and sets the context scenarios in which these items have been selected.
      * @param currentRecommendation A list of items, that shall be part of the current recommendation cycle.
      */
-    private static void retrieveSelectedInTheseContexts(List<Item> currentRecommendation){
+    private static void retrieveContextInformationForItems(List<Item> currentRecommendation){
         for (Item item : currentRecommendation){
 
+            //Set a new context for the item(s)
             ItemSelectedContext itemContext = new ItemSelectedContext();
-
-            // Reset the context maps
             item.setItemContext(itemContext);
 
             //Query the database
@@ -69,13 +93,14 @@ public class ContextualPostFiltering {
             Cursor query = ShoprApp.getContext().getContentResolver().query(ShoprContract.ContextItemRelation.CONTENT_URI,
                     sSelectionColumns, selectionString, null, null);
 
+            //Move the information from the database into the data structure
             if (query != null){
                 while (query.moveToNext()){
-                    itemContext.increaseTimeOfTheDay(TimeOfTheDay.getTimeOfTheDay(query.getInt(1)));
-                    itemContext.increaseDayOfTheWeek(DayOfTheWeek.getDayOfTheWeek(query.getInt(2)));
-                    itemContext.increaseTemperature(Temperature.getTemperature(query.getInt(3)));
-                    itemContext.increaseWeather(Weather.getWeather(query.getInt(4)));
-                    itemContext.increaseCompany(Company.getCompany(query.getInt(5)));
+                    itemContext.increaseDistanceMetric(TimeOfTheDay.getTimeOfTheDay(query.getInt(1)));
+                    itemContext.increaseDistanceMetric(DayOfTheWeek.getDayOfTheWeek(query.getInt(2)));
+                    itemContext.increaseDistanceMetric(Temperature.getTemperature(query.getInt(3)));
+                    itemContext.increaseDistanceMetric(Weather.getWeather(query.getInt(4)));
+                    itemContext.increaseDistanceMetric(Company.getCompany(query.getInt(5)));
                 }
 
                 query.close();
@@ -83,5 +108,18 @@ public class ContextualPostFiltering {
 
 //            Log.d("Item Context: ", ""+ itemContext);
         }
+    }
+
+    /**
+     * This method returns the adapted euclidean distance as described in the HEOM
+     * @param p the value for the first coordinate
+     * @param q the value for the second coordinate
+     * @param range the range in which the values are distributed
+     * @return a double with the distance
+     */
+    private static double getAdaptedEuclideanDistance(double p, double q, double range){
+        double result = ( p - q ) / range;
+        result = Math.pow(result, 2); // square it
+        return Math.sqrt(result);
     }
 }

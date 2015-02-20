@@ -10,7 +10,7 @@ import java.util.Calendar;
  *
  * Keeps the context data on the day of the week, meaning whether it is a weekday or a holiday.
  */
-public enum TimeOfTheDay {
+public enum TimeOfTheDay implements DistanceMetric{
     NIGHT(R.string.night),
     MORNING(R.string.morning),
     MIDDAY(R.string.midday),
@@ -90,5 +90,25 @@ public enum TimeOfTheDay {
 
     public int getTime(){
         return mTime;
+    }
+
+    @Override
+    public boolean isMetricWithEuclideanDistance() {
+        return true;
+    }
+
+    @Override
+    public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
+        throw new UnsupportedOperationException("Is Euclidean Distance");
+    }
+
+    @Override
+    public int numberOfItems() throws UnsupportedOperationException {
+        return values().length;
+    }
+
+    @Override
+    public int currentOrdinal() throws UnsupportedOperationException {
+        return ordinal();
     }
 }

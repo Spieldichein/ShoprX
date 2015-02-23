@@ -276,6 +276,39 @@ public class ScenarioContext implements Cloneable {
     }
 
     /**
+     * This method calculates the maximum possible distance
+     * @return the maximum available distance
+     */
+    public static double calculateMaximumPossibleDistance(){
+        //For the two numeric items Time of the day and Day of the Week, we just need to get their weights,
+        // as the maximum distance is 1. We return the sum of the weights
+        double distance = DayOfTheWeek.WORKDAY.getWeight() + TimeOfTheDay.AFTERNOON.getWeight() + Weather.OTHER_CONDITIONS.getWeight() + Temperature.BETWEEN_0_AND_5.getWeight() + Company.ALONE.getWeight();
+        return distance / ItemSelectedContext.getNumberOfDifferentContextFactors();
+    }
+
+    /**
+     * This method returns the distance metric, that is of the same type as the given metric.
+     * @param metric the metric, that shall be compared
+     * @return the distance metric for the scenario, which is of the same type as the metric given.
+     */
+    public DistanceMetric getMetric(DistanceMetric metric){
+        Class classToCompare = metric.getClass();
+        if (classToCompare == TimeOfTheDay.class){
+            return mTimeOfTheDay;
+        } else if (classToCompare == Temperature.class){
+            return mTemperature;
+        } else if (classToCompare == Weather.class){
+            return mWeather;
+        } else if (classToCompare == DayOfTheWeek.class){
+            return mDayOfTheWeek;
+        } else if (classToCompare == Company.class){
+            return mCompany;
+        }
+
+        return null;
+    }
+
+    /**
      * Logs the current scenario context to the console
      */
     public void logScenarioContext(){

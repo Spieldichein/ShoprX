@@ -42,7 +42,7 @@ public enum Company implements DistanceMetric{
         sDistanceGraph.setEdgeWeight(edge, 0.4);
 
         edge = sDistanceGraph.addEdge(WITH_FRIEND, WITH_FAMILY);
-        sDistanceGraph.setEdgeWeight(edge, 0.9);
+        sDistanceGraph.setEdgeWeight(edge, 1.0);
     }
 
     Company(int company) {

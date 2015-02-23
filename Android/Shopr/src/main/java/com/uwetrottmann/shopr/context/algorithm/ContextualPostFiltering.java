@@ -29,6 +29,8 @@ import java.util.Map;
  */
 public class ContextualPostFiltering {
 
+    private static final double DISTANCE_OF_NON_SELECTED_ITEMS = 0.6;
+
     private static String[] sSelectionColumns = new String[]{ShoprContract.ContextItemRelation.REF_ITEM_ID, ShoprContract.ContextItemRelation.CONTEXT_TIME, ShoprContract.ContextItemRelation.CONTEXT_DAY, ShoprContract.ContextItemRelation.CONTEXT_TEMPERATURE, ShoprContract.ContextItemRelation.CONTEXT_HUMIDITY, ShoprContract.ContextItemRelation.CONTEXT_COMPANY};
 
     /**
@@ -47,8 +49,6 @@ public class ContextualPostFiltering {
         retrieveContextInformationForItems(currentRecommendation);
 
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
-
-        int differentContextFactors = ItemSelectedContext.getNumberOfDifferentContextFactors();
 
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
@@ -69,7 +69,7 @@ public class ContextualPostFiltering {
                     overallContextsSet += times;
                     if (metric.isMetricWithEuclideanDistance()){
                         // The -1 makes sure that we can have 1 as a distance, as when min is 0 and max 5, the number of items is 6, but should be 5 for the maximum distance.
-                        distance = getAdaptedEuclideanDistance(scenarioContext.getDayOfTheWeek().currentOrdinal(), metric.currentOrdinal(), metric.numberOfItems() - 1.0);
+                        distance = getAdaptedEuclideanDistance(scenarioContext.getMetric(metric).currentOrdinal(), metric.currentOrdinal(), metric.numberOfItems() - 1.0);
                         distance = times * distance;
                     } else {
                         distance = times * metric.distanceToContext(scenarioContext);
@@ -83,18 +83,18 @@ public class ContextualPostFiltering {
                 // Set the distance to the current context
                 // Items that were not selected in any context are the very far away and will first of all be attached to the end, afterwards they will get the median.
                 if (overallItemDistance == 0 && overallContextsSet == 0){
-                    //TODO determine how to set the distance for products that were never set
-                    //TODO what would be a good average scenario?
-                    // 0.763 is the maximum distance a user can reach;
-                    overallItemDistance = 0.5; // Never selected, therefore this item is not that likely to be selected at any time
+                    // Never selected, therefore this item is not that likely to be selected at any time
+                    overallItemDistance = ScenarioContext.calculateMaximumPossibleDistance();
+                    overallItemDistance = overallItemDistance * DISTANCE_OF_NON_SELECTED_ITEMS; // Set the distance for items that were not selected in any context
                 } else {
                     overallItemDistance = overallItemDistance / overallContextsSet;
                 }
-                item.setDistanceToContext(overallItemDistance);
+                item.setDistanceToContext(itemContext.normalizeDistance(overallItemDistance));
 
                 //The variable times selected states how often this item was (overall) selected. This is necessary,
                 // because we might want to improve the scores for products that are very frequently selected.
-                item.setTimesSelected(overallContextsSet / differentContextFactors);
+
+                item.setTimesSelected(overallContextsSet / ItemSelectedContext.getNumberOfDifferentContextFactors());
 
             } // End for each item
 
@@ -103,16 +103,13 @@ public class ContextualPostFiltering {
             //The maximum distance for a product is 1 and the minimum 0 (closest).
             //We want the closest items to be at the top of the list (screen)
             Collections.sort(currentRecommendation, new DistanceComparator());
-
-            for (Item i : currentRecommendation){
-                Log.d("Sorted", "" + i.getDistanceToContext());
-            }
-
         } //End check for scenario
 
+        int i = 1;
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
                 updatedRecommendation.add(item);
+                Log.d("Distance " + i++, "" + item.getDistanceToContext());
             } else {
                 break;
             }

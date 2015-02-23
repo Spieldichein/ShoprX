@@ -35,6 +35,15 @@ public class ItemSelectedContext {
     }
 
     /**
+     * This method normalizes the
+     * distance between 0 and 1.
+     * @return the normalized distance between 0 and 1
+     */
+    public double normalizeDistance(double currentDistance){
+        return currentDistance / ScenarioContext.calculateMaximumPossibleDistance() * 1.0;
+    }
+
+    /**
      * Returns all the different distance metrics that we do have here.
      * @return a map with all the distance metrics possible
      */

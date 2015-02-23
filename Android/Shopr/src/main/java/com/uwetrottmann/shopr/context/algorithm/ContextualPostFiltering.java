@@ -29,7 +29,15 @@ import java.util.Map;
  */
 public class ContextualPostFiltering {
 
+    /*
+     * This variable can be between 0 and 1.
+     * It states the distance of items, that were not selected in any context, to the currently
+     * active context. Meaning that if you set 0.5 here, all items that were not selected yet, are
+     * going to get a distance of 0.5 Therefore you can influence the exploration/exploitation parameter.
+     */
     private static final double DISTANCE_OF_NON_SELECTED_ITEMS = 0.6;
+    private static final double THRESHOLD_FREQUENTLY_USED_ITEMS = 0.3; // Items that are selected in more than this numbers times of cases
+    private static final double IMPROVEMENT_FREQUENTLY_USED_ITEMS = 0.2; // will get a bonus in distance of this
 
     private static String[] sSelectionColumns = new String[]{ShoprContract.ContextItemRelation.REF_ITEM_ID, ShoprContract.ContextItemRelation.CONTEXT_TIME, ShoprContract.ContextItemRelation.CONTEXT_DAY, ShoprContract.ContextItemRelation.CONTEXT_TEMPERATURE, ShoprContract.ContextItemRelation.CONTEXT_HUMIDITY, ShoprContract.ContextItemRelation.CONTEXT_COMPANY};
 
@@ -53,6 +61,8 @@ public class ContextualPostFiltering {
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
 
+            int contexts = 0;
+
             //For each item: Calculate the distances
             for (Item item : currentRecommendation) {
 
@@ -64,41 +74,29 @@ public class ContextualPostFiltering {
                 double overallItemDistance = 0; // The overall distance after summation of all factors without dividing
                 for (DistanceMetric metric : distanceMetrics.keySet()) { //For each metric for the item
                     int times = distanceMetrics.get(metric);
-
-                    double distance;
                     overallContextsSet += times;
-                    if (metric.isMetricWithEuclideanDistance()){
-                        // The -1 makes sure that we can have 1 as a distance, as when min is 0 and max 5, the number of items is 6, but should be 5 for the maximum distance.
-                        distance = getAdaptedEuclideanDistance(scenarioContext.getMetric(metric).currentOrdinal(), metric.currentOrdinal(), metric.numberOfItems() - 1.0);
-                        distance = times * distance;
-                    } else {
-                        distance = times * metric.distanceToContext(scenarioContext);
-                    }
 
                     //Multiply the distance with its weight, as they should not have their full weight
-                    overallItemDistance = overallItemDistance + distance * metric.getWeight();
+                    overallItemDistance = overallItemDistance + getDistance(times, metric, scenarioContext) * metric.getWeight();
 
                 } // End for each metric within the contexts of a item
 
                 // Set the distance to the current context
                 // Items that were not selected in any context are the very far away and will first of all be attached to the end, afterwards they will get the median.
-                if (overallItemDistance == 0 && overallContextsSet == 0){
-                    // Never selected, therefore this item is not that likely to be selected at any time
-                    overallItemDistance = ScenarioContext.calculateMaximumPossibleDistance();
-                    overallItemDistance = overallItemDistance * DISTANCE_OF_NON_SELECTED_ITEMS; // Set the distance for items that were not selected in any context
-                } else {
+                if (overallItemDistance != 0 || overallContextsSet != 0){
                     overallItemDistance = overallItemDistance / overallContextsSet;
                 }
                 item.setDistanceToContext(itemContext.normalizeDistance(overallItemDistance));
 
                 //The variable times selected states how often this item was (overall) selected. This is necessary,
                 // because we might want to improve the scores for products that are very frequently selected.
-
                 item.setTimesSelected(overallContextsSet / ItemSelectedContext.getNumberOfDifferentContextFactors());
+
+                contexts = contexts + item.getTimesSelected();
 
             } // End for each item
 
-            //TODO make items better if they were selected in more contexts?
+            adjustDistances(contexts, currentRecommendation);
 
             //The maximum distance for a product is 1 and the minimum 0 (closest).
             //We want the closest items to be at the top of the list (screen)
@@ -109,13 +107,56 @@ public class ContextualPostFiltering {
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
                 updatedRecommendation.add(item);
-                Log.d("Distance " + i++, "" + item.getDistanceToContext());
+                Log.d("Distance " + i++, "" + item.getDistanceToContext() + " " + item);
             } else {
                 break;
             }
         }
 
         return updatedRecommendation;
+    }
+
+    /**
+     * This method returns the distance of this scenario context compared to the context in which the
+     * item has been selected.
+     * @param timesSelected the times in which the item has been selected in this context
+     * @param metric the distance metric to check
+     * @param scenarioContext the current scenario context
+     * @return the distance of the metric to the scenario multiplied by the times it was selected
+     */
+    private static double getDistance(int timesSelected, DistanceMetric metric, ScenarioContext scenarioContext){
+        double distance;
+        if (metric.isMetricWithEuclideanDistance()){
+            // The -1 makes sure that we can have 1 as a distance, as when min is 0 and max 5, the number of items is 6, but should be 5 for the maximum distance.
+            distance = getAdaptedEuclideanDistance(scenarioContext.getMetric(metric).currentOrdinal(), metric.currentOrdinal(), metric.numberOfItems() - 1.0);
+            distance = timesSelected * distance;
+        } else {
+            distance = timesSelected * metric.distanceToContext(scenarioContext);
+        }
+
+        return distance;
+    }
+
+    /**
+     * This method adjusts the distances for over-performing articles as well as for articles
+     * that do not sell at all.
+     * @param contexts the number of times an item was (successfully) recommended
+     * @param currentRecommendation the list of current recommendations.
+     */
+    private static void adjustDistances(int contexts, List<Item> currentRecommendation){
+        if (contexts > 0) {
+            for (Item item : currentRecommendation) {
+                //Improve items that are very frequently selected
+                if ( (item.getTimesSelected() / contexts) > THRESHOLD_FREQUENTLY_USED_ITEMS) {
+                    item.setDistanceToContext(item.getDistanceToContext() * (1 - IMPROVEMENT_FREQUENTLY_USED_ITEMS));
+                }
+
+                //Items that were never selected.
+                if (item.getTimesSelected() == 0){
+                    item.setDistanceToContext(DISTANCE_OF_NON_SELECTED_ITEMS); // Set the distance for items that were not selected in any context
+                }
+            }
+        }
     }
 
     /**

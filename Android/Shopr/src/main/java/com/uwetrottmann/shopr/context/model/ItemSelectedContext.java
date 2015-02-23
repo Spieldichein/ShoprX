@@ -20,25 +20,6 @@ public class ItemSelectedContext {
      */
     public ItemSelectedContext(){
         mDistanceMetrics = new HashMap<DistanceMetric, Integer>();
-        for (TimeOfTheDay t : TimeOfTheDay.values()){
-            mDistanceMetrics.put(t, 0);
-        }
-
-        for (DayOfTheWeek d : DayOfTheWeek.values()){
-            mDistanceMetrics.put(d, 0);
-        }
-
-        for (Temperature t : Temperature.values()){
-            mDistanceMetrics.put(t, 0);
-        }
-
-        for (Weather w : Weather.values()){
-            mDistanceMetrics.put(w, 0);
-        }
-
-        for (Company c : Company.values()){
-            mDistanceMetrics.put(c, 0);
-        }
     }
 
     /**
@@ -46,7 +27,11 @@ public class ItemSelectedContext {
      * @param d the TimeOfTheDay to increase.
      */
     public void increaseDistanceMetric(DistanceMetric d){
-        mDistanceMetrics.put(d, mDistanceMetrics.get(d) + 1);
+        Integer times = mDistanceMetrics.get(d);
+        if (times == null){
+            times = 0;
+        }
+        mDistanceMetrics.put(d, times + 1);
     }
 
     /**

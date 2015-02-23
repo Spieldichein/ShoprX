@@ -49,10 +49,8 @@ public class ContextualPostFiltering {
 
         int differentContextFactors = ItemSelectedContext.getNumberOfDifferentContextFactors();
         //TODO overall contexts set divided by differentContextFactors provides the number of situations in which this item was selected
-        //TODO Sum up the individual values for the distance
         //TODO Set a maximum reachable value for the distance
         //TODO Select the minimums out of the calculated items
-        //TODO Select the median if product was not set in any context
         //TODO Scale the individual item and its selected context with the overall number of all items (all contexts for all items)
         //TODO Optionally scale with the number of items by multiplying it.
 
@@ -66,14 +64,10 @@ public class ContextualPostFiltering {
                 ItemSelectedContext itemContext = item.getItemContext();
                 Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem(); //Get the contexts for the item
 
-                int overallContextsSet = 0;
+                int overallContextsSet = 0; // The number of context factors which are set for this item
+                double overallItemDistance = 0; // The overall distance after summation of all factors without dividing
                 for (DistanceMetric metric : distanceMetrics.keySet()) { //For each metric for the item
                     int times = distanceMetrics.get(metric);
-
-                    //Do not calculate anything, if there is nothing!
-                    if (times == 0){
-                        continue;
-                    }
 
                     double distance;
                     overallContextsSet += times;
@@ -86,10 +80,17 @@ public class ContextualPostFiltering {
                     }
 
                     //Multiply the distance with its weight, as they should not have their full weight
-                    distance = distance * metric.getWeight();
+                    overallItemDistance = overallItemDistance + distance * metric.getWeight();
 
-                    Log.d("Distance for " + item + " for " + metric, "" + distance);
+                    Log.d("" + metric, "" + distance);
                 } // End for each metric within the contexts of a item
+
+                Log.d("" + item, "Overall Distance: " + overallItemDistance );
+                Log.d("Per Factor: ", ""+ (overallItemDistance / overallContextsSet) );
+
+                if (overallContextsSet == 0){
+                    //TODO Select the median if product was not set in any context
+                }
 
             } // End for each item
 

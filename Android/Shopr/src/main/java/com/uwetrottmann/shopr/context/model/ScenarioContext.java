@@ -279,15 +279,15 @@ public class ScenarioContext implements Cloneable {
      * Logs the current scenario context to the console
      */
     public void logScenarioContext(){
-        Log.d(TAG, "Time of the day: " + mTimeOfTheDay);
-        Log.d(TAG, "Day of the week: " + mDayOfTheWeek);
-        Log.d(TAG, "Distance to shop: " + mDistanceToShop);
-        Log.d(TAG, "Shop Opening Hours: " + mOpeningHours);
-        Log.d(TAG, "Only items in stock: " + mOnlyItemsInStock);
-        Log.d(TAG, "Crowded Shops allowed: " + mCrowdedShopsAllowed);
-        Log.d(TAG, "Temperature: " + mTemperature);
-        Log.d(TAG, "Weather: " + mWeather);
-        Log.d(TAG, "Company: " + mCompany);
+        Log.v(TAG, "Time of the day: " + mTimeOfTheDay);
+        Log.v(TAG, "Day of the week: " + mDayOfTheWeek);
+        Log.v(TAG, "Distance to shop: " + mDistanceToShop);
+        Log.v(TAG, "Shop Opening Hours: " + mOpeningHours);
+        Log.v(TAG, "Only items in stock: " + mOnlyItemsInStock);
+        Log.v(TAG, "Crowded Shops allowed: " + mCrowdedShopsAllowed);
+        Log.v(TAG, "Temperature: " + mTemperature);
+        Log.v(TAG, "Weather: " + mWeather);
+        Log.v(TAG, "Company: " + mCompany);
     }
 
     /**

@@ -34,6 +34,10 @@ public class Item {
 
     private ItemSelectedContext mItemContext;
 
+    private double mDistanceToContext;//Stores the calculated distance between the context and the item
+
+    private int mTimesSelected; // How often was this item part of a context?
+
     public int id() {
         return id;
     }
@@ -156,6 +160,38 @@ public class Item {
      */
     public void setItemContext(ItemSelectedContext itemContext) {
         this.mItemContext = itemContext;
+    }
+
+    /**
+     * Get the distance to the active scenario context.
+     * @return the distance
+     */
+    public double getDistanceToContext() {
+        return mDistanceToContext;
+    }
+
+    /**
+     * Sets the calculated distance to the currently active scenario.
+     * @param mDistanceToContext the calculated distance
+     */
+    public void setDistanceToContext(double mDistanceToContext) {
+        this.mDistanceToContext = mDistanceToContext;
+    }
+
+    /**
+     * Get how often this item was selected in ANY context
+     * @return times Selected.
+     */
+    public int getTimesSelected() {
+        return mTimesSelected;
+    }
+
+    /**
+     * Set how many times this item was selected in any context.
+     * @param mTimesSelected how many times was the item selected.
+     */
+    public void setTimesSelected(int mTimesSelected) {
+        this.mTimesSelected = mTimesSelected;
     }
 
     @Override

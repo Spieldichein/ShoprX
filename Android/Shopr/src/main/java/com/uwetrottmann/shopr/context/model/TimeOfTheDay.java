@@ -96,7 +96,7 @@ public enum TimeOfTheDay implements DistanceMetric{
 
     @Override
     public boolean isMetricWithEuclideanDistance() {
-        return true;
+        return false; // In fact it is, but we have a cycle here
     }
 
     @Override
@@ -106,7 +106,18 @@ public enum TimeOfTheDay implements DistanceMetric{
 
     @Override
     public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
-        throw new UnsupportedOperationException("Is Euclidean Distance");
+        TimeOfTheDay time = scenarioContext.getTimeOfTheDay();
+        int distance = time.currentOrdinal() - this.currentOrdinal();
+
+        //This is the special case!
+        if (this.equals(TimeOfTheDay.NIGHT) || time.equals(TimeOfTheDay.NIGHT)){
+            if (this.equals(TimeOfTheDay.AFTERNOON) || time.equals(TimeOfTheDay.AFTERNOON)){
+                distance = 1;
+            }
+        }
+
+        //We have to take 2 off here, because the maximum range is not number of items -1, but in fact -2 due to the cyclic relationship
+        return Math.sqrt( Math.pow( distance / (numberOfItems() - 2), 2) ); // square it and take the root
     }
 
     @Override

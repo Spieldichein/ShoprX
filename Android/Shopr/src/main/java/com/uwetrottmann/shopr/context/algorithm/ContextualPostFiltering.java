@@ -16,6 +16,7 @@ import com.uwetrottmann.shopr.context.model.Weather;
 import com.uwetrottmann.shopr.provider.ShoprContract;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -48,11 +49,6 @@ public class ContextualPostFiltering {
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
 
         int differentContextFactors = ItemSelectedContext.getNumberOfDifferentContextFactors();
-        //TODO overall contexts set divided by differentContextFactors provides the number of situations in which this item was selected
-        //TODO Set a maximum reachable value for the distance
-        //TODO Select the minimums out of the calculated items
-        //TODO Scale the individual item and its selected context with the overall number of all items (all contexts for all items)
-        //TODO Optionally scale with the number of items by multiplying it.
 
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
@@ -82,17 +78,35 @@ public class ContextualPostFiltering {
                     //Multiply the distance with its weight, as they should not have their full weight
                     overallItemDistance = overallItemDistance + distance * metric.getWeight();
 
-                    Log.d("" + metric, "" + distance);
                 } // End for each metric within the contexts of a item
 
-                Log.d("" + item, "Overall Distance: " + overallItemDistance );
-                Log.d("Per Factor: ", ""+ (overallItemDistance / overallContextsSet) );
-
-                if (overallContextsSet == 0){
-                    //TODO Select the median if product was not set in any context
+                // Set the distance to the current context
+                // Items that were not selected in any context are the very far away and will first of all be attached to the end, afterwards they will get the median.
+                if (overallItemDistance == 0 && overallContextsSet == 0){
+                    //TODO determine how to set the distance for products that were never set
+                    //TODO what would be a good average scenario?
+                    // 0.763 is the maximum distance a user can reach;
+                    overallItemDistance = 0.5; // Never selected, therefore this item is not that likely to be selected at any time
+                } else {
+                    overallItemDistance = overallItemDistance / overallContextsSet;
                 }
+                item.setDistanceToContext(overallItemDistance);
+
+                //The variable times selected states how often this item was (overall) selected. This is necessary,
+                // because we might want to improve the scores for products that are very frequently selected.
+                item.setTimesSelected(overallContextsSet / differentContextFactors);
 
             } // End for each item
+
+            //TODO make items better if they were selected in more contexts?
+
+            //The maximum distance for a product is 1 and the minimum 0 (closest).
+            //We want the closest items to be at the top of the list (screen)
+            Collections.sort(currentRecommendation, new DistanceComparator());
+
+            for (Item i : currentRecommendation){
+                Log.d("Sorted", "" + i.getDistanceToContext());
+            }
 
         } //End check for scenario
 

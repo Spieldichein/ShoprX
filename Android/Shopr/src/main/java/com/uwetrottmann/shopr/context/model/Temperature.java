@@ -21,6 +21,8 @@ public enum Temperature implements DistanceMetric{
     BETWEEN_25_AND_30(R.string.between25And30Degrees),
     ABOVE_30(R.string.above30Degrees);
 
+    private static final double WEIGHT = 0.89;
+
     private int mDegrees;
 
     private static Map<String, Temperature> sAvailableTemperatures = new HashMap<String, Temperature>();
@@ -64,6 +66,11 @@ public enum Temperature implements DistanceMetric{
     @Override
     public boolean isMetricWithEuclideanDistance() {
         return true;
+    }
+
+    @Override
+    public double getWeight() {
+        return WEIGHT;
     }
 
     @Override

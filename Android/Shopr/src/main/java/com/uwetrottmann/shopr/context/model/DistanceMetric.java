@@ -16,6 +16,12 @@ public interface DistanceMetric {
     public boolean isMetricWithEuclideanDistance();
 
     /**
+     * This method returns the weight which should be assigned to the given context metric.
+     * @return a double stating the weight of the given distance metric, between 0 and 1.
+     */
+    public double getWeight();
+
+    /**
      * This method computes the distance to the scenario context and returns this distance as a double value.
      * @param scenarioContext the current context as set by the user
      * @return a double containing the distance to the currently active context

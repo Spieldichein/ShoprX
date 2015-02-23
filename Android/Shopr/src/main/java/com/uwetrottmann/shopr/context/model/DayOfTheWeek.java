@@ -14,6 +14,8 @@ public enum DayOfTheWeek implements DistanceMetric {
     WORKDAY(R.string.workday),
     HOLIDAY(R.string.holiday);
 
+    private static final double WEIGHT = 1.0;
+
     private int mDay;
 
     DayOfTheWeek(int day) {
@@ -53,6 +55,11 @@ public enum DayOfTheWeek implements DistanceMetric {
     }
 
     @Override
+    public double getWeight() {
+        return WEIGHT;
+    }
+
+    @Override
     public double distanceToContext(ScenarioContext scenarioContext) throws UnsupportedOperationException {
         throw new UnsupportedOperationException("Is Euclidean Metric");
     }
@@ -66,4 +73,6 @@ public enum DayOfTheWeek implements DistanceMetric {
     public int currentOrdinal() {
         return ordinal();
     }
+
+
 }

@@ -13,6 +13,8 @@ public class ItemSelectedContext {
 
     private Map<DistanceMetric, Integer> mDistanceMetrics;
 
+    private static final int DIFFERENT_CONTEXT_FACTORS = 5;
+
     /**
      * Initializes the local data stores.
      */
@@ -53,6 +55,15 @@ public class ItemSelectedContext {
      */
     public Map<DistanceMetric, Integer> getContextsForItem(){
         return mDistanceMetrics;
+    }
+
+    /**
+     * Returns the number of different context factors that are used in this calculation. This is necessary
+     * in order to calculate averages from the different distances.
+     * @return number of different context factors (for postfiltering) in use.
+     */
+    public static int getNumberOfDifferentContextFactors(){
+        return DIFFERENT_CONTEXT_FACTORS;
     }
 
     @Override

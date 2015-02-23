@@ -47,24 +47,53 @@ public class ContextualPostFiltering {
 
         ScenarioContext scenarioContext = ScenarioContext.getInstance();
 
-        //Only if we have a scenario context, we are allowed to check whether the scenario matches the item contexts.
+        int differentContextFactors = ItemSelectedContext.getNumberOfDifferentContextFactors();
+        //TODO overall contexts set divided by differentContextFactors provides the number of situations in which this item was selected
+        //TODO Sum up the individual values for the distance
+        //TODO Set a maximum reachable value for the distance
+        //TODO Select the minimums out of the calculated items
+        //TODO Select the median if product was not set in any context
+        //TODO Scale the individual item and its selected context with the overall number of all items (all contexts for all items)
+        //TODO Optionally scale with the number of items by multiplying it.
+
+        //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
-            //Calculate the distances
+
+            //For each item: Calculate the distances
             for (Item item : currentRecommendation) {
+
+                //Get the context for the item
                 ItemSelectedContext itemContext = item.getItemContext();
-                Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem();
-                for (DistanceMetric metric : distanceMetrics.keySet()) {
-                    double distance;
+                Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem(); //Get the contexts for the item
+
+                int overallContextsSet = 0;
+                for (DistanceMetric metric : distanceMetrics.keySet()) { //For each metric for the item
                     int times = distanceMetrics.get(metric);
+
+                    //Do not calculate anything, if there is nothing!
+                    if (times == 0){
+                        continue;
+                    }
+
+                    double distance;
+                    overallContextsSet += times;
                     if (metric.isMetricWithEuclideanDistance()){
-                        distance = times * getAdaptedEuclideanDistance(scenarioContext.getDayOfTheWeek().ordinal(), metric.currentOrdinal(), metric.numberOfItems());
+                        // The -1 makes sure that we can have 1 as a distance, as when min is 0 and max 5, the number of items is 6, but should be 5 for the maximum distance.
+                        distance = getAdaptedEuclideanDistance(scenarioContext.getDayOfTheWeek().currentOrdinal(), metric.currentOrdinal(), metric.numberOfItems() - 1.0);
+                        distance = times * distance;
                     } else {
                         distance = times * metric.distanceToContext(scenarioContext);
                     }
-                    Log.d("Distance", "" + distance);
-                }
-            }
-        }
+
+                    //Multiply the distance with its weight, as they should not have their full weight
+                    distance = distance * metric.getWeight();
+
+                    Log.d("Distance for " + item + " for " + metric, "" + distance);
+                } // End for each metric within the contexts of a item
+
+            } // End for each item
+
+        } //End check for scenario
 
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
@@ -112,9 +141,9 @@ public class ContextualPostFiltering {
 
     /**
      * This method returns the adapted euclidean distance as described in the HEOM
-     * @param p the value for the first coordinate
-     * @param q the value for the second coordinate
-     * @param range the range in which the values are distributed
+     * @param p the value for the coordinate of the first object
+     * @param q the value for the coordinate of the second object
+     * @param range the difference between the highest and the lowest number in the range
      * @return a double with the distance
      */
     private static double getAdaptedEuclideanDistance(double p, double q, double range){

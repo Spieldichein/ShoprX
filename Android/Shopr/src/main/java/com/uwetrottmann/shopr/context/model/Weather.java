@@ -23,6 +23,8 @@ public enum Weather implements DistanceMetric{
     SNOWING(R.string.SnowyWeather),
     OTHER_CONDITIONS(R.string.OtherWeather);
 
+    private static final double WEIGHT = 0.77;
+
     private int mWeatherIndicator;
 
     private static Map<String, Weather> sAvailableWeatherStates = new HashMap<String, Weather>();
@@ -123,6 +125,11 @@ public enum Weather implements DistanceMetric{
     @Override
     public boolean isMetricWithEuclideanDistance() {
         return false;
+    }
+
+    @Override
+    public double getWeight() {
+        return WEIGHT;
     }
 
     @Override

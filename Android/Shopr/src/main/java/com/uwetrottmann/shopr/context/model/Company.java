@@ -19,6 +19,8 @@ public enum Company implements DistanceMetric{
     WITH_FAMILY(R.string.withFamily),
     WITH_FRIEND(R.string.withAFriend);
 
+    private static final double WEIGHT = 0.69;
+
     private int mCompanyType;
 
     private static Map<String, Company> sAvailableCompany = new HashMap<String, Company>();
@@ -82,6 +84,11 @@ public enum Company implements DistanceMetric{
     @Override
     public boolean isMetricWithEuclideanDistance() {
         return false;
+    }
+
+    @Override
+    public double getWeight() {
+        return WEIGHT;
     }
 
     @Override

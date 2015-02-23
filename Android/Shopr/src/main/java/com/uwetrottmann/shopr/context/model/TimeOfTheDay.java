@@ -17,6 +17,8 @@ public enum TimeOfTheDay implements DistanceMetric{
     AFTERNOON(R.string.afternoon),
     EVENING(R.string.evening);
 
+    private static final double WEIGHT = 0.71;
+
     private int mTime;
 
     private static int END_OF_NIGHT = 6;
@@ -95,6 +97,11 @@ public enum TimeOfTheDay implements DistanceMetric{
     @Override
     public boolean isMetricWithEuclideanDistance() {
         return true;
+    }
+
+    @Override
+    public double getWeight() {
+        return WEIGHT;
     }
 
     @Override

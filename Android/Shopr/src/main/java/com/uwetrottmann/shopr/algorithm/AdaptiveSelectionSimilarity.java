@@ -6,7 +6,7 @@ import com.uwetrottmann.shopr.algorithm.model.Attributes.Attribute;
 
 import java.util.List;
 
-public class Similarity {
+public class AdaptiveSelectionSimilarity {
 
     public static double similarity(Attributes first, Attributes second) {
         List<Attribute> attrsFirst = first.getAllAttributes();
@@ -49,7 +49,9 @@ public class Similarity {
 
         double[] valueWeightsFirst = first.getValueWeights();
         double[] valueWeightsSecond = second.getValueWeights();
+
         if (valueWeightsFirst==null||valueWeightsSecond==null) return 0;
+
         if (valueWeightsFirst.length != valueWeightsSecond.length) {
             throw new IllegalArgumentException(
                     "Attribute value weight vectors must be of same size.");

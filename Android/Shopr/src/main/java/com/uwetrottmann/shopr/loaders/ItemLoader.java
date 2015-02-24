@@ -19,7 +19,6 @@ import com.uwetrottmann.shopr.provider.ShoprContract.Items;
 import com.uwetrottmann.shopr.provider.ShoprContract.Shops;
 import com.uwetrottmann.shopr.settings.AppSettings;
 import com.uwetrottmann.shopr.stereotype.user.User;
-import com.uwetrottmann.shopr.utils.ShoprLocalizer;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -51,8 +50,6 @@ public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
         // get initial case base
         if (mIsInit) {
-            manager.setLocalizationModule(new ShoprLocalizer(getContext()));
-
             List<Item> caseBase = getInitialCaseBase();
             manager.setInitialCaseBase(caseBase);
             Log.d(TAG, "Initialized case base with " + caseBase.size() + " items.");

@@ -1,8 +1,6 @@
 
 package com.uwetrottmann.shopr.algorithm.model;
 
-import com.uwetrottmann.shopr.algorithm.AdaptiveSelection;
-import com.uwetrottmann.shopr.algorithm.LocalizationModule;
 import com.uwetrottmann.shopr.algorithm.Query;
 
 import java.util.Arrays;
@@ -50,13 +48,7 @@ public abstract class GenericAttribute implements Attributes.Attribute {
      * that have this value are recommended.
      */
     public String getOnlyString(Attributes.AttributeValue value) {
-        LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
-        if (localizer != null) {
-            return String.format(localizer.getOnlyString(),
-                    localizer.getLocalizedValueDescriptor(value.descriptor()));
-        } else {
-            return "only " + value.descriptor();
-        }
+        return "only " + value.descriptor();
     }
 
     /**
@@ -65,12 +57,7 @@ public abstract class GenericAttribute implements Attributes.Attribute {
      * options).
      */
     public String getAvoidString() {
-        LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
-        if (localizer != null) {
-            return localizer.getAvoidString();
-        } else {
-            return "avoid %s";
-        }
+        return "avoid %s";
     }
 
     /**
@@ -78,18 +65,11 @@ public abstract class GenericAttribute implements Attributes.Attribute {
      * e.g. recommended items are likely to have this value.
      */
     public String getPreferablyString(Attributes.AttributeValue value) {
-        LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
-        if (localizer != null) {
-            return String.format(localizer.getPreferablyString(),
-                    localizer.getLocalizedValueDescriptor(value.descriptor()));
-        } else {
-            return "preferably " + value.descriptor();
-        }
+        return "preferably " + value.descriptor();
     }
 
     @Override
     public String getReasonString() {
-        LocalizationModule localizer = AdaptiveSelection.get().getLocalizationModule();
         StringBuilder reason = new StringBuilder();
         Attributes.AttributeValue[] values = getValueSymbols();
 
@@ -104,11 +84,8 @@ public abstract class GenericAttribute implements Attributes.Attribute {
                 if (reason.length() != 0 && i < mValueWeights.length) {
                     reason.append("/");
                 }
-                if (localizer != null) {
-                    reason.append(localizer.getLocalizedValueDescriptor(values[i].descriptor()));
-                } else {
-                    reason.append(values[i].descriptor());
-                }
+
+                reason.append(values[i].descriptor());
             } else if (mValueWeights[i] > mValueWeights[maxIndex]) {
                 maxIndex = i;
             }

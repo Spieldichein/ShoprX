@@ -1,8 +1,6 @@
 
 package com.uwetrottmann.shopr.algorithm;
 
-import android.util.Log;
-
 import com.uwetrottmann.shopr.algorithm.model.Attributes;
 import com.uwetrottmann.shopr.algorithm.model.Item;
 
@@ -28,21 +26,12 @@ public class AdaptiveSelection {
     private Critique mCurrentCritique;
     private int mNumRecommendations;
     private List<Item> mCurrentRecommendations;
-    private LocalizationModule mLocalizer;
 
     private AdaptiveSelection() {
         mCaseBase = new ArrayList<Item>();
         mQuery = new Query();
         mNumRecommendations = NUM_RECOMMENDATIONS_DEFAULT;
         mCurrentRecommendations = new ArrayList<Item>();
-    }
-
-    public void setLocalizationModule(LocalizationModule localizer) {
-        mLocalizer = localizer;
-    }
-
-    public LocalizationModule getLocalizationModule() {
-        return mLocalizer;
     }
 
     /**
@@ -73,8 +62,7 @@ public class AdaptiveSelection {
         // build a new set of recommendations
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
-        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations,
-                    BOUND_DEFAULT, mCurrentCritique);
+        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique);
 
         mCurrentRecommendations = recommendations;
 
@@ -115,14 +103,12 @@ public class AdaptiveSelection {
      * Takes the current query, number of recommended items to return, the last
      * critique. Returns a list of recommended items based on the case-base.
      */
-    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems,
-            int bound, Critique lastCritique) {
+    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique) {
 
         List<Item> recommendations = new ArrayList<Item>();
 
         if ( lastCritique != null && lastCritique.item() != null
                 && lastCritique.feedback().isPositiveFeedback()) {
-            Log.d("Last Critique", "Positive");
             /*
              * Positive progress: user liked one or more features of one of the
              * recommended items.
@@ -135,19 +121,18 @@ public class AdaptiveSelection {
                 recommendations.add(caseBase.get(i));
             }
         } else {
-            Log.d("Last Critique", "negative");
             /*
              * Negative progress: user disliked one or more of the features of
              * one recommended item. Or: first run.
              * REFOCUS: show diverse recommendations
              */
-            recommendations = BoundedGreedySelection
-                    .boundedGreedySelection(query, caseBase, numItems, bound);
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItems, bound);
         }
+
+        //Utils.dumpToConsole(recommendations, query);
 
         // Carry the critiqued so the user may critique it further.
         if (lastCritique != null && lastCritique.item() != null) {
-            Log.d("Last Critique", "Last item");
             // check if it is already in the list
             boolean isAlreadyPresent = false;
             for (Item item : recommendations) {
@@ -162,6 +147,8 @@ public class AdaptiveSelection {
                 recommendations.add(lastCritique.item());
             }
         }
+
+        //ContextualPostFiltering.postFilterItems(recommendations, numItems);
 
         return recommendations;
     }

@@ -4,23 +4,40 @@ package com.uwetrottmann.shopr.algorithm;
 import android.util.Log;
 
 import com.uwetrottmann.shopr.algorithm.model.Item;
+import com.uwetrottmann.shopr.context.algorithm.ContextualPreFiltering;
+import com.uwetrottmann.shopr.context.model.ScenarioContext;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Utils {
 
     /**
      * Returns a subset of the overall case base filtered by hard-limits like
-     * location, availability and opening hours.<br>
-     * Currently only returns sample items.
+     * location, availability and opening hours. <br/>
+     * In the extended version (not for the baseline) it also returns items that were filtered by the stereotype settings of the user.
      */
     public static List<Item> getLimitedCaseBase(List<Item> wholeCaseBase) {
-        List<Item> cases = new ArrayList<Item>();
+        List<Item> cases;
 
-        cases = wholeCaseBase;
+        long start = System.currentTimeMillis();
+        ScenarioContext scenarioContext = ScenarioContext.getACopy();
+        cases = ContextualPreFiltering.filterShops(wholeCaseBase, scenarioContext);
+        //Write the relaxations to the real instance
+        ScenarioContext.getInstance().setRelaxations(scenarioContext.getRelaxations());
+        Log.d("Context pre-filtering", ""+ (System.currentTimeMillis() - start) + " ms");
+
+//        start = System.currentTimeMillis();
+//        try {
+//            User u = User.getUser();
+//            if (u.hasStereotype()) {
+//                StereotypeFiltering stereotypeFiltering = new StereotypeFiltering();
+//                cases = stereotypeFiltering.computeStereotypeProximity(u.getStereotype(), cases);
+//            }
+//        } catch (RuntimeException re){
+//            Log.d("User", "User object not initialized.");
+//        }
+//        Log.d("Stereotype filtering", ""+ (System.currentTimeMillis() - start) + " ms");
 
         return cases;
     }
@@ -31,32 +48,20 @@ public class Utils {
      */
     public static List<Item> sortBySimilarityToQuery(Query query, List<Item> caseBase) {
         // Limit the case base (PRE-FILTERING)
-        Log.d("Case Base size before limiting", ""+caseBase.size());
+        Log.d("CB before limiting", ""+caseBase.size());
         caseBase = getLimitedCaseBase(caseBase);
-        Log.d("Case Base size after limiting", ""+caseBase.size());
+        Log.d("CB after limiting", ""+caseBase.size());
 
+        long start = System.currentTimeMillis();
         // calculate similarity value for each item
         for (Item item : caseBase) {
             //Log.d("Item", item.toString());
-            item.querySimilarity(Similarity.similarity(query.attributes(), item.attributes()));
+            item.querySimilarity(AdaptiveSelectionSimilarity.similarity(query.attributes(), item.attributes()));
         }
+        Log.d("AdaptiveSelection", ""+ (System.currentTimeMillis() - start) + " ms");
 
         // sort highest similarity first
-        Collections.sort(caseBase, new Comparator<Item>() {
-            @Override
-            public int compare(Item o1, Item o2) {
-                // is o2 smaller?
-                if (o1.querySimilarity() > o2.querySimilarity()) {
-                    return -1;
-                }
-                // is o2 bigger?
-                if (o1.querySimilarity() < o2.querySimilarity()) {
-                    return 1;
-                }
-                // they are equal!
-                return 0;
-            }
-        });
+        Collections.sort(caseBase, new AdaptiveSelectionComparator());
 
         return caseBase;
     }
@@ -71,7 +76,8 @@ public class Utils {
             Item item = cases.get(i);
             Log.d("[" + i + "] Item", "" + item.attributes().getAllAttributesString()
                             + " sim " + item.querySimilarity()
-                            + " qual " + item.quality());
+                            + " qual " + item.quality()
+                            + " stereo " + item.getProximityToStereotype());
         }
     }
 

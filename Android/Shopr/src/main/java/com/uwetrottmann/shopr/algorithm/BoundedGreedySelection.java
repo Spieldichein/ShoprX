@@ -1,32 +1,17 @@
 
 package com.uwetrottmann.shopr.algorithm;
 
+import android.util.Log;
+
 import com.uwetrottmann.shopr.algorithm.model.Item;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class BoundedGreedySelection {
 
-    private static final class QualityComparator implements Comparator<Item> {
-        @Override
-        public int compare(Item o1, Item o2) {
-            // is o2 smaller?
-            if (o1.quality() > o2.quality()) {
-                return -1;
-            }
-            // is o2 bigger?
-            if (o1.quality() < o2.quality()) {
-                return 1;
-            }
-            // they are equal!
-            return 0;
-        }
-    }
-
-    public static final double ALPHA = 0.97;
+    public static final double ALPHA = 0.95;
 
     /**
      * Chooses <code>bound*limit</code> items most similar to current query.
@@ -35,10 +20,10 @@ public class BoundedGreedySelection {
      * If there are less items than required, will still return (less)
      * recommendations.
      */
-    public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit,
-            int bound) {
+    public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit, int bound) {
         caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
 
+        Log.d("BoundedGreedy", "Bound: " + bound);
         // Get first b*k items
         int numItems = limit * bound;
         numItems = Math.min(numItems, caseBase.size());
@@ -73,7 +58,7 @@ public class BoundedGreedySelection {
         }
 
         // sort by highest quality first
-        Collections.sort(caseBase, new QualityComparator());
+        Collections.sort(caseBase, new BoundedGreedyComparator());
     }
 
     /**
@@ -88,7 +73,7 @@ public class BoundedGreedySelection {
 
         double similarity = 0;
         for (Item recommendation : recommendations) {
-            similarity += 1 - Similarity.similarity(item.attributes(), recommendation.attributes());
+            similarity += 1 - AdaptiveSelectionSimilarity.similarity(item.attributes(), recommendation.attributes());
         }
         similarity /= recommendations.size();
 

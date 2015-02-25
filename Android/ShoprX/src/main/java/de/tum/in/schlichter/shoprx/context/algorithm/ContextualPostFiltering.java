@@ -1,7 +1,6 @@
 package de.tum.in.schlichter.shoprx.context.algorithm;
 
 import android.database.Cursor;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -103,11 +102,10 @@ public class ContextualPostFiltering {
             Collections.sort(currentRecommendation, new DistanceComparator());
         } //End check for scenario
 
-        int i = 1;
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
                 updatedRecommendation.add(item);
-                Log.d("Distance " + i++, "" + item.getDistanceToContext() + " " + item);
+//                Log.d("Distance " + i++, "" + item.getDistanceToContext() + " " + item);
             } else {
                 break;
             }

@@ -1,8 +1,6 @@
 
 package de.tum.in.schlichter.shoprx.algorithm;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -23,7 +21,6 @@ public class BoundedGreedySelection {
     public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit, int bound) {
         caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
 
-        Log.d("BoundedGreedy", "Bound: " + bound);
         // Get first b*k items
         int numItems = limit * bound;
         numItems = Math.min(numItems, caseBase.size());

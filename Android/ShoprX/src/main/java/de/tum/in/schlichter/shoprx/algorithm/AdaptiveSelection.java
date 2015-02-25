@@ -6,11 +6,13 @@ import java.util.List;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
+import de.tum.in.schlichter.shoprx.context.algorithm.ContextualPostFiltering;
 
 public class AdaptiveSelection {
 
     private static final int NUM_RECOMMENDATIONS_DEFAULT = 8;
     private static final int BOUND_DEFAULT = 10;
+    private static final int NUM_RECOMMENDATIONS_PRESELECTION = 30;
 
     private static AdaptiveSelection _instance;
 
@@ -62,7 +64,7 @@ public class AdaptiveSelection {
         // build a new set of recommendations
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
-        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique);
+        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION);
 
         mCurrentRecommendations = recommendations;
 
@@ -102,8 +104,10 @@ public class AdaptiveSelection {
     /**
      * Takes the current query, number of recommended items to return, the last
      * critique. Returns a list of recommended items based on the case-base.
+     * @param numItemsPreSelection Determines how many items should be part of the initial algorithm to
+     *                            be filtered against the context scenario.
      */
-    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique) {
+    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique, int numItemsPreSelection) {
 
         List<Item> recommendations = new ArrayList<Item>();
 
@@ -117,7 +121,7 @@ public class AdaptiveSelection {
              * decreasing similarity to current query. Return top k items.
              */
             caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
-            for (int i = 0; i < numItems; i++) {
+            for (int i = 0; i < numItemsPreSelection; i++) {
                 recommendations.add(caseBase.get(i));
             }
         } else {
@@ -126,10 +130,14 @@ public class AdaptiveSelection {
              * one recommended item. Or: first run.
              * REFOCUS: show diverse recommendations
              */
-            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItems, bound);
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound);
         }
 
-        //Utils.dumpToConsole(recommendations, query);
+//        Utils.dumpToConsole(recommendations, query);
+
+        recommendations = ContextualPostFiltering.postFilterItems(recommendations, numItems);
+
+        Utils.dumpToConsole(recommendations, query);
 
         // Carry the critiqued so the user may critique it further.
         if (lastCritique != null && lastCritique.item() != null) {
@@ -147,8 +155,6 @@ public class AdaptiveSelection {
                 recommendations.add(lastCritique.item());
             }
         }
-
-        //ContextualPostFiltering.postFilterItems(recommendations, numItems);
 
         return recommendations;
     }

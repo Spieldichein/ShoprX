@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.tum.in.schlichter.shoprx"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Google Maps v2 API -->
+    <permission
+        android:name="de.tum.in.schlichter.shoprx.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="de.tum.in.schlichter.shoprx.permission.MAPS_RECEIVE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="de.tum.in.schlichter.shoprx.ShoprApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBAXT5ws7Shyz498g_x78lE31K6artYwqU" />
+
+        <!-- Content provider -->
+        <provider
+            android:name="de.tum.in.schlichter.shoprx.provider.ShoprProvider"
+            android:authorities="de.tum.in.schlichter.shoprx.provider"
+            android:exported="false" >
+        </provider>
+
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.ui.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.ui.CritiqueActivity"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.importer.ImporterActivity"
+            android:label="@string/title_activity_importer"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.MainActivity" />
+        </activity>
+        <activity android:name="de.tum.in.schlichter.shoprx.ui.SettingsActivity" >
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.eval.TestSetupActivity"
+            android:label="@string/title_activity_test_setup" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.stereotype.ui.StereotypeActivity"
+            android:label="@string/title_activity_stereotype"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.context.ui.ContextActivity"
+            android:label="@string/title_activity_context"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.MainActivity" />
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.eval.ResultsActivity"
+            android:label="@string/title_activity_results" >
+        </activity>
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.ui.ItemDetailsActivity"
+            android:label="@string/title_activity_item_details" >
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

@@ -9,6 +9,8 @@ import java.util.List;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.algorithm.ContextualPreFiltering;
 import de.tum.in.schlichter.shoprx.context.model.ScenarioContext;
+import de.tum.in.schlichter.shoprx.stereotype.algorithm.StereotypeFiltering;
+import de.tum.in.schlichter.shoprx.stereotype.user.User;
 
 public class Utils {
 
@@ -20,6 +22,7 @@ public class Utils {
     public static List<Item> getLimitedCaseBase(List<Item> wholeCaseBase) {
         List<Item> cases;
 
+        //Pre-filter based on the current active scenario context.
         long start = System.currentTimeMillis();
         ScenarioContext scenarioContext = ScenarioContext.getACopy();
         cases = ContextualPreFiltering.filterShops(wholeCaseBase, scenarioContext);
@@ -27,17 +30,18 @@ public class Utils {
         ScenarioContext.getInstance().setRelaxations(scenarioContext.getRelaxations());
         Log.d("Context pre-filtering", ""+ (System.currentTimeMillis() - start) + " ms");
 
-//        start = System.currentTimeMillis();
-//        try {
-//            User u = User.getUser();
-//            if (u.hasStereotype()) {
-//                StereotypeFiltering stereotypeFiltering = new StereotypeFiltering();
-//                cases = stereotypeFiltering.computeStereotypeProximity(u.getStereotype(), cases);
-//            }
-//        } catch (RuntimeException re){
-//            Log.d("User", "User object not initialized.");
-//        }
-//        Log.d("Stereotype filtering", ""+ (System.currentTimeMillis() - start) + " ms");
+        //Do the calculation of stereotype proximity.
+        start = System.currentTimeMillis();
+        try {
+            User u = User.getUser();
+            if (u.hasStereotype()) {
+                StereotypeFiltering stereotypeFiltering = new StereotypeFiltering();
+                cases = stereotypeFiltering.computeStereotypeProximity(u.getStereotype(), cases);
+            }
+        } catch (RuntimeException re){
+            Log.d("User", "User object not initialized.");
+        }
+        Log.d("Stereotype filtering", ""+ (System.currentTimeMillis() - start) + " ms");
 
         return cases;
     }

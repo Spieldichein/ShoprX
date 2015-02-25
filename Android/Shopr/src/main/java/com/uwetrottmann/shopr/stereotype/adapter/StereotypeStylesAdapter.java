@@ -38,8 +38,7 @@ public class StereotypeStylesAdapter extends BaseAdapter {
     private Context mContext;
     List<AbstractStereotype> topThreeStereotypes;
 
-    public StereotypeStylesAdapter(Context c,
-                                   List<AbstractStereotype> topThreeStereotypes) {
+    public StereotypeStylesAdapter(Context c, List<AbstractStereotype> topThreeStereotypes) {
         mContext = c;
         this.topThreeStereotypes = topThreeStereotypes;
 
@@ -50,27 +49,22 @@ public class StereotypeStylesAdapter extends BaseAdapter {
         stereotypeImagesMale.put(Stereotype.EMO, R.drawable.emo_male);
         stereotypeImagesMale.put(Stereotype.GOTHIC, R.drawable.gothic_male);
         stereotypeImagesMale.put(Stereotype.INDIE, R.drawable.indie_male);
-        stereotypeImagesMale.put(Stereotype.MAINSTREAM,
-                R.drawable.mainstream_male);
+        stereotypeImagesMale.put(Stereotype.MAINSTREAM, R.drawable.mainstream_male);
         stereotypeImagesMale.put(Stereotype.PREPPY, R.drawable.preppy_male);
         stereotypeImagesMale.put(Stereotype.SKATER, R.drawable.skater_male);
-        stereotypeImagesMale.put(Stereotype.URBAN, R.drawable.urban_male);
 
         // initialize female stereotype images
 
         stereotypeImagesFemale = new HashMap<Stereotype, Integer>();
-        stereotypeImagesFemale.put(Stereotype.ATHLETE,
-                R.drawable.athlete_female);
+        stereotypeImagesFemale.put(Stereotype.ATHLETE, R.drawable.athlete_female);
         stereotypeImagesFemale.put(Stereotype.CLASSY, R.drawable.classy_female);
         stereotypeImagesFemale.put(Stereotype.EMO, R.drawable.emo_female);
         stereotypeImagesFemale.put(Stereotype.GIRLY, R.drawable.girly_female);
         stereotypeImagesFemale.put(Stereotype.GOTHIC, R.drawable.gothic_female);
         stereotypeImagesFemale.put(Stereotype.INDIE, R.drawable.indie_female);
-        stereotypeImagesFemale.put(Stereotype.MAINSTREAM,
-                R.drawable.mainstream_female);
+        stereotypeImagesFemale.put(Stereotype.MAINSTREAM, R.drawable.mainstream_female);
         stereotypeImagesFemale.put(Stereotype.PREPPY, R.drawable.preppy_female);
         stereotypeImagesFemale.put(Stereotype.SKATER, R.drawable.skater_female);
-        stereotypeImagesFemale.put(Stereotype.URBAN, R.drawable.urban_female);
     }
 
     @Override

@@ -56,13 +56,11 @@ public class Utils {
         caseBase = getLimitedCaseBase(caseBase);
         Log.d("CB after limiting", ""+caseBase.size());
 
-        long start = System.currentTimeMillis();
         // calculate similarity value for each item
         for (Item item : caseBase) {
             //Log.d("Item", item.toString());
             item.querySimilarity(AdaptiveSelectionSimilarity.similarity(query.attributes(), item.attributes()));
         }
-        Log.d("AdaptiveSelection", ""+ (System.currentTimeMillis() - start) + " ms");
 
         // sort highest similarity first
         Collections.sort(caseBase, new AdaptiveSelectionComparator());

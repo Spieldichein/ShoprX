@@ -1,6 +1,8 @@
 
 package de.tum.in.schlichter.shoprx.algorithm;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,10 +122,13 @@ public class AdaptiveSelection {
              * REFINE: Show similar recommendations by sorting the case-base in
              * decreasing similarity to current query. Return top k items.
              */
+            long start = System.currentTimeMillis();
             caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
             for (int i = 0; i < numItemsPreSelection; i++) {
                 recommendations.add(caseBase.get(i));
             }
+            Log.d("AdaptiveSelection", "" + (System.currentTimeMillis() - start) + " ms");
+
         } else {
             /*
              * Negative progress: user disliked one or more of the features of
@@ -137,7 +142,7 @@ public class AdaptiveSelection {
 
         recommendations = ContextualPostFiltering.postFilterItems(recommendations, numItems);
 
-        Utils.dumpToConsole(recommendations, query);
+//        Utils.dumpToConsole(recommendations, query);
 
         // Carry the critiqued so the user may critique it further.
         if (lastCritique != null && lastCritique.item() != null) {

@@ -30,7 +30,7 @@ import de.tum.in.schlichter.shoprx.stereotype.user.User;
 public class ItemLoader extends GenericSimpleLoader<List<Item>> {
 
     private static final String TAG = "ItemLoader";
-    private static final int LIMIT_ITEMS = 300;
+    public static final int LIMIT_ITEMS = 300;
     private LatLng mLocation;
     private boolean mIsInit;
 

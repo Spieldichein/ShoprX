@@ -1,6 +1,8 @@
 
 package de.tum.in.schlichter.shoprx.algorithm;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,6 +12,7 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 public class BoundedGreedySelection {
 
     public static final double ALPHA = 0.95;
+    public static final double BETA = 1 - ALPHA;
 
     /**
      * Chooses <code>bound*limit</code> items most similar to current query.
@@ -33,13 +36,25 @@ public class BoundedGreedySelection {
         // add recommendations
         int numRecs = Math.min(limit, limitedCaseBase.size());
 
+        //Delete previously stored data
+        for (Item item : limitedCaseBase){
+            item.setTemporaryQuality(0);
+        }
+
+        long start = System.currentTimeMillis();
+
         List<Item> recommendations = new ArrayList<Item>();
+
+        Item lastAdded = null;
         for (int i = 0; i < numRecs; i++) {
-            sortByQuality(limitedCaseBase, recommendations);
+            sortByQuality(limitedCaseBase, lastAdded);
 
             // get top item, remove it from remaining cases
-            recommendations.add(limitedCaseBase.remove(0));
+            lastAdded = limitedCaseBase.remove(0);
+            recommendations.add(lastAdded);
         }
+
+        Log.d("BoundedGreedySelect", "" + (System.currentTimeMillis() - start) + " ms");
 
         return recommendations;
     }
@@ -48,10 +63,10 @@ public class BoundedGreedySelection {
      * Calculates the quality for each item, sorts the case base with highest
      * quality first.
      */
-    private static void sortByQuality(List<Item> caseBase, List<Item> recommendations) {
+    private static void sortByQuality(List<Item> caseBase, Item lastAdded) {
         // Calculate current quality
         for (Item item : caseBase) {
-            item.quality(ALPHA * item.querySimilarity() + (1 - ALPHA) * relativeDiversity(item, recommendations));
+            item.quality(ALPHA * item.querySimilarity() + BETA * relativeDiversity(item, lastAdded));
         }
 
         // sort by highest quality first
@@ -62,19 +77,15 @@ public class BoundedGreedySelection {
      * Calculates the relative diversity of an item to the current list of
      * recommendations.
      */
-    private static double relativeDiversity(Item item, List<Item> recommendations) {
-        if (recommendations.size() == 0) {
+    private static double relativeDiversity(Item item, Item lastAdded) {
+        if (lastAdded == null) { //Means that we do not have an item to check against
             // default to 1 for R={}
             return 1;
         }
 
-        double similarity = 0;
-        for (Item recommendation : recommendations) {
-            similarity += 1 - AdaptiveSelectionSimilarity.similarity(item.attributes(), recommendation.attributes());
-        }
-        similarity /= recommendations.size();
+        item.setTemporaryQuality(item.getTemporaryQuality() + (1 - AdaptiveSelectionSimilarity.similarity(item.attributes(), lastAdded.attributes())));
 
-        return similarity;
+        return item.getTemporaryQuality();
     }
 
 }

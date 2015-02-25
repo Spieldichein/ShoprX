@@ -13,6 +13,7 @@ public class AdaptiveSelectionSimilarity {
         int count = 0;
         double similarity = 0;
 
+
         // sum up similarity values for all attributes
         for (Attributes.Attribute attrFirst : attrsFirst) {
             /*
@@ -34,9 +35,7 @@ public class AdaptiveSelectionSimilarity {
         }
 
         // average
-        similarity /= count;
-
-        return similarity;
+        return similarity / count;
     }
 
     /**
@@ -52,8 +51,7 @@ public class AdaptiveSelectionSimilarity {
         if (valueWeightsFirst==null||valueWeightsSecond==null) return 0;
 
         if (valueWeightsFirst.length != valueWeightsSecond.length) {
-            throw new IllegalArgumentException(
-                    "Attribute value weight vectors must be of same size.");
+            throw new IllegalArgumentException("Attribute value weight vectors must be of same size.");
         }
 
         // sum up deltas
@@ -68,9 +66,7 @@ public class AdaptiveSelectionSimilarity {
         }
 
         // average
-        similarity /= count;
-
-        return similarity;
+        return similarity / count;
     }
 
 }

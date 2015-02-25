@@ -1,7 +1,5 @@
 package de.tum.in.schlichter.shoprx.context.algorithm;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +7,7 @@ import de.tum.in.schlichter.shoprx.ShoprApp;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.model.DistanceToShop;
 import de.tum.in.schlichter.shoprx.context.model.ScenarioContext;
+import de.tum.in.schlichter.shoprx.loaders.ItemLoader;
 import de.tum.in.schlichter.shoprx.model.Shop;
 
 /**
@@ -33,7 +32,9 @@ public class ContextualPreFiltering {
         List<Shop> shops = ShoprApp.getShopList();
 
         //If there were shops and a context object for the distance to the shops, then we can proceed
-        if (shops != null && scenarioContext.isSet()){
+        // if the size of the cases equals the number of items that should be loaded in the initial
+        // case, we do not do the contextual pre filtering.
+        if (shops != null && scenarioContext.isSet() && cases.size() != ItemLoader.LIMIT_ITEMS){
 
             // Initialize a new array where we can store whether a store should be accessed or not.
             boolean[] shopAvailable = listAvailableShops(shops, scenarioContext);
@@ -46,15 +47,12 @@ public class ContextualPreFiltering {
                 }
             }
 
-            Log.d("New case base size after contextual pre-filtering", "" + newCases.size());
-
             //Check if the number of items is large enough. Otherwise we have to lessen some restrictions.
             // Also this number of cases is returned, if the Scenario Context restrictions cannot be relaxed further
             if (newCases.size() >= MINIMUM_ITEMS_NUMBER || !scenarioContext.relaxSomeConditions()){
                 return newCases;
             } else {
                 // try returning items again.
-                Log.d("Relaxed restrictions", "true");
                 scenarioContext.logScenarioContext();
                 return filterShops(cases, scenarioContext); // We already loosened some conditions (see above condition)
             }

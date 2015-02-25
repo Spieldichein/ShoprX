@@ -32,7 +32,6 @@ public class SimilarityForLabelCalculator {
         Mainstream mainstream = new Mainstream();
         Preppy preppy = new Preppy();
         Skater skater = new Skater();
-        Urban urban = new Urban();
 
         List<AbstractStereotype> stereotypes = new LinkedList<AbstractStereotype>();
         stereotypes.add(athlete);
@@ -43,7 +42,6 @@ public class SimilarityForLabelCalculator {
         stereotypes.add(mainstream);
         stereotypes.add(preppy);
         stereotypes.add(skater);
-        stereotypes.add(urban);
 
         double[][] similarRating = new double[athlete.brandProbabilityMap.size()][athlete.brandProbabilityMap.size()];
 

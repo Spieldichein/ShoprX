@@ -6,5 +6,5 @@ package com.uwetrottmann.shopr.stereotype.stereotypes;
  * Enumeration of all possible stereotypes
  */
 public enum Stereotype {
-    ATHLETE, CLASSY, EMO, GIRLY, GOTHIC, INDIE, MAINSTREAM, NULL, PREPPY, SKATER, URBAN
+    ATHLETE, CLASSY, EMO, GIRLY, GOTHIC, INDIE, MAINSTREAM, NULL, PREPPY, SKATER
 }

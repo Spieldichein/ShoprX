@@ -12,7 +12,6 @@ import com.uwetrottmann.shopr.stereotype.stereotypes.Indie;
 import com.uwetrottmann.shopr.stereotype.stereotypes.Mainstream;
 import com.uwetrottmann.shopr.stereotype.stereotypes.Preppy;
 import com.uwetrottmann.shopr.stereotype.stereotypes.Skater;
-import com.uwetrottmann.shopr.stereotype.stereotypes.Urban;
 import com.uwetrottmann.shopr.stereotype.user.AgeRange;
 import com.uwetrottmann.shopr.stereotype.user.Music;
 import com.uwetrottmann.shopr.utils.Utils;
@@ -43,7 +42,6 @@ public class StereotypeDeterminator {
         stereotypes.add(new Mainstream());
         stereotypes.add(new Preppy());
         stereotypes.add(new Skater());
-        stereotypes.add(new Urban());
     }
 
     public List<AbstractStereotype> determinePotentialStereotypes(

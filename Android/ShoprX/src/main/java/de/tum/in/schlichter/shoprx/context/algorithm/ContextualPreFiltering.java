@@ -53,7 +53,7 @@ public class ContextualPreFiltering {
                 return newCases;
             } else {
                 // try returning items again.
-                scenarioContext.logScenarioContext();
+                //scenarioContext.logScenarioContext();
                 return filterShops(cases, scenarioContext); // We already loosened some conditions (see above condition)
             }
         }

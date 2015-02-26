@@ -2,7 +2,6 @@ package de.tum.in.schlichter.shoprx.stereotype.algorithm;
 
 import android.util.Log;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -41,12 +40,13 @@ public class StereotypeFiltering {
             //Log.i("Putting proximity " + item.getProximityToStereotype(), item.toString());
         }
 
+        //Do not have to sort here, as the proximity is part of the adaptive selection algorithm
         // sort the entries in descending order
-        ProximityComparator proximityComparator = new ProximityComparator();
-        Collections.sort(clothingItems, proximityComparator);
+        //ProximityComparator proximityComparator = new ProximityComparator();
+        //Collections.sort(clothingItems, proximityComparator);
 
 
-        logTop10Items(clothingItems);
+        //logTop10Items(clothingItems);
         return clothingItems;
     }
 
@@ -56,7 +56,6 @@ public class StereotypeFiltering {
      * @param sortedClothingItems the sorted list with the top 10 clothing items.
      */
     private void logTop10Items(List<Item> sortedClothingItems) {
-        Log.i("Top 10 items for selected stereotype:","start");
         int i = 1;
 
         for (Item item : sortedClothingItems) {
@@ -81,21 +80,25 @@ public class StereotypeFiltering {
         int hits = 0;
 
         // compute attribute proximity first
-        String haystack = item.name() + item.attributes().getAttributeById(Color.ID).currentValue().descriptor();
-        haystack = haystack.toLowerCase();
+        String[] haystack = item.getNameParts();
 
         // get all relevant attributes for the active stereotype
         Map<String, Integer> attributeProbabilityMap = stereotype.getAttributeProbabilityMap();
         // check whether these attributes appear in the item, if so add their
         // weight to the proximity measure
-        for (String needle : attributeProbabilityMap.keySet()) {
-            if (haystack.contains(needle.toLowerCase())) {
+        for (String needle : haystack) {
+            if (attributeProbabilityMap.containsKey(needle)) {
                 // if the needle is found add it's weight divided by the number
                 // of all attributes of the stereotype
                 int weight = attributeProbabilityMap.get(needle);
                 proximity += weight;
                 hits++;
             }
+        }
+        if (attributeProbabilityMap.containsKey(item.attributes().getAttributeById(Color.ID).currentValue().descriptor())){
+            int weight = attributeProbabilityMap.get(item.attributes().getAttributeById(Color.ID).currentValue().descriptor());
+            proximity += weight;
+            hits++;
         }
 
         // depending on number of attribute hits set weight for brand impact

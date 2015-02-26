@@ -40,6 +40,8 @@ public class Item {
 
     private double mTemporaryQuality;
 
+    private String[] mNameParts;
+
     public int id() {
         return id;
     }
@@ -55,7 +57,26 @@ public class Item {
 
     public Item name(String name) {
         this.name = name;
+
+        mNameParts = name.split("-");
+        for (int i = 0; i < mNameParts.length; i++){
+            mNameParts[i] = mNameParts[i].trim().toLowerCase();
+            if (mNameParts[i].length() > 1) {
+                mNameParts[i] = Character.toUpperCase(mNameParts[i].charAt(0)) + mNameParts[i].substring(1);
+            } else {
+                mNameParts[i] = "";
+            }
+        }
+
         return this;
+    }
+
+    /**
+     * Gets an array with the parts of the name (strings that are part of the description)
+     * @return an array with the parts of the name.
+     */
+    public String[] getNameParts(){
+        return mNameParts;
     }
 
     public BigDecimal price() {

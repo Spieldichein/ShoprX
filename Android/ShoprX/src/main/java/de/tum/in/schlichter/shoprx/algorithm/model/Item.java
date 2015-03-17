@@ -2,6 +2,7 @@
 package de.tum.in.schlichter.shoprx.algorithm.model;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 import de.tum.in.schlichter.shoprx.context.model.ItemSelectedContext;
 
@@ -76,7 +77,10 @@ public class Item {
      * @return an array with the parts of the name.
      */
     public String[] getNameParts(){
-        return mNameParts;
+        String[] strings = Arrays.copyOf(mNameParts, mNameParts.length + 1);
+        strings[strings.length -1 ] = attributes().getAttributeById(Color.ID).currentValue().descriptor();
+
+        return strings;
     }
 
     public BigDecimal price() {

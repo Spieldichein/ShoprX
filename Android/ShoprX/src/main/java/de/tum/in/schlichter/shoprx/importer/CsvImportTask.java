@@ -20,7 +20,13 @@ import java.util.Random;
 
 import au.com.bytecode.opencsv.CSVReader;
 import de.tum.in.schlichter.androidutils.Lists;
+import de.tum.in.schlichter.shoprx.context.model.Company;
+import de.tum.in.schlichter.shoprx.context.model.DayOfTheWeek;
+import de.tum.in.schlichter.shoprx.context.model.Temperature;
+import de.tum.in.schlichter.shoprx.context.model.TimeOfTheDay;
+import de.tum.in.schlichter.shoprx.context.model.Weather;
 import de.tum.in.schlichter.shoprx.loaders.ShopLoader;
+import de.tum.in.schlichter.shoprx.provider.ShoprContract.ContextItemRelation;
 import de.tum.in.schlichter.shoprx.provider.ShoprContract.Items;
 import de.tum.in.schlichter.shoprx.provider.ShoprContract.Shops;
 
@@ -31,7 +37,8 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
 
     public enum Type {
         IMPORT_SHOPS,
-        IMPORT_ITEMS
+        IMPORT_ITEMS,
+        IMPORT_CONTEXT
     }
 
     private static final String TAG = "Importer";
@@ -78,7 +85,8 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                 return "No data.";
             }
             if ((mType == Type.IMPORT_ITEMS && firstLine.length != 10) ||
-                    mType == Type.IMPORT_SHOPS && firstLine.length != 9) {
+                    mType == Type.IMPORT_SHOPS && firstLine.length != 9 ||
+                    mType == Type.IMPORT_CONTEXT && firstLine.length != 6) {
                 Log.d(TAG, "Invalid column count.");
                 return "Invalid column count.";
             }
@@ -101,6 +109,15 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                 ContentValues values = new ContentValues();
 
                 switch (mType) {
+                    case IMPORT_CONTEXT:
+                        values.put(ContextItemRelation.REF_ITEM_ID, line[0]);
+                        values.put(ContextItemRelation.CONTEXT_TIME, TimeOfTheDay.getTimeOfTheDay(line[1]).getTime());
+                        values.put(ContextItemRelation.CONTEXT_DAY, DayOfTheWeek.getDay(line[2]).getDay());
+                        values.put(ContextItemRelation.CONTEXT_TEMPERATURE, Temperature.getTemperature(line[3]).getDegrees());
+                        values.put(ContextItemRelation.CONTEXT_HUMIDITY, Weather.getWeather(line[4]).getWeatherIndicator());
+                        values.put(ContextItemRelation.CONTEXT_COMPANY, Company.getCompany(line[5]).getCompanyType());
+
+                        break;
                     case IMPORT_SHOPS:
                         // add values for one shop
                         values.put(Shops._ID, numberOfShops); //Ensures that we have all IDs even though there might be some missing in the CSV.
@@ -166,6 +183,9 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
 
         Uri uri;
         switch (mType) {
+            case IMPORT_CONTEXT:
+                uri = ContextItemRelation.CONTENT_URI;
+                break;
             case IMPORT_SHOPS:
                 uri = Shops.CONTENT_URI;
                 break;

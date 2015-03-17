@@ -36,6 +36,16 @@ public enum DayOfTheWeek implements DistanceMetric {
         }
     }
 
+    public static DayOfTheWeek getDay(String day) {
+        if (DayOfTheWeek.WORKDAY.toString().equals(day)){
+            return WORKDAY;
+        } else if (DayOfTheWeek.HOLIDAY.toString().equals(day)){
+            return HOLIDAY;
+        }
+
+        return null;
+    }
+
     public int getDay(){
         return mDay;
     }

@@ -91,6 +91,22 @@ public enum TimeOfTheDay implements DistanceMetric{
         return NIGHT;
     }
 
+    public static TimeOfTheDay getTimeOfTheDay(String time){
+        if (TimeOfTheDay.MORNING.toString().equals(time)){
+            return TimeOfTheDay.MORNING;
+        } else if (TimeOfTheDay.MIDDAY.toString().equals(time)){
+            return TimeOfTheDay.MIDDAY;
+        } else if (TimeOfTheDay.AFTERNOON.toString().equals(time)){
+            return TimeOfTheDay.AFTERNOON;
+        } else if (TimeOfTheDay.EVENING.toString().equals(time)){
+            return TimeOfTheDay.EVENING;
+        } else if (TimeOfTheDay.NIGHT.toString().equals(time)){
+            return TimeOfTheDay.NIGHT;
+        }
+
+        return null;
+    }
+
     public int getTime(){
         return mTime;
     }

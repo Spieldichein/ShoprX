@@ -14,4 +14,8 @@ public class CsvImporter {
         new CsvImportTask(context, uri, CsvImportTask.Type.IMPORT_ITEMS).execute();
     }
 
+    public static void importContextCsvToDatabase(Context context, Uri uri) {
+        new CsvImportTask(context, uri, CsvImportTask.Type.IMPORT_CONTEXT).execute();
+    }
+
 }

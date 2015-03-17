@@ -22,6 +22,7 @@ public class ImporterActivity extends Activity {
 
     private static final int CODE_IMPORT_SHOPS = 100;
     private static final int CODE_IMPORT_ITEMS = 200;
+    private static final int CODE_IMPORT_CONTEXT = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,13 @@ public class ImporterActivity extends Activity {
                 onDisplayChooser(CODE_IMPORT_ITEMS);
             }
         });
+        View buttonImportContext = findViewById(R.id.buttonImporterContext);
+        buttonImportContext.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onDisplayChooser(CODE_IMPORT_CONTEXT);
+            }
+        });
     }
 
     private void onDisplayChooser(int requestCode) {
@@ -81,6 +89,8 @@ public class ImporterActivity extends Activity {
                 } else {
                     onImportItems(data.getData());
                 }
+            } else if (requestCode == CODE_IMPORT_CONTEXT){
+                onImportContext(data.getData());
             }
         }
     }
@@ -91,6 +101,10 @@ public class ImporterActivity extends Activity {
 
     protected void onImportItems(Uri uri) {
         CsvImporter.importItemsCsvToDatabase(this, uri);
+    }
+
+    protected void onImportContext(Uri uri) {
+        CsvImporter.importContextCsvToDatabase(this, uri);
     }
 
     @Override

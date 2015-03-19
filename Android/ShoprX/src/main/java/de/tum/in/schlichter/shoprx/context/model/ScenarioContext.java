@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.context.model.interfaces.DistanceMetric;
 
 /**
  * Created by Yannick on 11.02.15.
@@ -274,17 +275,6 @@ public class ScenarioContext implements Cloneable {
         }
 
         return false;
-    }
-
-    /**
-     * This method calculates the maximum possible distance
-     * @return the maximum available distance
-     */
-    public static double calculateMaximumPossibleDistance(){
-        //For the two numeric items Time of the day and Day of the Week, we just need to get their weights,
-        // as the maximum distance is 1. We return the sum of the weights
-        double distance = DayOfTheWeek.WORKDAY.getWeight() + TimeOfTheDay.AFTERNOON.getWeight() + Weather.OTHER_CONDITIONS.getWeight() + Temperature.BETWEEN_0_AND_5.getWeight() + Company.ALONE.getWeight();
-        return distance / ItemSelectedContext.getNumberOfDifferentContextFactors();
     }
 
     /**

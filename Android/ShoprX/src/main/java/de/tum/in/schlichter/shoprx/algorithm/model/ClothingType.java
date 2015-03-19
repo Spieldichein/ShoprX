@@ -16,6 +16,11 @@ import java.util.List;
 import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.context.model.Company;
+import de.tum.in.schlichter.shoprx.context.model.DayOfTheWeek;
+import de.tum.in.schlichter.shoprx.context.model.Temperature;
+import de.tum.in.schlichter.shoprx.context.model.TimeOfTheDay;
+import de.tum.in.schlichter.shoprx.context.model.Weather;
 
 public class ClothingType extends GenericAttribute {
 
@@ -197,6 +202,18 @@ public class ClothingType extends GenericAttribute {
             }
         }
         return false;
+    }
+
+    public double getContextWeightsSum(){
+        double weight = 0.0;
+        //The weights are like static methods.
+        weight += DayOfTheWeek.WORKDAY.getWeight(this);
+        weight += TimeOfTheDay.AFTERNOON.getWeight(this);
+        weight += Company.ALONE.getWeight(this);
+        weight += Weather.CLOUDY.getWeight(this);
+        weight += Temperature.ABOVE_30.getWeight(this);
+
+        return weight;
     }
 
 }

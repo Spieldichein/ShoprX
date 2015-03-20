@@ -4,7 +4,9 @@ package de.tum.in.schlichter.shoprx.algorithm;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
@@ -14,7 +16,9 @@ public class AdaptiveSelection {
 
     private static final int NUM_RECOMMENDATIONS_DEFAULT = 8;
     private static final int BOUND_DEFAULT = 10;
-    private static final int NUM_RECOMMENDATIONS_PRESELECTION = 30;
+    private static final int NUM_RECOMMENDATIONS_PRESELECTION = 20;
+
+    private static final double ALPHA_BOUNDED_GREEDY_REFOCUS = 0.96;
 
     private static AdaptiveSelection _instance;
 
@@ -30,12 +34,14 @@ public class AdaptiveSelection {
     private Critique mCurrentCritique;
     private int mNumRecommendations;
     private List<Item> mCurrentRecommendations;
+    private Map<Integer, Double> mAlreadySeenItems;
 
     private AdaptiveSelection() {
         mCaseBase = new ArrayList<Item>();
         mQuery = new Query();
         mNumRecommendations = NUM_RECOMMENDATIONS_DEFAULT;
         mCurrentRecommendations = new ArrayList<Item>();
+        mAlreadySeenItems = new HashMap<Integer, Double>();
     }
 
     /**
@@ -69,6 +75,8 @@ public class AdaptiveSelection {
         recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION);
 
         mCurrentRecommendations = recommendations;
+
+        addItemsToAlreadySeenItems(recommendations);
 
         return recommendations;
     }
@@ -111,7 +119,7 @@ public class AdaptiveSelection {
      */
     private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique, int numItemsPreSelection) {
 
-        List<Item> recommendations = new ArrayList<Item>();
+        List<Item> recommendations;
 
         if ( lastCritique != null && lastCritique.item() != null
                 && lastCritique.feedback().isPositiveFeedback()) {
@@ -122,11 +130,9 @@ public class AdaptiveSelection {
              * REFINE: Show similar recommendations by sorting the case-base in
              * decreasing similarity to current query. Return top k items.
              */
+            double alpha = 0.98;
             long start = System.currentTimeMillis();
-            caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
-            for (int i = 0; i < numItemsPreSelection; i++) {
-                recommendations.add(caseBase.get(i));
-            }
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, 9, bound, alpha);
             Log.d("AdaptiveSelection", "" + (System.currentTimeMillis() - start) + " ms");
 
         } else {
@@ -135,7 +141,7 @@ public class AdaptiveSelection {
              * one recommended item. Or: first run.
              * REFOCUS: show diverse recommendations
              */
-            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound);
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, ALPHA_BOUNDED_GREEDY_REFOCUS);
         }
 
 //        Utils.dumpToConsole(recommendations, query);
@@ -162,6 +168,12 @@ public class AdaptiveSelection {
         }
 
         return recommendations;
+    }
+
+    private void addItemsToAlreadySeenItems(List<Item> recommendations) {
+        for (Item item : recommendations){
+            mAlreadySeenItems.put(item.id(), 1.0);
+        }
     }
 
     /**

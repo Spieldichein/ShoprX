@@ -3,6 +3,7 @@ package de.tum.in.schlichter.shoprx.algorithm.model;
 
 import java.math.BigDecimal;
 
+import de.tum.in.schlichter.shoprx.Explanations.Model.Explanation;
 import de.tum.in.schlichter.shoprx.context.model.ItemSelectedContext;
 
 /**
@@ -42,6 +43,8 @@ public class Item {
 
     private String[] mNameParts;
 
+    private Explanation explanation;
+
     public int id() {
         return id;
     }
@@ -49,6 +52,13 @@ public class Item {
     public Item id(int id) {
         this.id = id;
         return this;
+    }
+
+    public Explanation getExplanation(){
+        return explanation;
+    }
+    public void setExplanation(Explanation explanation){
+        this.explanation = explanation;
     }
 
     public String name() {

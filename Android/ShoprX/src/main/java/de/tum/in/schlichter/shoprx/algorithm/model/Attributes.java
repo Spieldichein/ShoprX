@@ -2,6 +2,7 @@
 package de.tum.in.schlichter.shoprx.algorithm.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -24,6 +25,8 @@ public class Attributes {
         public String getReasonString();
 
         public void critiqueQuery(Query query, boolean isPositive);
+
+        public AttributeValue[] getAttributeValues();
     }
 
     public interface AttributeValue {
@@ -42,6 +45,10 @@ public class Attributes {
     }
 
     private HashMap<String, Attribute> attributes = new HashMap<String, Attributes.Attribute>();
+
+    public Collection<Attribute> values() {
+        return attributes.values();
+    }
 
     public Attribute getAttributeById(String id) {
         return attributes.get(id);
@@ -115,6 +122,22 @@ public class Attributes {
         } catch (IllegalAccessException ex) {
             System.err.println(ex + " Interpreter class must have a no-arg constructor.");
         }
+    }
+
+    public Attribute initializeAndReturnAttribute(Attribute attribute) {
+        try {
+            Class<?> attrClass = Class.forName(attribute.getClass().getCanonicalName());
+            Attribute newAttr = (Attribute) attrClass.newInstance();
+            putAttribute(newAttr);
+            return newAttr;
+        } catch (ClassNotFoundException ex) {
+            System.err.println(ex + " Interpreter class must be in class path.");
+        } catch (InstantiationException ex) {
+            System.err.println(ex + " Interpreter class must be concrete.");
+        } catch (IllegalAccessException ex) {
+            System.err.println(ex + " Interpreter class must have a no-arg constructor.");
+        }
+        return null;
     }
 
 }

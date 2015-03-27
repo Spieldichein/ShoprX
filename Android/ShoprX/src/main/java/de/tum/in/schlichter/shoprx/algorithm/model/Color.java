@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
 
 public class Color extends GenericAttribute {
 
@@ -192,5 +193,10 @@ public class Color extends GenericAttribute {
             }
         }
         return false;
+    }
+
+    @Override
+    public AttributeValue[] getAttributeValues() {
+        return Value.values();
     }
 }

@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
 
 public class Price extends GenericAttribute {
 
@@ -170,4 +171,9 @@ public class Price extends GenericAttribute {
         return false;
     }
 
+
+    @Override
+    public AttributeValue[] getAttributeValues() {
+        return Value.values();
+    }
 }

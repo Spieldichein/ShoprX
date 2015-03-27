@@ -4,12 +4,14 @@ package de.tum.in.schlichter.shoprx.algorithm.model;
 import android.util.Log;
 
 import java.util.Arrays;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
 
 public class Sex extends GenericAttribute {
 
     public static final String ID = "sex";
 
-    public enum Value implements Attributes.AttributeValue {
+    public enum Value implements AttributeValue {
         FEMALE("Female"),
         MALE("Male"),
         UNISEX("Unisex");
@@ -72,7 +74,12 @@ public class Sex extends GenericAttribute {
     }
 
     @Override
-    public Attributes.AttributeValue[] getValueSymbols() {
+    public AttributeValue[] getValueSymbols() {
+        return Value.values();
+    }
+
+    @Override
+    public AttributeValue[] getAttributeValues() {
         return Value.values();
     }
 

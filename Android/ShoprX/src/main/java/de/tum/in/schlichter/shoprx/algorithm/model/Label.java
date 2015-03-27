@@ -12,6 +12,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
+
 
 public class Label extends GenericAttribute {
 
@@ -971,5 +973,9 @@ public class Label extends GenericAttribute {
             }
         }
         return false;
+    }
+    @Override
+    public AttributeValue[] getAttributeValues() {
+        return Value.values();
     }
 }

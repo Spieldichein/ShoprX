@@ -5,6 +5,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -34,14 +35,14 @@ public class AdaptiveSelection {
     private Critique mCurrentCritique;
     private int mNumRecommendations;
     private List<Item> mCurrentRecommendations;
-    private Map<Integer, Double> mAlreadySeenItems;
+    private Map<Integer, Integer> mAlreadySeenItems;
 
     private AdaptiveSelection() {
         mCaseBase = new ArrayList<Item>();
         mQuery = new Query();
         mNumRecommendations = NUM_RECOMMENDATIONS_DEFAULT;
         mCurrentRecommendations = new ArrayList<Item>();
-        mAlreadySeenItems = new HashMap<Integer, Double>();
+        mAlreadySeenItems = new HashMap<Integer, Integer>();
     }
 
     /**
@@ -72,7 +73,10 @@ public class AdaptiveSelection {
         // build a new set of recommendations
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
-        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION);
+
+        double alpha = 0.997;
+
+        recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION, mAlreadySeenItems, alpha);
 
         mCurrentRecommendations = recommendations;
 
@@ -117,7 +121,7 @@ public class AdaptiveSelection {
      * @param numItemsPreSelection Determines how many items should be part of the initial algorithm to
      *                            be filtered against the context scenario.
      */
-    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique, int numItemsPreSelection) {
+    private static List<Item> itemRecommend(List<Item> caseBase, Query query, int numItems, int bound, Critique lastCritique, int numItemsPreSelection, Map<Integer, Integer> alreadySeenItems, double alpha) {
 
         List<Item> recommendations;
 
@@ -130,9 +134,8 @@ public class AdaptiveSelection {
              * REFINE: Show similar recommendations by sorting the case-base in
              * decreasing similarity to current query. Return top k items.
              */
-            double alpha = 0.98;
             long start = System.currentTimeMillis();
-            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, 9, bound, alpha);
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, alpha, alreadySeenItems);
             Log.d("AdaptiveSelection", "" + (System.currentTimeMillis() - start) + " ms");
 
         } else {
@@ -141,7 +144,7 @@ public class AdaptiveSelection {
              * one recommended item. Or: first run.
              * REFOCUS: show diverse recommendations
              */
-            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, ALPHA_BOUNDED_GREEDY_REFOCUS);
+            recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, ALPHA_BOUNDED_GREEDY_REFOCUS, alreadySeenItems);
         }
 
 //        Utils.dumpToConsole(recommendations, query);
@@ -170,10 +173,38 @@ public class AdaptiveSelection {
         return recommendations;
     }
 
+    /**
+     * Adds the items, which are in the current recommendation cycle to the items, that were already seen.
+     * Furthermore the items, that are currently part of the list, are altered, such that they might again be part of the next cycle.
+     * @param recommendations the list of items that are recommended
+     */
     private void addItemsToAlreadySeenItems(List<Item> recommendations) {
-        for (Item item : recommendations){
-            mAlreadySeenItems.put(item.id(), 1.0);
+        List<Integer> removeItems = new LinkedList<Integer>();
+        for (Integer itemId : mAlreadySeenItems.keySet()){
+            if (mAlreadySeenItems.get(itemId) == 1){
+                removeItems.add(itemId);
+            } else {
+                mAlreadySeenItems.put(itemId, mAlreadySeenItems.get(itemId) - 1);
+            }
         }
+
+        //Delete the items.
+        for (Integer itemId : removeItems){
+            mAlreadySeenItems.remove(itemId);
+        }
+
+        for (Item item : recommendations){
+            mAlreadySeenItems.put(item.id(), 3);
+        }
+
+        Log.d("Items",""+mAlreadySeenItems);
+    }
+
+    /**
+     * Resets the already seen items to a new Map.
+     */
+    public void resetAlreadySeen(){
+        mAlreadySeenItems = new HashMap<Integer, Integer>();
     }
 
     /**

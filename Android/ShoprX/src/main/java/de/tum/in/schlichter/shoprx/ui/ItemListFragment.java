@@ -230,6 +230,8 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     }
 
     private void onInitializeItems() {
+        AdaptiveSelection adaptiveSelection = AdaptiveSelection.get();
+        adaptiveSelection.resetAlreadySeen();
         Bundle args = new Bundle();
         args.putBoolean("is init", true);
         //Here we have a loader with a unique ID, optional arguments and the implementation of the callbacks (this class)

@@ -6,6 +6,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 
@@ -18,7 +19,7 @@ public class BoundedGreedySelection {
      * If there are less items than required, will still return (less)
      * recommendations.
      */
-    public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit, int bound, double alpha) {
+    public static List<Item> boundedGreedySelection(Query query, List<Item> caseBase, int limit, int bound, double alpha, Map<Integer, Integer> alreadySeenItems) {
         caseBase = Utils.sortBySimilarityToQuery(query, caseBase);
 
         // Get first b*k items
@@ -46,8 +47,10 @@ public class BoundedGreedySelection {
         for (int i = 0; i < numRecs; i++) {
             sortByQuality(limitedCaseBase, lastAdded, alpha, i);
 
-            // get top item, remove it from remaining cases
-            lastAdded = limitedCaseBase.remove(0);
+            do {
+                // get top item, remove it from remaining cases
+                lastAdded = limitedCaseBase.remove(0);
+            } while (alreadySeenItems.get(lastAdded.id()) != null); // if item is not found, we may display it
             recommendations.add(lastAdded);
         }
 

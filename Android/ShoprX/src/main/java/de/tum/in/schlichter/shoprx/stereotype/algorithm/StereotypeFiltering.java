@@ -2,11 +2,9 @@ package de.tum.in.schlichter.shoprx.stereotype.algorithm;
 
 import android.util.Log;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
-import de.tum.in.schlichter.shoprx.algorithm.model.Color;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.algorithm.model.Label;
 import de.tum.in.schlichter.shoprx.stereotype.stereotypes.AbstractStereotype;
@@ -40,12 +38,6 @@ public class StereotypeFiltering {
             //Log.i("Putting proximity " + item.getProximityToStereotype(), item.toString());
         }
 
-        //Do not have to sort here, as the proximity is part of the adaptive selection algorithm
-        // sort the entries in descending order
-        //ProximityComparator proximityComparator = new ProximityComparator();
-        //Collections.sort(clothingItems, proximityComparator);
-
-
         //logTop10Items(clothingItems);
         return clothingItems;
     }
@@ -55,6 +47,7 @@ public class StereotypeFiltering {
      *
      * @param sortedClothingItems the sorted list with the top 10 clothing items.
      */
+    @SuppressWarnings("UnusedDeclaration")
     private void logTop10Items(List<Item> sortedClothingItems) {
         int i = 1;
 
@@ -95,11 +88,6 @@ public class StereotypeFiltering {
                 hits++;
             }
         }
-        if (attributeProbabilityMap.containsKey(item.attributes().getAttributeById(Color.ID).currentValue().descriptor())){
-            int weight = attributeProbabilityMap.get(item.attributes().getAttributeById(Color.ID).currentValue().descriptor());
-            proximity += weight;
-            hits++;
-        }
 
         // depending on number of attribute hits set weight for brand impact
         int brandImpact = (hits> 2 ? hits / 2 : 1);
@@ -112,30 +100,5 @@ public class StereotypeFiltering {
         }
 
         return hits > 0 ? proximity / hits : 0.0;
-    }
-
-    /**
-     * Comparator for sorting clothing items in descending order by their
-     * proximity value.
-     *
-     * @author Yannick Rödl
-     *
-     */
-    private class ProximityComparator implements Comparator<Item> {
-
-        public ProximityComparator() {}
-
-        // Note: this comparator imposes orderings that are inconsistent with
-        // equals.
-        public int compare(Item a, Item b) {
-            if (a.getProximityToStereotype() > b.getProximityToStereotype()) {
-                return -1;
-            } else if (b.getProximityToStereotype() == a.getProximityToStereotype()) {
-                return 0;
-            } else {
-                return 1;
-            }
-        }
-
     }
 }

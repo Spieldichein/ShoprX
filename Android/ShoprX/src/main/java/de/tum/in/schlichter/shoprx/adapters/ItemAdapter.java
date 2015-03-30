@@ -26,7 +26,6 @@ import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
 import de.tum.in.schlichter.shoprx.algorithm.model.Color;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
-import de.tum.in.schlichter.shoprx.utils.ValueConverter;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
 
@@ -67,8 +66,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             holder.label = (TextView) convertView.findViewById(R.id.textViewItemLabel);
             holder.price = (TextView) convertView.findViewById(R.id.textViewItemPrice);
             holder.buttonLike = (ImageButton) convertView.findViewById(R.id.imageButtonItemLike);
-            holder.buttonDislike = (ImageButton) convertView
-                    .findViewById(R.id.imageButtonItemDislike);
+            holder.buttonDislike = (ImageButton) convertView.findViewById(R.id.imageButtonItemDislike);
             holder.lastCritiqueTag = convertView.findViewById(R.id.textViewItemLastCritiqueLabel);
             holder.iconLayout = (LinearLayout)convertView.findViewById(R.id.explanationIconContainer);
 
@@ -80,11 +78,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         final Item item = getItem(position);
         holder.name.setText(item.name());
-        holder.label.setText(ValueConverter.getLocalizedStringForValue(getContext(), item
-                .attributes().getAttributeById(Color.ID).currentValue()
-                .descriptor()));
-        holder.price.setText(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(
-                item.price().doubleValue()));
+        holder.label.setText(item.attributes().getAttributeById(Color.ID).currentValue().descriptor());
+        holder.price.setText(NumberFormat.getCurrencyInstance(Locale.GERMANY).format(item.price().doubleValue()));
         holder.buttonLike.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

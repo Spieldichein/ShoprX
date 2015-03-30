@@ -24,4 +24,12 @@
         android:layout_centerHorizontal="true"
         android:text="@string/import_shops" />
 
+    <Button
+        android:id="@+id/buttonImporterContext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonImporterItems"
+        android:layout_centerHorizontal="true"
+        android:text="@string/import_context" />
+
 </RelativeLayout>

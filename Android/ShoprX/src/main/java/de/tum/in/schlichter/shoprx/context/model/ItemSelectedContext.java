@@ -3,6 +3,8 @@ package de.tum.in.schlichter.shoprx.context.model;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.tum.in.schlichter.shoprx.context.model.interfaces.DistanceMetric;
+
 /**
  * Created by Yannick on 19.02.15.
  *
@@ -23,8 +25,8 @@ public class ItemSelectedContext {
     }
 
     /**
-     * Increases the counter for the times of the day in which this item has been selected.
-     * @param d the TimeOfTheDay to increase.
+     * Increases the counter for the distance metric in which this item has been selected.
+     * @param d the DistanceMetric to increase.
      */
     public void increaseDistanceMetric(DistanceMetric d){
         Integer times = mDistanceMetrics.get(d);
@@ -32,15 +34,6 @@ public class ItemSelectedContext {
             times = 0;
         }
         mDistanceMetrics.put(d, times + 1);
-    }
-
-    /**
-     * This method normalizes the
-     * distance between 0 and 1.
-     * @return the normalized distance between 0 and 1
-     */
-    public double normalizeDistance(double currentDistance){
-        return currentDistance / ScenarioContext.calculateMaximumPossibleDistance() * 1.0;
     }
 
     /**
@@ -54,7 +47,7 @@ public class ItemSelectedContext {
     /**
      * Returns the number of different context factors that are used in this calculation. This is necessary
      * in order to calculate averages from the different distances.
-     * @return number of different context factors (for postfiltering) in use.
+     * @return number of different context factors (for post-filtering) in use.
      */
     public static int getNumberOfDifferentContextFactors(){
         return DIFFERENT_CONTEXT_FACTORS;

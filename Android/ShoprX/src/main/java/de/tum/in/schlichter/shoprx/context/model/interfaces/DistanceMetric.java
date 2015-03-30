@@ -1,4 +1,7 @@
-package de.tum.in.schlichter.shoprx.context.model;
+package de.tum.in.schlichter.shoprx.context.model.interfaces;
+
+import de.tum.in.schlichter.shoprx.algorithm.model.ClothingType;
+import de.tum.in.schlichter.shoprx.context.model.ScenarioContext;
 
 /**
  * Created by Yannick on 20.02.15.
@@ -19,7 +22,7 @@ public interface DistanceMetric {
      * This method returns the weight which should be assigned to the given context metric.
      * @return a double stating the weight of the given distance metric, between 0 and 1.
      */
-    public double getWeight();
+    public double getWeight(ClothingType clothingType);
 
     /**
      * This method computes the distance to the scenario context and returns this distance as a double value.

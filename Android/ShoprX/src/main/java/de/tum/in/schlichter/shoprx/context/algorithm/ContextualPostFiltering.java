@@ -1,6 +1,7 @@
 package de.tum.in.schlichter.shoprx.context.algorithm;
 
 import android.database.Cursor;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,10 +9,11 @@ import java.util.List;
 import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.algorithm.model.ClothingType;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.model.Company;
 import de.tum.in.schlichter.shoprx.context.model.DayOfTheWeek;
-import de.tum.in.schlichter.shoprx.context.model.DistanceMetric;
+import de.tum.in.schlichter.shoprx.context.model.interfaces.DistanceMetric;
 import de.tum.in.schlichter.shoprx.context.model.ItemSelectedContext;
 import de.tum.in.schlichter.shoprx.context.model.ScenarioContext;
 import de.tum.in.schlichter.shoprx.context.model.Temperature;
@@ -60,7 +62,7 @@ public class ContextualPostFiltering {
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
 
-            int contexts = 0;
+            int overallNumberOfContextsSetForAllItems = 0;
 
             //For each item: Calculate the distances
             for (Item item : currentRecommendation) {
@@ -69,43 +71,53 @@ public class ContextualPostFiltering {
                 ItemSelectedContext itemContext = item.getItemContext();
                 Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem(); //Get the contexts for the item
 
-                int overallContextsSet = 0; // The number of context factors which are set for this item
-                double overallItemDistance = 0; // The overall distance after summation of all factors without dividing
+                int overallContextFactorsSet = 0; // The number of context factors which are set for this item
+                double overallItemDistance = 0.0; // The overall distance after summation of all factors without dividing
+                double weight;
                 for (DistanceMetric metric : distanceMetrics.keySet()) { //For each metric for the item
                     int times = distanceMetrics.get(metric);
-                    overallContextsSet += times;
+                    overallContextFactorsSet += times;
+                    weight = metric.getWeight((ClothingType) item.attributes().getAttributeById(ClothingType.ID));
 
                     //Multiply the distance with its weight, as they should not have their full weight
-                    overallItemDistance = overallItemDistance + getDistance(times, metric, scenarioContext) * metric.getWeight();
+//                    Log.d("Weight", "" + weight);
+                    overallItemDistance = overallItemDistance + getDistance(times, metric, scenarioContext) * weight;
+//                    Log.d("Found Context", ""+ metric +" selected "+ times +" times " +overallItemDistance);
 
                 } // End for each metric within the contexts of a item
 
                 // Set the distance to the current context
-                // Items that were not selected in any context are the very far away and will first of all be attached to the end, afterwards they will get the median.
-                if (overallItemDistance != 0 || overallContextsSet != 0){
-                    overallItemDistance = overallItemDistance / overallContextsSet;
+                // Items that were not selected in any context are very far away and will first of all be attached to the end, afterwards they will get the median.
+                if (overallItemDistance != 0 && overallContextFactorsSet != 0){
+//                    Log.d("Found", "Dist: " + overallItemDistance + " Factors: " + overallContextFactorsSet);
+                    overallItemDistance = overallItemDistance / overallContextFactorsSet; //have an average weight
                 }
-                item.setDistanceToContext(itemContext.normalizeDistance(overallItemDistance));
+                //scale from 0 to 1 to be able to compare different items
+                double maxContextWeights = ((ClothingType) item.attributes().getAttributeById(ClothingType.ID)).getContextWeightsSum();
 
+                item.setDistanceToContext(overallItemDistance / maxContextWeights * ItemSelectedContext.getNumberOfDifferentContextFactors()); //divided by contextWeights multiplied by 5 (because of 5 context factors)
+
+//                Log.d("Distance compare", "Before: " + overallItemDistance + " After: " + item.getDistanceToContext());
                 //The variable times selected states how often this item was (overall) selected. This is necessary,
                 // because we might want to improve the scores for products that are very frequently selected.
-                item.setTimesSelected(overallContextsSet / ItemSelectedContext.getNumberOfDifferentContextFactors());
+                item.setTimesSelected(overallContextFactorsSet / ItemSelectedContext.getNumberOfDifferentContextFactors());
 
-                contexts = contexts + item.getTimesSelected();
+                overallNumberOfContextsSetForAllItems = overallNumberOfContextsSetForAllItems + item.getTimesSelected();
 
             } // End for each item
 
-            adjustDistances(contexts, currentRecommendation);
+            adjustDistances(overallNumberOfContextsSetForAllItems, currentRecommendation);
 
             //The maximum distance for a product is 1 and the minimum 0 (closest).
             //We want the closest items to be at the top of the list (screen)
-            Collections.sort(currentRecommendation, new DistanceComparator());
+            Collections.sort(currentRecommendation, new ContextualDistanceComparator());
         } //End check for scenario
+
+        logItems(currentRecommendation);
 
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
                 updatedRecommendation.add(item);
-//                Log.d("Distance " + i++, "" + item.getDistanceToContext() + " " + item);
             } else {
                 break;
             }
@@ -145,7 +157,8 @@ public class ContextualPostFiltering {
         if (contexts > 0) {
             for (Item item : currentRecommendation) {
                 //Improve items that are very frequently selected
-                if ( (item.getTimesSelected() / contexts) > THRESHOLD_FREQUENTLY_USED_ITEMS) {
+                if ( (item.getTimesSelected() * 1.0 / contexts * 1.0) > THRESHOLD_FREQUENTLY_USED_ITEMS) {
+                    Log.d("ContextDistanceImprove", ""+ item);
                     item.setDistanceToContext(item.getDistanceToContext() * (1 - IMPROVEMENT_FREQUENTLY_USED_ITEMS));
                 }
 
@@ -198,8 +211,16 @@ public class ContextualPostFiltering {
      * @return a double with the distance
      */
     private static double getAdaptedEuclideanDistance(double p, double q, double range){
+//        Log.d("Euclide", "p " + p + " q " + q + " range " + range);
         double result = ( p - q ) / range;
-        result = Math.pow(result, 2); // square it
-        return Math.sqrt(result);
+        result = Math.sqrt(Math.pow(result, 2)); // square it
+//        Log.d("Result" , ""+result);
+        return result;
+    }
+
+    private static void logItems(List<Item> items){
+        for (Item item : items) {
+            Log.d("ContextDistance", "" + item.getDistanceToContext() + " " + item);
+        }
     }
 }

@@ -26,15 +26,14 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.model.LatLng;
-import de.tum.in.schlichter.shoprx.R;
 
 import java.util.Locale;
 
 import de.greenrobot.event.EventBus;
+import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.ShoprApp;
 import de.tum.in.schlichter.shoprx.eval.TestSetupActivity;
 import de.tum.in.schlichter.shoprx.importer.ImporterActivity;
-import de.tum.in.schlichter.shoprx.settings.AppSettings;
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener,
         GooglePlayServicesClient.ConnectionCallbacks,
@@ -109,10 +108,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             // the adapter. Also specify this Activity object, which implements
             // the TabListener interface, as the callback (listener) for when
             // this tab is selected.
-            actionBar.addTab(
-                    actionBar.newTab()
-                            .setText(mSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
+            actionBar.addTab( actionBar.newTab()
+                                .setText(mSectionsPagerAdapter.getPageTitle(i))
+                                .setTabListener(this));
         }
     }
 

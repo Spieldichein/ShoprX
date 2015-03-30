@@ -215,5 +215,10 @@ public class ClothingType extends GenericAttribute {
 
         return weight;
     }
-
+    @Override
+    public Attributes.AttributeValue[] getAttributeValues() {
+        return Value.values();
+    }
 }
+
+

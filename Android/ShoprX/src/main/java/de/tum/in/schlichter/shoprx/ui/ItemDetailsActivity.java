@@ -16,6 +16,11 @@ import android.widget.Toast;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
+
+import de.tum.in.schlichter.shoprx.Explanations.Model.AbstractExplanation;
+import de.tum.in.schlichter.shoprx.Explanations.Model.Argument;
+import de.tum.in.schlichter.shoprx.Explanations.Model.ContextArgument;
+import de.tum.in.schlichter.shoprx.Explanations.Model.DimensionArgument;
 import de.tum.in.schlichter.shoprx.R;
 
 import java.text.NumberFormat;
@@ -91,9 +96,46 @@ public class ItemDetailsActivity extends Activity {
             }
         });
 
+
+        String exp="";
+        AbstractExplanation explanation = mItem.getExplanation().getAbstractExplanation();
+        if (explanation.hasPrimaryArguments()){
+            DimensionArgument dimensionArgument = (DimensionArgument) explanation.primaryArguments().toArray()[0];
+            if (dimensionArgument!=null) {
+                Log.d("bugsearch","dimensionArgument not null: "+dimensionArgument.dimension());
+                Log.d("bugsearch","arraysize: "+explanation.primaryArguments().toArray().length);
+                exp = dimensionArgument.dimension().attribute().id();
+            }
+        }
+        else if (explanation.hasSupportingArguments()){
+            DimensionArgument dimensionArgument = (DimensionArgument) explanation.supportingArguments().toArray()[0];
+            if (dimensionArgument!=null) {
+                Log.d("bugsearch","dimensionArgument not null: "+dimensionArgument);
+                Log.d("bugsearch","arraysize: "+explanation.supportingArguments().toArray().length);
+
+                if (dimensionArgument.type()== Argument.Type.ON_DIMENSION) {
+                    exp = dimensionArgument.dimension().attribute().id();
+                }
+                else if (dimensionArgument.type()== Argument.Type.GOOD_AVERAGE){
+                    exp ="Good Average";
+                }
+                else if (dimensionArgument.type()== Argument.Type.SERENDIPITOUS){
+                    exp ="Exploring";
+                }
+                else if (dimensionArgument.type()== Argument.Type.CONTEXT){
+                    exp ="Context";
+                }
+            }
+        }else if(explanation.hasContextArguments()) {
+            ContextArgument contextArgument = (ContextArgument) explanation.contextArguments().toArray()[0];
+            exp = "some context stuff";
+        }
+
         // title
         TextView itemTitle = (TextView) findViewById(R.id.textViewItemDetailsTitle);
-        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor()));
+        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor())+exp);
+
+
 
         // item attributes
         StringBuilder description = new StringBuilder();

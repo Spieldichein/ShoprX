@@ -9,14 +9,19 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 
 import de.tum.in.schlichter.androidutils.CheatSheet;
+import de.tum.in.schlichter.shoprx.Explanations.Model.AbstractExplanation;
+import de.tum.in.schlichter.shoprx.Explanations.Model.DimensionArgument;
+import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
 import de.tum.in.schlichter.shoprx.algorithm.model.Color;
@@ -65,6 +70,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
             holder.buttonDislike = (ImageButton) convertView
                     .findViewById(R.id.imageButtonItemDislike);
             holder.lastCritiqueTag = convertView.findViewById(R.id.textViewItemLastCritiqueLabel);
+            holder.iconLayout = (LinearLayout)convertView.findViewById(R.id.explanationIconContainer);
+
 
             convertView.setTag(holder);
         } else {
@@ -122,10 +129,51 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                 .centerCrop()
                 .into(holder.picture);
 
+
+        AbstractExplanation abstractExplanation = item.getExplanation().getAbstractExplanation();
+        ArrayList<SimpleExplanation> simpleExplanations = new ArrayList<SimpleExplanation>();
+        if (abstractExplanation.hasPrimaryArguments()){
+            Object[] arguments = abstractExplanation.primaryArguments().toArray();
+            for ( Object argument :arguments){
+                DimensionArgument dimensionArgument = (DimensionArgument) argument;
+                if (dimensionArgument.dimension()!=null){
+                    SimpleExplanation simpleExplanation = new SimpleExplanation(dimensionArgument.dimension());
+                    simpleExplanations.add(simpleExplanation);
+                }
+            }
+        }
+        else if(abstractExplanation.hasSupportingArguments()){
+
+        }
+        else if (abstractExplanation.hasContextArguments()){
+
+        }
+        //holder.iconLayout
+
+
+        for (SimpleExplanation explanation: simpleExplanations){
+            ImageView imageView = new ImageView(getContext());
+            imageView.setMaxHeight(10);
+            imageView.setMaxWidth(10);
+            switch (explanation.getIconType()){
+                case PRICE:
+                    imageView.setImageResource(R.drawable.euro);
+                    break;
+                case COLOR:
+                    imageView.setImageResource(R.drawable.color);
+                    break;
+                default:
+                    imageView.setImageResource(R.drawable.euro);
+                    break;
+            }
+            holder.iconLayout.addView(imageView);
+        }
         return convertView;
     }
 
+
     static class ViewHolder {
+        LinearLayout iconLayout;
         View pictureContainer;
         ImageView picture;
         TextView name;

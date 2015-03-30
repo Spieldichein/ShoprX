@@ -38,6 +38,14 @@ public class Shop {
         return this;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public LatLng getmLocation() {
+        return mLocation;
+    }
+
     public LatLng location() {
         return mLocation;
     }

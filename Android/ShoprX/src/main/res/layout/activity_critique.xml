@@ -40,15 +40,37 @@
         android:layout_marginBottom="16dp"
         android:text="@string/update_recommendations" />
 
+
+
+    <LinearLayout
+        android:id="@+id/listViews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        android:layout_below="@+id/containerCritiqueItem"
+        android:layout_above="@id/buttonRecommend"
+        >
+    <ListView
+        android:id="@+id/listViewExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:minHeight="30dp">
+        </ListView>
+
     <ListView
         android:id="@+id/listViewCritique"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/buttonRecommend"
-        android:layout_below="@+id/containerCritiqueItem"
+        android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin" >
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:minHeight="30dp">
     </ListView>
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"

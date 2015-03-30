@@ -20,8 +20,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
+
+import de.tum.in.schlichter.shoprx.Explanations.Algorithm.ExplanationGenerator;
+import de.tum.in.schlichter.shoprx.Explanations.Model.Context;
+import de.tum.in.schlichter.shoprx.Explanations.Model.LocationContext;
 import de.tum.in.schlichter.shoprx.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -82,6 +87,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         args.putBoolean("is init", false);
         getLoaderManager().initLoader(LOADER_ID, args, this);
 
+
         setHasOptionsMenu(true);
     }
 
@@ -128,6 +134,21 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
     public void onLoadFinished(Loader<List<Item>> loader, List<Item> data) {
         // is called as soon as the loader finishes.
         mAdapter.clear();
+        List<de.tum.in.schlichter.shoprx.Explanations.Model.Context> contexts = new ArrayList<de.tum.in.schlichter.shoprx.Explanations.Model.Context>();
+        LatLng location = ShoprApp.getLastLocation();
+        if (location != null) {
+            contexts.add(new LocationContext(location.latitude,
+                    location.longitude));
+        }
+
+        ExplanationGenerator explanationGenerator = new ExplanationGenerator(getActivity());
+        if (data!=null)Log.d("bugsearch","data: is empty"+data.isEmpty()+"and data firstname"+data.get(0).name());
+        else {Log.d("bugsearch","data null");}
+        data = explanationGenerator.explain(data, AdaptiveSelection.get().getCurrentQuery(), contexts);
+       if(data!=null) Log.d("bugsearch","data: is empty"+data.isEmpty()+"and data firstname"+data.get(0).name());
+       else {Log.d("bugsearch","data null");}
+
+
         mAdapter.addAll(data);
         Statistics.get().itemCoverageStatistics(data);
         StringBuilder text = new StringBuilder();

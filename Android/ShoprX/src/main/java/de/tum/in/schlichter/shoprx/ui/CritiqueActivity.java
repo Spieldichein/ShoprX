@@ -27,8 +27,14 @@ import android.widget.TextView;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
+
+import de.tum.in.schlichter.shoprx.Explanations.Model.AbstractExplanation;
+import de.tum.in.schlichter.shoprx.Explanations.Model.DimensionArgument;
+import de.tum.in.schlichter.shoprx.Explanations.Model.Explanation;
+import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.R;
 
+import java.lang.reflect.Array;
 import java.util.List;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
@@ -48,9 +54,12 @@ import de.tum.in.schlichter.shoprx.utils.ValueConverter;
 public class CritiqueActivity extends Activity {
 
     private ListView mListView;
+    private ListView explanationListView;
     private Button mButtonUpdate;
 
     private ItemFeatureAdapter mAdapter;
+    private ExplanationAdapter explanationAdapter;
+
 
     private Item mItem;
     private boolean mIsPositiveCritique;
@@ -86,6 +95,7 @@ public class CritiqueActivity extends Activity {
         setupActionBar();
         setupViews();
         setupAdapter();
+        setupExplanationAdapter();
     }
 
     /**
@@ -114,6 +124,7 @@ public class CritiqueActivity extends Activity {
                 .into(image);
 
         mListView = (ListView) findViewById(R.id.listViewCritique);
+        explanationListView = (ListView) findViewById(R.id.listViewExplanation);
 
         mButtonUpdate = (Button) findViewById(R.id.buttonRecommend);
         mButtonUpdate.setEnabled(false);
@@ -135,6 +146,33 @@ public class CritiqueActivity extends Activity {
             }
         }
         mListView.setAdapter(mAdapter);
+    }
+
+    private void setupExplanationAdapter() {
+        explanationAdapter = new ExplanationAdapter(this);
+       // explanationAdapter.addAll(mItem.attributes().getAllAttributes());
+
+        AbstractExplanation explanation = mItem.getExplanation().getAbstractExplanation();
+
+
+        if (explanation.hasPrimaryArguments()){
+            Object[] arguments = explanation.primaryArguments().toArray();
+            for ( Object argument :arguments){
+                DimensionArgument dimensionArgument = (DimensionArgument) argument;
+                if (dimensionArgument.dimension()!=null){
+                    SimpleExplanation simpleExplanation = new SimpleExplanation(dimensionArgument.dimension());
+                    explanationAdapter.add(simpleExplanation);
+                }
+            }
+        }
+        else if(explanation.hasSupportingArguments()){
+
+        }
+        else if (explanation.hasContextArguments()){
+
+        }
+        explanationAdapter.add(new SimpleExplanation("Test", SimpleExplanation.IconType.COLOR));
+        explanationListView.setAdapter(explanationAdapter);
     }
 
     @Override
@@ -286,9 +324,78 @@ public class CritiqueActivity extends Activity {
 
     }
 
+
+    public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
+
+        private static final int LAYOUT = R.layout.explanation_row;
+        private LayoutInflater mLayoutInflater;
+        private SparseBooleanArray mCheckedPositions = new SparseBooleanArray();
+
+        public ExplanationAdapter(Context context) {
+            super(context, LAYOUT);
+            mLayoutInflater = (LayoutInflater) context
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            ViewHolderExplanation holder;
+
+            if (convertView == null) {
+                convertView = mLayoutInflater.inflate(LAYOUT, parent, false);
+
+                holder = new ViewHolderExplanation();
+                holder.title = (TextView) convertView.findViewById(R.id.explanationText);
+                holder.icon = (ImageView) convertView.findViewById(R.id.imageViewExplanationIcon);
+
+                convertView.setTag(holder);
+            } else {
+                holder = (ViewHolderExplanation) convertView.getTag();
+            }
+
+            SimpleExplanation explanation = getItem(position);
+            holder.title.setText(explanation.getText());
+            switch (explanation.getIconType()){
+                case PRICE:
+                    holder.icon.setImageResource(R.drawable.euro);
+                    break;
+                case COLOR:
+                    holder.icon.setImageResource(R.drawable.color);
+                    break;
+                default:
+                     holder.icon.setImageResource(R.drawable.euro);
+            }
+
+            holder.icon.setOnClickListener(new OnClickListener() {
+                @Override
+
+                public void onClick(View v) {
+
+                    //todo push correct screen for correcting algorithm
+                }
+            });
+
+
+
+
+            return convertView;
+        }
+
+        public SparseBooleanArray getCheckedPositions() {
+            return mCheckedPositions;
+        }
+
+    }
+
+
+
     static class ViewHolder {
         TextView title;
         CheckBox value;
+    }
+    static class ViewHolderExplanation{
+        TextView title;
+        ImageView icon;
     }
 
 }

@@ -9,18 +9,19 @@
     android:orientation="horizontal"
     android:showDividers="middle" >
 
-    <CheckBox
-        android:id="@+id/checkBoxFeatureValue"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:paddingRight="@dimen/default_margin"
-        android:text="@string/app_name"
-        android:textAppearance="@style/TextAppearance.Light"
-        android:textColor="@color/lilac" />
+
+
+
+    <ImageView
+        android:id="@+id/imageViewExplanationIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/description_item_picture"
+        android:scaleType="fitCenter"
+        android:src="@drawable/euro" />
 
     <TextView
-        android:id="@+id/textViewFeatureTitle"
+        android:id="@+id/explanationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/default_margin"

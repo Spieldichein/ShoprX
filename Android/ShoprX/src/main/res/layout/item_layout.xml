@@ -4,10 +4,20 @@
     android:layout_height="wrap_content"
     android:background="@drawable/card_background" >
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/explanationIconContainer"
+        android:orientation="horizontal"
+        >
+
+        </LinearLayout>
     <FrameLayout
         android:id="@+id/containerItemPicture"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/explanationIconContainer"
         android:foreground="@drawable/selectable_background_shopr" >
 
         <ImageView

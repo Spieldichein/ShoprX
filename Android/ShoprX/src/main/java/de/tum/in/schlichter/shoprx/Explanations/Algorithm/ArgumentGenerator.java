@@ -159,9 +159,6 @@ public class ArgumentGenerator {
             dimension.informationScore(Valuator.informationScore(item, query,
                     dimension, recommendedItems));
             DimensionArgument dimensionArgument = new DimensionArgument(dimension,true);
-            Log.d("buggybug","explanationscore"+dimensionArgument.dimension().explanationScore());
-            Log.d("buggybug","informationscore"+dimensionArgument.dimension().informationScore());
-
             arguments.add(dimensionArgument);
         }
         sortDesc(arguments);

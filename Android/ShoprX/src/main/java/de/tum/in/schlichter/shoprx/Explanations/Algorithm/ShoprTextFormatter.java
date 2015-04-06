@@ -1,6 +1,6 @@
 package de.tum.in.schlichter.shoprx.Explanations.Algorithm;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.preference.PreferenceActivity;
@@ -10,6 +10,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
 
 import java.util.Locale;
@@ -80,15 +81,15 @@ public class ShoprTextFormatter implements TextFormatter {
 
         @Override
         public void onClick(View widget) {
-            Class<?> cls = null;
+            Log.d("clicked text","clicked text");
+
+          /*  Class<?> cls = null;
             if (attribute instanceof Color) {
-                cls = ColorPreferenceActivity.class;
+               // cls = ColorPreferenceActivity.class;
             } else if (attribute instanceof ClothingType) {
-                cls = ClothingTypePreferenceActivity.class;
+              //  cls = ClothingTypePreferenceActivity.class;
             } else if (attribute instanceof Price) {
-                cls = PricePreferenceActivity.class;
-            } else if (attribute instanceof Sex) {
-                cls = GenderPreferenceActivity.class;
+                //cls = PricePreferenceActivity.class;
             }
             Intent intent = new Intent(fragment.getActivity(), cls);
             if (hasExtra) {
@@ -97,7 +98,7 @@ public class ShoprTextFormatter implements TextFormatter {
                                 .toLowerCase(Locale.ENGLISH));
             }
             fragment.startActivityForResult(intent,
-                    RecommendationsFragment.REQUEST_CODE);
+                    RecommendationsFragment.REQUEST_CODE);*/
         }
 
     }

@@ -14,8 +14,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.algorithm.Query;
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
 
 public class Color extends GenericAttribute {
@@ -57,29 +59,43 @@ public class Color extends GenericAttribute {
     public static final String ID = "color";
 
     public enum Value implements Attributes.AttributeValue {
-        BEIGE(R.string.beige),
-        BLACK(R.string.black),
-        BLUE(R.string.blue),
-        BROWN(R.string.brown),
-        COLORED(R.string.colored),
-        GOLD(R.string.gold),
-        GREY(R.string.grey),
-        GREEN(R.string.green),
-        LILAC(R.string.lilac),
-        OLIVE(R.string.olive),
-        ORANGE(R.string.orange),
-        PETROL(R.string.petrol),
-        PINK(R.string.pink), // rosa zu Deutsch
-        RED(R.string.red),
-        SILVER(R.string.silver),
-        TURQUOISE(R.string.turquoise),
-        WHITE(R.string.white),
-        YELLOW(R.string.yellow);
+        BEIGE(R.string.beige,"beige", Colors.BEIGE),
+        BLACK(R.string.black,"black", Colors.BLACK),
+        BLUE(R.string.blue,"blue",Colors.BLUE),
+        BROWN(R.string.brown,"brown",Colors.BROWN),
+        COLORED(R.string.colored,"multicolor", Colors.MULTICOLOR),
+        GOLD(R.string.gold,"gold",Colors.GOLD),
+        GREY(R.string.grey,"grey",Colors.GREY),
+        GREEN(R.string.green,"green",Colors.GREEN),
+        LILAC(R.string.lilac,"lilac",Colors.LILAC),
+        OLIVE(R.string.olive,"olive",Colors.OLIVE),
+        ORANGE(R.string.orange,"orange",Colors.ORANGE),
+        PETROL(R.string.petrol,"petrol",Colors.PETROL),
+        PINK(R.string.pink,"pink",Colors.PINK), // rosa zu Deutsch
+        RED(R.string.red,"red",Colors.RED),
+        SILVER(R.string.silver,"silver", Colors.SILVER),
+        TURQUOISE(R.string.turquoise,"turquoise",Colors.TURQUOISE),
+        WHITE(R.string.white,"white", Colors.WHITE),
+        YELLOW(R.string.yellow,"yellow", Colors.YELLOW);
 
         int mDescriptor;
+        private String valueName;
+        private String color;
+        private String simpleNamePrefix = "color_";
+        private String simpleName;
 
-        Value(int name) {
+
+
+        Value(int name,String value, String color) {
+            //valueName=value;
             mDescriptor = name;
+            valueName= ShoprApp.getContext().getString(name);
+            simpleName = simpleNamePrefix+value;
+
+            this.color = color;
+        }
+        Value(String name) {
+            valueName = name;
         }
 
         @Override
@@ -88,8 +104,23 @@ public class Color extends GenericAttribute {
         }
 
         @Override
+        public String getColor() {
+            return color;
+        }
+
+        @Override
         public int index() {
             return ordinal();
+        }
+
+        @Override
+        public String getValueName(){
+            return valueName;
+        }
+
+        @Override
+        public String getSimpleName(){
+            return simpleName;
         }
     }
 
@@ -199,4 +230,7 @@ public class Color extends GenericAttribute {
     public AttributeValue[] getAttributeValues() {
         return Value.values();
     }
+
+
+
 }

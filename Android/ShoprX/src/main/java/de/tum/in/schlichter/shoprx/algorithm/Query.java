@@ -1,6 +1,7 @@
 
 package de.tum.in.schlichter.shoprx.algorithm;
 
+import de.tum.in.schlichter.shoprx.Explanations.Model.ShoprPreference;
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
 
 /**
@@ -18,5 +19,9 @@ public class Query {
 
     public Attributes attributes() {
         return attrs;
+    }
+
+    public void revise(ShoprPreference preference) {
+        preference.attribute().updateQuery(this, preference.attributeValues());
     }
 }

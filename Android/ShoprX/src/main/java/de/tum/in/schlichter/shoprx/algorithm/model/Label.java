@@ -794,9 +794,17 @@ public class Label extends GenericAttribute {
 
 
         private String mDescriptor;
+        private String color;
+
 
         Value(String descriptor) {
             mDescriptor = descriptor;
+            color = Colors.PURPLE;
+        }
+
+        @Override
+        public String getValueName(){
+            return mDescriptor;
         }
 
         @Override
@@ -808,6 +816,12 @@ public class Label extends GenericAttribute {
         public int index() {
             return ordinal();
         }
+         @Override
+        public String getColor(){
+             return color;
+         }
+        @Override
+        public String getSimpleName(){return mDescriptor;}
     }
 
     static {

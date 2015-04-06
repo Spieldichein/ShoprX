@@ -62,6 +62,14 @@
                 android:value="de.tum.in.schlichter.shoprx.ui.MainActivity" />
         </activity>
         <activity
+            android:name="de.tum.in.schlichter.shoprx.ui.explanation.HelpActivity"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.CritiqueActivity"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.CritiqueActivity" />
+        </activity>
+        <activity
             android:name="de.tum.in.schlichter.shoprx.importer.ImporterActivity"
             android:label="@string/title_activity_importer"
             android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity" >

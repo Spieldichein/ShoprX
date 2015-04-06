@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.util.SparseBooleanArray;
@@ -20,8 +23,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.analytics.HitBuilders;
@@ -49,9 +54,11 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Label;
 import de.tum.in.schlichter.shoprx.algorithm.model.Price;
 import de.tum.in.schlichter.shoprx.algorithm.model.Sex;
 import de.tum.in.schlichter.shoprx.eval.Statistics;
+import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.PriceRangeFragment;
+import de.tum.in.schlichter.shoprx.utils.ExplanationAdapter;
 import de.tum.in.schlichter.shoprx.utils.ValueConverter;
 
-public class CritiqueActivity extends Activity {
+public class CritiqueActivity extends FragmentActivity {
 
     private ListView mListView;
     private ListView explanationListView;
@@ -70,10 +77,11 @@ public class CritiqueActivity extends Activity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
-        super.onCreate(savedInstanceState);
+        protected void onCreate(Bundle savedInstanceState) {
+            requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+            super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_critique);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -109,6 +117,8 @@ public class CritiqueActivity extends Activity {
     }
 
     private void setupViews() {
+
+
         TextView question = (TextView) findViewById(R.id.textViewCritiqueQuestion);
         question.setText(getString(mIsPositiveCritique ? R.string.detail_like
                 : R.string.detail_dislike, mItem.name()));
@@ -150,28 +160,11 @@ public class CritiqueActivity extends Activity {
 
     private void setupExplanationAdapter() {
         explanationAdapter = new ExplanationAdapter(this);
-       // explanationAdapter.addAll(mItem.attributes().getAllAttributes());
 
-        AbstractExplanation explanation = mItem.getExplanation().getAbstractExplanation();
-
-
-        if (explanation.hasPrimaryArguments()){
-            Object[] arguments = explanation.primaryArguments().toArray();
-            for ( Object argument :arguments){
-                DimensionArgument dimensionArgument = (DimensionArgument) argument;
-                if (dimensionArgument.dimension()!=null){
-                    SimpleExplanation simpleExplanation = new SimpleExplanation(dimensionArgument.dimension());
-                    explanationAdapter.add(simpleExplanation);
-                }
-            }
-        }
-        else if(explanation.hasSupportingArguments()){
+        for (SimpleExplanation explanation1: mItem.getExplanation().getSimpleExplanations()){
+            explanationAdapter.add(explanation1);
 
         }
-        else if (explanation.hasContextArguments()){
-
-        }
-        explanationAdapter.add(new SimpleExplanation("Test", SimpleExplanation.IconType.COLOR));
         explanationListView.setAdapter(explanationAdapter);
     }
 
@@ -325,77 +318,10 @@ public class CritiqueActivity extends Activity {
     }
 
 
-    public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
-
-        private static final int LAYOUT = R.layout.explanation_row;
-        private LayoutInflater mLayoutInflater;
-        private SparseBooleanArray mCheckedPositions = new SparseBooleanArray();
-
-        public ExplanationAdapter(Context context) {
-            super(context, LAYOUT);
-            mLayoutInflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            ViewHolderExplanation holder;
-
-            if (convertView == null) {
-                convertView = mLayoutInflater.inflate(LAYOUT, parent, false);
-
-                holder = new ViewHolderExplanation();
-                holder.title = (TextView) convertView.findViewById(R.id.explanationText);
-                holder.icon = (ImageView) convertView.findViewById(R.id.imageViewExplanationIcon);
-
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolderExplanation) convertView.getTag();
-            }
-
-            SimpleExplanation explanation = getItem(position);
-            holder.title.setText(explanation.getText());
-            switch (explanation.getIconType()){
-                case PRICE:
-                    holder.icon.setImageResource(R.drawable.euro);
-                    break;
-                case COLOR:
-                    holder.icon.setImageResource(R.drawable.color);
-                    break;
-                default:
-                     holder.icon.setImageResource(R.drawable.euro);
-            }
-
-            holder.icon.setOnClickListener(new OnClickListener() {
-                @Override
-
-                public void onClick(View v) {
-
-                    //todo push correct screen for correcting algorithm
-                }
-            });
-
-
-
-
-            return convertView;
-        }
-
-        public SparseBooleanArray getCheckedPositions() {
-            return mCheckedPositions;
-        }
-
-    }
-
-
-
     static class ViewHolder {
         TextView title;
         CheckBox value;
     }
-    static class ViewHolderExplanation{
-        TextView title;
-        ImageView icon;
-    }
+
 
 }

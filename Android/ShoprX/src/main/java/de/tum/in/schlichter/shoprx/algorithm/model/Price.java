@@ -42,18 +42,24 @@ public class Price extends GenericAttribute {
     public static final String ID = "price";
 
     public enum Value implements Attributes.AttributeValue {
-        SUB_25(R.string.less_than_25),
-        BETWEEN_25_50(R.string._25_to_50),
-        BETWEEN_50_75(R.string._50_to_75),
-        BETWEEN_75_100(R.string._75_to_100),
-        BETWEEN_100_150(R.string._100_to_150),
-        BETWEEN_150_200(R.string._150_to_200),
-        ABOVE_200(R.string._200_or_more);
+        SUB_25(R.string.less_than_25,"Less than 25 €", Colors.BLACK),
+        BETWEEN_25_50(R.string._25_to_50,"25 to 50 €",Colors.BLUE),
+        BETWEEN_50_75(R.string._50_to_75,"50 to 75 €",Colors.GREEN),
+        BETWEEN_75_100(R.string._75_to_100,"75 to 100 €",Colors.LILAC),
+        BETWEEN_100_150(R.string._100_to_150,"100 to 150 €",Colors.ORANGE),
+        BETWEEN_150_200(R.string._150_to_200,"150 to 200 €",Colors.RED),
+        ABOVE_200(R.string._200_or_more,"200 € or more",Colors.WHITE);
 
         private int mDescriptor;
+        private String valueName;
+        private String color;
+        private String simpleNamePrefix = "price_";
+        private String simpleName;
 
-        Value(int descriptor) {
+        Value(int descriptor, String name,String color) {
             mDescriptor = descriptor;
+            valueName = name;
+            this.color = color;
         }
 
         @Override
@@ -62,10 +68,21 @@ public class Price extends GenericAttribute {
         }
 
         @Override
+        public String getValueName(){
+            return valueName;
+        }
+
+        @Override
         public int index() {
             return ordinal();
         }
 
+        @Override
+        public String getColor() {
+            return color;
+        }
+        @Override
+        public String getSimpleName(){return valueName;}
     }
 
     public Price() {

@@ -13,7 +13,10 @@ public class SimpleExplanation {
         COLOR,
         LABEL,
         TYPE,
-        SOME_CONTEXT
+        SOME_CONTEXT,
+        RANDOM,
+        WEATHER,
+        TEMPERATURE
     }
 
 
@@ -44,5 +47,13 @@ public class SimpleExplanation {
 
     public IconType getIconType() {
         return iconType;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setIconType(IconType iconType) {
+        this.iconType = iconType;
     }
 }

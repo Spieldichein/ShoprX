@@ -5,11 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ import de.tum.in.schlichter.shoprx.Explanations.Model.AbstractExplanation;
 import de.tum.in.schlichter.shoprx.Explanations.Model.Argument;
 import de.tum.in.schlichter.shoprx.Explanations.Model.ContextArgument;
 import de.tum.in.schlichter.shoprx.Explanations.Model.DimensionArgument;
+import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.R;
 
 import java.text.NumberFormat;
@@ -37,8 +40,9 @@ import de.tum.in.schlichter.shoprx.eval.ResultsActivity;
 import de.tum.in.schlichter.shoprx.eval.Statistics;
 import de.tum.in.schlichter.shoprx.model.Shop;
 import de.tum.in.schlichter.shoprx.provider.ShoprContract.Stats;
+import de.tum.in.schlichter.shoprx.utils.ExplanationAdapter;
 
-public class ItemDetailsActivity extends Activity {
+public class ItemDetailsActivity extends FragmentActivity {
 
     public interface InitBundle {
         String ITEM_ID = "item_id";
@@ -47,6 +51,9 @@ public class ItemDetailsActivity extends Activity {
 
     private Item mItem;
     private int mItemPosition;
+    private ListView explanationListView;
+    private ExplanationAdapter explanationAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,44 +103,13 @@ public class ItemDetailsActivity extends Activity {
             }
         });
 
-
-        String exp="";
-        AbstractExplanation explanation = mItem.getExplanation().getAbstractExplanation();
-        if (explanation.hasPrimaryArguments()){
-            DimensionArgument dimensionArgument = (DimensionArgument) explanation.primaryArguments().toArray()[0];
-            if (dimensionArgument!=null) {
-                Log.d("bugsearch","dimensionArgument not null: "+dimensionArgument.dimension());
-                Log.d("bugsearch","arraysize: "+explanation.primaryArguments().toArray().length);
-                exp = dimensionArgument.dimension().attribute().id();
-            }
-        }
-        else if (explanation.hasSupportingArguments()){
-            DimensionArgument dimensionArgument = (DimensionArgument) explanation.supportingArguments().toArray()[0];
-            if (dimensionArgument!=null) {
-                Log.d("bugsearch","dimensionArgument not null: "+dimensionArgument);
-                Log.d("bugsearch","arraysize: "+explanation.supportingArguments().toArray().length);
-
-                if (dimensionArgument.type()== Argument.Type.ON_DIMENSION) {
-                    exp = dimensionArgument.dimension().attribute().id();
-                }
-                else if (dimensionArgument.type()== Argument.Type.GOOD_AVERAGE){
-                    exp ="Good Average";
-                }
-                else if (dimensionArgument.type()== Argument.Type.SERENDIPITOUS){
-                    exp ="Exploring";
-                }
-                else if (dimensionArgument.type()== Argument.Type.CONTEXT){
-                    exp ="Context";
-                }
-            }
-        }else if(explanation.hasContextArguments()) {
-            ContextArgument contextArgument = (ContextArgument) explanation.contextArguments().toArray()[0];
-            exp = "some context stuff";
-        }
+        //Explanations
+        explanationListView = (ListView) findViewById(R.id.listViewExplanation);
+        setupExplanationAdapter();
 
         // title
         TextView itemTitle = (TextView) findViewById(R.id.textViewItemDetailsTitle);
-        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor())+exp);
+        itemTitle.setText(getString(R.string.choice_confirmation, mItem.name(), mItem.attributes().getAttributeById(Label.ID).currentValue().descriptor()));
 
 
 
@@ -167,6 +143,8 @@ public class ItemDetailsActivity extends Activity {
         TextView itemDescription = (TextView) findViewById(R.id.textViewItemDetailsAttributes);
         itemDescription.setText(description);
 
+
+
         List<Shop> shops = ShoprApp.getShopList();
         if (shops != null) {
             for (Shop shop : shops) {
@@ -193,6 +171,16 @@ public class ItemDetailsActivity extends Activity {
                 }
             }
         }
+    }
+
+    private void setupExplanationAdapter() {
+        explanationAdapter = new ExplanationAdapter(this);
+
+        for (SimpleExplanation explanation1: mItem.getExplanation().getSimpleExplanations()){
+            explanationAdapter.add(explanation1);
+
+        }
+        explanationListView.setAdapter(explanationAdapter);
     }
 
     @Override

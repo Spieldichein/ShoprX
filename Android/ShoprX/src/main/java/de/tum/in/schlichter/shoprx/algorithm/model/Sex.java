@@ -17,6 +17,8 @@ public class Sex extends GenericAttribute {
         UNISEX("Unisex");
 
         String mDescriptor;
+        String valueName;
+        String color;
 
         Value(String name) {
             mDescriptor = name;
@@ -28,9 +30,21 @@ public class Sex extends GenericAttribute {
         }
 
         @Override
+        public String getValueName(){
+            return mDescriptor;
+        }
+
+        @Override
         public int index() {
             return ordinal();
         }
+
+        @Override
+        public String getColor() {
+            return color;
+        }
+        @Override
+        public String getSimpleName(){return valueName;}
     }
 
     public Sex() {
@@ -38,6 +52,8 @@ public class Sex extends GenericAttribute {
         mValueWeights = new double[numValues];
         Arrays.fill(mValueWeights, 1.0 / numValues);
     }
+
+
 
     public Sex(Value value) {
         setWeights(value);

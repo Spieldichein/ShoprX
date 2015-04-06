@@ -75,30 +75,39 @@ public class ClothingType extends GenericAttribute {
     public static final String ID = "clothing-type";
 
     public enum Value implements Attributes.AttributeValue {
-        BLOUSE(R.string.blouse),
-        CARDIGAN(R.string.cardigan),
-        CHINO(R.string.chino),
-        COAT(R.string.coat),
-        DRESS(R.string.dress),
-        HOODIE(R.string.hoodie),
-        JACKET(R.string.jacket),
-        JEANS(R.string.jeans),
-        JUMPER(R.string.jumper),
-        SKIRT(R.string.skirt),
-        SHORTS(R.string.shorts),
-        SHIRT(R.string.shirt),
-        SWEATSHIRT(R.string.sweatshirt),
-        SWIMWEAR(R.string.swimwear),
-        TOP(R.string.top),
-        TROUSERS(R.string.trousers),
-        T_SHIRT(R.string.t_shirt),
-        TUNIC(R.string.tunic),
-        UNKNOWN(R.string.unknownClothingType);
+
+        BLOUSE(R.string.blouse,Colors.YELLOW),
+        CARDIGAN(R.string.cardigan,Colors.WHITE),
+        CHINO(R.string.chino,Colors.TURQUOISE),
+        COAT(R.string.coat, Colors.SILVER),
+        DRESS(R.string.dress, Colors.AZURE_BLUE),
+        HOODIE(R.string.hoodie,Colors.BEIGE),
+        JACKET(R.string.jacket, Colors.BLACK),
+        JEANS(R.string.jeans,Colors.BLUE),
+        JUMPER(R.string.jumper,Colors.BROWN),
+        SKIRT(R.string.skirt,Colors.GOLD),
+        SHORTS(R.string.shorts,Colors.GREEN),
+        SHIRT(R.string.shirt,Colors.LILAC),
+        SWEATSHIRT(R.string.sweatshirt,Colors.MULTICOLOR),
+        SWIMWEAR(R.string.swimwear,Colors.OLIVE),
+        TOP(R.string.top,Colors.ORANGE),
+        TROUSERS(R.string.trousers,Colors.PEACH),
+        T_SHIRT(R.string.t_shirt,Colors.PETROL),
+        TUNIC(R.string.tunic,Colors.RED),
+        UNKNOWN(R.string.unknownClothingType, Colors.PURPLE);
 
         int mDescriptor;
+        private String valueName;
+        private String color;
+        private String simpleNamePrefix = "clothing_";
+        private String simpleName;
 
-        Value(int descriptor) {
+
+        Value(int descriptor,String color) {
             mDescriptor = descriptor;
+            valueName= ShoprApp.getContext().getString(descriptor);
+            this.color =color;
+            simpleName = simpleNamePrefix+valueName.toLowerCase();
         }
 
         @Override
@@ -110,6 +119,17 @@ public class ClothingType extends GenericAttribute {
         public int index() {
             return ordinal();
         }
+
+        @Override
+        public String getValueName(){
+            return valueName;
+        }
+        @Override
+        public String getColor() {
+            return color;
+        }
+        @Override
+        public String getSimpleName(){return simpleName;}
     }
 
     public ClothingType() {

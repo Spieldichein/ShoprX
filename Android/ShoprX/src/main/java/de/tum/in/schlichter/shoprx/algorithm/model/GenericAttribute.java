@@ -2,20 +2,26 @@
 package de.tum.in.schlichter.shoprx.algorithm.model;
 
 import java.util.Arrays;
+import java.util.Set;
 
 import de.tum.in.schlichter.shoprx.algorithm.Query;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.AttributeValue;
+import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
 
-public abstract class GenericAttribute implements Attributes.Attribute {
 
-    private Attributes.AttributeValue currentValue;
 
+public abstract class GenericAttribute implements Attribute {
+
+    private AttributeValue currentValue;
+    public static double WEIGHT_UPPER_BOUND = 1.0;
+    public static double WEIGHT_LOWER_BOUND = 0.0;
     double[] mValueWeights;
 
-    public Attributes.AttributeValue currentValue() {
+    public AttributeValue currentValue() {
         return currentValue;
     }
 
-    public GenericAttribute currentValue(Attributes.AttributeValue currentValue) {
+    public GenericAttribute currentValue(AttributeValue currentValue) {
         this.currentValue = currentValue;
         return this;
     }
@@ -24,12 +30,12 @@ public abstract class GenericAttribute implements Attributes.Attribute {
         return mValueWeights;
     }
 
-    public abstract Attributes.AttributeValue[] getValueSymbols();
+    public abstract AttributeValue[] getValueSymbols();
 
     @Override
     public String getValueWeightsString() {
         StringBuilder builder = new StringBuilder();
-        Attributes.AttributeValue[] values = getValueSymbols();
+        AttributeValue[] values = getValueSymbols();
 
         builder.append("[");
         for (int i = 0; i < mValueWeights.length; i++) {
@@ -260,5 +266,22 @@ public abstract class GenericAttribute implements Attributes.Attribute {
                 }
             }
         }
+    }
+
+    @Override
+    public void updateQuery(Query query, Set<AttributeValue> preferredValues) {
+        Attribute queryAttr =  query.attributes().getAttributeById(id());
+        if (queryAttr == null) {
+            queryAttr = query.attributes().initializeAndReturnAttribute(this);
+        }
+
+        queryAttr = (GenericAttribute) query.attributes().getAttributeById(id());
+        preferAttributeValues(preferredValues, queryAttr.getValueWeights());
+    }
+    protected void preferAttributeValues(Set<AttributeValue> values, double[] weights) {
+        double favorValue = WEIGHT_UPPER_BOUND / values.size();
+        Arrays.fill(weights, WEIGHT_LOWER_BOUND);
+        for(AttributeValue value : values)
+            weights[value.index()] = favorValue;
     }
 }

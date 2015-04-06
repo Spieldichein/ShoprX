@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
 
 import de.tum.in.schlichter.shoprx.Explanations.Algorithm.ExplanationGenerator;
+import de.tum.in.schlichter.shoprx.Explanations.Algorithm.ShoprLocalizer;
+import de.tum.in.schlichter.shoprx.Explanations.Algorithm.ShoprTextFormatter;
 import de.tum.in.schlichter.shoprx.Explanations.Model.Context;
 import de.tum.in.schlichter.shoprx.Explanations.Model.LocationContext;
 import de.tum.in.schlichter.shoprx.R;
@@ -141,7 +143,8 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
                     location.longitude));
         }
 
-        ExplanationGenerator explanationGenerator = new ExplanationGenerator(getActivity());
+      //  ExplanationGenerator explanationGenerator = new ExplanationGenerator(getActivity());
+        ExplanationGenerator explanationGenerator = new ExplanationGenerator(new ShoprLocalizer(getActivity()),new ShoprTextFormatter(this));
         if (data!=null)Log.d("bugsearch","data: is empty"+data.isEmpty()+"and data firstname"+data.get(0).name());
         else {Log.d("bugsearch","data null");}
         data = explanationGenerator.explain(data, AdaptiveSelection.get().getCurrentQuery(), contexts);

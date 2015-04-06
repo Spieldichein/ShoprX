@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import de.tum.in.schlichter.shoprx.algorithm.Query;
 
@@ -27,6 +28,9 @@ public class Attributes {
         public void critiqueQuery(Query query, boolean isPositive);
 
         public AttributeValue[] getAttributeValues();
+
+        public void updateQuery(Query query, Set<AttributeValue> preferredValues);
+
     }
 
     public interface AttributeValue {
@@ -36,6 +40,11 @@ public class Attributes {
          * attribute.
          */
         public int index();
+        public String getValueName();
+        public String getColor();
+        public String getSimpleName();
+
+
 
         /**
          * Returns a {@link String} representation suitable for end-user

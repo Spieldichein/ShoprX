@@ -46,11 +46,14 @@ public class Item {
 
     private Explanation explanation;
 
+    private boolean inFashion;
+
     public int id() {
         return id;
     }
 
     public Item id(int id) {
+        explanation = new Explanation();
         this.id = id;
         return this;
     }
@@ -67,6 +70,7 @@ public class Item {
     }
 
     public Item name(String name) {
+        explanation = new Explanation();
         this.name = name;
 
         mNameParts = name.split("-");
@@ -98,8 +102,17 @@ public class Item {
     }
 
     public Item price(BigDecimal price) {
+        explanation = new Explanation();
         this.price = price;
         return this;
+    }
+
+    public boolean isInFashion() {
+        return inFashion;
+    }
+
+    public void setInFashion(boolean inFashion) {
+        this.inFashion = inFashion;
     }
 
     public String image() {
@@ -107,6 +120,7 @@ public class Item {
     }
 
     public Item image(String image_url) {
+        explanation = new Explanation();
         this.image_url = image_url;
         return this;
     }
@@ -125,6 +139,7 @@ public class Item {
     }
 
     public Item attributes(Attributes attrs) {
+        explanation = new Explanation();
         this.attrs = attrs;
         return this;
     }
@@ -143,6 +158,7 @@ public class Item {
     }
 
     public Item quality(double quality) {
+        explanation = new Explanation();
         this.quality = quality;
         return this;
     }

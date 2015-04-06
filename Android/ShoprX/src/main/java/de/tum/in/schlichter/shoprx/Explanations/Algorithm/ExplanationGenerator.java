@@ -64,21 +64,14 @@ public class ExplanationGenerator {
                                 List<Item> recommendedItems, List<Context> contexts) {
         AbstractExplanation abstractExplanation = new ArgumentGenerator().select(item, query,
                 recommendedItems, contexts);
-        Log.d("bugsearch","has supporting"+abstractExplanation.hasSupportingArguments());
-        if (abstractExplanation.hasSupportingArguments()){
-            Log.d("bugsearch","has supporting"+abstractExplanation.supportingArguments().toArray()[0]);
-            Log.d("bugsearch","supp count"+abstractExplanation.supportingArguments().toArray().length);
+        /*if (abstractExplanation.hasSupportingArguments()){
             if (abstractExplanation.supportingArguments().toArray()[0] !=null){
                 DimensionArgument dimensionArgument = (DimensionArgument) abstractExplanation.supportingArguments().toArray()[0];
-                Log.d("bugsearch",""+dimensionArgument.dimension());
-                Log.d("bugsearch",""+dimensionArgument.type());
             }
-        }
-        Explanation explanation = new Explanation();
-        explanation.setAbstractExplanation(abstractExplanation);
-        return  explanation;
+        }*/
+        //return  explanation;
 
-       // return new SurfaceGenerator(localizer, formatter).transform(abstractExplanation);
+        return new SurfaceGenerator(localizer, formatter).transform(abstractExplanation);
     }
 
 

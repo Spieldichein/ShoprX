@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import de.tum.in.schlichter.shoprx.Explanations.Model.ShoprPreference;
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.algorithm.ContextualPostFiltering;
@@ -87,6 +88,9 @@ public class AdaptiveSelection {
 
     public List<Item> getCurrentRecommendations() {
         return mCurrentRecommendations;
+    }
+    public void setCurrentRecommendations(List<Item> currentRecommendations){
+        this.mCurrentRecommendations=currentRecommendations;
     }
 
     /**
@@ -207,6 +211,16 @@ public class AdaptiveSelection {
         mAlreadySeenItems = new HashMap<Integer, Integer>();
     }
 
+    public void submitPreference(ShoprPreference preference) {
+        // Update the current query with the new critique
+        if (preference != null) {
+            queryRevise(mQuery, preference);
+            //  mCurrentCritique = critique;
+        }
+    }
+
+
+
     /**
      * Takes a liked/disliked item, which feature value was liked/disliked, the
      * current query. Returns a new query modified according to the given user
@@ -218,5 +232,13 @@ public class AdaptiveSelection {
             critique.item().attributes().getAttributeById(attribute.id())
                     .critiqueQuery(query, critique.feedback().isPositiveFeedback());
         }
+    }
+    /**
+     * Takes a preference over an attribute's values. Yields a new query modified
+     * according to the given user preference over the values of the submitted attribute.
+     */
+
+    private static void queryRevise(Query query, ShoprPreference preference) {
+        query.revise(preference);
     }
 }

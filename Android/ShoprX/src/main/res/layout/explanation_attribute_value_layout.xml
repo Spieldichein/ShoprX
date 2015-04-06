@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<de.tum.in.schlichter.shoprx.ui.explanation.Prefrences.CheckableRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/checked_attribute_preference_background_shopr">
+    
+    <FrameLayout
+        android:id="@+id/containerAttributeValuePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <ImageView
+            android:id="@+id/imageViewAttributeValuePicture"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:contentDescription="@string/description_item_picutre"
+            android:scaleType="fitCenter" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewAttributeValueName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/containerAttributeValuePicture"
+        android:ellipsize="end"
+        android:paddingLeft="1dp"
+        android:paddingRight="1dp"
+        android:singleLine="true"
+        android:textAppearance="@style/TextAppearance.Small.Light" />
+
+</de.tum.in.schlichter.shoprx.ui.explanation.Prefrences.CheckableRelativeLayout>

@@ -2,6 +2,7 @@
 package de.tum.in.schlichter.shoprx.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -56,7 +57,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if (convertView == null) {
+        if (true/*convertView == null*/) {
             convertView = mInflater.inflate(LAYOUT, null);
 
             holder = new ViewHolder();
@@ -124,29 +125,10 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                 .centerCrop()
                 .into(holder.picture);
 
-
-        AbstractExplanation abstractExplanation = item.getExplanation().getAbstractExplanation();
-        ArrayList<SimpleExplanation> simpleExplanations = new ArrayList<SimpleExplanation>();
-        if (abstractExplanation.hasPrimaryArguments()){
-            Object[] arguments = abstractExplanation.primaryArguments().toArray();
-            for ( Object argument :arguments){
-                DimensionArgument dimensionArgument = (DimensionArgument) argument;
-                if (dimensionArgument.dimension()!=null){
-                    SimpleExplanation simpleExplanation = new SimpleExplanation(dimensionArgument.dimension());
-                    simpleExplanations.add(simpleExplanation);
-                }
-            }
-        }
-        else if(abstractExplanation.hasSupportingArguments()){
-
-        }
-        else if (abstractExplanation.hasContextArguments()){
-
-        }
         //holder.iconLayout
 
 
-        for (SimpleExplanation explanation: simpleExplanations){
+        for (SimpleExplanation explanation: item.getExplanation().getSimpleExplanations()){
             ImageView imageView = new ImageView(getContext());
             imageView.setMaxHeight(10);
             imageView.setMaxWidth(10);
@@ -156,6 +138,21 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                     break;
                 case COLOR:
                     imageView.setImageResource(R.drawable.color);
+                    break;
+                case TYPE:
+                    imageView.setImageResource(R.drawable.clothing);
+                    break;
+                case LABEL:
+                    imageView.setImageResource(R.drawable.brand);
+                    break;
+                case RANDOM:
+                    imageView.setImageResource(R.drawable.exploring);
+                    break;
+                case TEMPERATURE:
+                    imageView.setImageResource(R.drawable.temperature);
+                    break;
+                case WEATHER:
+                    imageView.setImageResource(R.drawable.weather);
                     break;
                 default:
                     imageView.setImageResource(R.drawable.euro);

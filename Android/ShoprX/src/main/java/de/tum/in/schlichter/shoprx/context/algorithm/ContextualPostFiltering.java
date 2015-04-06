@@ -8,7 +8,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.ShoprApp;
+import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
 import de.tum.in.schlichter.shoprx.algorithm.model.ClothingType;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.model.Company;
@@ -53,6 +55,7 @@ public class ContextualPostFiltering {
      */
     public static List<Item> postFilterItems(List<Item> currentRecommendation, int numberOfRecommendations){
         List<Item> updatedRecommendation = new ArrayList<Item>();
+        Log.d("CONTEXTSTUFF","enter method!!!");
 
         //Updates the items, such that we can see in which contexts these items were selected
         retrieveContextInformationForItems(currentRecommendation);
@@ -61,15 +64,36 @@ public class ContextualPostFiltering {
 
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
+            Log.d("CONTEXTSTUFF","scenario isset");
 
             int overallNumberOfContextsSetForAllItems = 0;
 
+            List<Item> newCurrentRec = new ArrayList<Item>();
             //For each item: Calculate the distances
             for (Item item : currentRecommendation) {
+
+
+                Log.d("CONTEXTSTUFF","item in currentrec");
 
                 //Get the context for the item
                 ItemSelectedContext itemContext = item.getItemContext();
                 Map<DistanceMetric, Integer> distanceMetrics = itemContext.getContextsForItem(); //Get the contexts for the item
+
+
+
+
+                int overallWeather =0;
+                int overallTemperature =0;
+                int overallDay=0;
+                int overallTime =0;
+                int overallCompany=0;
+                double overallWeatherDistance =0;
+                double overallTemperatureDistance =0;
+                double overallDayDistance=0;
+                double overallTimeDistance =0;
+                double overallCompanyDistance=0;
+
+
 
                 int overallContextFactorsSet = 0; // The number of context factors which are set for this item
                 double overallItemDistance = 0.0; // The overall distance after summation of all factors without dividing
@@ -78,13 +102,48 @@ public class ContextualPostFiltering {
                     int times = distanceMetrics.get(metric);
                     overallContextFactorsSet += times;
                     weight = metric.getWeight((ClothingType) item.attributes().getAttributeById(ClothingType.ID));
+                    double distanceHolder =  getDistance(times, metric, scenarioContext) * weight;
+                    Log.d("CONTEXTSTUFF","a context");
 
+                    //**TODO** gather information for all 5 dimension seperatly for explanations, count factorset for weight too
+                    if (metric instanceof Company){
+                        overallCompany++;
+                        overallCompanyDistance+=distanceHolder;
+                        Log.d("CONTEXTSTUFF","company");
+                    }
+                    else if (metric instanceof DayOfTheWeek){
+                        overallDay++;
+                        overallDayDistance+=distanceHolder;
+                        Log.d("CONTEXTSTUFF","DayOfTheWeek");
+                    }
+                    else if (metric instanceof Temperature){
+                        Log.d("CONTEXTSTUFF","Temperature");
+                        overallTemperature++;
+                        overallTemperatureDistance+=distanceHolder;
+                    }
+                    else if (metric instanceof TimeOfTheDay){
+                        Log.d("CONTEXTSTUFF","TimeOfTheDay");
+                        overallTime++;
+                        overallTimeDistance+=distanceHolder;
+                    }
+                    else if (metric instanceof Weather){
+                        Log.d("CONTEXTSTUFF","Weather");
+                        overallWeather++;
+                        overallWeatherDistance+=distanceHolder;
+                    }
                     //Multiply the distance with its weight, as they should not have their full weight
 //                    Log.d("Weight", "" + weight);
-                    overallItemDistance = overallItemDistance + getDistance(times, metric, scenarioContext) * weight;
+                    overallItemDistance = overallItemDistance +distanceHolder;
 //                    Log.d("Found Context", ""+ metric +" selected "+ times +" times " +overallItemDistance);
 
                 } // End for each metric within the contexts of a item
+
+
+                if (overallCompany !=0 && overallCompanyDistance !=0)overallCompanyDistance = overallCompanyDistance/overallCompany;
+                if (overallWeather!=0 && overallWeatherDistance!=0)overallWeatherDistance = overallWeatherDistance/overallWeather;
+                if (overallDay!=0&&overallDayDistance!=0)overallDayDistance = overallDayDistance/overallDay;
+                if (overallTemperature!=0 &&overallTemperatureDistance!=0)overallTemperatureDistance = overallTemperatureDistance/overallTemperature;
+                if (overallTime!=0 &&overallTimeDistance !=0)overallTimeDistance = overallTimeDistance / overallTime;
 
                 // Set the distance to the current context
                 // Items that were not selected in any context are very far away and will first of all be attached to the end, afterwards they will get the median.
@@ -92,6 +151,21 @@ public class ContextualPostFiltering {
 //                    Log.d("Found", "Dist: " + overallItemDistance + " Factors: " + overallContextFactorsSet);
                     overallItemDistance = overallItemDistance / overallContextFactorsSet; //have an average weight
                 }
+
+//TODO make more reasonable ^^
+                if (overallTemperatureDistance < overallItemDistance / 8){
+                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
+                    Log.d("CONTEXTSTUFF","ADDED temp");
+
+                }
+                if (overallWeatherDistance < overallItemDistance /8){
+                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
+                    Log.d("CONTEXTSTUFF","ADDED Weather");
+
+                }
+
+                newCurrentRec.add(item);
+
                 //scale from 0 to 1 to be able to compare different items
                 double maxContextWeights = ((ClothingType) item.attributes().getAttributeById(ClothingType.ID)).getContextWeightsSum();
 
@@ -106,6 +180,8 @@ public class ContextualPostFiltering {
 
             } // End for each item
 
+            AdaptiveSelection.get().setCurrentRecommendations(newCurrentRec);
+            currentRecommendation = newCurrentRec;
             adjustDistances(overallNumberOfContextsSetForAllItems, currentRecommendation);
 
             //The maximum distance for a product is 1 and the minimum 0 (closest).

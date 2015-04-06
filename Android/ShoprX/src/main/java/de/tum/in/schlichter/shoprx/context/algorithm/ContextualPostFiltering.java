@@ -38,7 +38,7 @@ public class ContextualPostFiltering {
      * active context. Meaning that if you set 0.5 here, all items that were not selected yet, are
      * going to get a distance of 0.5 Therefore you can influence the exploration/exploitation parameter.
      */
-    private static final double DISTANCE_OF_NON_SELECTED_ITEMS = 0.6;
+    private static final double DISTANCE_OF_NON_SELECTED_ITEMS = 0.51;
     private static final double THRESHOLD_FREQUENTLY_USED_ITEMS = 0.3; // Items that are selected in more than this numbers times of cases
     private static final double IMPROVEMENT_FREQUENTLY_USED_ITEMS = 0.2; // will get a bonus in distance of this
 

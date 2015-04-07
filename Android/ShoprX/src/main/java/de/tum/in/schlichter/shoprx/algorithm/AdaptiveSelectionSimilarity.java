@@ -1,6 +1,8 @@
 
 package de.tum.in.schlichter.shoprx.algorithm;
 
+import android.util.Log;
+
 import java.util.List;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
@@ -8,22 +10,21 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Attributes;
 public class AdaptiveSelectionSimilarity {
 
     public static double similarity(Attributes first, Attributes second) {
-        List<Attributes.Attribute> attrsFirst = first.getAllAttributes();
+        List<Attributes.Attribute> attrsSecond = second.getAllAttributes();
 
         int count = 0;
         double similarity = 0;
 
-
         // sum up similarity values for all attributes
-        for (Attributes.Attribute attrFirst : attrsFirst) {
+        for (Attributes.Attribute attrSecond : attrsSecond) {
             /*
              * The query does only store new vectors for a feature once it has
              * been critiqued (others remain null). This speeds up processing by
              * avoiding useless comparisons (calculating similarity for
              * un-critiqued features).
              */
-            Attributes.Attribute attrSecond = second.getAttributeById(attrFirst.id());
-            if (attrSecond != null) {
+            Attributes.Attribute attrFirst = first.getAttributeById(attrSecond.id());
+            if (attrFirst != null) {
                 count++;
                 similarity += attributeSimilarity(attrFirst, attrSecond);
             }
@@ -33,6 +34,8 @@ public class AdaptiveSelectionSimilarity {
         if (count == 0) {
             return 0;
         }
+
+//        Log.d("Attr Sim", "" + second.getAllAttributesString() + (similarity / count));
 
         // average
         return similarity / count;
@@ -57,13 +60,18 @@ public class AdaptiveSelectionSimilarity {
         // sum up deltas
         int count = 0;
         for (int i = 0; i < valueWeightsFirst.length; i++) {
-            if (valueWeightsFirst[i] == 0 && valueWeightsSecond[i] == 0) {
+            if ( valueWeightsSecond[i] == 0.0) {
                 // skip if both weights are 0
                 continue;
             }
             count++;
-            similarity += 1 - Math.abs(valueWeightsFirst[i] - valueWeightsSecond[i]);
+//            Log.d("Weights", "Query: " + valueWeightsFirst[i] + " Item:" +valueWeightsSecond[i]);
+            similarity += valueWeightsFirst.length * (1 - Math.abs(valueWeightsFirst[i] - valueWeightsSecond[i]));
         }
+
+//        if (similarity > 0){
+//            Log.d("Attr Sim", " " + second.currentValue() + " Sim:" + similarity + " Res:" +(similarity / count));
+//        }
 
         // average
         return similarity / count;

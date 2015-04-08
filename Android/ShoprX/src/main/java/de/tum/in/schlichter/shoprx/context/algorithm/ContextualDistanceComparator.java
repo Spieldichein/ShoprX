@@ -15,21 +15,21 @@ public class ContextualDistanceComparator implements Comparator<Item> {
     @Override
     public int compare(Item item, Item item2) {
         if (item.getDistanceToContext() > item2.getDistanceToContext()){
-            return 1;
-        } else if (item.getDistanceToContext() < item2.getDistanceToContext()){
             return -1;
+        } else if (item.getDistanceToContext() < item2.getDistanceToContext()){
+            return 1;
         }
 
-        if (item.querySimilarity() > item2.querySimilarity()){
-            return 1;
-        } else if (item.querySimilarity() < item2.querySimilarity()){
+        if (item.quality() > item2.quality()){
             return -1;
+        } else if (item.quality() < item2.quality()){
+            return 1;
         }
 
         if (item.getProximityToStereotype() > item2.getProximityToStereotype()){
-            return 1;
-        } else if (item.getProximityToStereotype() < item2.getProximityToStereotype()){
             return -1;
+        } else if (item.getProximityToStereotype() < item2.getProximityToStereotype()){
+            return 1;
         }
 
         return 0;

@@ -75,7 +75,7 @@ public class AdaptiveSelection {
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
 
-        double alpha = 0.997;
+        double alpha = 0.99;
 
         recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION, mAlreadySeenItems, alpha);
 
@@ -141,7 +141,6 @@ public class AdaptiveSelection {
             long start = System.currentTimeMillis();
             recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, alpha, alreadySeenItems);
             Log.d("AdaptiveSelection", "" + (System.currentTimeMillis() - start) + " ms");
-
         } else {
             /*
              * Negative progress: user disliked one or more of the features of
@@ -151,7 +150,7 @@ public class AdaptiveSelection {
             recommendations = BoundedGreedySelection.boundedGreedySelection(query, caseBase, numItemsPreSelection, bound, ALPHA_BOUNDED_GREEDY_REFOCUS, alreadySeenItems);
         }
 
-//        Utils.dumpToConsole(recommendations, query);
+        Utils.dumpToConsole(recommendations, query);
 
         recommendations = ContextualPostFiltering.postFilterItems(recommendations, numItems);
 

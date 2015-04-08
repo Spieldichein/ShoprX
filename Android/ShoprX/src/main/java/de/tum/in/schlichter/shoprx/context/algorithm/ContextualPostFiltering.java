@@ -11,6 +11,7 @@ import java.util.Map;
 import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.ShoprApp;
 import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
+import de.tum.in.schlichter.shoprx.algorithm.Utils;
 import de.tum.in.schlichter.shoprx.algorithm.model.ClothingType;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.model.Company;
@@ -55,7 +56,7 @@ public class ContextualPostFiltering {
      */
     public static List<Item> postFilterItems(List<Item> currentRecommendation, int numberOfRecommendations){
         List<Item> updatedRecommendation = new ArrayList<Item>();
-        Log.d("CONTEXTSTUFF","enter method!!!");
+//        Log.d("CONTEXTSTUFF","enter method!!!");
 
         //Updates the items, such that we can see in which contexts these items were selected
         retrieveContextInformationForItems(currentRecommendation);
@@ -64,7 +65,7 @@ public class ContextualPostFiltering {
 
         //Check that we have a scenario (real test)
         if (scenarioContext.isSet()) {
-            Log.d("CONTEXTSTUFF","scenario isset");
+//            Log.d("CONTEXTSTUFF","scenario isset");
 
             int overallNumberOfContextsSetForAllItems = 0;
 
@@ -73,7 +74,7 @@ public class ContextualPostFiltering {
             for (Item item : currentRecommendation) {
 
 
-                Log.d("CONTEXTSTUFF","item in currentrec");
+//                Log.d("CONTEXTSTUFF","item in currentrec");
 
                 //Get the context for the item
                 ItemSelectedContext itemContext = item.getItemContext();
@@ -101,33 +102,38 @@ public class ContextualPostFiltering {
                 for (DistanceMetric metric : distanceMetrics.keySet()) { //For each metric for the item
                     int times = distanceMetrics.get(metric);
                     overallContextFactorsSet += times;
+//                    Log.d("Attr", ""+item.attributes());
+//                    Log.d("ID", ""+item.id());
+//                    Log.d("Name", ""+ item.name());
+//                    Log.d("ById", "" + item.attributes().getAttributeById(ClothingType.ID));
+//                    Log.d("Metric", ""+metric);
                     weight = metric.getWeight((ClothingType) item.attributes().getAttributeById(ClothingType.ID));
                     double distanceHolder =  getDistance(times, metric, scenarioContext) * weight;
-                    Log.d("CONTEXTSTUFF","a context");
+//                    Log.d("CONTEXTSTUFF","a context");
 
                     //**TODO** gather information for all 5 dimension seperatly for explanations, count factorset for weight too
                     if (metric instanceof Company){
                         overallCompany++;
                         overallCompanyDistance+=distanceHolder;
-                        Log.d("CONTEXTSTUFF","company");
+//                        Log.d("CONTEXTSTUFF","company");
                     }
                     else if (metric instanceof DayOfTheWeek){
                         overallDay++;
                         overallDayDistance+=distanceHolder;
-                        Log.d("CONTEXTSTUFF","DayOfTheWeek");
+//                        Log.d("CONTEXTSTUFF","DayOfTheWeek");
                     }
                     else if (metric instanceof Temperature){
-                        Log.d("CONTEXTSTUFF","Temperature");
+//                        Log.d("CONTEXTSTUFF","Temperature");
                         overallTemperature++;
                         overallTemperatureDistance+=distanceHolder;
                     }
                     else if (metric instanceof TimeOfTheDay){
-                        Log.d("CONTEXTSTUFF","TimeOfTheDay");
+//                        Log.d("CONTEXTSTUFF","TimeOfTheDay");
                         overallTime++;
                         overallTimeDistance+=distanceHolder;
                     }
                     else if (metric instanceof Weather){
-                        Log.d("CONTEXTSTUFF","Weather");
+//                        Log.d("CONTEXTSTUFF","Weather");
                         overallWeather++;
                         overallWeatherDistance+=distanceHolder;
                     }
@@ -152,15 +158,15 @@ public class ContextualPostFiltering {
                     overallItemDistance = overallItemDistance / overallContextFactorsSet; //have an average weight
                 }
 
-//TODO make more reasonable ^^
+                //TODO make more reasonable ^^
                 if (overallTemperatureDistance < overallItemDistance / 8){
                     item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
-                    Log.d("CONTEXTSTUFF","ADDED temp");
+//                    Log.d("CONTEXTSTUFF","ADDED temp");
 
                 }
                 if (overallWeatherDistance < overallItemDistance /8){
                     item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
-                    Log.d("CONTEXTSTUFF","ADDED Weather");
+//                    Log.d("CONTEXTSTUFF","ADDED Weather");
 
                 }
 
@@ -187,9 +193,8 @@ public class ContextualPostFiltering {
             //The maximum distance for a product is 1 and the minimum 0 (closest).
             //We want the closest items to be at the top of the list (screen)
             Collections.sort(currentRecommendation, new ContextualDistanceComparator());
+            Utils.dumpToConsole(currentRecommendation, null);
         } //End check for scenario
-
-        logItems(currentRecommendation);
 
         for (Item item : currentRecommendation){
             if (updatedRecommendation.size() < numberOfRecommendations) {
@@ -275,6 +280,7 @@ public class ContextualPostFiltering {
                 query.close();
             }
 
+//            Log.d("Item", "" + item.id());
 //            Log.d("Item Context: ", ""+ itemContext);
         }
     }
@@ -292,11 +298,5 @@ public class ContextualPostFiltering {
         result = Math.sqrt(Math.pow(result, 2)); // square it
 //        Log.d("Result" , ""+result);
         return result;
-    }
-
-    private static void logItems(List<Item> items){
-        for (Item item : items) {
-            Log.d("ContextDistance", "" + item.getDistanceToContext() + " " + item);
-        }
     }
 }

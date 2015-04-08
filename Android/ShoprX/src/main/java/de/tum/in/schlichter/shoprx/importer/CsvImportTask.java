@@ -181,6 +181,8 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
             }
         }
 
+        Log.d("Number of items", "" + newValues.size());
+
         Uri uri;
         switch (mType) {
             case IMPORT_CONTEXT:

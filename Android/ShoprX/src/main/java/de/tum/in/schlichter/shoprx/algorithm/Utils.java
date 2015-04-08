@@ -4,7 +4,9 @@ package de.tum.in.schlichter.shoprx.algorithm;
 import android.util.Log;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
 import de.tum.in.schlichter.shoprx.context.algorithm.ContextualPreFiltering;
@@ -19,7 +21,7 @@ public class Utils {
      * location, availability and opening hours. <br/>
      * In the extended version (not for the baseline) it also returns items that were filtered by the stereotype settings of the user.
      */
-    public static List<Item> getLimitedCaseBase(List<Item> wholeCaseBase) {
+    public static List<Item> getLimitedCaseBase(List<Item> wholeCaseBase, Map<Integer, Integer> alreadySeenItems) {
         List<Item> cases;
 
         //Pre-filter based on the current active scenario context.
@@ -29,6 +31,8 @@ public class Utils {
         //Write the relaxations to the real instance
         ScenarioContext.getInstance().setRelaxations(scenarioContext.getRelaxations());
         Log.d("Context pre-filtering", ""+ (System.currentTimeMillis() - start) + " ms");
+
+        cases = filterAlreadySeenItems(cases, alreadySeenItems);
 
         //Do the calculation of stereotype proximity.
         start = System.currentTimeMillis();
@@ -50,26 +54,42 @@ public class Utils {
      * Sorts items by similarity to query using the Sim function: sim(query,
      * item of caseBase).
      */
-    public static List<Item> sortBySimilarityToQuery(Query query, List<Item> caseBase) {
+    public static List<Item> sortBySimilarityToQuery(Query query, List<Item> caseBase, Map<Integer, Integer> alreadySeenItems) {
         // Limit the case base (PRE-FILTERING)
         Log.d("CB before limiting", ""+caseBase.size());
-        caseBase = getLimitedCaseBase(caseBase);
+        caseBase = getLimitedCaseBase(caseBase, alreadySeenItems);
         Log.d("CB after limiting", ""+caseBase.size());
 
         // calculate similarity value for each item
         for (Item item : caseBase) {
-            //Log.d("Item", item.toString());
+//            Log.d("Item", item.toString());
             item.querySimilarity(AdaptiveSelectionSimilarity.similarity(query.attributes(), item.attributes()));
         }
 
         // sort highest similarity first
         Collections.sort(caseBase, new AdaptiveSelectionComparator());
 
+        //Get first item and take its similarity
+        //divide all other item's similarities by this
+        if (caseBase.size() > 0) {
+            Double highestItemSimilarity = caseBase.get(0).querySimilarity();
+            if ( highestItemSimilarity <= 0 || highestItemSimilarity.isNaN() ){
+                for (Item item : caseBase) {
+                    item.querySimilarity(1.0); // Set 1.0 if similarity was not set.
+                }
+            } else { // Entries already exist
+                for (Item item : caseBase) {
+                    item.querySimilarity((item.querySimilarity() / highestItemSimilarity)); //Scale from 0 to 1
+                    //                Log.d("QuerySim after", "" + item.querySimilarity());
+                }
+            }
+        }
+
         return caseBase;
     }
 
     public static void dumpToConsole(List<Item> cases, Query query) {
-        if (query.attributes() != null) {
+        if (query != null && query.attributes() != null) {
             System.out.println("Query " + query.attributes().getAllAttributesString());
         } else {
             System.out.println("Query EMPTY");
@@ -79,8 +99,22 @@ public class Utils {
             Log.d("[" + i + "] Item", "" + item.attributes().getAllAttributesString()
                             + " sim " + item.querySimilarity()
                             + " qual " + item.quality()
-                            + " stereo " + item.getProximityToStereotype());
+                            + " stereo " + item.getProximityToStereotype()
+                            + " postFilter " + item.getDistanceToContext());
         }
+    }
+
+    private static List<Item> filterAlreadySeenItems(List<Item> caseBase, Map<Integer, Integer> alreadySeenItems){
+        List<Item> newCaseBase = new LinkedList<Item>();
+
+        for (Item item: caseBase){
+            if (alreadySeenItems.containsKey(item.id()) ){
+                continue;
+            }
+            newCaseBase.add(item);
+        }
+
+        return newCaseBase;
     }
 
 }

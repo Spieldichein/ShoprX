@@ -75,7 +75,7 @@ public class AdaptiveSelection {
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
 
-        double alpha = 0.99;
+        double alpha = 0.95;
 
         recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION, mAlreadySeenItems, alpha);
 

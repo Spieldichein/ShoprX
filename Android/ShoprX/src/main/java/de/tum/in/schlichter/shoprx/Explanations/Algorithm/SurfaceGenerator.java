@@ -38,6 +38,10 @@ public class SurfaceGenerator {
                 simpleExplanations.add(oneSimpleExplanation);
             }
         }
+        if (abstractExplanation.item().isTrendy()){
+            if (abstractExplanation.item().isTrendy())Log.d("trendy","trendy item!!!!!!: "+abstractExplanation.item().name());
+            simpleExplanations.add(new SimpleExplanation("Suggested by our fashion experts!", SimpleExplanation.IconType.TRENDY));
+        }
         explanation.setSimpleExplanations(simpleExplanations);
 
         CharSequence contextArguments = renderContextArguments(abstractExplanation);
@@ -46,10 +50,7 @@ public class SurfaceGenerator {
         if (!contextArguments.toString().isEmpty())
             explanation.addPositiveReason(contextArguments);
 
-        if(!abstractExplanation.negativeArguments().isEmpty()){
-            CharSequence negativeArguments = renderNegativeArguments(abstractExplanation);
-            explanation.addNegativeReason(negativeArguments);
-        }
+
 
       //  explanation.simple(formatter.concat(dimensionArguments,  contextArguments));
         return explanation;

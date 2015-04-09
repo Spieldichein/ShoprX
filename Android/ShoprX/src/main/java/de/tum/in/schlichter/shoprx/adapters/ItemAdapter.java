@@ -128,7 +128,10 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         //holder.iconLayout
 
 
+        int imagesAdded =0;
         for (SimpleExplanation explanation: item.getExplanation().getSimpleExplanations()){
+            imagesAdded++;
+            if (imagesAdded>5)break;
             ImageView imageView = new ImageView(getContext());
             imageView.setMaxHeight(10);
             imageView.setMaxWidth(10);
@@ -154,12 +157,22 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                 case WEATHER:
                     imageView.setImageResource(R.drawable.weather);
                     break;
+                case TRENDY:
+                    imageView.setImageResource(R.drawable.trendy);
+                    break;
                 default:
                     imageView.setImageResource(R.drawable.euro);
                     break;
             }
+
+            int dps =20;
+            final float scale = getContext().getResources().getDisplayMetrics().density;
+            int pixels = (int) (dps * scale + 0.5f);
+            imageView.setLayoutParams(new ViewGroup.LayoutParams(pixels,pixels));
             holder.iconLayout.addView(imageView);
+
         }
+
         return convertView;
     }
 

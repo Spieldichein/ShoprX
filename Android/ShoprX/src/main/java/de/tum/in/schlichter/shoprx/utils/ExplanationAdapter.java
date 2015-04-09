@@ -82,6 +82,9 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
             case TEMPERATURE:
                 holder.icon.setImageResource(R.drawable.temperature);
                 break;
+            case TRENDY:
+                holder.icon.setImageResource(R.drawable.trendy);
+                break;
             default:
                 holder.icon.setImageResource(R.drawable.euro);
         }

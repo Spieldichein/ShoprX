@@ -145,11 +145,8 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
 
       //  ExplanationGenerator explanationGenerator = new ExplanationGenerator(getActivity());
         ExplanationGenerator explanationGenerator = new ExplanationGenerator(new ShoprLocalizer(getActivity()),new ShoprTextFormatter(this));
-        if (data!=null)Log.d("bugsearch","data: is empty"+data.isEmpty()+"and data firstname"+data.get(0).name());
-        else {Log.d("bugsearch","data null");}
         data = explanationGenerator.explain(data, AdaptiveSelection.get().getCurrentQuery(), contexts);
-       if(data!=null) Log.d("bugsearch","data: is empty"+data.isEmpty()+"and data firstname"+data.get(0).name());
-       else {Log.d("bugsearch","data null");}
+
 
 
         mAdapter.addAll(data);

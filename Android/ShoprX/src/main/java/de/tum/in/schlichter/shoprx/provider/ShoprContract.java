@@ -22,8 +22,10 @@ public class ShoprContract {
         String IMAGE_URL = "item_image";
 
         String NAME = "item_name";
-        
+
         String SEASON = "item_season";
+
+        String ISTRENDY = "item_istrendy";
 
         String STOCK = "item_stock";
     }

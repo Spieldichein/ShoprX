@@ -16,7 +16,8 @@ public class SimpleExplanation {
         SOME_CONTEXT,
         RANDOM,
         WEATHER,
-        TEMPERATURE
+        TEMPERATURE,
+        TRENDY
     }
 
 

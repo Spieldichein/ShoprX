@@ -9,10 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:id="@+id/explanationIconContainer"
-        android:orientation="horizontal"
-        >
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        </LinearLayout>
+
+    </LinearLayout>
     <FrameLayout
         android:id="@+id/containerItemPicture"
         android:layout_width="match_parent"

@@ -84,7 +84,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
             if (firstLine == null) {
                 return "No data.";
             }
-            if ((mType == Type.IMPORT_ITEMS && firstLine.length != 10) ||
+            if ((mType == Type.IMPORT_ITEMS && firstLine.length != 11) ||
                     mType == Type.IMPORT_SHOPS && firstLine.length != 9 ||
                     mType == Type.IMPORT_CONTEXT && firstLine.length != 6) {
                 Log.d(TAG, "Invalid column count.");
@@ -131,6 +131,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         break;
                     case IMPORT_ITEMS:
                         // add values for one item
+                        Log.d("bugsearch","id: "+id+" line length: "+line.length);
                         values.put(Items._ID, id);
                         int shopID = id % numberOfShops + 1;  // 0 is inclusive but n exclusive, we start at 1 with our IDs
                         values.put(Shops.REF_SHOP_ID, shopID);
@@ -141,6 +142,8 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         values.put(Items.NAME, line[6]);
                         values.put(Items.BRAND, line[7]);
                         values.put(Items.SEX, line[8]);
+                        if (line.length==11)values.put(Items.ISTRENDY, line[10]);
+                        else values.put(Items.ISTRENDY, 0);
 
                         //Increment id
                         id++;

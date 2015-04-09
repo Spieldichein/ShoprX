@@ -30,6 +30,8 @@ public class Item {
 
     private Sex sex;
 
+    private boolean isTrendy;
+
     private double proximityToStereotype;
 
     private int mItemsInStock;
@@ -162,6 +164,12 @@ public class Item {
         this.quality = quality;
         return this;
     }
+
+    public void setTrendy(boolean isTrendy){
+        this.isTrendy = isTrendy;
+    }
+
+    public boolean isTrendy(){return isTrendy;}
 
     public void setSex(Sex sex){
         this.sex = sex;

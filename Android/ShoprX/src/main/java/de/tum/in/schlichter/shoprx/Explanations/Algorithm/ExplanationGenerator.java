@@ -102,7 +102,7 @@ public class ExplanationGenerator {
         }
 
         String[] columns = new String[] { ShoprContract.Items._ID, ShoprContract.Items.CLOTHING_TYPE, ShoprContract.Items.BRAND, ShoprContract.Items.PRICE, ShoprContract.Items.IMAGE_URL,
-                ShoprContract.Items.COLOR, ShoprContract.Items.SEX, ShoprContract.Shops.REF_SHOP_ID, ShoprContract.Items.SEASON, ShoprContract.Items.NAME, ShoprContract.Items.STOCK };
+                ShoprContract.Items.COLOR, ShoprContract.Items.SEX, ShoprContract.Shops.REF_SHOP_ID, ShoprContract.Items.SEASON, ShoprContract.Items.NAME, ShoprContract.Items.STOCK, ShoprContract.Items.ISTRENDY };
 
         Cursor query = appContext.getContentResolver().query( ShoprContract.Items.CONTENT_URI, columns, selectionString, null, limitString);
 
@@ -136,6 +136,7 @@ public class ExplanationGenerator {
                 item.shopId(query.getInt(7));
 
                 item.setItemsInStock(query.getInt(10));
+                item.setTrendy(query.getInt(11)==1);
 
                 caseBase.add(item);
             }

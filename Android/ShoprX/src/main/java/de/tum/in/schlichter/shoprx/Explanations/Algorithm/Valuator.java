@@ -11,6 +11,7 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
 import de.tum.in.schlichter.shoprx.algorithm.model.ClothingType;
 import de.tum.in.schlichter.shoprx.algorithm.model.Color;
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
+import de.tum.in.schlichter.shoprx.algorithm.model.Label;
 import de.tum.in.schlichter.shoprx.algorithm.model.Price;
 import de.tum.in.schlichter.shoprx.algorithm.model.Sex;
 
@@ -156,7 +157,7 @@ public class Valuator {
         attributes.add(new Color());
         attributes.add(new Price());
         attributes.add(new ClothingType());
-        attributes.add(new Sex());
+        attributes.add(new Label());
 
         double totalAttributeValues = 0;
         for (Attribute attr : attributes) {

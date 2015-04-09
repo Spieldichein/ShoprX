@@ -39,11 +39,6 @@ public class SurfaceGenerator {
             }
         }
         explanation.setSimpleExplanations(simpleExplanations);
-        Log.d("transform","abstract explanatio for:"+abstractExplanation.item().name());
-        Log.d("transform","abstract explanatio for:"+abstractExplanation.category());
-        for (SimpleExplanation se :explanation.getSimpleExplanations()){
-            Log.d("transform","simple: "+se.getText());
-        }
 
         CharSequence contextArguments = renderContextArguments(abstractExplanation);
 

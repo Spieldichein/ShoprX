@@ -40,6 +40,9 @@ public class ArgumentGenerator {
         List<DimensionArgument> sortedInitialArguments = generateSortedInitialArguments(
                 item, query, recommendedItems);
 
+        for (DimensionArgument dimensionArgument: sortedInitialArguments){
+            Log.d("explanationscores",""+dimensionArgument.dimension().attribute().id()+" eS: "+dimensionArgument.dimension().explanationScore()+" iS; "+dimensionArgument.dimension().informationScore());
+        }
         List<DimensionArgument> strongPrimaryArguments = filterBy(
                 sortedInitialArguments, new StrongPrimaryArgumentFilter());
 

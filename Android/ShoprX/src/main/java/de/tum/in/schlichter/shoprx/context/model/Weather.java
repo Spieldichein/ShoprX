@@ -107,6 +107,9 @@ public enum Weather implements DistanceMetric {
         edge = sDistanceGraph.addEdge(CLOUDY, RAINING);
         sDistanceGraph.setEdgeWeight(edge, 0.7);
 
+	edge = sDistanceGraph.addEdge(CLOUDY, SNOWING);
+        sDistanceGraph.setEdgeWeight(edge, 0.7);
+
         edge = sDistanceGraph.addEdge(RAINING, VERY_CLOUDY);
         sDistanceGraph.setEdgeWeight(edge, 0.4);
 

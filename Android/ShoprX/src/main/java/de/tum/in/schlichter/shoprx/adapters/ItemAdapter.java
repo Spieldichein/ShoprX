@@ -149,7 +149,7 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                     imageView.setImageResource(R.drawable.brand);
                     break;
                 case RANDOM:
-                    imageView.setImageResource(R.drawable.exploring);
+                    imageView.setImageResource(R.drawable.random);
                     break;
                 case TEMPERATURE:
                     imageView.setImageResource(R.drawable.temperature);
@@ -159,6 +159,12 @@ public class ItemAdapter extends ArrayAdapter<Item> {
                     break;
                 case TRENDY:
                     imageView.setImageResource(R.drawable.trendy);
+                    break;
+                case LAST_CRITIQUE:
+                    imageView.setImageResource(R.drawable.repeat);
+                    break;
+                case LOCATION:
+                    imageView.setImageResource(R.drawable.location);
                     break;
                 default:
                     imageView.setImageResource(R.drawable.euro);

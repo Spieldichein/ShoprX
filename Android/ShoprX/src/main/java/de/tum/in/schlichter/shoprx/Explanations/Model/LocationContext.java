@@ -1,5 +1,7 @@
 package de.tum.in.schlichter.shoprx.Explanations.Model;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,12 +55,22 @@ public class LocationContext extends Context {
     public double distanceToUserInMeters(Item item) {
         List<Shop> shops = ShoprApp.getShopList();
         Shop shop=null;
-        if (shops ==null)return 100.0;
+        if (shops ==null){
+            Log.d("searching shop","shops null");
+
+            return 100.0;
+        }
+        Log.d("searching shop","shops not null but size: "+shops.size());
+
         for (Shop aShop :shops){
             if (aShop.getId() == item.shopId())shop =aShop;
             break;
         }
-        if (shop ==null)return 100.0;
+        if (shop ==null){
+            Log.d("searching shop","shop not found");
+
+            return 100.0;
+        }
         double latitude = shop.getmLocation().latitude;
         double longitude =  shop.getmLocation().longitude;
 
@@ -82,13 +94,15 @@ public class LocationContext extends Context {
     public double informationScore(Item item, List<Item> recommendations) {
         double R = calculateRange(recommendations);
         double I = calculateInformation(item, recommendations);
+        Log.d("Distance!!","Range: "+R+" and Info:"+I) ;
+
         return (R + I) / 2;
     }
 
     private double calculateInformation(Item item, List<Item> recommendations) {
-        int n = recommendations.size();
-        int h = calculateH(item, recommendations);
-
+        double n = recommendations.size();
+        double h = calculateH(item, recommendations);
+        Log.d("Distance!!","h: "+h+" and n:"+n) ;
         return (n - h) / (n - 1);
     }
 

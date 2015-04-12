@@ -23,11 +23,11 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Item;
  */
 public class ArgumentGenerator {
     // Î± - compares explanation score
-    public static double ALPHA = 0.11;// 0.6;
+    public static double ALPHA = 3;//0.11;// 0.6;
     // Âµ - second criteria for explanation score (Âµ < Î±)
-    public static double MU = 0.09;// 0.51;
+    public static double MU = 1.99;//0.09;// 0.51;
     // Î² - compares global score
-    public static double BETA = 0.11;
+    public static double BETA = 1.5;
     // Î³ - compares desired lowest information score
     public static double GAMMA = 0.5;
     // ÆŸ - compares the information score for negative arguments
@@ -49,14 +49,15 @@ public class ArgumentGenerator {
         List<DimensionArgument> weakPrimaryArguments = filterBy(
                 sortedInitialArguments, new WeakPrimaryArgumentFilter());
 
-        List<DimensionArgument> negativeArguments = generateNegativeArguments(item, query, recommendedItems);
+        /*List<DimensionArgument> negativeArguments = generateNegativeArguments(item, query, recommendedItems);
 
         if(negativeArguments.size() > 0) {
             explanation.addNegativeArguments(negativeArguments);
-        }
+        }*/
 
         // Select context arguments
         for (Context context : contexts) {
+
             if (context.isValidArgument(item, recommendedItems))
                 explanation.addContextArgument(new ContextArgument(context,
                         true));

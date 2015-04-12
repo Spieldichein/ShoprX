@@ -1,5 +1,7 @@
 package de.tum.in.schlichter.shoprx.Explanations.Model;
 
+import android.util.Log;
+
 import java.util.List;
 
 import de.tum.in.schlichter.shoprx.algorithm.model.Item;
@@ -17,6 +19,13 @@ public abstract class Context {
     public abstract double informationScore(Item item, List<Item> recommendations);
 
     public boolean isValidArgument(Item item, List<Item> recommendations) {
+       double es=explanationScore(item);
+               Log.d("context Distance","es:"+es);
+        double is = informationScore(item,recommendations);
+        Log.d("context Distance","is:"+is);
+
+
+
         return explanationScore(item) > ALPHA && informationScore(item, recommendations) > GAMMA;
     }
 }

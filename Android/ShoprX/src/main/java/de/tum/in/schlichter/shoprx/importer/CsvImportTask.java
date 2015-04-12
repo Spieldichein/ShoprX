@@ -131,7 +131,6 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         break;
                     case IMPORT_ITEMS:
                         // add values for one item
-                        Log.d("bugsearch","id: "+id+" line length: "+line.length);
                         values.put(Items._ID, id);
                         int shopID = id % numberOfShops + 1;  // 0 is inclusive but n exclusive, we start at 1 with our IDs
                         values.put(Shops.REF_SHOP_ID, shopID);

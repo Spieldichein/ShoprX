@@ -26,7 +26,7 @@ public class Valuator {
      */
     public static double informationScore(Item item, Query query,
                                           Dimension dimension, List<Item> recommendations) {
-        double R = calculateRange(recommendations, query, dimension);
+        double R = calculateRangeNew(recommendations, query, dimension);
         double I = calculateInformation(item, recommendations, dimension);
         return (R + I) / 2;
     }
@@ -112,6 +112,21 @@ public class Valuator {
         return max - min;
     }
 
+    protected static double calculateRangeNew(List<Item> recommendations,
+                                           Query query, Dimension dimension) {
+        double max = 0.0;
+        double min = 1.0;
+
+        for (Item item : recommendations) {
+            double ES = explanationScoreNew(item, query, dimension);
+            max = Math.max(max, ES);
+            min = Math.min(min, ES);
+        }
+
+        double result = (max-min)* query.attributes().getAttributeById(dimension.attribute().id()).getAttributeValues().length;
+        return result;
+    }
+
     /*
      * Calculates a score that measures how fit an item is overall to the user's
      * preferences.
@@ -148,11 +163,34 @@ public class Valuator {
             queryValueWeights = missingQueryAttr.getValueWeights();
         }
 
-        return getDimensionWeight(dimension)
-                * calculateLocalScore(itemValueWeights, queryValueWeights);
+        return calculateLocalScore(itemValueWeights,queryValueWeights);
+      //  return getDimensionWeight(dimension)
+       //         * calculateLocalScore(itemValueWeights, queryValueWeights);
     }
 
-    private static double getDimensionWeight(Dimension dimension) {
+    public static double explanationScoreNew(Item item, Query query,
+                                          Dimension dimension) {
+        Attribute itemAttr = item.attributes().getAttributeById(
+                dimension.attribute().id());
+        Attribute queryAttr = query.attributes().getAttributeById(
+                dimension.attribute().id());
+        double[] itemValueWeights = itemAttr.getValueWeights();
+        double[] queryValueWeights;
+
+        if (itemAttr != null && queryAttr != null) {
+            queryValueWeights = queryAttr.getValueWeights();
+        } else {
+            Attribute missingQueryAttr = query.attributes().initializeAndReturnAttribute(
+                    dimension.attribute());
+            queryValueWeights = missingQueryAttr.getValueWeights();
+        }
+
+        return calculateLocalScoreOld(itemValueWeights,queryValueWeights);
+        //  return getDimensionWeight(dimension)
+        //         * calculateLocalScore(itemValueWeights, queryValueWeights);
+    }
+
+  /* private static double getDimensionWeight(Dimension dimension) {
         List<Attribute> attributes = new ArrayList<Attribute>();
         attributes.add(new Color());
         attributes.add(new Price());
@@ -166,7 +204,7 @@ public class Valuator {
 
         return Math.sqrt(dimension.attribute().getAttributeValues().length
                 / totalAttributeValues);
-    }
+    }*/
 
     private static double calculateLocalScore(double[] itemWeights,
                                               double[] queryWeights) {
@@ -174,7 +212,16 @@ public class Valuator {
         for (int i = 0; i < itemWeights.length; i++) {
             score += itemWeights[i] * queryWeights[i];
         }
+        score = score * itemWeights.length;
+        return score;
+    }
 
+    private static double calculateLocalScoreOld(double[] itemWeights,
+                                              double[] queryWeights) {
+        double score = 0.0;
+        for (int i = 0; i < itemWeights.length; i++) {
+            score += itemWeights[i] * queryWeights[i];
+        }
         return score;
     }
 

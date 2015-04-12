@@ -6,6 +6,7 @@ import android.widget.Checkable;
 import android.widget.RelativeLayout;
 
 public class CheckableRelativeLayout extends RelativeLayout implements Checkable {
+    private int multiChecked =0;
     private boolean checked = false;
     private static final int[] CHECKED_STATE_SET = { android.R.attr.state_checked };
 

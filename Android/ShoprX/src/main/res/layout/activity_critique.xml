@@ -32,8 +32,8 @@
 
             <ImageView
                 android:id="@+id/imageViewCritiqueImage"
-                android:layout_width="150dp"
-                android:layout_height="200dp"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
                 android:contentDescription="@string/description_item_picture"
                 android:scaleType="fitCenter" />
         </LinearLayout>

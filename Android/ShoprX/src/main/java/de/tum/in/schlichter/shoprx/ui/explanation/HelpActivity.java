@@ -11,6 +11,7 @@ import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.ClothingTypeFragment;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.ColorFragment;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.PriceRangeFragment;
+import de.tum.in.schlichter.shoprx.ui.explanation.Prefrences.LabelPreferenceFragment;
 
 /**
  * Created by Nicksteal on 06.04.2015.
@@ -60,8 +61,8 @@ public class HelpActivity extends FragmentActivity {
             fragmentTransaction.commit ();
         }
         else if (pushedView.equalsIgnoreCase("label")){
-           // fragmentTransaction.add(R.id.emptyframe,new ColorFragment(), "colorFragment");
-           // fragmentTransaction.commit ();
+            fragmentTransaction.add(R.id.emptyframe,new LabelPreferenceFragment(), "labelFragment");
+            fragmentTransaction.commit ();
         }
 
 

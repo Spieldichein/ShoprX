@@ -269,19 +269,24 @@ public abstract class GenericAttribute implements Attribute {
     }
 
     @Override
-    public void updateQuery(Query query, Set<AttributeValue> preferredValues) {
+    public void updateQuery(Query query, Set<AttributeValue> preferredValues,Set<AttributeValue> preferredValuesDouble) {
         Attribute queryAttr =  query.attributes().getAttributeById(id());
         if (queryAttr == null) {
             queryAttr = query.attributes().initializeAndReturnAttribute(this);
         }
 
         queryAttr = (GenericAttribute) query.attributes().getAttributeById(id());
-        preferAttributeValues(preferredValues, queryAttr.getValueWeights());
+        preferAttributeValues(preferredValues,preferredValuesDouble, queryAttr.getValueWeights());
     }
-    protected void preferAttributeValues(Set<AttributeValue> values, double[] weights) {
-        double favorValue = WEIGHT_UPPER_BOUND / values.size();
+    protected void preferAttributeValues(Set<AttributeValue> values,Set<AttributeValue> preferredValues, double[] weights) {
+        int divisor = values.size()+preferredValues.size();
+        double favorValue = WEIGHT_UPPER_BOUND /divisor*2;
+        double normalValue = WEIGHT_UPPER_BOUND /divisor;
         Arrays.fill(weights, WEIGHT_LOWER_BOUND);
         for(AttributeValue value : values)
+        if (preferredValues.contains(value))
             weights[value.index()] = favorValue;
+        else weights[value.index()] = normalValue;
+
     }
 }

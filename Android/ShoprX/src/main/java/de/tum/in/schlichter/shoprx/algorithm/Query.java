@@ -22,6 +22,6 @@ public class Query {
     }
 
     public void revise(ShoprPreference preference) {
-        preference.attribute().updateQuery(this, preference.attributeValues());
+        preference.attribute().updateQuery(this, preference.attributeValues(),preference.attributeValuesDouble());
     }
 }

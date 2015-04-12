@@ -2,8 +2,10 @@ package de.tum.in.schlichter.shoprx.ui.explanation.MindMap;
 
 import android.view.View;
 
+import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
 import de.tum.in.schlichter.shoprx.algorithm.model.Color;
+import de.tum.in.schlichter.shoprx.ui.explanation.Prefrences.ColorPreferenceFragment;
 
 
 public class ColorFragment extends MindMapFragment {
@@ -19,7 +21,8 @@ public class ColorFragment extends MindMapFragment {
 
 	@Override
 	protected void onAttributePreferenceChangeRequested() {
-	//	startActivity(ColorPreferenceActivity.class);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.emptyframe,new ColorPreferenceFragment(),"").addToBackStack("").commit();
+        //	startActivity(ColorPreferenceActivity.class);
 	}
 
 }

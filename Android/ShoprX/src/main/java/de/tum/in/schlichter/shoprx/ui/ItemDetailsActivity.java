@@ -42,7 +42,7 @@ import de.tum.in.schlichter.shoprx.model.Shop;
 import de.tum.in.schlichter.shoprx.provider.ShoprContract.Stats;
 import de.tum.in.schlichter.shoprx.utils.ExplanationAdapter;
 
-public class ItemDetailsActivity extends FragmentActivity {
+public class ItemDetailsActivity extends Activity {
 
     public interface InitBundle {
         String ITEM_ID = "item_id";
@@ -95,6 +95,14 @@ public class ItemDetailsActivity extends FragmentActivity {
                 .resizeDimen(R.dimen.default_image_width, R.dimen.default_image_height)
                 .centerCrop()
                 .into(image);
+        image.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), ImageActivity.class);
+                intent.putExtra(ImageActivity.InitBundle2.IMAGE_URL,mItem.image());
+                startActivity(intent);
+            }
+        });
 
         findViewById(R.id.buttonItemDetailsFinish).setOnClickListener(new OnClickListener() {
             @Override

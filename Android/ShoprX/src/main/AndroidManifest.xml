@@ -55,6 +55,7 @@
         </activity>
         <activity
             android:name="de.tum.in.schlichter.shoprx.ui.CritiqueActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName="de.tum.in.schlichter.shoprx.ui.MainActivity"
             android:theme="@android:style/Theme.Holo.Light" >
             <meta-data
@@ -63,12 +64,24 @@
         </activity>
         <activity
             android:name="de.tum.in.schlichter.shoprx.ui.explanation.HelpActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName="de.tum.in.schlichter.shoprx.ui.CritiqueActivity"
             android:theme="@android:style/Theme.Holo.Light" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.tum.in.schlichter.shoprx.ui.CritiqueActivity" />
         </activity>
+
+        <activity
+            android:name="de.tum.in.schlichter.shoprx.ui.ImageActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName="de.tum.in.schlichter.shoprx.ui.CritiqueActivity"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.tum.in.schlichter.shoprx.ui.CritiqueActivity" />
+        </activity>
+
         <activity
             android:name="de.tum.in.schlichter.shoprx.importer.ImporterActivity"
             android:label="@string/title_activity_importer"
@@ -110,6 +123,7 @@
         </activity>
         <activity
             android:name="de.tum.in.schlichter.shoprx.ui.ItemDetailsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_item_details" >
         </activity>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />

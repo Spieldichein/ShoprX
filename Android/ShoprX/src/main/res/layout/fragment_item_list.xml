@@ -4,14 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <!--<TextView
         android:id="@+id/textViewItemListReason"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:padding="8dp"
         android:text="@string/reason_empty"
-        android:textAppearance="@style/TextAppearance.Small.Dim.Highlight" />
+        android:textAppearance="@style/TextAppearance.Small.Dim.Highlight" />-->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/diversityButton"
+        android:text="@string/change_diversity"/>
 
     <GridView
         android:id="@+id/gridViewItemList"

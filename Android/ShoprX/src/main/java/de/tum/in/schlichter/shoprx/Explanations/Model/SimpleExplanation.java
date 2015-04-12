@@ -13,11 +13,12 @@ public class SimpleExplanation {
         COLOR,
         LABEL,
         TYPE,
-        SOME_CONTEXT,
+        LOCATION,
         RANDOM,
         WEATHER,
         TEMPERATURE,
-        TRENDY
+        TRENDY,
+        LAST_CRITIQUE
     }
 
 

@@ -50,10 +50,13 @@ public abstract class PreferenceGridFragment extends
     protected final Button updatePreferenceButton() {
         return (Button)  getV().findViewById(R.id.buttonUpdatePreferences);
     }
+    @Override
+    protected void doOptionalStuff(){
 
+    }
     protected final ArrayAdapter<AttributeValue> attributeValueAdapter() {
         Context context = getActivity();
-        return new AttributeValueAdapter(context);
+        return new MultiStateArrayAdapter(context);
     }
 
     protected final AbsListView attributeValueList() {

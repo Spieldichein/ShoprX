@@ -42,14 +42,14 @@ public class SurfaceGenerator {
             if (abstractExplanation.item().isTrendy())Log.d("trendy","trendy item!!!!!!: "+abstractExplanation.item().name());
             simpleExplanations.add(new SimpleExplanation("Suggested by our fashion experts!", SimpleExplanation.IconType.TRENDY));
         }
+
+
+        /*SimpleExplanation contextArgument = renderContextArguments(abstractExplanation);
+
+        // explanation.addPositiveReason(dimensionArguments);
+        if (contextArgument!=null)
+            simpleExplanations.add(contextArgument);*/
         explanation.setSimpleExplanations(simpleExplanations);
-
-        CharSequence contextArguments = renderContextArguments(abstractExplanation);
-
-       // explanation.addPositiveReason(dimensionArguments);
-        if (!contextArguments.toString().isEmpty())
-            explanation.addPositiveReason(contextArguments);
-
 
 
       //  explanation.simple(formatter.concat(dimensionArguments,  contextArguments));
@@ -104,7 +104,7 @@ public class SurfaceGenerator {
                // return localizer.getGoodAverageTemplate();
             case BY_LAST_CRITIQUE:
                 ArrayList<SimpleExplanation> list2 = new ArrayList<SimpleExplanation>();
-                list2.add(new SimpleExplanation(localizer.getLastCritiqueTemplate(), SimpleExplanation.IconType.RANDOM));
+                list2.add(new SimpleExplanation(localizer.getLastCritiqueTemplate(), SimpleExplanation.IconType.LAST_CRITIQUE));
                 return list2;
                // return localizer.getLastCritiqueTemplate();
             default:
@@ -113,7 +113,7 @@ public class SurfaceGenerator {
         }
     }
 
-    private CharSequence renderContextArguments(AbstractExplanation explanation) {
+    private SimpleExplanation renderContextArguments(AbstractExplanation explanation) {
         if (explanation.hasContextArguments()) {
             String template = chooseRandomOne(localizer
                     .getContextArgumentTemplates());
@@ -121,9 +121,10 @@ public class SurfaceGenerator {
                     .contextArguments().iterator().next().context();
             String exp = String.format(template,
                     locContext.distanceToUserInMeters(explanation.item()));
-            return formatter.fromHtml(exp);
+            return new SimpleExplanation(exp, SimpleExplanation.IconType.LOCATION);
+           // return formatter.fromHtml(exp);
         } else
-            return "";
+            return null;
     }
 
     private ArrayList<SimpleExplanation> render(String template,

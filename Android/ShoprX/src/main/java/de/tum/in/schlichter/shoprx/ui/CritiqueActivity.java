@@ -54,11 +54,12 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Label;
 import de.tum.in.schlichter.shoprx.algorithm.model.Price;
 import de.tum.in.schlichter.shoprx.algorithm.model.Sex;
 import de.tum.in.schlichter.shoprx.eval.Statistics;
+import de.tum.in.schlichter.shoprx.ui.explanation.HelpActivity;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.PriceRangeFragment;
 import de.tum.in.schlichter.shoprx.utils.ExplanationAdapter;
 import de.tum.in.schlichter.shoprx.utils.ValueConverter;
 
-public class CritiqueActivity extends FragmentActivity {
+public class CritiqueActivity extends Activity {
 
     private ListView mListView;
     private ListView explanationListView;
@@ -74,6 +75,7 @@ public class CritiqueActivity extends FragmentActivity {
     public interface InitBundle {
         String ITEM_ID = "item_id";
         String IS_POSITIVE_CRITIQUE = "is_positive";
+        String IMAGE_URL = "image_url";
     }
 
     @Override
@@ -132,6 +134,14 @@ public class CritiqueActivity extends FragmentActivity {
                 .resizeDimen(R.dimen.default_image_width, R.dimen.default_image_height)
                 .centerCrop()
                 .into(image);
+        image.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplication(), ImageActivity.class);
+                intent.putExtra(ImageActivity.InitBundle2.IMAGE_URL,mItem.image());
+                startActivity(intent);
+            }
+        });
 
         mListView = (ListView) findViewById(R.id.listViewCritique);
         explanationListView = (ListView) findViewById(R.id.listViewExplanation);
@@ -161,6 +171,9 @@ public class CritiqueActivity extends FragmentActivity {
     private void setupExplanationAdapter() {
         explanationAdapter = new ExplanationAdapter(this);
 
+       // explanationAdapter.add(new SimpleExplanation("for testing", SimpleExplanation.IconType.TYPE));
+       // explanationAdapter.add(new SimpleExplanation("for testing", SimpleExplanation.IconType.LABEL));
+       // explanationAdapter.add(new SimpleExplanation("for testing", SimpleExplanation.IconType.PRICE));
         for (SimpleExplanation explanation1: mItem.getExplanation().getSimpleExplanations()){
             explanationAdapter.add(explanation1);
 
@@ -189,6 +202,25 @@ public class CritiqueActivity extends FragmentActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.critique, menu);
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode==1337){
+
+            if (resultCode ==42){
+                Log.d("result","resultcode = 42");
+                setResult(RESULT_OK);
+                finish();
+            }
+            else{
+                Log.d("result","resultcode diffrent = "+resultCode);
+
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     @Override

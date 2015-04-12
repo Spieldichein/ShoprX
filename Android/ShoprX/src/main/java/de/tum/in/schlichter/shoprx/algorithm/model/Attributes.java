@@ -29,7 +29,7 @@ public class Attributes {
 
         public AttributeValue[] getAttributeValues();
 
-        public void updateQuery(Query query, Set<AttributeValue> preferredValues);
+        public void updateQuery(Query query, Set<AttributeValue> preferredValues,Set<AttributeValue> preferredValuesDouble);
 
     }
 

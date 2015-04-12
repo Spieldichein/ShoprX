@@ -1,5 +1,6 @@
 package de.tum.in.schlichter.shoprx.utils;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,14 +29,14 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
     private static final int LAYOUT = R.layout.explanation_row;
     private LayoutInflater mLayoutInflater;
     private SparseBooleanArray mCheckedPositions = new SparseBooleanArray();
-    private FragmentActivity activityContext;
+    private Activity activity;
 
     public ExplanationAdapter(Context context) {
         super(context, LAYOUT);
-        if (context instanceof FragmentActivity) {
+        if (context instanceof Activity) {
             Log.d("ActivityContext","LOL");
 
-            activityContext = (FragmentActivity)context;
+            activity = (Activity)context;
         }
         mLayoutInflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -74,7 +75,7 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                 holder.icon.setImageResource(R.drawable.brand);
                 break;
             case RANDOM:
-                holder.icon.setImageResource(R.drawable.exploring);
+                holder.icon.setImageResource(R.drawable.random);
                 break;
             case WEATHER:
                 holder.icon.setImageResource(R.drawable.weather);
@@ -84,6 +85,12 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                 break;
             case TRENDY:
                 holder.icon.setImageResource(R.drawable.trendy);
+                break;
+            case LAST_CRITIQUE:
+                holder.icon.setImageResource(R.drawable.repeat);
+                break;
+            case LOCATION:
+                holder.icon.setImageResource(R.drawable.location);
                 break;
             default:
                 holder.icon.setImageResource(R.drawable.euro);
@@ -99,25 +106,27 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "price");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
-                        getContext().startActivity(intent);
+                        //getContext().startActivity(intent);
+                        activity.startActivityForResult(intent,1337);
+
                         break;
                     case COLOR:
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "color");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
-                        getContext().startActivity(intent);
+                        activity.startActivityForResult(intent,1337);
                         break;
                     case TYPE:
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "type");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
-                        getContext().startActivity(intent);
+                        activity.startActivityForResult(intent,1337);
                         break;
                     case LABEL:
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "label");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
-                        getContext().startActivity(intent);
+                        activity.startActivityForResult(intent,1337);
                         break;
                     default:
                         Log.d("DEFAULT","LOL");

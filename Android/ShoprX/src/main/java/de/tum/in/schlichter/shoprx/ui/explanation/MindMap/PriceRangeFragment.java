@@ -2,8 +2,10 @@ package de.tum.in.schlichter.shoprx.ui.explanation.MindMap;
 
 import android.view.View;
 
+import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
 import de.tum.in.schlichter.shoprx.algorithm.model.Price;
+import de.tum.in.schlichter.shoprx.ui.explanation.Prefrences.PricePreferenceFragment;
 
 
 public class PriceRangeFragment extends MindMapFragment {
@@ -19,7 +21,7 @@ public class PriceRangeFragment extends MindMapFragment {
 
 	@Override
 	protected void onAttributePreferenceChangeRequested() {
-	//	startActivity(PricePreferenceActivity.class);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.emptyframe,new PricePreferenceFragment(),"").addToBackStack("").commit();
 	}
 	
 }

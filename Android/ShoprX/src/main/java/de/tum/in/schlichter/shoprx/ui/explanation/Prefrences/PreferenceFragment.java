@@ -93,8 +93,23 @@ public abstract class PreferenceFragment extends Fragment implements
         String template = getString(R.string.attribute_value_preference_update_explanation_attribute_value);
         String startTemplate = getString(R.string.attribute_value_preference_update_explanation_start);
         CharSequence changingAttributeValue = Html.fromHtml(String.format(template, attributeValue));
-        CharSequence exp = attributeValue.isEmpty() ? TextUtils.concat(startTemplate, getPreferenceExplanation()) : TextUtils.concat(changingAttributeValue, getPreferenceExplanation());
+
+        String prefExp = getPreferenceExplanation();
+        prefExp=prefExp.replace(" like", " <font color='#5d1291'>like</font>");
+        prefExp = prefExp.replace("dislike"," <font color='red'>dislike</font>");
+        Log.d("prefExp","prefExp: "+prefExp);
+        if (attributeValue.isEmpty()){
+            String first = startTemplate.concat(prefExp);//TextUtils.concat(startTemplate, getPreferenceExplanation());
+            Log.d("prefExp","first: "+first);
+            first=first.replace(" like", " <font color='#5d1291'>like</font>");
+            first = first.replace("dislike"," <font color='red'>dislike</font>");
+            explanation.setText(Html.fromHtml(first));
+            return explanation;
+        }
+        CharSequence exp = TextUtils.concat(changingAttributeValue, Html.fromHtml(String.format(prefExp)));
         explanation.setText(exp);
+        Log.d("prefExp","exp: "+exp);
+
         return explanation;
     }
 

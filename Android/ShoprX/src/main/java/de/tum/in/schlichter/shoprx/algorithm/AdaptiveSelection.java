@@ -21,6 +21,11 @@ public class AdaptiveSelection {
     private static final int NUM_RECOMMENDATIONS_PRESELECTION = 20;
 
     private static final double ALPHA_BOUNDED_GREEDY_REFOCUS = 0.96;
+    private static final double ALPHA_ZERO = 1;
+    private static final double ALPHA_LOW = 0.997;
+    private static final double ALPHA_HIGH = 0.95;
+    private double alpha = 0.997;
+
 
     private static AdaptiveSelection _instance;
 
@@ -60,6 +65,12 @@ public class AdaptiveSelection {
      * The maximum number of recommendations to return. Does not count the
      * carried item!
      */
+
+    public void setAlpha(int a){
+        if (a==0)alpha = ALPHA_ZERO;
+        else if (a==1)alpha = ALPHA_LOW;
+        else if (a==2)alpha = ALPHA_HIGH;
+    }
     public void setMaxRecommendations(int limit) {
         mNumRecommendations = Math.max(1, limit);
     }
@@ -75,7 +86,6 @@ public class AdaptiveSelection {
         List<Item> recommendations;
         // using adaptive selection (diversity on negative progress)
 
-        double alpha = 0.95;
 
         recommendations = itemRecommend(mCaseBase, mQuery, mNumRecommendations, BOUND_DEFAULT, mCurrentCritique, NUM_RECOMMENDATIONS_PRESELECTION, mAlreadySeenItems, alpha);
 

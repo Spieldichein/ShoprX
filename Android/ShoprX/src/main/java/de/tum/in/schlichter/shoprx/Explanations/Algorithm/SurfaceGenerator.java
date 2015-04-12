@@ -29,9 +29,8 @@ public class SurfaceGenerator {
         this.formatter = formatter;
     }
 
-    public Explanation transform(AbstractExplanation abstractExplanation) {
-        Explanation explanation = new Explanation();
-        explanation.setAbstractExplanation(abstractExplanation);
+    public Explanation transform(Explanation explanation) {
+        AbstractExplanation abstractExplanation= explanation.getAbstractExplanation();
         ArrayList<SimpleExplanation> simpleExplanations = renderDimensionArguments(abstractExplanation);
         if (explanation.getSimpleExplanations() != null){
             for (SimpleExplanation oneSimpleExplanation: explanation.getSimpleExplanations()){
@@ -75,17 +74,36 @@ public class SurfaceGenerator {
             case BY_STRONG_ARGUMENTS:
                 String template = chooseRandomOne(localizer
                         .getStrongArgumentTemplates());
-                return render(template, explanation.primaryArguments());
+                ArrayList<SimpleExplanation> part1 =  render(template, explanation.primaryArguments());
+                ArrayList<SimpleExplanation> supportingPart1= new ArrayList<SimpleExplanation>();
+                if (explanation.hasSupportingArguments())
+                    supportingPart1 = render(
+                            localizer.getSupportingArgumentTemplate(),
+                            explanation.supportingArguments());
+                for (SimpleExplanation explanation1: supportingPart1){
+                    part1.add(explanation1);
+                }
+                return part1;
+
             case BY_WEAK_ARGUMENTS:
                 String templ = chooseRandomOne(localizer
                         .getWeakArgumentTemplates());
                 ArrayList<SimpleExplanation> primaryPart = render(templ,
                         explanation.primaryArguments());
                 ArrayList<SimpleExplanation> supportingPart= new ArrayList<SimpleExplanation>();
-                if (explanation.hasSupportingArguments())
-                    supportingPart = render(
-                            localizer.getSupportingArgumentTemplate(),
-                            explanation.supportingArguments());
+                if (explanation.hasSupportingArguments()){
+                    if (primaryPart.size()==0){
+                        supportingPart = render(
+                                localizer.getSupportingArgumentTemplateSolo(),
+                                explanation.supportingArguments());
+                    }
+                   else {
+                        supportingPart = render(
+                                localizer.getSupportingArgumentTemplate(),
+                                explanation.supportingArguments());
+                    }
+                }
+
                 for (SimpleExplanation explanation1: supportingPart){
                     primaryPart.add(explanation1);
                 }

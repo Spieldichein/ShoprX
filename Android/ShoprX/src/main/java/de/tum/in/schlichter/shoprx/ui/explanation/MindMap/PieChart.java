@@ -13,13 +13,19 @@ import de.tum.in.schlichter.shoprx.algorithm.model.Attributes.Attribute;
 public class PieChart extends AttributeChart {
 
 	public PieChart(Context context, Attribute attribute) {
+
 		super(context, attribute);
 	}
 
 	public GraphicalView getView() {
 		CategorySeries series = getDataSet();
 		DefaultRenderer renderer = Charts.getDefaultRenderer(getElems());
-		return ChartFactory.getPieChartView(context, series, renderer);
+        int dps =14;
+        final float scale = context.getResources().getDisplayMetrics().density;
+        int pixels = (int) (dps * scale + 0.5f);
+        renderer.setLabelsTextSize(pixels);
+        renderer.setLegendTextSize(pixels);
+        return ChartFactory.getPieChartView(context, series, renderer);
 	}
 
 	protected CategorySeries getDataSet() {

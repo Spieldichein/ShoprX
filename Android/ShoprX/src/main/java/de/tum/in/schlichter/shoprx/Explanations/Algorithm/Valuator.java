@@ -1,5 +1,7 @@
 package de.tum.in.schlichter.shoprx.Explanations.Algorithm;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,14 +30,19 @@ public class Valuator {
                                           Dimension dimension, List<Item> recommendations) {
         double R = calculateRangeNew(recommendations, query, dimension);
         double I = calculateInformation(item, recommendations, dimension);
-        return (R + I) / 2;
+        Log.d("scores", "R: " + R+" and i: "+I);
+
+        return R*I;
+        //return (R + I) / 2;
     }
 
     protected static double calculateInformation(Item item,
                                                  List<Item> recommendations, Dimension dimension) {
-        int n = recommendations.size();
-        int h = calculateH(item, recommendations, dimension);// findNumMostFrequentX(recommendations,
+        double n = recommendations.size();
+        double h = calculateH(item, recommendations, dimension);// findNumMostFrequentX(recommendations,
         // query,															// dimension);
+        Log.d("scores", "n: " + n+" and h: "+h);
+
         return (n - h) / (n - 1);
     }
 
@@ -45,11 +52,11 @@ public class Valuator {
                 recommendations, dimension);
         int itemIndex = itemsWithSameDimensionValue.indexOf(item);
 
-        if (itemIndex < 2) {
+     /*   if (itemIndex < 2) {
             return itemIndex + 1;
-        } else {
+        } else {*/
             return itemsWithSameDimensionValue.size();
-        }
+        //}
     }
 
     protected static List<Item> filterItemsByDimensionValue(
@@ -118,12 +125,12 @@ public class Valuator {
         double min = 1.0;
 
         for (Item item : recommendations) {
-            double ES = explanationScoreNew(item, query, dimension);
+            double ES = explanationScore(item, query, dimension);
             max = Math.max(max, ES);
             min = Math.min(min, ES);
         }
 
-        double result = (max-min)* query.attributes().getAttributeById(dimension.attribute().id()).getAttributeValues().length;
+        double result = (max-min)* (query.attributes().getAttributeById(dimension.attribute().id()).getAttributeValues().length-1);
         return result;
     }
 
@@ -136,7 +143,7 @@ public class Valuator {
         double numDimensions = item.attributes().values().size();
         for (Attribute attribute : item.attributes().values()) {
             Dimension dimension = new Dimension(attribute);
-            scoreSum += explanationScore(item, query, dimension);
+            scoreSum += explanationScoreNew(item, query, dimension);
         }
 
         return scoreSum / numDimensions;
@@ -163,7 +170,7 @@ public class Valuator {
             queryValueWeights = missingQueryAttr.getValueWeights();
         }
 
-        return calculateLocalScore(itemValueWeights,queryValueWeights);
+        return calculateLocalScoreOld(itemValueWeights,queryValueWeights);
       //  return getDimensionWeight(dimension)
        //         * calculateLocalScore(itemValueWeights, queryValueWeights);
     }
@@ -185,7 +192,7 @@ public class Valuator {
             queryValueWeights = missingQueryAttr.getValueWeights();
         }
 
-        return calculateLocalScoreOld(itemValueWeights,queryValueWeights);
+        return calculateLocalScore(itemValueWeights,queryValueWeights);
         //  return getDimensionWeight(dimension)
         //         * calculateLocalScore(itemValueWeights, queryValueWeights);
     }

@@ -1,6 +1,8 @@
 package de.tum.in.schlichter.shoprx.utils;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 
 import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.R;
+import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
 import de.tum.in.schlichter.shoprx.ui.explanation.HelpActivity;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.PriceRangeFragment;
 
@@ -96,9 +99,9 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                 holder.icon.setImageResource(R.drawable.euro);
         }
 
-        holder.icon.setOnClickListener(new View.OnClickListener() {
-            @Override
+        View.OnClickListener onClickListener = new View.OnClickListener() {
 
+            @Override
             public void onClick(View v) {
                 Intent intent;
                 switch (explanation.getIconType()){
@@ -128,15 +131,41 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
                         activity.startActivityForResult(intent,1337);
                         break;
+                    case RANDOM:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                        builder.setTitle("Set diversity of results");
+                        builder.setItems(new CharSequence[]
+                                        {"high diversity", "low diversity", "no diversity"},
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // The 'which' argument contains the index position
+                                        // of the selected item
+                                        switch (which) {
+                                            case 0:
+                                                AdaptiveSelection.get().setAlpha(2);
+                                                break;
+                                            case 1:
+                                                AdaptiveSelection.get().setAlpha(1);
+                                                break;
+                                            case 2:
+                                                AdaptiveSelection.get().setAlpha(0);
+                                                break;
+
+                                        }
+                                    }
+                                });
+                        builder.create().show();
                     default:
                         Log.d("DEFAULT","LOL");
 
                         break;
                 }
-                //todo push correct screen for correcting algorithm
-            }
-        });
 
+            }
+        };
+        holder.icon.setOnClickListener(onClickListener);
+        holder.title.setOnClickListener(onClickListener);
+        //todo push correct screen for correcting algorithm
 
 
 

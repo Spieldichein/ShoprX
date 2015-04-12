@@ -33,6 +33,10 @@ public class ImageActivity extends Activity {
         }
         String image_url = extras.getString(InitBundle2.IMAGE_URL);
         Picasso.with(this).load(image_url).into(imageView);
+        getActionBar().setHomeButtonEnabled(false);
+        getActionBar().setDisplayHomeAsUpEnabled(false);
+        getActionBar().setDisplayShowTitleEnabled(false);
+        getActionBar().setBackgroundDrawable(null);
 
     }
 }

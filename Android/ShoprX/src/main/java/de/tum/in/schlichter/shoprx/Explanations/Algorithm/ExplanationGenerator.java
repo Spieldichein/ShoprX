@@ -64,6 +64,8 @@ public class ExplanationGenerator {
                                 List<Item> recommendedItems, List<Context> contexts) {
         AbstractExplanation abstractExplanation = new ArgumentGenerator().select(item, query,
                 recommendedItems, contexts);
+       Explanation exp =  item.getExplanation();
+        exp.setAbstractExplanation(abstractExplanation);
         /*if (abstractExplanation.hasSupportingArguments()){
             if (abstractExplanation.supportingArguments().toArray()[0] !=null){
                 DimensionArgument dimensionArgument = (DimensionArgument) abstractExplanation.supportingArguments().toArray()[0];
@@ -71,7 +73,7 @@ public class ExplanationGenerator {
         }*/
         //return  explanation;
 
-        return new SurfaceGenerator(localizer, formatter).transform(abstractExplanation);
+        return new SurfaceGenerator(localizer, formatter).transform(exp);
     }
 
 

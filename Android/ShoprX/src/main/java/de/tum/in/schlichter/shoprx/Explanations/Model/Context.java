@@ -20,9 +20,9 @@ public abstract class Context {
 
     public boolean isValidArgument(Item item, List<Item> recommendations) {
        double es=explanationScore(item);
-               Log.d("context Distance","es:"+es);
+           //    Log.d("context Distance","es:"+es);
         double is = informationScore(item,recommendations);
-        Log.d("context Distance","is:"+is);
+        //Log.d("context Distance","is:"+is);
 
 
 

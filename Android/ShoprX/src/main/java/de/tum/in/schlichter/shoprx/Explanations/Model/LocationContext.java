@@ -56,18 +56,18 @@ public class LocationContext extends Context {
         List<Shop> shops = ShoprApp.getShopList();
         Shop shop=null;
         if (shops ==null){
-            Log.d("searching shop","shops null");
+         //   Log.d("searching shop","shops null");
 
             return 100.0;
         }
-        Log.d("searching shop","shops not null but size: "+shops.size());
+      //  Log.d("searching shop","shops not null but size: "+shops.size());
 
         for (Shop aShop :shops){
             if (aShop.getId() == item.shopId())shop =aShop;
             break;
         }
         if (shop ==null){
-            Log.d("searching shop","shop not found");
+         //   Log.d("searching shop","shop not found");
 
             return 100.0;
         }
@@ -94,7 +94,7 @@ public class LocationContext extends Context {
     public double informationScore(Item item, List<Item> recommendations) {
         double R = calculateRange(recommendations);
         double I = calculateInformation(item, recommendations);
-        Log.d("Distance!!","Range: "+R+" and Info:"+I) ;
+       // Log.d("Distance!!","Range: "+R+" and Info:"+I) ;
 
         return (R + I) / 2;
     }
@@ -102,7 +102,7 @@ public class LocationContext extends Context {
     private double calculateInformation(Item item, List<Item> recommendations) {
         double n = recommendations.size();
         double h = calculateH(item, recommendations);
-        Log.d("Distance!!","h: "+h+" and n:"+n) ;
+       // Log.d("Distance!!","h: "+h+" and n:"+n) ;
         return (n - h) / (n - 1);
     }
 

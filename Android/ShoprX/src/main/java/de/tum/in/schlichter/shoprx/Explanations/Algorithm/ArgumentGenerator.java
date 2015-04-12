@@ -25,11 +25,11 @@ public class ArgumentGenerator {
     // Î± - compares explanation score
     public static double ALPHA = 3;//0.11;// 0.6;
     // Âµ - second criteria for explanation score (Âµ < Î±)
-    public static double MU = 1.99;//0.09;// 0.51;
+    public static double MU = 1.89;//0.09;// 0.51;
     // Î² - compares global score
-    public static double BETA = 1.5;
+    public static double BETA = 1.35;
     // Î³ - compares desired lowest information score
-    public static double GAMMA = 0.5;
+    public static double GAMMA = 1.2;
     // ÆŸ - compares the information score for negative arguments
     public static double TETA = 0.03;
 
@@ -68,25 +68,35 @@ public class ArgumentGenerator {
                 AdaptiveSelection.get().getLastCritiquedItem().id()
                 : -1;
 
+        boolean doubleIf = true;
+        boolean doubleIf2 = true;
 
         if(item.id() == lastCritiquedId){
             explanation.category(AbstractExplanation.Category.BY_LAST_CRITIQUE);
+            doubleIf = false;
         }
         else if (strongPrimaryArguments.size() > 0) {
             explanation.addPrimaryArguments(strongPrimaryArguments);
             explanation.category(AbstractExplanation.Category.BY_STRONG_ARGUMENTS);
+            doubleIf2 = false;
+
         }
         // Dimension provides low information, attempt to add supporting
         // arguments
-        else if (weakPrimaryArguments.size() > 0) {
+        if (weakPrimaryArguments.size() > 0 && doubleIf) {
             explanation.addPrimaryArguments(weakPrimaryArguments);
             explanation.addSupportingArguments(filterBy(sortedInitialArguments,
                     new SecondaryArgumentFilter()));
             explanation.category(AbstractExplanation.Category.BY_WEAK_ARGUMENTS);
 
         }
+        else if (filterBy(sortedInitialArguments,new SecondaryArgumentFilter()).size()>0){
+            explanation.addSupportingArguments(filterBy(
+                    sortedInitialArguments, new SecondaryArgumentFilter()));
+            explanation.category(AbstractExplanation.Category.BY_WEAK_ARGUMENTS);
+        }
         // No dimension is larger than alpha(Î±), no argument can be selected
-        else {
+        else if (doubleIf && doubleIf2){
             // Item is only a good average
             if (Valuator.globalScore(item, query) > BETA) {
                 explanation.addSupportingArgument(new DimensionArgument(
@@ -158,10 +168,12 @@ public class ArgumentGenerator {
 
         for (Attribute attribute : item.attributes().values()) {
             Dimension dimension = new Dimension(attribute);
-            dimension.explanationScore(Valuator.explanationScore(item, query,
+            dimension.explanationScore(Valuator.explanationScoreNew(item, query,
                     dimension));
             dimension.informationScore(Valuator.informationScore(item, query,
                     dimension, recommendedItems));
+            Log.d("scores", "es: " + dimension.explanationScore());
+            Log.d("scores","is: "+dimension.informationScore());
             DimensionArgument dimensionArgument = new DimensionArgument(dimension,true);
             arguments.add(dimensionArgument);
         }

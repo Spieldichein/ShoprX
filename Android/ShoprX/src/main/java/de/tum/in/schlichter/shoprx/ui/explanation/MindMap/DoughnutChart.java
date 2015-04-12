@@ -19,6 +19,11 @@ public class DoughnutChart extends AttributeChart {
 	public GraphicalView getView() {
 		MultipleCategorySeries series = getDataSet();
 		DefaultRenderer renderer = Charts.getDefaultRenderer(getElems());
+        int dps =14;
+        final float scale = context.getResources().getDisplayMetrics().density;
+        int pixels = (int) (dps * scale + 0.5f);
+        renderer.setLabelsTextSize(pixels);
+        renderer.setLegendTextSize(pixels);
 		return ChartFactory.getDoughnutChartView(context, series, renderer);
 	}
 

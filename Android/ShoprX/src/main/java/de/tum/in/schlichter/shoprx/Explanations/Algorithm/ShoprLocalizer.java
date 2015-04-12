@@ -110,6 +110,12 @@ public class ShoprLocalizer implements ExplanationLocalizer {
     }
 
     @Override
+    public String getSupportingArgumentTemplateSolo() {
+        return mContext
+                .getString(R.string.explanation_template_on_dimension_weak_supporting_solo);
+    }
+
+    @Override
     public String getGoodAverageTemplate() {
         return mContext.getString(R.string.explanation_template_average_item);
     }

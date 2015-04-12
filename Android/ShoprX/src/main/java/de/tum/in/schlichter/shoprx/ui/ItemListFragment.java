@@ -90,11 +90,13 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
                                 // of the selected item
                                 switch (which) {
                                     case 0:
-
+                                    AdaptiveSelection.get().setAlpha(2);
                                         break;
                                     case 1:
+                                     AdaptiveSelection.get().setAlpha(1);
                                         break;
                                     case 2:
+                                     AdaptiveSelection.get().setAlpha(0);
                                         break;
 
                                 }

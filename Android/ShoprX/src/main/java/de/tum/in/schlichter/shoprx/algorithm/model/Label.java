@@ -378,7 +378,6 @@ public class Label extends GenericAttribute {
         BILLABONG("Billabong"),
         BITCHING_N_JUNKFOOD("Bitching & Junkfood"),
         BJOERN_BORG("Björn Borg"),
-        BOOB_DESIGN("Boob Design"),
 //        BOOM_BAP("Boom Bap"),
         BOSS_ORANGE("BOSS Orange"),
         BOXEUR_DES_RUES("Boxeur Des Rues"),

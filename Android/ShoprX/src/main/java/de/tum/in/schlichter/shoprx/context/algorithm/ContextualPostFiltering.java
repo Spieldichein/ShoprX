@@ -159,13 +159,18 @@ public class ContextualPostFiltering {
                 }
 
                 //TODO make more reasonable ^^
-                if (overallTemperatureDistance < overallItemDistance / 8){
-                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
+                if (overallTemperatureDistance < overallItemDistance / 9){
+                    ArrayList<SimpleExplanation> simpleExplanations =  item.getExplanation().getSimpleExplanations();
+                   simpleExplanations.add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
+                    item.getExplanation().setSimpleExplanations(simpleExplanations);
 //                    Log.d("CONTEXTSTUFF","ADDED temp");
 
                 }
-                if (overallWeatherDistance < overallItemDistance /8){
-                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
+                if (overallWeatherDistance < overallItemDistance /9){
+                    ArrayList<SimpleExplanation> simpleExplanations =  item.getExplanation().getSimpleExplanations();
+                    simpleExplanations.add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
+                    item.getExplanation().setSimpleExplanations(simpleExplanations);
+
 //                    Log.d("CONTEXTSTUFF","ADDED Weather");
 
                 }

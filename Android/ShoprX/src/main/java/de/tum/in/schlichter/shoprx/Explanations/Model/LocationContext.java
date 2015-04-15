@@ -56,18 +56,21 @@ public class LocationContext extends Context {
         List<Shop> shops = ShoprApp.getShopList();
         Shop shop=null;
         if (shops ==null){
-         //   Log.d("searching shop","shops null");
+            Log.d("searching shop","shops null");
 
             return 100.0;
         }
-      //  Log.d("searching shop","shops not null but size: "+shops.size());
+        Log.d("searching shop","shops not null but size: "+shops.size());
+        Log.d("searching shop", "my item is " + item.shopId());
 
         for (Shop aShop :shops){
-            if (aShop.getId() == item.shopId())shop =aShop;
-            break;
+            if (aShop.id() == item.shopId()){
+                shop = aShop;
+                break;
+            }
         }
-        if (shop ==null){
-         //   Log.d("searching shop","shop not found");
+        if (shop == null){
+            Log.d("searching shop","shop not found");
 
             return 100.0;
         }

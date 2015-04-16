@@ -76,7 +76,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         mGridView = (GridView) v.findViewById(R.id.gridViewItemList);
         View emptyView = v.findViewById(R.id.textViewItemListEmpty);
         mGridView.setEmptyView(emptyView);
-        Button diversityButton = (Button)v.findViewById(R.id.diversityButton);
+      /*  Button diversityButton = (Button)v.findViewById(R.id.diversityButton);
         diversityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +104,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
                         });
                 builder.create().show();
             }
-        });
+        });*/
 
         return v;
     }

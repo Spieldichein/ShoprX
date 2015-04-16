@@ -24,8 +24,15 @@
         android:id="@+id/explanationText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:paddingLeft="@dimen/default_margin"
         android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.Light" />
+
+    <ImageView
+        android:id="@+id/iconClickable"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/icon_clickable" />
 
 </LinearLayout>

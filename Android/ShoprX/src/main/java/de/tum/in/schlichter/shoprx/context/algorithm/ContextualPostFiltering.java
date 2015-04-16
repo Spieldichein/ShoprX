@@ -145,11 +145,27 @@ public class ContextualPostFiltering {
                 } // End for each metric within the contexts of a item
 
 
-                if (overallCompany !=0 && overallCompanyDistance !=0)overallCompanyDistance = overallCompanyDistance/overallCompany;
-                if (overallWeather!=0 && overallWeatherDistance!=0)overallWeatherDistance = overallWeatherDistance/overallWeather;
-                if (overallDay!=0&&overallDayDistance!=0)overallDayDistance = overallDayDistance/overallDay;
-                if (overallTemperature!=0 &&overallTemperatureDistance!=0)overallTemperatureDistance = overallTemperatureDistance/overallTemperature;
-                if (overallTime!=0 &&overallTimeDistance !=0)overallTimeDistance = overallTimeDistance / overallTime;
+                double relevantMetrics =0;
+                if (overallCompany !=0 && overallCompanyDistance !=0){
+                    overallCompanyDistance = overallCompanyDistance/overallCompany;
+                    relevantMetrics++;
+                }
+                if (overallWeather!=0 && overallWeatherDistance!=0){
+                    overallWeatherDistance = overallWeatherDistance/overallWeather;
+                    relevantMetrics++;
+                }
+                if (overallDay!=0&&overallDayDistance!=0){
+                    overallDayDistance = overallDayDistance/overallDay;
+                    relevantMetrics++;
+                }
+                if (overallTemperature!=0 &&overallTemperatureDistance!=0){
+                    overallTemperatureDistance = overallTemperatureDistance/overallTemperature;
+                    relevantMetrics++;
+                }
+                if (overallTime!=0 &&overallTimeDistance !=0){
+                    overallTimeDistance = overallTimeDistance / overallTime;
+                    relevantMetrics++;
+                }
 
                 // Set the distance to the current context
                 // Items that were not selected in any context are very far away and will first of all be attached to the end, afterwards they will get the median.
@@ -157,22 +173,23 @@ public class ContextualPostFiltering {
 //                    Log.d("Found", "Dist: " + overallItemDistance + " Factors: " + overallContextFactorsSet);
                     overallItemDistance = overallItemDistance / overallContextFactorsSet; //have an average weight
                 }
+                Log.d("context icon","having a look!?");
 
                 //TODO make more reasonable ^^
-                if (overallTemperatureDistance < overallItemDistance / 9){
-                    ArrayList<SimpleExplanation> simpleExplanations =  item.getExplanation().getSimpleExplanations();
-                   simpleExplanations.add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
-                    item.getExplanation().setSimpleExplanations(simpleExplanations);
+                if (overallTemperatureDistance < (overallItemDistance / (1.25*relevantMetrics))){
+                   item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
 //                    Log.d("CONTEXTSTUFF","ADDED temp");
+                    Log.d("context icon","temp added!?"+item.name());
+                    Log.d("context icon","temp added!?"+item.getExplanation().getSimpleExplanations().get(0).getText());
+
 
                 }
-                if (overallWeatherDistance < overallItemDistance /9){
-                    ArrayList<SimpleExplanation> simpleExplanations =  item.getExplanation().getSimpleExplanations();
-                    simpleExplanations.add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
-                    item.getExplanation().setSimpleExplanations(simpleExplanations);
-
+                if (overallWeatherDistance < (overallItemDistance /(1.25*relevantMetrics))){
+                   item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
+                    Log.d("context icon","weather added!?"+item.name());
+                    Log.d("context icon","weather added!?"+item.getExplanation().getSimpleExplanations().get(0).getText());
 //                    Log.d("CONTEXTSTUFF","ADDED Weather");
-
+                    Log.d("context icon","weather added!?");
                 }
 
                 newCurrentRec.add(item);

@@ -21,7 +21,6 @@ public class ImageActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simple_image);
         ImageView imageView = (ImageView) findViewById(R.id.simpleImage);

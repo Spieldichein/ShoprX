@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.support.v4.app.FragmentActivity;
+import android.text.Html;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -56,6 +57,7 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
             holder = new ViewHolderExplanation();
             holder.title = (TextView) convertView.findViewById(R.id.explanationText);
             holder.icon = (ImageView) convertView.findViewById(R.id.imageViewExplanationIcon);
+            holder.goOn = (ImageView) convertView.findViewById(R.id.iconClickable);
 
             convertView.setTag(holder);
         } else {
@@ -63,40 +65,52 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
         }
 
         final SimpleExplanation explanation = getItem(position);
-        holder.title.setText(explanation.getText());
+        CharSequence test = Html.fromHtml(explanation.getText());
+        holder.title.setText(test);
         switch (explanation.getIconType()){
             case PRICE:
                 holder.icon.setImageResource(R.drawable.euro);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case COLOR:
                 holder.icon.setImageResource(R.drawable.color);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case TYPE:
                 holder.icon.setImageResource(R.drawable.clothing);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case LABEL:
                 holder.icon.setImageResource(R.drawable.brand);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case RANDOM:
                 holder.icon.setImageResource(R.drawable.random);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case WEATHER:
                 holder.icon.setImageResource(R.drawable.weather);
+                holder.goOn.setVisibility(View.GONE);
                 break;
             case TEMPERATURE:
                 holder.icon.setImageResource(R.drawable.temperature);
+                holder.goOn.setVisibility(View.GONE);
                 break;
             case TRENDY:
                 holder.icon.setImageResource(R.drawable.trendy);
+                holder.goOn.setVisibility(View.GONE);
                 break;
             case LAST_CRITIQUE:
                 holder.icon.setImageResource(R.drawable.repeat);
+                holder.goOn.setVisibility(View.GONE);
                 break;
             case LOCATION:
                 holder.icon.setImageResource(R.drawable.location);
+                holder.goOn.setVisibility(View.GONE);
                 break;
             default:
                 holder.icon.setImageResource(R.drawable.euro);
+                holder.goOn.setVisibility(View.GONE);
         }
 
         View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -165,6 +179,7 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
         };
         holder.icon.setOnClickListener(onClickListener);
         holder.title.setOnClickListener(onClickListener);
+        holder.goOn.setOnClickListener(onClickListener);
         //todo push correct screen for correcting algorithm
 
 
@@ -180,6 +195,7 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
     static class ViewHolderExplanation{
         TextView title;
         ImageView icon;
+        ImageView goOn;
     }
 }
 

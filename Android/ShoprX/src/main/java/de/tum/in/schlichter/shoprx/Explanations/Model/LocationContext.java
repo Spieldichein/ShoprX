@@ -56,13 +56,8 @@ public class LocationContext extends Context {
         List<Shop> shops = ShoprApp.getShopList();
         Shop shop=null;
         if (shops ==null){
-            Log.d("searching shop","shops null");
-
             return 100.0;
         }
-        Log.d("searching shop","shops not null but size: "+shops.size());
-        Log.d("searching shop", "my item is " + item.shopId());
-
         for (Shop aShop :shops){
             if (aShop.id() == item.shopId()){
                 shop = aShop;
@@ -70,8 +65,6 @@ public class LocationContext extends Context {
             }
         }
         if (shop == null){
-            Log.d("searching shop","shop not found");
-
             return 100.0;
         }
         double latitude = shop.getmLocation().latitude;
@@ -113,11 +106,11 @@ public class LocationContext extends Context {
         List<Item> itemsWithSimilarES = filterBySimilarExplanationScore(recommendations, item);
         int itemIndex = itemsWithSimilarES.indexOf(item);
 
-        if (itemIndex > -1 && itemIndex < 2) {
+       /* if (itemIndex > -1 && itemIndex < 2) {
             return itemIndex + 1;
-        } else {
+        } else {*/
             return itemsWithSimilarES.size();
-        }
+       // }
     }
 
     private List<Item> filterBySimilarExplanationScore(List<Item> recommendations, Item refItem) {

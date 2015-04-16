@@ -151,7 +151,7 @@
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:layout_below="@id/popup_shopDistance"
-        android:minHeight="30dp">
+        android:layout_above="@+id/buttonItemDetailsFinish">
     </ListView>
 
 
@@ -159,7 +159,7 @@
         android:id="@+id/buttonItemDetailsFinish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/listViewExplanation"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/choice_finish" />
 

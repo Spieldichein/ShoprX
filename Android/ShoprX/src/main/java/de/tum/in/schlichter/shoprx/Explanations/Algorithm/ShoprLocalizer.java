@@ -1,6 +1,7 @@
 package de.tum.in.schlichter.shoprx.Explanations.Algorithm;
 
 import android.content.Context;
+import android.text.Html;
 
 import de.tum.in.schlichter.shoprx.R;
 
@@ -110,9 +111,12 @@ public class ShoprLocalizer implements ExplanationLocalizer {
     }
 
     @Override
-    public String getSupportingArgumentTemplateSolo() {
-        return mContext
-                .getString(R.string.explanation_template_on_dimension_weak_supporting_solo);
+    public String[] getSupportingArgumentTemplateSolo() {
+        return new String[]{
+                mContext.getString(R.string.explanation_template_on_dimension_weak_supporting_solo),
+                mContext.getString(R.string.explanation_template_on_dimension_weak_supporting_solo2)
+        };
+
     }
 
     @Override

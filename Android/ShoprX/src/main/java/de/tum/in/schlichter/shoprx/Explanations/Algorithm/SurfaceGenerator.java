@@ -1,6 +1,7 @@
 package de.tum.in.schlichter.shoprx.Explanations.Algorithm;
 
 
+import android.text.Html;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -32,22 +33,23 @@ public class SurfaceGenerator {
     public Explanation transform(Explanation explanation) {
         AbstractExplanation abstractExplanation= explanation.getAbstractExplanation();
         ArrayList<SimpleExplanation> simpleExplanations = renderDimensionArguments(abstractExplanation);
-        if (explanation.getSimpleExplanations() != null){
+        if (explanation.getSimpleExplanations() != null && explanation.getAbstractExplanation().category()!= AbstractExplanation.Category.BY_LAST_CRITIQUE){
             for (SimpleExplanation oneSimpleExplanation: explanation.getSimpleExplanations()){
+                Log.d("context icon","was added!?");
                 simpleExplanations.add(oneSimpleExplanation);
             }
         }
-        if (abstractExplanation.item().isTrendy()){
+        if (abstractExplanation.item().isTrendy()&&explanation.getAbstractExplanation().category()!= AbstractExplanation.Category.BY_LAST_CRITIQUE){
             if (abstractExplanation.item().isTrendy())Log.d("trendy","trendy item!!!!!!: "+abstractExplanation.item().name());
             simpleExplanations.add(new SimpleExplanation("Suggested by our fashion experts!", SimpleExplanation.IconType.TRENDY));
         }
 
 
-        /*SimpleExplanation contextArgument = renderContextArguments(abstractExplanation);
+        SimpleExplanation contextArgument = renderContextArguments(abstractExplanation);
 
         // explanation.addPositiveReason(dimensionArguments);
         if (contextArgument!=null)
-            simpleExplanations.add(contextArgument);*/
+            simpleExplanations.add(contextArgument);
         explanation.setSimpleExplanations(simpleExplanations);
 
 
@@ -94,7 +96,7 @@ public class SurfaceGenerator {
                 if (explanation.hasSupportingArguments()){
                     if (primaryPart.size()==0){
                         supportingPart = render(
-                                localizer.getSupportingArgumentTemplateSolo(),
+                                chooseRandomOne(localizer.getSupportingArgumentTemplateSolo()),
                                 explanation.supportingArguments());
                     }
                    else {
@@ -137,6 +139,7 @@ public class SurfaceGenerator {
                     .getContextArgumentTemplates());
             LocationContext locContext = (LocationContext) explanation
                     .contextArguments().iterator().next().context();
+
             String exp = String.format(template,
                     locContext.distanceToUserInMeters(explanation.item()));
             return new SimpleExplanation(exp, SimpleExplanation.IconType.LOCATION);

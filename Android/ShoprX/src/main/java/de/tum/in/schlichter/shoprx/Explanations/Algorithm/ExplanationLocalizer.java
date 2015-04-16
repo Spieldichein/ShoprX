@@ -20,7 +20,7 @@ public interface ExplanationLocalizer extends LocalizationModule {
     public String getNegativeArgumentTemplate();
 
     public String getSupportingArgumentTemplate();
-    public String getSupportingArgumentTemplateSolo();
+    public String[] getSupportingArgumentTemplateSolo();
         public String getGoodAverageTemplate();
     public String getLastCritiqueTemplate();
 }

@@ -142,7 +142,7 @@ public class CsvImportTask extends AsyncTask<Void, Integer, String> {
                         values.put(Items.BRAND, line[7]);
                         values.put(Items.SEX, line[8]);
                         if (line.length==11)values.put(Items.ISTRENDY, line[10]);
-                        else values.put(Items.ISTRENDY, 0);
+                        else values.put(Items.ISTRENDY, "0");
 
                         //Increment id
                         id++;

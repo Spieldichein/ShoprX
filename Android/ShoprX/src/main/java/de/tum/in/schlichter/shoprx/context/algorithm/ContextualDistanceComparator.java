@@ -15,9 +15,9 @@ public class ContextualDistanceComparator implements Comparator<Item> {
     @Override
     public int compare(Item item, Item item2) {
         if (item.getDistanceToContext() > item2.getDistanceToContext()){
-            return -1;
-        } else if (item.getDistanceToContext() < item2.getDistanceToContext()){
             return 1;
+        } else if (item.getDistanceToContext() < item2.getDistanceToContext()){
+            return -1;
         }
 
         if (item.quality() > item2.quality()){

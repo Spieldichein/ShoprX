@@ -230,4 +230,25 @@ public class ItemDetailsActivity extends Activity {
         return true;
     }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode==1337){
+
+            if (resultCode ==42){
+                Log.d("result","resultcode = 42");
+                setResult(RESULT_OK);
+                finish();
+            }
+            else{
+                Log.d("result","resultcode diffrent = "+resultCode);
+
+            }
+        }
+        else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+
 }

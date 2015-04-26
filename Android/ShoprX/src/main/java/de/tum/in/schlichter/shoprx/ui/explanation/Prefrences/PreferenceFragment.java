@@ -95,15 +95,15 @@ public abstract class PreferenceFragment extends Fragment implements
         CharSequence changingAttributeValue = Html.fromHtml(String.format(template, attributeValue));
 
         String prefExp = getPreferenceExplanation();
-        prefExp=prefExp.replace(" like", " <font color='#5d1291'>like</font>");
-        prefExp = prefExp.replace("dislike"," <font color='red'>dislike</font>");
+       // prefExp=prefExp.replace(" liking", " <font color='#5d1291'>like</font>");
+        //prefExp = prefExp.replace("dislik"," <font color='red'>dislike</font>");
         Log.d("prefExp","prefExp: "+prefExp);
         if (attributeValue.isEmpty()){
             String first = startTemplate.concat(prefExp);//TextUtils.concat(startTemplate, getPreferenceExplanation());
             Log.d("prefExp","first: "+first);
-            first=first.replace(" like", " <font color='#5d1291'>like</font>");
-            first = first.replace("dislike"," <font color='red'>dislike</font>");
-            explanation.setText(Html.fromHtml(first));
+            prefExp=prefExp.replace(" liking", " <font color='#25b53a'>liking</font>");
+            prefExp = prefExp.replace("disliking"," <font color='red'>disliking</font>");
+            explanation.setText(Html.fromHtml(prefExp));
             return explanation;
         }
         CharSequence exp = TextUtils.concat(changingAttributeValue, Html.fromHtml(String.format(prefExp)));
@@ -158,7 +158,8 @@ public abstract class PreferenceFragment extends Fragment implements
     protected abstract AbsListView attributeValueList();
 
     protected final String getPreferenceExplanation() {
-        String baseExplanation = getString(R.string.attribute_value_preference_update_explanation);
+        //String baseExplanation = getString(R.string.attribute_value_preference_update_explanation);
+        String baseExplanation = getString(R.string.attribute_value_preference_update_explanation_new);
         return String.format(baseExplanation, attribute().id());
     }
 
@@ -182,7 +183,8 @@ public abstract class PreferenceFragment extends Fragment implements
         AdaptiveSelection.get().submitPreference(preference);
 
         // Record cycles
-       //TODO Statistics.get().incrementExplicityPreferenceChangeCount();
+       //TODO
+       Statistics.get().preferenceChanged();
         onPreferencesUpdateFinish();
     }
 
@@ -269,7 +271,7 @@ public abstract class PreferenceFragment extends Fragment implements
             holder.picture.setBackgroundDrawable(getDrawableOrDefault(attrValue.getSimpleName()));
             getContext().getResources().getDrawable(R.drawable.checked_attribute_preference_background_shopr);
             if (!checkStatus.containsKey(attrValue.getValueName())||checkStatus.get(attrValue.getValueName())==0)
-                convertView.setBackgroundResource( R.drawable.selectable_background_shopr);
+                convertView.setBackgroundResource( R.drawable.noselect_background_shopr);
             else if (checkStatus.get(attrValue.getValueName())==1)
                 convertView.setBackgroundResource( R.drawable.checked_background_shopr);
             else if(checkStatus.get(attrValue.getValueName())==2)

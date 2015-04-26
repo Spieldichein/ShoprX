@@ -252,7 +252,7 @@ public class ItemListFragment extends Fragment implements LoaderCallbacks<List<I
         Intent intent = new Intent(getActivity(), ItemDetailsActivity.class);
         intent.putExtra(ItemDetailsActivity.InitBundle.ITEM_ID, item.id());
         intent.putExtra(ItemDetailsActivity.InitBundle.ITEM_POSITION, mAdapter.getPosition(item) + 1); // Start for counting is 0
-        startActivity(intent);
+        startActivityForResult(intent,REQUEST_CODE);
     }
 
     @Override

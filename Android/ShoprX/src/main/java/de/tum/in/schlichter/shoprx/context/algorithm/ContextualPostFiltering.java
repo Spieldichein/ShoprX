@@ -111,7 +111,6 @@ public class ContextualPostFiltering {
                     double distanceHolder =  getDistance(times, metric, scenarioContext) * weight;
 //                    Log.d("CONTEXTSTUFF","a context");
 
-                    //**TODO** gather information for all 5 dimension seperatly for explanations, count factorset for weight too
                     if (metric instanceof Company){
                         overallCompany++;
                         overallCompanyDistance+=distanceHolder;
@@ -148,25 +147,22 @@ public class ContextualPostFiltering {
                 double relevantMetrics =0;
                 if (overallCompany !=0 && overallCompanyDistance !=0){
                     overallCompanyDistance = overallCompanyDistance/overallCompany;
-                    relevantMetrics++;
                 }
                 if (overallWeather!=0 && overallWeatherDistance!=0){
                     overallWeatherDistance = overallWeatherDistance/overallWeather;
-                    relevantMetrics++;
                 }
                 if (overallDay!=0&&overallDayDistance!=0){
                     overallDayDistance = overallDayDistance/overallDay;
-                    relevantMetrics++;
                 }
                 if (overallTemperature!=0 &&overallTemperatureDistance!=0){
                     overallTemperatureDistance = overallTemperatureDistance/overallTemperature;
-                    relevantMetrics++;
                 }
                 if (overallTime!=0 &&overallTimeDistance !=0){
                     overallTimeDistance = overallTimeDistance / overallTime;
-                    relevantMetrics++;
                 }
 
+                //0.3 temp distance MAX
+                //0.3
                 // Set the distance to the current context
                 // Items that were not selected in any context are very far away and will first of all be attached to the end, afterwards they will get the median.
                 if (overallItemDistance != 0 && overallContextFactorsSet != 0){
@@ -176,20 +172,16 @@ public class ContextualPostFiltering {
                 Log.d("context icon","having a look!?");
 
                 //TODO make more reasonable ^^
-                if (overallTemperatureDistance < (overallItemDistance / (1.25*relevantMetrics))){
+                if (overallTemperatureDistance < (overallItemDistance *0.74)&&overallTemperatureDistance< 0.29){
                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current temperature fits this item", SimpleExplanation.IconType.TEMPERATURE));
-//                    Log.d("CONTEXTSTUFF","ADDED temp");
-                    Log.d("context icon","temp added!?"+item.name());
-                    Log.d("context icon","temp added!?"+item.getExplanation().getSimpleExplanations().get(0).getText());
+                   // Log.d("context icon","temp added!?"+item.name());
 
 
                 }
-                if (overallWeatherDistance < (overallItemDistance /(1.25*relevantMetrics))){
+                if (overallWeatherDistance < (overallItemDistance *0.74)&& overallWeatherDistance<0.29){
                    item.getExplanation().getSimpleExplanations().add(new SimpleExplanation("The current weather fits this item", SimpleExplanation.IconType.WEATHER));
-                    Log.d("context icon","weather added!?"+item.name());
-                    Log.d("context icon","weather added!?"+item.getExplanation().getSimpleExplanations().get(0).getText());
-//                    Log.d("CONTEXTSTUFF","ADDED Weather");
-                    Log.d("context icon","weather added!?");
+                //    Log.d("context icon","weather added!?"+item.name());
+                    //TODO put in strings.xml
                 }
 
                 newCurrentRec.add(item);

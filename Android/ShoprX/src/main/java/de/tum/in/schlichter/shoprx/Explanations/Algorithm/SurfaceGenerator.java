@@ -16,6 +16,7 @@ import de.tum.in.schlichter.shoprx.Explanations.Model.DimensionArgument;
 import de.tum.in.schlichter.shoprx.Explanations.Model.Explanation;
 import de.tum.in.schlichter.shoprx.Explanations.Model.LocationContext;
 import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
+import de.tum.in.schlichter.shoprx.eval.Statistics;
 
 /**
  * Created by Nicksteal on 01.04.2015.
@@ -32,25 +33,38 @@ public class SurfaceGenerator {
 
     public Explanation transform(Explanation explanation) {
         AbstractExplanation abstractExplanation= explanation.getAbstractExplanation();
+        ArrayList<SimpleExplanation> finalSimpleExplanations = new ArrayList<SimpleExplanation>();
+        int x =0;
         ArrayList<SimpleExplanation> simpleExplanations = renderDimensionArguments(abstractExplanation);
+        if (abstractExplanation.item().isTrendy()&&explanation.getAbstractExplanation().category()!= AbstractExplanation.Category.BY_LAST_CRITIQUE){
+            Statistics.get().fashionSuggested();
+            finalSimpleExplanations.add(new SimpleExplanation("Suggested by our fashion experts!", SimpleExplanation.IconType.TRENDY));
+            x++;
+        }
         if (explanation.getSimpleExplanations() != null && explanation.getAbstractExplanation().category()!= AbstractExplanation.Category.BY_LAST_CRITIQUE){
             for (SimpleExplanation oneSimpleExplanation: explanation.getSimpleExplanations()){
-                Log.d("context icon","was added!?");
-                simpleExplanations.add(oneSimpleExplanation);
+                finalSimpleExplanations.add(oneSimpleExplanation);
+                x++;
             }
         }
-        if (abstractExplanation.item().isTrendy()&&explanation.getAbstractExplanation().category()!= AbstractExplanation.Category.BY_LAST_CRITIQUE){
-            if (abstractExplanation.item().isTrendy())Log.d("trendy","trendy item!!!!!!: "+abstractExplanation.item().name());
-            simpleExplanations.add(new SimpleExplanation("Suggested by our fashion experts!", SimpleExplanation.IconType.TRENDY));
-        }
+
 
 
         SimpleExplanation contextArgument = renderContextArguments(abstractExplanation);
 
         // explanation.addPositiveReason(dimensionArguments);
-        if (contextArgument!=null)
-            simpleExplanations.add(contextArgument);
-        explanation.setSimpleExplanations(simpleExplanations);
+        if (contextArgument!=null){
+            finalSimpleExplanations.add(contextArgument);
+            x++;
+        }
+
+        for (int i=0; i < simpleExplanations.size();i++){
+            if (x < 5){
+                finalSimpleExplanations.add(simpleExplanations.get(i));
+                x++;
+            }else break;
+        }
+        explanation.setSimpleExplanations(finalSimpleExplanations);
 
 
       //  explanation.simple(formatter.concat(dimensionArguments,  contextArguments));
@@ -74,41 +88,40 @@ public class SurfaceGenerator {
 
         switch (explanation.category()) {
             case BY_STRONG_ARGUMENTS:
-                String template = chooseRandomOne(localizer
-                        .getStrongArgumentTemplates());
-                ArrayList<SimpleExplanation> part1 =  render(template, explanation.primaryArguments());
-                ArrayList<SimpleExplanation> supportingPart1= new ArrayList<SimpleExplanation>();
+
+                ArrayList<SimpleExplanation> part1 = new ArrayList<SimpleExplanation>();
+                        for(DimensionArgument dA: explanation.primaryArguments()){
+                            part1.add(render2(chooseRandomOne(localizer.getStrongArgumentTemplates()),dA));
+                        }
                 if (explanation.hasSupportingArguments())
-                    supportingPart1 = render(
-                            localizer.getSupportingArgumentTemplate(),
-                            explanation.supportingArguments());
-                for (SimpleExplanation explanation1: supportingPart1){
-                    part1.add(explanation1);
-                }
+                    for (DimensionArgument dimArg: explanation.supportingArguments()){
+                        part1.add(render2(chooseRandomOne (localizer.getSupportingArgumentTemplateSolo()),dimArg));
+                    }
+
                 return part1;
 
             case BY_WEAK_ARGUMENTS:
-                String templ = chooseRandomOne(localizer
-                        .getWeakArgumentTemplates());
-                ArrayList<SimpleExplanation> primaryPart = render(templ,
-                        explanation.primaryArguments());
-                ArrayList<SimpleExplanation> supportingPart= new ArrayList<SimpleExplanation>();
+
+                ArrayList<SimpleExplanation> primaryPart = new ArrayList<SimpleExplanation>();
+
+                for(DimensionArgument dA: explanation.primaryArguments()){
+                    primaryPart.add(render2(chooseRandomOne(localizer.getWeakArgumentTemplates()),dA));
+                }
+
                 if (explanation.hasSupportingArguments()){
-                    if (primaryPart.size()==0){
-                        supportingPart = render(
-                                chooseRandomOne(localizer.getSupportingArgumentTemplateSolo()),
-                                explanation.supportingArguments());
-                    }
+                  //  if (primaryPart.size()==0){
+                        for (DimensionArgument dimArg: explanation.supportingArguments()){
+                            primaryPart.add(render2(chooseRandomOne (localizer.getSupportingArgumentTemplateSolo()),dimArg));
+                        }
+                  /*  }
                    else {
                         supportingPart = render(
                                 localizer.getSupportingArgumentTemplate(),
                                 explanation.supportingArguments());
-                    }
+                    }*/
                 }
 
-                for (SimpleExplanation explanation1: supportingPart){
-                    primaryPart.add(explanation1);
-                }
+
                 return primaryPart;
                 //return formatter.concat(primaryPart, supportingPart);
 
@@ -172,6 +185,25 @@ public class SurfaceGenerator {
         return formatted;*/
     }
 
+    private SimpleExplanation render2 (String template,
+                                                DimensionArgument argument) {
+        SimpleExplanation textified = textify(argument);
+        String text = String.format(template, textified.getText());
+        CharSequence formatted = formatter.fromHtml(text);
+        textified.setText(formatted.toString());
+        return textified;
+
+       /* String text = String.format(template, textify(arguments));
+        CharSequence formatted = formatter.fromHtml(text);
+        for (DimensionArgument argument : arguments) {
+            formatted = formatter.renderClickable(formatted, argument
+                    .dimension().attribute(), TextFormatting
+                    .textOf(localizer, argument.dimension().attribute()
+                            .currentValue()));
+        }
+        return formatted;*/
+    }
+
     private String textifyForNegativeArguments(Collection<DimensionArgument> arguments) {
         Iterator<DimensionArgument> iterator = arguments.iterator();
 
@@ -199,6 +231,16 @@ public class SurfaceGenerator {
         return argumentValues;
        // return TextFormatting.textify(localizer,  argumentValues);
     }
+
+
+    private SimpleExplanation textify(DimensionArgument argument) {
+            SimpleExplanation.IconType iconType = getIcontype(argument) ;
+            String explanationText = argument.dimension().attribute().currentValue().getValueName().toLowerCase(Locale.ENGLISH);
+            SimpleExplanation oneExplanation = new SimpleExplanation(explanationText,iconType);
+        return oneExplanation;
+        // return TextFormatting.textify(localizer,  argumentValues);
+    }
+
 
     private String chooseRandomOne(String[] texts) {
         return texts[new Random().nextInt(texts.length)];

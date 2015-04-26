@@ -1,10 +1,12 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="?android:attr/actionBarSize"
     android:id="@+id/lolFrame"
     tools:context=".CritiqueActivity" >
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:id="@+id/lolrel"
@@ -17,8 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/default_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin_small"
+            android:layout_marginRight="@dimen/activity_horizontal_margin_small"
             android:orientation="horizontal" >
 
             <TextView
@@ -38,14 +40,30 @@
                 android:scaleType="fitCenter" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonRecommend"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/listViews"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
-            android:text="@string/update_recommendations" />
+            android:layout_marginBottom="8dp"
+            android:id="@+id/buttonRecommendLayout"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/buttonRecommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/update_recommendations" />
+            <ImageButton
+                android:id="@+id/buttonDiversity"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/random"
+                android:text=""
+                android:layout_width="50dp" />
+            </LinearLayout>
+
 
 
 
@@ -54,49 +72,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/default_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:orientation="vertical"
             android:layout_below="@+id/containerCritiqueItem"
-            android:layout_above="@id/buttonRecommend"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
                 android:text="@string/explanation_headline"
                 android:textAppearance="@style/TextAppearance.Small.Dim.Highlight" />
 
-            <ListView
+            <LinearLayout
+                android:orientation="vertical"
                 android:id="@+id/listViewExplanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
+                android:paddingRight="@dimen/activity_horizontal_margin_small"
                 android:minHeight="30dp"
-                android:layout_weight="1">
-            </ListView>
+                android:layout_weight="1"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideOverlay">
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
                 android:text="@string/selection_hint"
                 android:textAppearance="@style/TextAppearance.Small.Dim.Highlight" />
-            <ListView
+            <LinearLayout
+                android:orientation="vertical"
                 android:id="@+id/listViewCritique"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin_small"
+                android:paddingRight="@dimen/activity_horizontal_margin_small"
                 android:minHeight="30dp"
-                android:layout_weight="1">
-            </ListView>
+                android:layout_weight="1"
+                android:fadeScrollbars="false"
+                android:scrollbarStyle="outsideOverlay"                >
+            </LinearLayout>
         </LinearLayout>
 
 
 
     </RelativeLayout>
-</FrameLayout>
+</ScrollView>

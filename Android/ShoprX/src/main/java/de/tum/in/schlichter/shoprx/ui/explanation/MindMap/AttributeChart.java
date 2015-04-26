@@ -36,6 +36,16 @@ public abstract class AttributeChart {
 		if (attr != null) {
 			AttributeValue[] values = attr.getAttributeValues();
 			int i = 0;
+          /* if (attr.id().equalsIgnoreCase("price")){
+                for (int y = attr.getValueWeights().length; y> 0;y--){
+                    AttributeValue value = values[y-1];
+                    double weight = attr.getValueWeights()[y-1];
+                    ChartElem elem = new ChartElem().name(value.descriptor())
+                            .color(Color.parseColor(value.getColor())).value(weight);
+                    elems.add(elem);
+                }
+                return elems;
+            }*/
 			for (double weight : attr.getValueWeights()) {
 				AttributeValue value = values[i];
 				ChartElem elem = new ChartElem().name(value.descriptor())

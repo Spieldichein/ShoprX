@@ -25,14 +25,14 @@ public class ArgumentGenerator {
     // Î± - compares explanation score
     public static double ALPHA = 2.5;//0.11;// 0.6;
     // Âµ - second criteria for explanation score (Âµ < Î±)
-    public static double MU = 1.39;//0.09;// 0.51;
+    public static double MU = 1.59;//0.09;// 0.51;
     // Î² - compares global score
     public static double BETA = 1.35;
     // Î³ - compares desired lowest information score
     public static double GAMMA = 1.2;
     // ÆŸ - compares the information score for negative arguments
     public static double TETA = 0.03;
-    public static double ZETA = 1.89;
+    public static double ZETA = 2.00;
 
     public AbstractExplanation select(Item item, Query query,
                                       List<Item> recommendedItems, List<Context> contexts) {
@@ -57,23 +57,22 @@ public class ArgumentGenerator {
         }*/
 
         // Select context arguments
-        for (Context context : contexts) {
 
-            if (context.isValidArgument(item, recommendedItems))
-                explanation.addContextArgument(new ContextArgument(context,
-                        true));
-        }
 
         // last critique tag
         int lastCritiquedId = AdaptiveSelection.get().getLastCritiquedItem() != null ?
                 AdaptiveSelection.get().getLastCritiquedItem().id()
                 : -1;
 
-
-
         if(item.id() == lastCritiquedId){
             explanation.category(AbstractExplanation.Category.BY_LAST_CRITIQUE);
             return explanation;
+        }
+        for (Context context : contexts) {
+
+            if (context.isValidArgument(item, recommendedItems))
+                explanation.addContextArgument(new ContextArgument(context,
+                        true));
         }
         if (strongPrimaryArguments.size() > 0) {
             explanation.addPrimaryArguments(strongPrimaryArguments);

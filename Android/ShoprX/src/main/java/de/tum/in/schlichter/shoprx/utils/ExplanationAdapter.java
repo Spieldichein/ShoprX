@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -17,11 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import de.tum.in.schlichter.shoprx.Explanations.Model.SimpleExplanation;
 import de.tum.in.schlichter.shoprx.R;
 import de.tum.in.schlichter.shoprx.algorithm.AdaptiveSelection;
+import de.tum.in.schlichter.shoprx.eval.Statistics;
 import de.tum.in.schlichter.shoprx.ui.explanation.HelpActivity;
 import de.tum.in.schlichter.shoprx.ui.explanation.MindMap.PriceRangeFragment;
 
@@ -98,7 +101,7 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                 break;
             case TRENDY:
                 holder.icon.setImageResource(R.drawable.trendy);
-                holder.goOn.setVisibility(View.GONE);
+                holder.goOn.setVisibility(View.VISIBLE);
                 break;
             case LAST_CRITIQUE:
                 holder.icon.setImageResource(R.drawable.repeat);
@@ -123,6 +126,8 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "price");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
+                        Statistics.get().chartStarted();
+
                         //getContext().startActivity(intent);
                         activity.startActivityForResult(intent,1337);
 
@@ -131,25 +136,33 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "color");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
+                        Statistics.get().chartStarted();
+
                         activity.startActivityForResult(intent,1337);
                         break;
                     case TYPE:
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "type");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
+                        Statistics.get().chartStarted();
                         activity.startActivityForResult(intent,1337);
                         break;
                     case LABEL:
                         intent = new Intent(getContext(), HelpActivity.class);
                         intent.putExtra(HelpActivity.InitBundle.PUSHED_VIEW, "label");
                         intent.putExtra(HelpActivity.InitBundle.PUSHING_VIEW, "null"); // Start for counting is 0
+                        Statistics.get().labelPrefrenceStarted();
                         activity.startActivityForResult(intent,1337);
                         break;
                     case RANDOM:
+                        LayoutInflater inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        View view = inflater.inflate(R.layout.alert_title_view, null);
+                        TextView textView = (TextView) view.findViewById(R.id.titleViewText);
                         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                        builder.setTitle("Set diversity of results");
+
+                        builder.setCustomTitle(view);
                         builder.setItems(new CharSequence[]
-                                        {"high diversity", "low diversity", "no diversity"},
+                                        {"high diversity", "normal diversity", "low diversity"},
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         // The 'which' argument contains the index position
@@ -157,20 +170,45 @@ public class ExplanationAdapter extends ArrayAdapter<SimpleExplanation> {
                                         switch (which) {
                                             case 0:
                                                 AdaptiveSelection.get().setAlpha(2);
+                                                Statistics.get().alphaChanged();
                                                 break;
                                             case 1:
                                                 AdaptiveSelection.get().setAlpha(1);
+                                                Statistics.get().alphaChanged();
                                                 break;
                                             case 2:
                                                 AdaptiveSelection.get().setAlpha(0);
+                                                Statistics.get().alphaChanged();
                                                 break;
 
                                         }
                                     }
                                 });
                         builder.create().show();
+                        break;
+                    case TRENDY:
+                        inflater= (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                        view = inflater.inflate(R.layout.alert_title_view, null);
+                        textView = (TextView) view.findViewById(R.id.titleViewText);
+                        builder = new AlertDialog.Builder(getContext());
+                        textView.setText("Our recommended items are selected by award winning fashion bloggers.");
+
+                        builder.setCustomTitle(view);
+                        builder.setPositiveButton("ok",null);
+                       // builder.setCancelable(false);
+                       /* builder.setItems(new CharSequence[]
+                                        {"ok"},
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // The 'which' argument contains the index position
+                                        // of the selected item
+
+                                    }
+                                });*/
+                        builder.create().show();
+
+                        break;
                     default:
-                        Log.d("DEFAULT","LOL");
 
                         break;
                 }

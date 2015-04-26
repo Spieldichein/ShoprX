@@ -163,7 +163,7 @@ public class LabelPreferenceFragment extends PreferenceFragment {
             if (search !=null && search.length()>1 && !labelString.contains(search))return new View(getContext());*/
             holder.name.setText(attrValue.descriptor());
             if (!getCheckStatus().containsKey(attrValue.getValueName())||getCheckStatus().get(attrValue.getValueName())==0)
-                convertView.setBackgroundResource( R.drawable.selectable_background_shopr);
+                convertView.setBackgroundResource( R.drawable.noselect_background_shopr);
             else if (getCheckStatus().get(attrValue.getValueName())==1)
                 convertView.setBackgroundResource( R.drawable.checked_background_shopr);
             else if(getCheckStatus().get(attrValue.getValueName())==2)

@@ -20,6 +20,8 @@ public class PieChart extends AttributeChart {
 	public GraphicalView getView() {
 		CategorySeries series = getDataSet();
 		DefaultRenderer renderer = Charts.getDefaultRenderer(getElems());
+        float xy= (float) 0.87;
+        renderer.setScale(xy);
         int dps =14;
         final float scale = context.getResources().getDisplayMetrics().density;
         int pixels = (int) (dps * scale + 0.5f);

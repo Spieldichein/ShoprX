@@ -94,6 +94,18 @@ public class ShoprDatabase extends SQLiteOpenHelper {
 
             + Stats.ITEM_POSITION + " INTEGER,"
 
+            + Stats.CHARTS_LOOKED_AT + " INTEGER,"
+
+            + Stats.PREFERENCE_CHANGED + " INTEGER,"
+
+            + Stats.PREFERENCE_SETTING_STARTED + " INTEGER,"
+
+            + Stats.LABEL_PREFERENCE_STARTED + " INTEGER,"
+
+            + Stats.ALPHA_CHANGED + " INTEGER,"
+
+            + Stats.FASHION_SUGGESTED + " INTEGER,"
+
             + Stats.ITEM_COVERAGE + " TEXT,"
 
             + Stats.STEREOTYPE + " TEXT"

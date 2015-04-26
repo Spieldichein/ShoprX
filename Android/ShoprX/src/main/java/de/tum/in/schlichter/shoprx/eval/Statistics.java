@@ -30,6 +30,12 @@ public class Statistics {
     private int mSelectedItemPosition;
     private List<Integer> mShowedIds;
     private String mSelectedStereotype;
+    private int fashionSuggested;
+    private int chartLookedAt;
+    private int preferenceSettingStarted;
+    private int preferenceChanged;
+    private int labelPrefrenceStarted;
+    private int alphaChanged;
 
     private boolean mIsStarted;
 
@@ -55,6 +61,12 @@ public class Statistics {
         mShowedIds = new LinkedList<Integer>();
         mCycleCount = 0;
         mCyclePositiveCount = 0;
+        fashionSuggested =0;
+        preferenceChanged =0;
+        preferenceSettingStarted=0;
+        chartLookedAt =0;
+        labelPrefrenceStarted=0;
+        alphaChanged =0;
     }
 
     /**
@@ -66,6 +78,27 @@ public class Statistics {
         if (isPositive) {
             mCyclePositiveCount++;
         }
+    }
+
+    public synchronized  void fashionSuggested(){
+        fashionSuggested++;
+    }
+
+    public synchronized  void preferenceStarted(){
+        preferenceSettingStarted++;
+    }
+
+    public synchronized  void preferenceChanged(){
+        preferenceChanged++;
+    }
+    public synchronized  void chartStarted(){
+        chartLookedAt++;
+    }
+    public synchronized  void labelPrefrenceStarted(){
+        labelPrefrenceStarted++;
+    }
+    public synchronized  void alphaChanged(){
+        alphaChanged++;
     }
 
     /**
@@ -105,7 +138,12 @@ public class Statistics {
         statValues.put(ShoprContract.Stats.DURATION, duration);
         statValues.put(ShoprContract.Stats.DURATION_RECOMMENDATION, durationFromRecommendationStart);
         statValues.put(ShoprContract.Stats.ITEM_POSITION, mSelectedItemPosition);
-        statValues.put(ShoprContract.Stats.STEREOTYPE, mSelectedStereotype);
+        statValues.put(ShoprContract.Stats.FASHION_SUGGESTED, fashionSuggested);
+        statValues.put(ShoprContract.Stats.CHARTS_LOOKED_AT, chartLookedAt);
+        statValues.put(ShoprContract.Stats.PREFERENCE_CHANGED, preferenceChanged);
+        statValues.put(ShoprContract.Stats.PREFERENCE_SETTING_STARTED, preferenceSettingStarted);
+        statValues.put(ShoprContract.Stats.LABEL_PREFERENCE_STARTED, labelPrefrenceStarted);
+        statValues.put(ShoprContract.Stats.ALPHA_CHANGED, alphaChanged);
 
         StringBuilder build = new StringBuilder();
         for(Integer i : mShowedIds){

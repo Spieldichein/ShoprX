@@ -2,7 +2,9 @@
 package de.tum.in.schlichter.shoprx.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -24,7 +26,9 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -64,6 +68,9 @@ public class CritiqueActivity extends Activity {
     private ListView mListView;
     private ListView explanationListView;
     private Button mButtonUpdate;
+    private ImageButton imageButton;
+    private LinearLayout testLayout;
+    private LinearLayout testLayout2;
 
     private ItemFeatureAdapter mAdapter;
     private ExplanationAdapter explanationAdapter;
@@ -143,10 +150,53 @@ public class CritiqueActivity extends Activity {
             }
         });
 
-        mListView = (ListView) findViewById(R.id.listViewCritique);
-        explanationListView = (ListView) findViewById(R.id.listViewExplanation);
+        //mListView = (ListView) findViewById(R.id.listViewCritique);
+        testLayout = (LinearLayout)findViewById(R.id.listViewCritique);
+       // explanationListView = (ListView) findViewById(R.id.listViewExplanation);
+        testLayout2 = (LinearLayout)findViewById(R.id.listViewExplanation);
+
 
         mButtonUpdate = (Button) findViewById(R.id.buttonRecommend);
+        imageButton = (ImageButton) findViewById(R.id.buttonDiversity);
+        imageButton.setMaxWidth(imageButton.getHeight());
+        imageButton.setMinimumWidth(imageButton.getHeight());
+        final Context context = this;
+        imageButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LayoutInflater inflater= (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View aview = inflater.inflate(R.layout.alert_title_view, null);
+                TextView textView = (TextView) aview.findViewById(R.id.titleViewText);
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                builder.setCustomTitle(aview);
+                builder.setItems(new CharSequence[]
+                                {"high diversity", "normal diversity", "low diversity"},
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                // The 'which' argument contains the index position
+                                // of the selected item
+                                switch (which) {
+                                    case 0:
+                                        AdaptiveSelection.get().setAlpha(2);
+                                        Statistics.get().alphaChanged();
+                                        break;
+                                    case 1:
+                                        AdaptiveSelection.get().setAlpha(1);
+                                        Statistics.get().alphaChanged();
+                                        break;
+                                    case 2:
+                                        AdaptiveSelection.get().setAlpha(0);
+                                        Statistics.get().alphaChanged();
+                                        break;
+
+
+                                }
+                            }
+                        });
+                builder.create().show();
+            }
+        });
         mButtonUpdate.setEnabled(false);
         mButtonUpdate.setOnClickListener(new OnClickListener() {
             @Override
@@ -165,7 +215,13 @@ public class CritiqueActivity extends Activity {
                 mAdapter.remove(attr);
             }
         }
-        mListView.setAdapter(mAdapter);
+        //mListView.setAdapter(mAdapter);
+        final int adapterCount = mAdapter.getCount();
+
+        for (int i = 0; i < adapterCount; i++) {
+            View item = mAdapter.getView(i, null, null);
+            testLayout.addView(item);
+        }
     }
 
     private void setupExplanationAdapter() {
@@ -178,7 +234,13 @@ public class CritiqueActivity extends Activity {
             explanationAdapter.add(explanation1);
 
         }
-        explanationListView.setAdapter(explanationAdapter);
+       // explanationListView.setAdapter(explanationAdapter);
+        final int adapterCount = explanationAdapter.getCount();
+
+        for (int i = 0; i < adapterCount; i++) {
+            View item = explanationAdapter.getView(i, null, null);
+            testLayout2.addView(item);
+        }
     }
 
     @Override

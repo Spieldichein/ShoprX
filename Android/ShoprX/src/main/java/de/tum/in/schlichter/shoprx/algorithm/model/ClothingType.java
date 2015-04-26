@@ -76,8 +76,8 @@ public class ClothingType extends GenericAttribute {
 
     public enum Value implements Attributes.AttributeValue {
 
-        BLOUSE(R.string.blouse,Colors.YELLOW),
-        CARDIGAN(R.string.cardigan,Colors.WHITE),
+        BLOUSE(R.string.blouse,Colors.RODEO_DUST),
+        CARDIGAN(R.string.cardigan,Colors.PINK),
         CHINO(R.string.chino,Colors.TURQUOISE),
         COAT(R.string.coat, Colors.SILVER),
         DRESS(R.string.dress, Colors.AZURE_BLUE),
@@ -87,9 +87,9 @@ public class ClothingType extends GenericAttribute {
         JUMPER(R.string.jumper,Colors.BROWN),
         SKIRT(R.string.skirt,Colors.GOLD),
         SHORTS(R.string.shorts,Colors.GREEN),
-        SHIRT(R.string.shirt,Colors.LILAC),
         SWEATSHIRT(R.string.sweatshirt,Colors.MULTICOLOR),
         SWIMWEAR(R.string.swimwear,Colors.OLIVE),
+        SHIRT(R.string.shirt,Colors.LILAC),
         TOP(R.string.top,Colors.ORANGE),
         TROUSERS(R.string.trousers,Colors.PEACH),
         T_SHIRT(R.string.t_shirt,Colors.PETROL),

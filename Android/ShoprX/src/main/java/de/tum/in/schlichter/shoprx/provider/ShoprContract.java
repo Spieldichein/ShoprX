@@ -60,6 +60,18 @@ public class ShoprContract {
 
         String STEREOTYPE = "stats_stereotype";
 
+        String FASHION_SUGGESTED = "stats_fashion_suggested";
+
+        String CHARTS_LOOKED_AT = "stats_charts_looked_at";
+
+        String PREFERENCE_SETTING_STARTED = "stats_preference_setting_started";
+
+        String PREFERENCE_CHANGED = "stats_preference_changed";
+
+        String LABEL_PREFERENCE_STARTED = "stats_label_preference_started";
+
+        String ALPHA_CHANGED = "stats_alpha_changed";
+
     }
 
     interface ContextItemRelationColumns {

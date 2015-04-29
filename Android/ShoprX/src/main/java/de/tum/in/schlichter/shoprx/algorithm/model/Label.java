@@ -340,10 +340,12 @@ public class Label extends GenericAttribute {
 
     public enum Value implements Attributes.AttributeValue {
 //        A0039_ITALY("0039 Italy"),
+        A2_LOVE_TONY_COHEN("2 Love Tony Cohen"),
+        A313("313"),
         A55_DSL("55 DSL"),
         A7_FOR_ALL_MANKIND("7 for all mankind"),
         AAIKO("Aaiko"),
-        ADD ("ADD"),
+        ADD ("add"),
         ADIDAS("Adidas"),
         AG_ADRIANO_GOLDSCHMIED("AG Adriano Goldschmied"),
 //        ALLEGRA_K("Allegra K"),
@@ -360,7 +362,7 @@ public class Label extends GenericAttribute {
         ANTONY_MORATO("Antony Morato"),
         APRICO("aprico"),
         APRIL_MAY("April May"),
-//        ARMOR_LUX("Armor lux"),
+        ARMOR_LUX("Armor lux"),
         ARMY_OF_ME("Army of Me"), 
         ATELIER_GARDEUR("Atelier Gardeur"),
         BAMBAM("BamBam"),
@@ -475,6 +477,7 @@ public class Label extends GenericAttribute {
         FLOWERS_FOR_FRIENDS("flowers for friends"),
 //        FOREVER_21("Forever 21"),
         FORVERT("Forvert"),
+        FQ1924("FQ1924"),
         FRAAS("Fraas"),
         FRACOMINA("Fracomina"),
         FRANCIS_LEON("Francis Leon"),
@@ -739,6 +742,7 @@ public class Label extends GenericAttribute {
         STEFANEL("Stefanel"),
         STELLA_NOVA("Stella Nova"),
         STRAND("Strand"),
+        STYLE_BUTLER("Style Butler"),
         SUBLEVEL("Sublevel"),
         SUNCOO("Suncoo"),
         SUNSEEKER("Sunseeker"),
@@ -753,6 +757,7 @@ public class Label extends GenericAttribute {
         TED_BAKER("Ted Baker"),
         TEDDY_SMITH("Teddy Smith"),
         TFNC("TFNC"),
+        THAKOON_ADDITION("Thakoon Addition"),
         THE_BLUE_UNIFORM("The Blue Uniform"),
         THE_LOCAL_FIRM("The Local Firm"),
         THE_NORTH_FACE("The North Face"),
@@ -801,6 +806,7 @@ public class Label extends GenericAttribute {
         ZALANDO("Zalando"),
         ZERGATIK("Zergatik"),
         ZIZZI("Zizzi"),
+        ZOO_YORK("ZOO YORK"),
         NOT_SET("Brand not set");
 
 

@@ -139,6 +139,7 @@ public class Statistics {
         statValues.put(ShoprContract.Stats.DURATION_RECOMMENDATION, durationFromRecommendationStart);
         statValues.put(ShoprContract.Stats.ITEM_POSITION, mSelectedItemPosition);
         statValues.put(ShoprContract.Stats.FASHION_SUGGESTED, fashionSuggested);
+        statValues.put(ShoprContract.Stats.STEREOTYPE, mSelectedStereotype);
         statValues.put(ShoprContract.Stats.CHARTS_LOOKED_AT, chartLookedAt);
         statValues.put(ShoprContract.Stats.PREFERENCE_CHANGED, preferenceChanged);
         statValues.put(ShoprContract.Stats.PREFERENCE_SETTING_STARTED, preferenceSettingStarted);

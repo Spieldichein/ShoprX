@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ public class ItemDetailsActivity extends Activity {
     private Item mItem;
     private int mItemPosition;
     private ListView explanationListView;
+    private LinearLayout testLayout2;
     private ExplanationAdapter explanationAdapter;
 
 
@@ -112,7 +114,8 @@ public class ItemDetailsActivity extends Activity {
         });
 
         //Explanations
-        explanationListView = (ListView) findViewById(R.id.listViewExplanation);
+        //   explanationListView = (ListView) findViewById(R.id.listViewExplanation);
+           testLayout2 = (LinearLayout) findViewById(R.id.listViewExplanation);
         setupExplanationAdapter();
 
         // title
@@ -188,7 +191,15 @@ public class ItemDetailsActivity extends Activity {
             explanationAdapter.add(explanation1);
 
         }
-        explanationListView.setAdapter(explanationAdapter);
+        final int adapterCount = explanationAdapter.getCount();
+
+        for (int i = 0; i < adapterCount; i++) {
+            View item = explanationAdapter.getView(i, null, null);
+            testLayout2.addView(item);
+        }
+
+
+        //explanationListView.setAdapter(explanationAdapter);*/
     }
 
     @Override

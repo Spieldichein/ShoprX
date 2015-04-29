@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +7,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ItemDetailsActivity" >
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/textViewItemDetailsTitle"
         android:layout_width="wrap_content"
@@ -144,15 +146,16 @@
 
 
 
-    <ListView
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/listViewExplanation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:layout_below="@id/popup_shopDistance"
-        android:layout_above="@+id/buttonItemDetailsFinish">
-    </ListView>
+       >
+    </LinearLayout>
 
 
     <Button
@@ -161,6 +164,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/choice_finish" />
+        android:layout_below="@id/listViewExplanation"
 
+        android:text="@string/choice_finish" />
 </RelativeLayout>
+</ScrollView>

@@ -2,6 +2,8 @@
 package de.tum.in.schlichter.shoprx.ui;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -219,19 +221,33 @@ public class ItemDetailsActivity extends Activity {
     }
 
     protected void onFinishTask() {
-        Statistics.get().setSelectedItemPosition(mItemPosition);
-        // finish task, store stats to database
-        Uri statUri = Statistics.get().finishTask(this);
-        if (statUri == null) {
-            Toast.makeText(this, "Task was not started.", Toast.LENGTH_LONG).show();
-            return;
-        }
 
-        // display results
-        Intent intent = new Intent(this, ResultsActivity.class);
-        intent.putExtra(ResultsActivity.InitBundle.STATS_ID, Integer.valueOf(Stats.getStatId(statUri)));
-        intent.putExtra(ResultsActivity.InitBundle.ITEM_ID, mItem.id());
-        startActivity(intent);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        final Activity activity = this;
+
+        builder.setTitle("You really want to choose this item and finish?");
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Statistics.get().setSelectedItemPosition(mItemPosition);
+                // finish task, store stats to database
+                Uri statUri = Statistics.get().finishTask(activity);
+                if (statUri == null) {
+                    Toast.makeText(activity, "Task was not started.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                // display results
+                Intent intent = new Intent(activity, ResultsActivity.class);
+                intent.putExtra(ResultsActivity.InitBundle.STATS_ID, Integer.valueOf(Stats.getStatId(statUri)));
+                intent.putExtra(ResultsActivity.InitBundle.ITEM_ID, mItem.id());
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Cancel",null);
+
+
+
     }
 
     @Override
